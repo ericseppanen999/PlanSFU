@@ -1,0 +1,49 @@
+#logo {
+    height: 60px;
+    object-fit: scale-down;
+}
+
+#signin_panel {
+    margin-left: auto;
+}
+
+#main_panel {
+    width: 80%;
+    border-top: var(--padding-small) solid var(--base-dark);
+    padding: var(--padding-large);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#left_pane {
+    width: 40ch;
+}
+
+#right_pane {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 100;
+}
+
+#search_panel {
+    width: 100%;
+}
+
+.class_item {
+    border: 1px solid var(--base-dark);
+    height: fit-content;
+    margin-bottom: var(--padding-medium);
+    margin-right: var(--padding-medium);
+    padding: var(--padding-small);
+    --title-color: var(--text-color);
+}
+
+.class_item:hover {
+    border: 1px solid var(--primary-color);
+    --title-color: var(--primary-color);
+}
+
+.class_title {
+    color: var(--title-color);
+}

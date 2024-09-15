@@ -1,1 +1,40 @@
-<h1>Hello, Rails!</h1>
+<%= favicon_link_tag %>
+<%= stylesheet_link_tag 'index' %>
+<header class="horizontal-stack">
+    <div id="logo_panel">
+        <img id="logo" src="assets/PlanSFULarge.svg"></img>
+    </div>
+    <div id="title_panel"></div>
+    <div id="signin_panel" class="center-content">
+        <button id="sign_in_button">SIGN IN</button>
+    </div>
+</header>
+<div id="main_panel" class="horizontal-stack">
+    <div id="left_pane">
+        <h3>Course Planning Links:</h3>
+    </div>
+    <div class="padding_medium"></div>
+    <div id="right_pane">
+        <div id="info_panel">Enter your completed/expected to complete courses and any courses you want to test. Sign in to autofill courses.</div>
+        <hr>
+        <div id="results_panel">
+            <h3>Courses meeting your prerequisites:</h3>
+            <div class="search_bar">
+                <input type="text" id="search_input" class="search_bar_input" placeholder="Search"></input>
+                <svg class="search_icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--base-dark)"><path d="M796-121 533-384q-30 26-69.96 40.5Q423.08-329 378-329q-108.16 0-183.08-75Q120-479 120-585t75-181q75-75 181.5-75t181 75Q632-691 632-584.85 632-542 618-502q-14 40-42 75l264 262-44 44ZM377-389q81.25 0 138.13-57.5Q572-504 572-585t-56.87-138.5Q458.25-781 377-781q-82.08 0-139.54 57.5Q180-666 180-585t57.46 138.5Q294.92-389 377-389Z"/></svg>
+            </div>
+            <div id="search_panel" class="scroll">
+                <div class="padding_medium"></div>
+                <p>No results.</p>
+                <div id="search_grid" class="item-stack">
+                    <div class="class_item">
+                        <h3 class="class_title">CMPT 276: Introduction to Software Engineering</h3>
+                        <h3>Sections:</h3>
+                        <h3>Description:</h3>
+                        <p>An overview of various techniques used for software development and software project management. Major tasks and phases in modern software development, including requirements, analysis, documentation, design, implementation, testing,and maintenance. Project management issues are also introduced. Students complete a team project using an iterative development process.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

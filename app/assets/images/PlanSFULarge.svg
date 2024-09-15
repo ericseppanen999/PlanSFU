@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 -0.4 2100 500" width="2100px" height="500px" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <style bx:fonts="Abhaya Libre">@import url(https://fonts.googleapis.com/css2?family=Abhaya+Libre%3Aital%2Cwght%400%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800&amp;display=swap);</style>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 315.84321009645487, -0.5255450166924902)">
+    <rect width="785" height="500" style="fill: rgb(177, 36, 37); stroke: rgba(0, 0, 0, 0);" x="-315.843" y="0.526"/>
+    <text style="fill: rgb(255, 255, 255); font-family: 'Abhaya Libre'; font-size: 28px; white-space: pre;" transform="matrix(5.55997, 0, 0, 5.924797, -763.372642, -642.594502)" x="164.598" y="149.633">Plan</text>
+    <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 28px; white-space: pre;" transform="matrix(8.3219, 0, 0, 10.32075, -1502.02275, -1117.650912)" x="180.904" y="155.201">SFU</text>
+  </g>
+  <text style="fill: rgb(95, 95, 95); font-family: 'Abhaya Libre'; font-size: 28px; white-space: pre;" transform="matrix(5.152404785156251, 0, 0, 4.698552131652832, -3578.664901574397, -1220.1037961275508)"><tspan x="863.727" y="304.048">UNDERGRADUATE </tspan><tspan x="863.727" dy="1em">​</tspan><tspan>COURSE </tspan><tspan x="863.727" dy="1em">​</tspan><tspan>PLANNER</tspan></text>
+</svg>

@@ -13,3 +13,113 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    --padding-small: 5px;
+    --padding-medium: 15px;
+    --padding-large: 30px;
+
+    --primary-color: brown;
+    --base-color: white;
+    --base-dark: rgb(225, 225, 225);
+
+    --font-h3: bold 14px Oswald, sans-serif;
+    --text-color: black;
+
+    margin: 0;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+hr {
+    width: 100%;
+}
+
+div {
+    background-color: var(--base-color);
+}
+
+h3 {
+    font: var(--font-h3);
+}
+
+button {
+    outline: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border: none;
+    background-color: var(--base-color);
+    font: var(--font-h3);
+    padding: var(--padding-medium);
+    width: fit-content;
+    height: fit-content;
+}
+
+button:hover {
+    color: var(--base-color);
+    background-color: var(--primary-color);
+}
+
+header {
+    background-color: var(--base-color);
+    padding: var(--padding-medium);
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.search_icon {
+    justify-self: right;
+}
+
+.search_bar {
+    outline: 1px solid var(--base-dark);
+    display: flex;
+    width: max-content;
+    height: max-content;
+}
+
+.search_bar_input {
+    outline: none;
+    border: none;
+}
+
+.horizontal-stack {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.center-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.scroll {
+    overflow-y: scroll;
+}
+
+.item_stack {
+    display: grid;
+}
+
+.padding_small {
+    width: var(--padding-small);
+    height: var(--padding-small);
+}
+
+.padding_medium {
+    width: var(--padding-medium);
+    height: var(--padding-medium);
+}
+
+.padding_large {
+    width: var(--padding-large);
+    height: var(--padding-large);
+}
