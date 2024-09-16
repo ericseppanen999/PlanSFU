@@ -22,6 +22,7 @@ body {
     --primary-color: brown;
     --base-color: white;
     --base-dark: rgb(225, 225, 225);
+    --base-medium: rgb(235, 235, 235);
 
     --font-h3: bold 14px Oswald, sans-serif;
     --text-color: black;

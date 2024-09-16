@@ -37,6 +37,27 @@
     margin-right: var(--padding-medium);
     padding: var(--padding-small);
     --title-color: var(--text-color);
+    --class-display-add: block;
+    --class-display-remove: none;
+}
+
+.class_add_button {
+    display: var(--class-display-add);
+}
+
+.class_remove_button {
+    display: var(--class-display-remove);
+}
+
+.class_add_remove_button {
+    outline: none;
+    background-color: var(--base-color);
+    margin-left: auto;
+    padding: var(--padding-small);
+}
+
+.class_add_remove_button:hover {
+    background-color: var(--base-medium);
 }
 
 .class_item:hover {
