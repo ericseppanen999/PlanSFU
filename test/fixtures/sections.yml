@@ -1,0 +1,11 @@
+one:
+  section_number: "e100"
+  course: one
+  instructor: Victor Cheung
+  schedule: MWF 10-11
+
+two:
+  section_number: "d300"
+  course: two
+  instructor: Steve Pearce
+  schedule: TTh 9-10:30
