@@ -51,46 +51,24 @@
     // may want to switch to a better way of handling client-side scripting later on
     // not sure how to approach that
 
+    // todo: update search string on change search params
+    // build search string from params
+    // create classes for handling courses
 
+    // templatize course entries
 
+    const searchstring = "hello world";
 
-    
-    // none of this code does anything yet
+    window.onload = updateSearchResults;
 
-    class Class {
-        function asHTML(show_detail = true, show_grade = false){
-
+    async function updateSearchResults(){
+        console.log("sending request...");
+        const response = await fetch(`courses?${searchstring}`);
+        if (response.ok) {
+            const data = await response.json();
+            updateSearchDisplay(data);   
+        } else {
+            throw new Error(`Failed to fetch search result. Response status: ${response.status}`);
         }
-    }
-
-    class ClassList {
-        constructor(display_object){
-            this.display_object = display_object;
-            this.classes = [];
-        }
-
-        function at(index){
-            return classes[index];
-        }
-
-        function push(item){
-            item.index = classes.length;
-            classes.push(item);
-        }
-
-        function pop(item){
-            return item;
-        }
-    }
-
-    let displayed_classes = new ClassList(document.getElementById("search_grid")); //list of database entries
-    let user_classes = new ClassList(document.getElementById("user_grid"));
-
-    function get_class(element){
-
-    }
-    
-    function remove_class(element){
-
     }
 </script>
