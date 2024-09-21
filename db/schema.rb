@@ -10,35 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_18_004018) do
-  create_table "course_relationships", force: :cascade do |t|
-    t.integer "course_id", null: false
-    t.integer "related_course_id", null: false
-    t.string "relationship_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["course_id"], name: "index_course_relationships_on_course_id"
-    t.index ["related_course_id"], name: "index_course_relationships_on_related_course_id"
-  end
-
-  create_table "courses", force: :cascade do |t|
-    t.string "name"
+ActiveRecord::Schema[7.2].define(version: 2024_09_20_211355) do
+  create_table "courses", id: false, force: :cascade do |t|
+    t.string "dept", null: false
+    t.string "number", null: false
     t.string "title"
+    t.text "description"
+    t.text "requisite_description"
+    t.text "short_description"
+    t.integer "credits"
+    t.json "instructors", default: []
+    t.json "campuses", default: []
+    t.json "delivery_methods", default: []
+    t.json "sections", default: []
+    t.json "requisites", default: []
+    t.integer "grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["dept", "number"], name: "index_courses_on_dept_and_number", unique: true
   end
-
-  create_table "sections", force: :cascade do |t|
-    t.string "section_number"
-    t.integer "course_id", null: false
-    t.string "instructor"
-    t.string "schedule"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["course_id"], name: "index_sections_on_course_id"
-  end
-
-  add_foreign_key "course_relationships", "courses"
-  add_foreign_key "course_relationships", "related_courses"
-  add_foreign_key "sections", "courses"
 end
