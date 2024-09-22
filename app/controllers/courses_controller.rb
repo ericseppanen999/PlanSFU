@@ -1,11 +1,12 @@
-class CoursesController < ApplicationController
-  # This action retrieves all courses from the database
-  def index
-    @courses = Course.all
-  end
+# This controller handles all search requests
 
-  # This action retrieves courses based on certain conditions (example: dept filter)
-  def filter
-    @courses = Course.where(dept: params[:dept]) # Adjust condition as needed
+class CoursesController < ApplicationController
+  def search
+    searchquery = params[:searchquery]
+    puts searchquery
+    @courses = Course.all
+    #@courses = Course.where(dept: params[:dept])
+    data = { message: @courses, status: 200 }
+    render json: data
   end
 end

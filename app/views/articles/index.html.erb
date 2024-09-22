@@ -57,15 +57,17 @@
 
     // templatize course entries
 
-    const searchstring = "hello world";
+    const searchstring = `hello world`;
 
     window.onload = updateSearchResults;
 
     async function updateSearchResults(){
-        console.log("sending request...");
-        const response = await fetch(`courses?${searchstring}`);
+        console.log(`sending request...`);
+        const response = await fetch(`courses?searchquery=${searchstring}`);
         if (response.ok) {
+            console.log(`response recieved...`);
             const data = await response.json();
+            console.log(`response data: ${JSON.stringify(data.message)}`);
             updateSearchDisplay(data);   
         } else {
             throw new Error(`Failed to fetch search result. Response status: ${response.status}`);
