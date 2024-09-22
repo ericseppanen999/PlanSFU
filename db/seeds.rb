@@ -77,7 +77,7 @@ Course.create!(
   grade: 80
 )
 
-=begin
+
 Course.create!(
   dept: 'CMPT',
   number: '300',
@@ -146,6 +146,3 @@ Course.create!(
   requisites: [],
   grade: 90
 )
-
-
-=end
