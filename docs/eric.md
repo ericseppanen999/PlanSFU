@@ -30,3 +30,18 @@ completed_courses = [
   { "dept" => "MATH", "number" => "151", "grade" => "C-" },
   { "dept" => "CMPT", "number" => "105", "grade" => "C-" }
 ]
+
+
+
+## 2024/09/21 ## 
+goto localhost/courses to see course list
+
+if errors (should be good): 
+rails tmp:clear 
+rails assets:clobber
+
+for armand
+  added route in config/routes.rb
+  created new view courses
+  pull from db in any controller using @courses = Course.all (or Course.where(param))
+  
