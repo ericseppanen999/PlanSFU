@@ -5,7 +5,7 @@ class CoursesController < ApplicationController
     searchquery = params[:searchquery]
     puts searchquery
     @courses = Course.all
-    #@courses = Course.where(dept: params[:dept])
+    # @courses = Course.where(dept: params[:dept])
     data = { message: @courses, status: 200 }
     render json: data
   end

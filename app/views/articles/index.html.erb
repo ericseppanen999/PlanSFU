@@ -27,14 +27,16 @@
             <div id="search_panel" class="scroll">
                 <div class="padding_medium"></div>
                 <p>No results.</p>
+                <div id="course_search_display"></div>
+                <!--
                 <div id="search_grid" class="item-stack">
-                    <div class="class_item">
+                    <div class="course_item">
                         <div class="horizontal-stack">
-                            <h3 class="class_title">CMPT 276: Introduction to Software Engineering</h3>
-                            <button class="class_add_button class_add_remove_button" onclick="add_class()">
+                            <h3 class="course_title">CMPT 276: Introduction to Software Engineering</h3>
+                            <button class="course_add_button course_add_remove_button" onclick="add_class()">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text-color)"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
                             </button>
-                            <button class="class_remove_button class_add_remove_button" onclick="remove_class()">
+                            <button class="course_remove_button course_add_remove_button" onclick="remove_class()">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--text-color)"><path d="M200-440v-80h560v80H200Z"/></svg>
                             </button>
                         </div>
@@ -43,11 +45,17 @@
                         <p>An overview of various techniques used for software development and software project management. Major tasks and phases in modern software development, including requirements, analysis, documentation, design, implementation, testing,and maintenance. Project management issues are also introduced. Students complete a team project using an iterative development process.</p>
                     </div>
                 </div>
+                -->
             </div>
         </div>
     </div>
 </div>
-<script>
+<!--
+<script type="module">
+    import React from "./react.js"
+    import CourseSearchDisplay from "./javascript/components/course_panels.js"
+
+    ReactDOM.render(<CourseSearchDisplay />, document.getElementById('course_search_display'));
     // may want to switch to a better way of handling client-side scripting later on
     // not sure how to approach that
 
@@ -57,20 +65,23 @@
 
     // templatize course entries
 
+    /*
     const searchstring = `hello world`;
 
-    window.onload = updateSearchResults;
+    window.onload = updateSearchResults(searchstring);
 
-    async function updateSearchResults(){
-        console.log(`sending request...`);
-        const response = await fetch(`courses?searchquery=${searchstring}`);
+    async function updateSearchResults(query){
+        const response = await fetch(`courses?searchquery=${query}`);
         if (response.ok) {
-            console.log(`response recieved...`);
-            const data = await response.json();
-            console.log(`response data: ${JSON.stringify(data.message)}`);
-            updateSearchDisplay(data);   
+            search_res = await response.json();
+            console.log(`response data: ${JSON.stringify(search_res.message, undefined, 4)}`);
         } else {
             throw new Error(`Failed to fetch search result. Response status: ${response.status}`);
         }
     }
+    */
+
+    //window.onload = search.updateResults(searchstring);
+    
 </script>
+-->

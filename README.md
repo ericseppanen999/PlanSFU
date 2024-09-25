@@ -1,6 +1,14 @@
 ![PlanSFU](assets/PlanSFU.svg "PlanSFU")\
 A course planner for undergrads at SFU. A group project for CMPT 276 D300, Fall 2024
 
+## Iteration 1 Features ##
+- Filtered search
+- Sign in (no autofill)
+- Cookies for state storage
+### Tentative: ###
+- Sorted search
+- Autofill on sign in
+
 ## Running The Server Locally ##
 run `ruby bin/rails server` from the main project folder\
 navigate to `127.0.0.1:3000/articles` on your browser\
