@@ -111,16 +111,19 @@ header {
 }
 
 .padding_small {
+    display: inline;
     width: var(--padding-small);
     height: var(--padding-small);
 }
 
 .padding_medium {
+    display: inline;
     width: var(--padding-medium);
     height: var(--padding-medium);
 }
 
 .padding_large {
+    display: inline;
     width: var(--padding-large);
     height: var(--padding-large);
 }
