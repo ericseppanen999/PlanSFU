@@ -14,9 +14,12 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_20_211355) do
   create_table "courses", id: false, force: :cascade do |t|
     t.string "dept", null: false
     t.string "number", null: false
+    t.string "term", null: false
+    t.string "year", null: false
     t.string "title"
     t.text "description"
     t.text "requisite_description"
+    t.text "prereq_logic"
     t.text "short_description"
     t.integer "credits"
     t.json "instructors", default: []
@@ -24,9 +27,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_20_211355) do
     t.json "delivery_methods", default: []
     t.json "sections", default: []
     t.json "requisites", default: []
-    t.integer "grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["dept", "number"], name: "index_courses_on_dept_and_number", unique: true
+    t.index ["dept", "number", "term", "year"], name: "index_courses_on_dept_and_number_and_term_and_year", unique: true
   end
 end
