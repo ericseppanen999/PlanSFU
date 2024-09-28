@@ -9,6 +9,7 @@ const CourseSearchDisplay = () => {
 
   useEffect(() => {
     const fetchCourses = async () => {
+      console.log(`ran`);
       setLoading(true);
       let query = `hello world`;
       const response = await fetch(`courses?searchquery=${query}`);

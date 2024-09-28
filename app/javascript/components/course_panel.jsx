@@ -17,25 +17,27 @@ const Course = ({
   sections,
   requisites,
   grade,
+  operations = ["add"]
 }) => {
   return (
-    <div className="course_item">
+    <div className="course_item active_panel">
       <div className="horizontal-stack">
         <h3>
-          {dept}
-          {number}: {title}
+          {dept.toUpperCase()} {number}: {title}
         </h3>
         <button
-          className="course_add_button course_add_remove_button"
+          className="flat course_add_remove_button"
           onclick="add_class()"
         >
-          <Plus />
-        </button>
-        <button
-          className="course_remove_button course_add_remove_button"
-          onclick="remove_class()"
-        >
-          <Minus />
+          {
+            operations.includes("add") ? (
+              <Plus />
+            ) : operations.includes("subtract") ? (
+              <Minus />
+            ) : (
+              <></>
+            )
+          }
         </button>
       </div>
       <h3>Description:</h3>
