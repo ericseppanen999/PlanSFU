@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   get "/articles", to: "articles#index"
-  get "/courses", to: "courses#search"
+  get "/courses/search_page", to: "courses#search_page"
+
+  # Route to handle the search request from the front end
+  get "/courses/search", to: "courses#search"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -10,7 +13,4 @@ Rails.application.routes.draw do
   # Render dynamic PWA files from app/views/pwa/*
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-
-  resources :courses, only: [ :index ]
-  get "courses/filter", to: "courses#filter", as: "filter_courses"
 end

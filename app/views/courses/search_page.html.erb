@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Search</title>
+</head>
+<body>
+  <form id="search-form">
+    <label for="searchstring">course search</label>
+    <input type="text" id="searchstring" name="searchstring">
+    <label for="term">Term:</label>
+    <select id="term" name = "term">
+        <option value = "fall">Fall</option>
+        <option value = "spring">Spring</option>
+        <option value = "summer">Summer</option>
+    </select>
+    <label for="year">Term:</label>
+    <select id="year" name = "year">
+        <option value = "2024">2024</option>
+        <option value = "2023">2023</option>
+        <option value = "2022">2022</option>
+    </select>
+    <button type="submit">Search</button>
+  </form>
+
+  <div id="search-results"></div>
+
+  <script>
+    document.getElementById('search-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const searchstring = document.getElementById('searchstring').value;
+  const term = document.getElementById('term').value;
+  const year = document.getElementById('year').value;
+
+  const queryString = `searchstring=${encodeURIComponent(searchstring)}&term=${encodeURIComponent(term)}&year=${encodeURIComponent(year)}`;
+
+  fetch(`/courses/search?${queryString}`, {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(data => {
+    const resultsDiv = document.getElementById('search-results');
+    resultsDiv.innerHTML = ''; 
+
+    data.forEach(course => {
+      const courseDiv = document.createElement('div');
+      courseDiv.innerHTML = `<p>${course.dept} ${course.number} - ${course.title} - (${course.term} ${course.year} - taught by: ${course.instructors})</p>`;
+      resultsDiv.appendChild(courseDiv);
+    });
+  })
+  .catch(error => console.error('Error:', error));
+});
+
+  </script>
+
+</body>
+</html>
