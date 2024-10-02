@@ -60,9 +60,49 @@ button:hover {
     background-color: var(--primary-color);
 }
 
+button:hover {
+    color: var(--base-color);
+    background-color: var(--primary-color);
+}
+
+button:active {
+    color: var(--primary-color);
+    background-color: var(--base-dark);
+}
+
+button.flat {
+    outline: none;
+    background-color: var(--base-color);
+    padding: var(--padding-small);
+    --content-color: var(--text-color);
+}
+
+button.flat:hover {
+    outline: none;
+    background-color: var(--base-medium);
+}
+
+button.flat:active {
+    outline: 1px solid var(--primary-color);
+    background-color: var(--base-color);
+    color: var(--primary-color);
+    --content-color: var(--primary-color);
+}
+
 header {
     background-color: var(--base-color);
     padding: var(--padding-medium);
+}
+
+.active_panel {
+    border: 1px solid var(--base-dark);
+    padding: var(--padding-small);
+    --title-color: var(--text-color);
+}
+
+.active_panel:hover {
+    border: 1px solid var(--primary-color);
+    --title-color: var(--primary-color);
 }
 
 .material-symbols-outlined {
@@ -111,19 +151,16 @@ header {
 }
 
 .padding_small {
-    display: inline;
     width: var(--padding-small);
     height: var(--padding-small);
 }
 
 .padding_medium {
-    display: inline;
     width: var(--padding-medium);
     height: var(--padding-medium);
 }
 
 .padding_large {
-    display: inline;
     width: var(--padding-large);
     height: var(--padding-large);
 }

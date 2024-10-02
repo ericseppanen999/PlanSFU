@@ -6,7 +6,7 @@ const Plus = () => (
     height="24px"
     viewBox="0 -960 960 960"
     width="24px"
-    fill="var(--text-color)"
+    fill="var(--content-color)"
   >
     <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
   </svg>
@@ -18,7 +18,7 @@ const Minus = () => (
     height="24px"
     viewBox="0 -960 960 960"
     width="24px"
-    fill="var(--text-color)"
+    fill="var(--content-color)"
   >
     <path d="M200-440v-80h560v80H200Z" />
   </svg>
