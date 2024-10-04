@@ -4,6 +4,13 @@ Rails.application.routes.draw do
 
   # Route to handle the search request from the front end
   get "/courses/search", to: "courses#search"
+
+  # Route for CAS login
+  get "/login", to: "cas_sessions#new", as: :login
+
+  # Route for CAS logout
+  delete "/logout", to: "cas_sessions#destroy", as: :logout
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
