@@ -16,6 +16,16 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user!
-    redirect_to login_path unless current_user
+    redirect_to cas_login_path unless current_user
+  end
+
+  private
+
+  def cas_login_url
+    "#{CAS_BASE_URL}/login?service=#{callback_url}"
+  end
+
+  def callback_url
+    "#{root_url}cas_sessions/create"
   end
 end
