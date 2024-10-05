@@ -20,7 +20,7 @@ gem "jbuilder"
 # gem "redis", ">= 4.0.1"
 # force bundler to use older version of psych, bc it won't work otherwise
 gem "psych", "< 5"
-
+gem "rubycas-client"
 gem "shakapacker"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
