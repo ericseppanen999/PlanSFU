@@ -14,7 +14,7 @@ const CourseSearchDisplay = () => {
       const response = await fetch(`courses?searchquery=${query}`);
       if (response.ok) {
         let search_res = await response.json();
-        console.log(`response data: ${JSON.stringify(search_res.message, undefined, 4)}`);
+        //console.log(`response data: ${JSON.stringify(search_res.message, undefined, 4)}`);
         setCourses(search_res.message);
       } else {
         throw new Error(
@@ -41,43 +41,25 @@ const CourseSearchDisplay = () => {
 
         <div>
             {courses.map((course) => (
-                <Course key={course.courseid} {...course} />
+                <Course key={course.courseid} course={course} operation="add" makeActive={() => {}}/>
             ))}
         </div>
     </div>
   );
 };
 
-const CourseTermDisplay = () => {
-  const [courses, setCourses] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  // run at startup
-  useEffect(() => {
-    const fetchCourses = async () => {
-      setLoading(true);
-      // get term info from cookie, then query server for info, or just query server if user logged in
-      setLoading(false);
-    };
-
-    fetchCourses();
-  }, []);
+const CourseTermDisplay = ({courses}) => {
+  const [activeCourse, setActiveCourse] = useState(undefined);
 
   return (
     <div>
-        {loading ? 
-            <div className="center-content">
-                <img className="loading_img" src="assets/loading.gif"></img>
-            </div>
-       : <></>}
-
         {courses.length === 0 ? 
             <p>No courses entered for this term.</p>
        : <></>}
 
         <div>
             {courses.map((course) => (
-                <Course key={course.courseid} {...course} />
+                <Course key={course.id} course={course} operation="remove" minimized={activeCourse === course.id} showGrade={true} makeActive={(courseid) => setActiveCourse(courseid)}/>
             ))}
         </div>
     </div>

@@ -1,92 +1,117 @@
-import React from "react";
+import React, {useCallback, useState} from "react";
 import { Plus, Minus } from "./icons.jsx";
+import { AddCourseCallback, RemoveCourseCallback } from "./callback.js"
 import "./course_panel.css"
 
 // Component to render each item
 const Course = ({
-  dept,
-  number,
-  title,
-  description,
-  requisite_description,
-  short_description,
-  credits,
-  instructors,
-  campuses,
-  delivery_methods,
-  sections,
-  requisites,
-  grade,
-  operations = ["add"]
+  key,
+  course,
+  operation = "add",
+  minimized = false,
+  showGrade = false,
+  makeActive
 }) => {
+  const AddCourseWrapper = useCallback(() => {
+    AddCourseCallback.trigger(course);
+  })
+
+  const RemoveCourseWrapper = useCallback(() => {
+    RemoveCourseCallback.trigger(course);
+  })
+
   return (
-    <div className="course_item active_panel">
+    <div className="course_item active_panel" onClick={() => makeActive(course.id)}>
       <div className="horizontal-stack">
         <h3>
-          {dept.toUpperCase()} {number}: {title}
+          {course.dept.toUpperCase()} {course.number}: {course.title}
         </h3>
-        <button
-          className="flat course_add_remove_button"
-          onclick="add_class()"
-        >
-          {
-            operations.includes("add") ? (
+        {
+          operation == "add" ? (
+            <button
+              className="flat course_add_remove_button"
+              onClick={AddCourseWrapper}
+            >
               <Plus />
-            ) : operations.includes("subtract") ? (
+            </button>
+          ) : operation =="remove" ? (
+            <button
+              className="flat course_add_remove_button"
+              onClick={RemoveCourseWrapper}
+            >
               <Minus />
-            ) : (
-              <></>
-            )
-          }
-        </button>
+            </button>
+          ) : (
+            <></>
+          )
+        }
       </div>
-      <h3>Description:</h3>
-      <p>{description}</p>
 
-      <h3>Credits:</h3>
-      <p>{credits}</p>
+      {!minimized ? (
+        <>
+          <p>{course.term}, {course.year}</p>
 
-      {typeof grade !== `undefined` ? (
+          <h3>Description:</h3>
+          <p>{course.description}</p>
+        </>
+      ) : (
+        <>
+          <h3>Overview:</h3>
+          <p>{course.short_description}</p>
+        </>
+      )}
+
+      <div className="horizontal-stack">
+        <h3 className="course_info_item">Credits:</h3>
+        <div className="padding_small"></div>
+        <p className="course_info_item">{course.credits}</p>
+      </div>
+
+      {showGrade ? (
         <>
           <h3>Grade:</h3>
-          <p>{grade}</p>
+          <p>{course.grade}</p>
         </>
       ) : (
         <></>
       )}
 
-      <h3>Prerequisites:</h3>
-      <p>{requisite_description}</p>
+      {!minimized ? (
+        <>
+          <h3>Prerequisites:</h3>
+          <p>{course.requisite_description}</p>
 
-      <h3>Sections:</h3>
-      <div className="horizontal-stack">
-        {sections.map((section) => (
-          <>
-            <p className="course_info_item">{section}</p>
-            <div className="padding_medium"></div>
-          </>
-        ))}
-      </div>
+          <h3>Sections:</h3>
+          <div className="horizontal-stack">
+            {course.sections.map((section) => (
+              <>
+                <p className="course_info_item">{section}</p>
+                <div className="padding_medium"></div>
+              </>
+            ))}
+          </div>
 
-      <h3>Instructors:</h3>
-      <div className="horizontal-stack">
-        {instructors.map((instructor) => (
-          <>
-            <p className="course_info_item">{instructor}</p>
-            <div className="padding_medium"></div>
-          </>
-        ))}
-      </div>
+          <h3>Instructors:</h3>
+          <div className="horizontal-stack">
+            {course.instructors.map((instructor) => (
+              <>
+                <p className="course_info_item">{instructor}</p>
+                <div className="padding_medium"></div>
+              </>
+            ))}
+          </div>
 
-      <h3>Campuses:</h3>
-      <div className="horizontal-stack">
-        {campuses.map((campus) => (
-          <>
-            <p className="course_info_item">{campus}</p>
-            <div className="padding_medium"></div>
-          </>
-        ))}
-      </div>
+          <h3>Campuses:</h3>
+          <div className="horizontal-stack">
+            {course.campuses.map((campus) => (
+              <>
+                <p className="course_info_item">{campus}</p>
+                <div className="padding_medium"></div>
+              </>
+            ))}
+          </div>
+        </>
+      ) : (<></>)}
     </div>
   );
 };
