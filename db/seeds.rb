@@ -1,9 +1,42 @@
-
+Course.create!(
+  dept: "cmpt",
+  number: "105w",
+  term: "fall",
+  year: "2022",
+  title: "Social Issues and Communication Strategies in Computing Science",
+  description: "This course teaches the fundamentals of informative and persuasive communication for professional engineers and computer scientists. A principal goal of this course is to assist students in thinking critically about various contemporary technical, social, and ethical issues. It focuses on communicating technical information clearly and concisely, managing issues of persuasion when communicating with diverse audiences, presentation skills, and teamwork.",
+  requisite_description: "",
+  prereq_logic: "", # implement
+  short_description: "This course teaches the fundamentals of informative and persuasive communication for professional engineers and computer scientists. A principal goal of this course is to assist students in thinking critically about various contemporary technical, social, and ethical issues. It focuses on communicating technical information clearly and concisely, managing issues of persuasion when communicating with diverse audiences, presentation skills, and teamwork.",
+  credits: 3,
+  instructors: [ "Harinder Khangura", "Cristina Eftenaru" ],
+  campuses: [ "Surrey", "Burnaby" ],
+  delivery_methods: [ "In Person" ],
+  sections: [ "d100", "e100" ],
+  requisites: [],
+)
+Course.create!(
+  dept: "cmpt",
+  number: "120",
+  term: "fall",
+  year: "2020",
+  title: "Introduction to Computing Science and Programming I",
+  description: "An elementary introduction to computing science and computer programming, suitable for students with little or no programming background. Students will learn fundamental concepts and terminology of computing science, acquire elementary skills for programming in a high-level language, e.g. Python. The students will be exposed to diverse fields within, and applications of computing science. Topics will include: pseudocode; data types and control structures; fundamental algorithms; recursion; reading and writing files; measuring performance of algorithms; debugging tools; basic terminal navigation using shell commands. Treatment is informal and programming is presented as a problem-solving tool. ",
+  requisite_description: "BC Math 12 or equivalent is recommended.",
+  prereq_logic: "", # implement
+  short_description: "An elementary introduction to computing science and computer programming, suitable for students with little or no programming background. Students will learn fundamental concepts and terminology of computing science, acquire elementary skills for programming in a high-level language, e.g. Python. The students will be exposed to diverse fields within, and applications of computing science. Topics will include: pseudocode; data types and control structures; fundamental algorithms; recursion; reading and writing files; measuring performance of algorithms; debugging tools; basic terminal navigation using shell commands. Treatment is informal and programming is presented as a problem-solving tool. ",
+  credits: 3,
+  instructors: [ "Toby Donaldson", "Nicholas Vincent", "Brian Fraser" ],
+  campuses: [ "Burnaby", "Surrey" ],
+  delivery_methods: [ "In Person" ],
+  sections: [ "d100", "d300", "d400" ],
+  requisites: [],
+)
 Course.create!(
   dept: "cmpt",
   number: "125",
   term: "fall",
-  year: "2024",
+  year: "2018",
   title: "Introduction to Computing Science and Programming II",
   description: "A rigorous introduction to computing science and computer programming, suitable for students who already have some background in computing science and programming.  Intended for students who will major in computing science or a related program. Topics include: memory management; fundamental algorithms; formally analyzing the running time of algorithms; abstract data types and elementary data structures; object-oriented programming and software design; specification and program correctness; reading and writing files; debugging tools; shell commands.",
   requisite_description: "CMPT 120 or CMPT 130, with a minimum grade of C-.",
@@ -71,7 +104,7 @@ Course.create!(
   dept: "cmpt",
   number: "213",
   term: "fall",
-  year: "2024",
+  year: "2015",
   title: "Object Oriented Design in Java",
   description: "An introduction to object oriented design using Java. The Java programming language is introduced,
 

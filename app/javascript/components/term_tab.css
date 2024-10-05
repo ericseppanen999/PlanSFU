@@ -1,0 +1,33 @@
+.loading_greyout {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--base-dark);
+    opacity: 0.5;
+}
+
+.greyout_container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.tab_container {
+    border: 1px solid var(--base-dark);
+}
+
+.tab_header {
+    height: 2lh;
+    background-color: var(--base-dark);
+}
+
+.term_tab_header {
+    height: 100%;
+    padding: auto;
+    padding-left: var(--padding-medium);
+    padding-right: var(--padding-medium);
+    width: max-content;
+    border-left: 1px solid var(--base-dark);
+    border-right: 1px solid var(--base-dark);
+    max-width: 10lh;
+}
