@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_20_211355) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_05_225945) do
   create_table "courses", id: false, force: :cascade do |t|
     t.string "dept", null: false
     t.string "number", null: false
@@ -29,6 +29,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_20_211355) do
     t.json "requisites", default: []
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "unique_identifier"
     t.index ["dept", "number", "term", "year"], name: "index_courses_on_dept_and_number_and_term_and_year", unique: true
+    t.index ["unique_identifier"], name: "index_courses_on_unique_identifier", unique: true
   end
 end
