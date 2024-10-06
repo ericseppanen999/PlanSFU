@@ -89,7 +89,7 @@ end
 def filter_sections(secdata)
   secdata.select do |section|
     section_value = section["value"]
-    if not starts_with("g",section_value) and (div_by_100(section_value) or starts_with("o", section_value))
+    if not starts_with("g", section_value) and (div_by_100(section_value) or starts_with("o", section_value))
       true
     else
       false
@@ -190,7 +190,7 @@ def generate_url(year, sem, dept)
     end
 end
 
-generate_url("2024", "fall", "cmpt")
+generate_url("2024", "fall", "math")
 
 =begin
 base_url = "https://www.sfu.ca/bin/wcm/course-outlines?2024/fall/cmpt/295/"
