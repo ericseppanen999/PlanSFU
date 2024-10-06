@@ -54,7 +54,7 @@ class CoursesController < ApplicationController
   end
 
   def search_params
-    params.permit(:term, :year, :searchstring, courses: [:dept, :number, :term, :year])
+    params.permit(:term, :year, :searchstring, courses: [ :dept, :number, :term, :year ])
   end
 
   def search_courses(search_string, term, year, taken_courses)

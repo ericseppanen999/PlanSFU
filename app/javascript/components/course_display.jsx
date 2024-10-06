@@ -11,10 +11,10 @@ const CourseSearchDisplay = () => {
     const fetchCourses = async () => {
       setLoading(true);
       let query = `hello world`;
-      const response = await fetch(`courses?searchquery=${query}`);
+      const response = await fetch(`/courses/search?searchstring=${query}`);
       if (response.ok) {
         let search_res = await response.json();
-        //console.log(`response data: ${JSON.stringify(search_res.message, undefined, 4)}`);
+        console.log(`response data: ${JSON.stringify(search_res.message, undefined, 4)}`);
         setCourses(search_res.message);
       } else {
         throw new Error(
