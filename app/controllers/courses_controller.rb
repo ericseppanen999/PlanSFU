@@ -16,7 +16,7 @@ class CoursesController < ApplicationController
 
     results = search_courses(search_string, term, year, taken_courses)
 
-    save_user_search_history(search_string, term, year) # you may have to comment this out
+    # save_user_search_history(search_string, term, year) # you may have to comment this out
 
     # Return the search results as JSON
     render json: results
