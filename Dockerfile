@@ -25,10 +25,12 @@ ENV RAILS_ENV="production" \
 # Throw-away build stage to reduce size of final image
 FROM base AS build
 
-# Install packages needed to build gems
+# Install packages needed to build gems and Node.js for Shakapacker
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git pkg-config && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+apt-get install --no-install-recommends -y build-essential git pkg-config curl && \
+curl -sL https://deb.nodesource.com/setup_20.x | bash - && \
+apt-get install -y nodejs && \
+rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
@@ -38,6 +40,9 @@ RUN bundle install && \
 
 # Copy application code
 COPY . .
+
+# Install npm packages (this might require a package.json and yarn.lock in your repo)
+RUN npm install
 
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/

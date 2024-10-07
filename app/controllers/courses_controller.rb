@@ -41,7 +41,6 @@ class CoursesController < ApplicationController
     results
   end
 =begin
-  # you may have to comment this out
   def save_user_search_history(search_string, term, year)
     if @current_user
       UserSearchHistory.create(
