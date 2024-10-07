@@ -1,6 +1,9 @@
 require "net/http"
 require "json"
+require "benchmark"
+require "fileutils"
 
+# $base_directory = "PlanSFU/db/course_seeds"
 
 def create_course(base_url)
   sections_data = get_sections(base_url)
@@ -44,7 +47,7 @@ def create_course(base_url)
     desc,
     creds,
     base_url
-  )
+    )
 end
 
 def rbappend(a, e)
@@ -163,7 +166,11 @@ Course.create!(
   requisites: [],
 )
   RUBY
-  file_path = "output.txt"
+  base_directory = "course_seed_data"
+  folder_path = File.join(base_directory, year, term)
+  FileUtils.mkdir_p(folder_path)
+  file_name = "#{year}_#{term}_#{dept}_courses.txt"
+  file_path = File.join(folder_path, file_name)
   begin
     File.open(file_path, "a") { |file| file.puts(course_create_command) }
   rescue IOError => e
@@ -190,7 +197,41 @@ def generate_url(year, sem, dept)
     end
 end
 
-generate_url("2024", "fall", "math")
+year_scope = [ "2023", "2024", "2025" ]
+
+terms = [ "fall", "spring", "summer" ]
+
+departments = [
+  "acma", "als", "apma", "arab", "arch", "bisc", "bpk", "bus", "ca", "cenv",
+  "chem", "chin", "cmns", "cmpt", "cogs", "crim", "data", "dial", "dmed", "easc",
+  "econ", "edpr", "educ", "engl", "ensc", "env", "evsc", "fal", "fan", "fass",
+  "fep", "fren", "ga", "geog", "germ", "gero", "grad", "grk", "gsws", "hist",
+  "hsci", "hum", "iat", "indg", "inlg", "ins", "is", "ital", "japn", "lang",
+  "lbrl", "lbst", "ling", "ls", "macm", "masc", "math", "mbb", "mse", "neur",
+  "nusc", "onc", "phil", "phys", "plan", "plcy", "pol", "port", "psyc", "pub",
+  "punj", "rem", "sa", "sci", "sd", "sda", "see", "span", "stat", "tekx",
+  "ugrad", "urb", "wl"
+]
+
+
+def times(year_scope, terms, departments)
+  puts "year:"
+  year = gets.chomp
+  puts "term:"
+  term = gets.chomp
+  puts "dept:"
+  dept = gets.chomp
+  if year_scope.include?(year) and terms.include?(term) and departments.include?(dept)
+    time = Benchmark.measure do
+      generate_url(year, term, dept)
+    end
+    puts time.real
+  else
+    puts "invalid input"
+  end
+end
+
+times(year_scope, terms, departments)
 
 =begin
 base_url = "https://www.sfu.ca/bin/wcm/course-outlines?2024/fall/cmpt/295/"
