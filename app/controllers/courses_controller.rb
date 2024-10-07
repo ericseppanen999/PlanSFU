@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   # you may have to comment this out
-  before_action :set_current_user, only: [ :search ]
+  # before_action :set_current_user, only: [ :search ]
 
   def search_page
     # render the search page view
@@ -16,7 +16,7 @@ class CoursesController < ApplicationController
 
     results = search_courses(search_string, term, year, taken_courses)
 
-    save_user_search_history(search_string, term, year) # you may have to comment this out
+    # save_user_search_history(search_string, term, year) # you may have to comment this out
 
     # Return the search results as JSON
     render json: results
@@ -42,7 +42,8 @@ class CoursesController < ApplicationController
     results
   end
 
-  # you may have to comment this out
+# you may have to comment this out
+=begin
   def save_user_search_history(search_string, term, year)
     if @current_user
       UserSearchHistory.create(
@@ -56,4 +57,5 @@ class CoursesController < ApplicationController
   def set_current_user
     @current_user = current_user # Assuming `current_user` is set by CAS authentication
   end
+=end
 end
