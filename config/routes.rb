@@ -1,30 +1,35 @@
 Rails.application.routes.draw do
+  # Articles routes
   get "/articles", to: "articles#index"
+
+  root 'articles#index'
+
+  # Courses routes
   get "/courses/search_page", to: "courses#search_page"
+  get "/courses/search", to: "courses#search" # Route to handle the search request from the front end
 
+=begin 
 
-  # Route to handle the search request from the front end
-  get "/courses/search", to: "courses#search"
+JUST REMOVE "=begin" AND "=end" TO REMOVE COMMENTS!
 
-  # Route for CAS login
-  # get "/login", to: "cas_sessions#new", as: :login
+  # CAS session routes
+  get "/cas_sessions/new", to: "cas_sessions#new", as: :login   # Route to initiate CAS login
+  post "/cas_sessions/create", to: "cas_sessions#create" # Change this to POST
+  delete "/cas_sessions/destroy", to: "cas_sessions#destroy", as: :logout
 
-  # Route for CAS logout
-  # delete "/logout", to: "cas_sessions#destroy", as: :logout
+  match "/cas_sessions/create", to: "cas_sessions#create", via: [:get, :post]
 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  # get "/cas_sessions/new", to: "cas_sessions#new", as: :login # Route to initiate CAS login
-  # get "/cas_sessions/create", to: "cas_sessions#create"       # CAS callback after login
-  # delete "/cas_sessions/destroy", to: "cas_sessions#destroy", as: :logout
+=end
 
   # UserSearchHistory routes
   resources :search_histories, only: [ :index ]
 
+  # User routes
   resources :users, only: [ :show, :edit, :update, :destroy ]
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
 
-
+  # Health check route
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Render dynamic PWA files from app/views/pwa/*
