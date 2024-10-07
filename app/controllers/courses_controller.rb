@@ -9,9 +9,9 @@ class CoursesController < ApplicationController
   def search
     query = search_params
 
-    term = query[:term]
-    year = query[:year]
-    search_string = query[:searchstring]
+    term = query[:term].presence || "fall"
+    year = query[:year].presence || "2024"
+    search_string = query[:searchstring].presence || ""
     taken_courses = query[:courses] || []
 
     results = search_courses(search_string, term, year, taken_courses)
@@ -31,18 +31,15 @@ class CoursesController < ApplicationController
 
   def search_courses(search_string, term, year, taken_courses)
     results = Course.where(
-      "term = ? AND year = ? AND (title LIKE ? COLLATE NOCASE OR description LIKE ? COLLATE NOCASE OR short_description LIKE ? COLLATE NOCASE)",
-      term, year, "%#{search_string}%", "%#{search_string}%", "%#{search_string}%"
+      "term = ? AND year = ? AND (title LIKE ? COLLATE NOCASE OR description LIKE ? COLLATE NOCASE OR short_description LIKE ? COLLATE NOCASE OR EXISTS (SELECT 1 FROM json_each(instructors) WHERE value LIKE ? COLLATE NOCASE) OR EXISTS(SELECT 1 FROM json_each(campuses) WHERE value LIKE ? COLLATE NOCASE) OR EXISTS (SELECT 1 FROM json_each(delivery_methods) WHERE value LIKE ? COLLATE NOCASE))",
+      term, year, "%#{search_string}%", "%#{search_string}%", "%#{search_string}%", "%#{search_string}%", "%#{search_string}%", "%#{search_string}%"
     )
-
     unless taken_courses.empty?
       results = results.where.not(dept: taken_courses.map { |course| course[:dept] }, number: taken_courses.map { |course| course[:number] }, term: taken_courses.map { |course| course[:term] }, year: taken_courses.map { |course| course[:year] })
     end
 
     results
   end
-
-# you may have to comment this out
 =begin
   def save_user_search_history(search_string, term, year)
     if @current_user
