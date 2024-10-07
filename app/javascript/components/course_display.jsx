@@ -10,12 +10,17 @@ const CourseSearchDisplay = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       setLoading(true);
-      let query = `hello world`;
-      const response = await fetch(`/courses/search?searchstring=${query}`);
+      let query = ``;
+      const response = await fetch(`/courses/search?searchstring=${encodeURIComponent(query)}&term=${encodeURIComponent(`fall`)}&year=${encodeURIComponent(`2024`)}`, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
       if (response.ok) {
         let search_res = await response.json();
-        console.log(`response data: ${JSON.stringify(search_res.message, undefined, 4)}`);
-        setCourses(search_res.message);
+        console.log(`response data: ${JSON.stringify(search_res, undefined, 4)}`);
+        setCourses(search_res);
       } else {
         throw new Error(
           `Failed to fetch search result. Response status: ${response.status}`
@@ -41,7 +46,7 @@ const CourseSearchDisplay = () => {
 
         <div>
             {courses.map((course) => (
-                <Course key={course.courseid} course={course} operation="add" makeActive={() => {}}/>
+                <Course key={course.unique_identifier} course={course} operation="add" makeActive={() => {}}/>
             ))}
         </div>
     </div>
@@ -59,7 +64,7 @@ const CourseTermDisplay = ({courses}) => {
 
         <div>
             {courses.map((course) => (
-                <Course key={course.id} course={course} operation="remove" minimized={activeCourse === course.id} showGrade={true} makeActive={(courseid) => setActiveCourse(courseid)}/>
+                <Course key={course.unique_identifier} course={course} operation="remove" minimized={activeCourse === course.unique_identifier} showGrade={true} makeActive={(courseid) => setActiveCourse(courseid)}/>
             ))}
         </div>
     </div>

@@ -5,7 +5,6 @@ import "./course_panel.css"
 
 // Component to render each item
 const Course = ({
-  key,
   course,
   operation = "add",
   minimized = false,
@@ -21,7 +20,7 @@ const Course = ({
   })
 
   return (
-    <div className="course_item active_panel" onClick={() => makeActive(course.id)}>
+    <div className="course_item active_panel" onClick={() => makeActive(course.unique_identifier)}>
       <div className="horizontal-stack">
         <h3>
           {course.dept.toUpperCase()} {course.number}: {course.title}
@@ -83,31 +82,31 @@ const Course = ({
 
           <h3>Sections:</h3>
           <div className="horizontal-stack">
-            {course.sections.map((section) => (
-              <>
+            {course.sections.map((section, index) => (
+              <div key={index}>
                 <p className="course_info_item">{section}</p>
                 <div className="padding_medium"></div>
-              </>
+              </div>
             ))}
           </div>
 
           <h3>Instructors:</h3>
           <div className="horizontal-stack">
-            {course.instructors.map((instructor) => (
-              <>
+            {course.instructors.map((instructor, index) => (
+              <div key={index}>
                 <p className="course_info_item">{instructor}</p>
                 <div className="padding_medium"></div>
-              </>
+              </div>
             ))}
           </div>
 
           <h3>Campuses:</h3>
           <div className="horizontal-stack">
-            {course.campuses.map((campus) => (
-              <>
+            {course.campuses.map((campus, index) => (
+              <div key={index}>
                 <p className="course_info_item">{campus}</p>
                 <div className="padding_medium"></div>
-              </>
+              </div>
             ))}
           </div>
         </>

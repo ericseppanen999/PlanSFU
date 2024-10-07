@@ -14,7 +14,7 @@ const TermTabDisplay = () => {
             setTerms((currterms) => {
                 const termidx = currterms.findIndex((term) => term.id === id);
                 if (termidx != -1){
-                    const courseidx = currterms[termidx].courses.findIndex((c) => c.id === course.id);
+                    const courseidx = currterms[termidx].courses.findIndex((c) => c.unique_identifier === course.unique_identifier);
                     if (courseidx != -1){
                         let newterms = [...currterms];
                         newterms[termidx].courses.splice(courseidx, 1);
