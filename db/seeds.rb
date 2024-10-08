@@ -1296,7 +1296,7 @@ Course.create!(
   dept: "math",
   number: "322",
   term: "fall",
-  year: "2023",
+  year: "2022",
   title: "Complex Variables",
   description: "Functions of a complex variable, differentiability, contour integrals, Cauchy's theorem, Taylor and Laurent expansions, method of residues.",
   requisite_description: "MATH 251 with a minimum grade of C-.",
