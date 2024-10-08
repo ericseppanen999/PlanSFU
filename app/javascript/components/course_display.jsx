@@ -64,7 +64,7 @@ const CourseTermDisplay = ({courses}) => {
 
         <div>
             {courses.map((course) => (
-                <Course key={course.unique_identifier} course={course} operation="remove" minimized={activeCourse === course.unique_identifier} showGrade={true} makeActive={(courseid) => setActiveCourse(courseid)}/>
+                <Course key={course.unique_identifier} course={course} operation="remove" minimized={activeCourse !== course.unique_identifier} showGrade={true} makeActive={(unique_identifier) => setActiveCourse(unique_identifier)}/>
             ))}
         </div>
     </div>
