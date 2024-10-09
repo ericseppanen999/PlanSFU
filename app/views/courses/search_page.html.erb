@@ -3,59 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Course Search</title>
+  <title>search page</title>
 </head>
 <body>
+
+  <h1>course search</h1>
   <form id="search-form">
-    <label for="searchstring">course search</label>
-    <input type="text" id="searchstring" name="searchstring">
-    <label for="term">Term:</label>
-    <select id="term" name = "term">
-        <option value = "fall">Fall</option>
-        <option value = "spring">Spring</option>
-        <option value = "summer">Summer</option>
-    </select>
-    <label for="year">Term:</label>
-    <select id="year" name = "year">
-        <option value = "2024">2024</option>
-        <option value = "2023">2023</option>
-        <option value = "2022">2022</option>
-    </select>
-    <button type="submit">Search</button>
+    <div>
+      <label for="searchstring">searchstring:</label>
+      <input type="text" id="searchstring" name="searchstring" placeholder="Enter course title, description, etc.">
+    </div>
+
+    <div>
+      <label for="term">term:</label>
+      <select id="term" name="term">
+        <option value="fall">fall</option>
+        <option value="spring">spring</option>
+        <option value="summer">summer</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="year">year:</label>
+      <select id="year" name="year">
+        <option value="2025">2025</option>
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="departments">departments:</label>
+      <div>
+        <input type="checkbox" id="math" name="departments[]" value="math">
+        <label for="math">math</label>
+      </div>
+      <div>
+        <input type="checkbox" id="cmpt" name="departments[]" value="cmpt">
+        <label for="cmpt">cmpt</label>
+      </div>
+      <div>
+        <input type="checkbox" id="macm" name="departments[]" value="macm">
+        <label for="macm">macm</label>
+      </div>
+    </div>
+
+    <div>
+      <label for="levels">levels</label>
+      <div>
+        <input type="checkbox" id="1XX" name="levels[]" value="1XX">
+        <label for="1XX">1xx</label>
+      </div>
+      <div>
+        <input type="checkbox" id="2XX" name="levels[]" value="2XX">
+        <label for="2XX">2xx</label>
+      </div>
+      <div>
+        <input type="checkbox" id="3XX" name="levels[]" value="3XX">
+        <label for="3XX">3xx</label>
+      </div>
+      <div>
+        <input type="checkbox" id="4XX" name="levels[]" value="4XX">
+        <label for="4XX">4xx</label>
+      </div>
+    </div>
+
+    <div>
+      <label for="search_in_props">search_in_props:</label>
+      <div>
+        <input type="checkbox" id="title" name="search_in_props[]" value="title">
+        <label for="title">title</label>
+      </div>
+      <div>
+        <input type="checkbox" id="dept" name="search_in_props[]" value="dept">
+        <label for="dept">department</label>
+      </div>
+      <div>
+        <input type="checkbox" id="description" name="search_in_props[]" value="description">
+        <label for="description">description</label>
+      </div>
+      <div>
+        <input type="checkbox" id="instructors" name="search_in_props[]" value="instructors">
+        <label for="instructors">instructors</label>
+      </div>
+      <div>
+        <input type="checkbox" id="campuses" name="search_in_props[]" value="campuses">
+        <label for="campuses">campuses</label>
+      </div>
+    </div>
+    <button type="submit">search !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</button>
   </form>
 
   <div id="search-results"></div>
 
   <script>
     document.getElementById('search-form').addEventListener('submit', function(event) {
-  event.preventDefault();
+      event.preventDefault();
 
-  const searchstring = document.getElementById('searchstring').value;
-  const term = document.getElementById('term').value;
-  const year = document.getElementById('year').value;
+      const searchstring = document.getElementById('searchstring').value;
+      const term = document.getElementById('term').value;
+      const year = document.getElementById('year').value;
+      const departments = Array.from(document.querySelectorAll('input[name="departments[]"]:checked')).map(checkbox => checkbox.value);
+      const levels = Array.from(document.querySelectorAll('input[name="levels[]"]:checked')).map(checkbox => checkbox.value);
+      const search_in_props = Array.from(document.querySelectorAll('input[name="search_in_props[]"]:checked')).map(checkbox => checkbox.value);
 
-  const queryString = `searchstring=${encodeURIComponent(searchstring)}&term=${encodeURIComponent(term)}&year=${encodeURIComponent(year)}`;
+      const queryParams = new URLSearchParams({
+        searchstring,
+        term,
+        year
+      });
 
-  fetch(`/courses/search?${queryString}`, {
-    method: 'GET',
-    headers: {
-      'Accept': 'application/json'
-    }
-  })
-  .then(response => response.json())
-  .then(data => {
-    const resultsDiv = document.getElementById('search-results');
-    resultsDiv.innerHTML = ''; 
+      departments.forEach(dept => queryParams.append('departments[]', dept));
+      levels.forEach(level => queryParams.append('levels[]', level));
+      search_in_props.forEach(prop => queryParams.append('search_in_props[]', prop));
 
-    data.forEach(course => {
-      const courseDiv = document.createElement('div');
-      courseDiv.innerHTML = `<p>${course.dept} ${course.number} - ${course.title} - (${course.term} ${course.year} - taught by: ${course.instructors})</p>`;
-      resultsDiv.appendChild(courseDiv);
+      fetch(`/courses/search?${queryParams.toString()}`, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        const resultsDiv = document.getElementById('search-results');
+        resultsDiv.innerHTML = '';
+
+        if (data.length === 0) {
+          resultsDiv.innerHTML = '<p>No courses found.</p>';
+        } else {
+          data.forEach(course => {
+            const courseDiv = document.createElement('div');
+            courseDiv.classList.add('course');
+            courseDiv.innerHTML = `
+              <h2>${course.dept} ${course.number} - ${course.title}</h2>
+              <p><strong>Term:</strong> ${course.term} ${course.year}</p>
+              <p><strong>Credits:</strong> ${course.credits || 'no credits listed'}</p>
+              <p><strong>Description:</strong> ${course.short_description || 'no description listed'}</p>
+              <p><strong>Instructors:</strong> ${course.instructors.join(', ') || 'no instructor listed'}</p>
+              <p><strong>Campuses:</strong> ${course.campuses.join(', ') || 'no campus listed'}</p>
+              <p><strong>Delivery Methods:</strong> ${course.delivery_methods.join(', ') || 'no delivery meth listed'}</p>
+            `;
+            resultsDiv.appendChild(courseDiv);
+          });
+        }
+      })
+      .catch(error => console.error('error', error));
     });
-  })
-  .catch(error => console.error('Error:', error));
-});
-
   </script>
 
 </body>
