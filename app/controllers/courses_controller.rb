@@ -19,8 +19,8 @@ class CoursesController < ApplicationController
     search_string = query[:searchstring].presence || ""
     search_in_props = query[:search_in_props].presence ||[ "title", "dept", "description", "instructors", "campuses" ]
     terms = query[:terms].presence || [ { year: query[:year], term: query[:term] } ]
-    departments = query[:departments].presence || [ "any" ]
-    levels = query[:levels].presence || [ "any" ]
+    departments = query[:departments]
+    levels = query[:levels]
     custom_sql = query[:SQL].presence
     taken_courses = query[:courses] || []
     # railer.logger.debug("Taken courses: #{taken_courses}")
@@ -29,6 +29,7 @@ class CoursesController < ApplicationController
     if departments == [ "any" ]
       departments = []
     end
+
     if levels == [ "any" ]
       levels = []
     end
@@ -106,9 +107,11 @@ class CoursesController < ApplicationController
 
     if levels.present?
       # create SQL condition for levels
-      levels = Array(levels) # again, make sure levels is an array although may not be necessary
-      level_conditions = levels.map { |level| "number LIKE '#{level[0]}'" }.join(" OR ") # extract the first character of each level (1xx -> 1) and match
+      # again, make sure levels is an array although may not be necessary
+      level_conditions = levels.map { |level| "number LIKE '#{level[0]}%'" }.join(" OR ") # extract the first character of each level (1xx -> 1) and match
+      puts "#{level_conditions}"
       sql_query += " AND (#{level_conditions})" # add conditions to our query
+      puts "#{sql_query}"
     end
 
     unless taken_courses.empty?
@@ -127,6 +130,7 @@ class CoursesController < ApplicationController
     end
 
     # execute the query
+    puts "#{sql_query}"
     results = Course.find_by_sql([ sql_query, *query_values ])
 
     # return results
