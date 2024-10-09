@@ -1,0 +1,15 @@
+PLANSFU/
+- app/
+    - assets/
+    - controllers/ : handlers for various requests
+    - models/ : data which should be stored
+    - views/ : pages the user can view
+    - javascript/
+        - components/ : react components, stylesheets, and js to be used by application.js
+        - packs/ : entrypoints for webpack
+            - application.js : the react entrypoint for index.html.rb
+- config/
+    - routes.rb : specifies which controllers should be used for requests
+    - shakapacker.yml : shakapacker config
+- Gemfile : ruby packages to include
+- package.json : javascript packages to include
