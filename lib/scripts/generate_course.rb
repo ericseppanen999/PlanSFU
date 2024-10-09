@@ -2,8 +2,11 @@ require "net/http"
 require "json"
 require "benchmark"
 require "fileutils"
+require "thread"  # Import threading
 
-# $base_directory = "PlanSFU/db/course_seeds"
+# Initialize a counter for the total number of valid courses
+$course_count = 0
+$mutex = Mutex.new # Mutex to handle concurrency when updating global variables
 
 def create_course(base_url)
   sections_data = get_sections(base_url)
@@ -37,6 +40,9 @@ def create_course(base_url)
   campuses.uniq!
   delivery_methods.uniq!
 
+  # Safely increment course count using a mutex for thread safety
+  $mutex.synchronize { $course_count += 1 }
+
   print_command(
     sections_data.first,
     filtered_sections,
@@ -47,19 +53,18 @@ def create_course(base_url)
     desc,
     creds,
     base_url
-    )
+  )
 end
 
 def rbappend(a, e)
-    n = a.length
-    newA = Array.new(a.length + 1)
-    for i in 0..n
-        newA[i] = a[i]
-    end
-    newA[n] = e
-    newA
+  n = a.length
+  newA = Array.new(a.length + 1)
+  for i in 0..n
+    newA[i] = a[i]
+  end
+  newA[n] = e
+  newA
 end
-
 
 def get_sections(base_url)
   response = get_data(base_url)
@@ -71,17 +76,12 @@ rescue JSON::ParserError
 end
 
 def starts_with(letter, string)
-=begin
-  puts string[0]
-  puts letter
-  puts "starts with O" if string[0] == letter
-=end
   string[0] == letter
 end
 
 def div_by_100(val)
-    x = val[/\d+/].to_i
-    x % 100 == 0
+  x = val[/\d+/].to_i
+  x % 100 == 0
 end
 
 def less_than_600(val)
@@ -125,7 +125,23 @@ end
 def get_data(url)
   uri = URI(url)
   response = Net::HTTP.get_response(uri)
-  response.code.to_i == 200 ? response.body : (puts "response error in getdata #{url}"; nil)
+  if response.code.to_i == 200
+    parsed_body = JSON.parse(response.body)
+
+    # Check for error message in the response
+    if parsed_body.is_a?(Hash) && parsed_body["errorMessage"]
+      puts "Error: #{parsed_body["errorMessage"]} at URL #{url}"
+      return nil
+    else
+      return response.body
+    end
+  else
+    puts "response error in getdata #{url} with code #{response.code}"
+    nil
+  end
+rescue JSON::ParserError
+  puts "Invalid JSON response from #{url}"
+  nil
 end
 
 def get_profs(section_data)
@@ -137,9 +153,9 @@ def get_campus(section_data)
 end
 
 def get_course_dept_term_year(url)
-    parts = url.split("/")
-    year = parts[-4].sub("course-outlines?", "")
-    return parts[-1], parts[-2], parts[-3], year
+  parts = url.split("/")
+  year = parts[-4].sub("course-outlines?", "")
+  return parts[-1], parts[-2], parts[-3], year
 end
 
 def print_command(first_section, filtered_sections, instructors, campuses, delivery_methods, prerequisite, description, credits, url)
@@ -166,40 +182,49 @@ Course.create!(
   requisites: [],
 )
   RUBY
+
   base_directory = "course_seed_data"
   folder_path = File.join(base_directory, year, term)
   FileUtils.mkdir_p(folder_path)
   file_name = "#{year}_#{term}_#{dept}_courses.txt"
   file_path = File.join(folder_path, file_name)
+
   begin
     File.open(file_path, "a") { |file| file.puts(course_create_command) }
   rescue IOError => e
-      puts "Error writing to file: #{e}"
+    puts "Error writing to file: #{e}"
   end
 end
 
 def get_all_courses(year, sem, dept)
   url = URI("https://www.sfu.ca/bin/wcm/course-outlines?#{year}/#{sem}/#{dept}/")
   response = Net::HTTP.get_response(url)
-  return nil if response.code.to_i != 200
+  if response.code.to_i != 200
+    puts "dept: #{dept} failed with #{response.code}"
+    return nil
+  end
   JSON.parse(response.body)
+rescue JSON::ParserError
+  puts "json error in get_all_courses: #{url}"
+  nil
 end
 
 def generate_url(year, sem, dept)
-    courses = get_all_courses(year, sem, dept)
-    nil if courses.nil?
-    courses.each do |course|
-      course_value = course["value"]
-      if less_than_600(course_value)
-        course_url = "https://www.sfu.ca/bin/wcm/course-outlines?#{year}/#{sem}/#{dept}/#{course_value}/"
-        create_course(course_url)
-      end
+  courses = get_all_courses(year, sem, dept)
+  return if courses.nil?
+
+  courses.each do |course|
+    course_value = course["value"] rescue nil
+    next if course_value.nil? # Handle missing course value
+    if less_than_600(course_value)
+      course_url = "https://www.sfu.ca/bin/wcm/course-outlines?#{year}/#{sem}/#{dept}/#{course_value}/"
+      create_course(course_url)
     end
+  end
 end
 
-year_scope = [ "2023", "2024", "2025" ]
-
-terms = [ "fall", "spring", "summer" ]
+year_scope = ["2022", "2023", "2024", "2025"]
+terms = ["fall", "spring", "summer"]
 
 departments = [
   "acma", "als", "apma", "arab", "arch", "bisc", "bpk", "bus", "ca", "cenv",
@@ -213,33 +238,35 @@ departments = [
   "ugrad", "urb", "wl"
 ]
 
-
 def times(year_scope, terms, departments)
   puts "year:"
   year = gets.chomp
   puts "term:"
   term = gets.chomp
-  puts "dept:"
-  dept = gets.chomp
-  if year_scope.include?(year) and terms.include?(term) and departments.include?(dept)
-    time = Benchmark.measure do
-      generate_url(year, term, dept)
+
+  total_time = Benchmark.measure do
+    threads = [] # Store threads for parallel processing
+
+    departments.each do |dept|
+      threads << Thread.new do
+        if year_scope.include?(year) and terms.include?(term) and departments.include?(dept)
+          time = Benchmark.measure do
+            generate_url(year, term, dept)
+          end
+          puts "dept: #{dept} elapsed in: #{time.real}"
+        else
+          puts "invalid input"
+        end
+      end
     end
-    puts time.real
-  else
-    puts "invalid input"
+
+    threads.each(&:join) # Wait for all threads to finish
+
+    puts "year: #{year} term: #{term} total elapsed in: #{total_time.real}"
   end
+
+  # Output total number of valid courses processed
+  puts "Total number of valid courses processed: #{$course_count}"
 end
 
 times(year_scope, terms, departments)
-
-=begin
-base_url = "https://www.sfu.ca/bin/wcm/course-outlines?2024/fall/cmpt/295/"
-create_course(base_url)
-
-base_url = "https://www.sfu.ca/bin/wcm/course-outlines?2024/fall/cmpt/276/"
-create_course(base_url)
-
-base_url = "https://www.sfu.ca/bin/wcm/course-outlines?2024/fall/cmpt/225/"
-create_course(base_url)
-=end

@@ -1,15 +1,16 @@
-=begin
-check if prerequisites are satisfied, works most of the time right now
-fix: cannot handle grades with + or - sometimes
-=end
-
+## Course Model ##
+# Creates a unique identifier for each course, using a hash of the term and course code.
+# Also will contain a method to evaluate if a course's prerequisites are satisfied (Not complete as of 10/08/24)
 
 require "digest"
 class Course < ApplicationRecord
+  # define the primary key
   self.primary_key = "unique_identifier"
 
+  # define the relationships
   before_save :set_unique_identifier
 
+  # define the validations
   def prerequisites_satisfied?(completed_courses)
     completed_courses_hash = completed_courses.each_with_object({}) do |course, hash|
       # https://stackoverflow.com/questions/26634897/each-with-object-ruby-explanation
@@ -22,11 +23,12 @@ class Course < ApplicationRecord
 
   private
 
+  # method to set unique identifier before saving
   def set_unique_identifier
     self.unique_identifier = generate_unique_identifier
   end
 
-  # Method to generate unique identifier based on course attributes
+  # method to generate unique identifier based on course attributes using MD5 hash
   def generate_unique_identifier
     input_string = "#{year}-#{term}-#{dept}-#{number}"
     Digest::MD5.hexdigest(input_string)
@@ -41,10 +43,9 @@ class Course < ApplicationRecord
       # https://apidock.com/ruby/String/gsub
       actual = completed_courses[course_id]
 
-      result = if actual
-                 grade_meets_requirement?(actual, req) ? "true" : "false"
+      result = if actual grade_meets_requirement?(actual, req) ? "true" : "false"
       else
-                 "false"
+        "false"
       end
 
       # debug: print each replacement
