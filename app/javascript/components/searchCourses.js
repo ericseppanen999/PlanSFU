@@ -22,11 +22,14 @@ export const fetchCourses = async (successCallback, searchparams = defaultQuery)
     queryParams.append('terms[][term]', term.term);
   });
 
-  if (searchparams.departments.length > 0 && searchparams.departments[0] !== "any") {
+  if (searchparams.departments && searchparams.departments.length === 0) {
+    queryParams.append('departments[]', 'none');
+  } else if (searchparams.departments[0] !== "any") {
     searchparams.departments.forEach(dept => queryParams.append('departments[]', dept));
   }
-
-  if (searchparams.levels.length > 0 && searchparams.levels[0] !== "any") {
+  if(searchparams.levels && searchparams.levels.length === 0) {
+    queryParams.append('levels[]', 'none');
+  } else if (searchparams.levels[0] !== "any") {
     searchparams.levels.forEach(level => queryParams.append('levels[]', level));
   }
 
