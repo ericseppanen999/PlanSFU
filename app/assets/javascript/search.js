@@ -10,7 +10,7 @@ class SearchPanel {
         const response = await fetch(`courses?searchquery=${query}`);
         if (response.ok) {
             search_res = await response.json();
-            console.log(`response data: ${JSON.stringify(search_res.message, undefined, 4)}`);
+            //console.log(`response data: ${JSON.stringify(search_res.message, undefined, 4)}`);
             updateSearchDisplay();   
         } else {
             throw new Error(`Failed to fetch search result. Response status: ${response.status}`);

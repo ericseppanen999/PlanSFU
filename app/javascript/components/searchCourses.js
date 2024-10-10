@@ -11,7 +11,7 @@ export const defaultQuery = {
 // returns a course list to successCallback if courses are successfully fetched, given a search query
 export const fetchCourses = async (successCallback, searchparams = defaultQuery) => {
 
-  console.log("checking course fetch...");
+  //console.log("checking course fetch...");
 
   const queryParams = new URLSearchParams();
   queryParams.append("searchstring", searchparams.searchstring);
@@ -36,8 +36,8 @@ export const fetchCourses = async (successCallback, searchparams = defaultQuery)
   if (searchparams.SQL) {
     queryParams.append("SQL", searchparams.SQL);
   }
-  console.log(JSON.stringify(searchparams))
-  console.log(`queryt: ${queryParams.toString()}`);
+  //console.log(JSON.stringify(searchparams))
+  //console.log(`queryt: ${queryParams.toString()}`);
 
   try {
     const response = await fetch(`/courses/search?${queryParams.toString()}`, {
@@ -47,7 +47,7 @@ export const fetchCourses = async (successCallback, searchparams = defaultQuery)
 
     if (response.ok) {
       const search_res = await response.json();
-      console.log(`Received response: ${JSON.stringify(search_res, undefined, 4)}`);
+      //console.log(`Received response: ${JSON.stringify(search_res, undefined, 4)}`);
       successCallback(search_res);
     } else {
       throw new Error(`Failed to fetch search result. Response status: ${response.status}`);

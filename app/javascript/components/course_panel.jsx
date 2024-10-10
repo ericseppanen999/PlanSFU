@@ -90,7 +90,7 @@ const Course = ({
           <h3>Sections:</h3>
           <div className="horizontal-stack">
             {course.sections.map((section, index) => (
-              <div key={index}>
+              <div key={index} className="horizontal-stack">
                 <p className="course_info_item">{section}</p>
                 <div className="padding_medium"></div>
               </div>
@@ -100,7 +100,7 @@ const Course = ({
           <h3>Instructors:</h3>
           <div className="horizontal-stack">
             {course.instructors.map((instructor, index) => (
-              <div key={index}>
+              <div key={index} className="horizontal-stack">
                 <p className="course_info_item">{instructor}</p>
                 <div className="padding_medium"></div>
               </div>
@@ -110,7 +110,7 @@ const Course = ({
           <h3>Campuses:</h3>
           <div className="horizontal-stack">
             {course.campuses.map((campus, index) => (
-              <div key={index}>
+              <div key={index} className="horizontal-stack">
                 <p className="course_info_item">{campus}</p>
                 <div className="padding_medium"></div>
               </div>
