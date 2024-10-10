@@ -134,7 +134,7 @@
     levels.forEach(level => queryParams.append('levels[]', level));
 
     // Log constructed query for debugging
-    console.log(`Constructed Query: ${queryParams.toString()}`);
+    //console.log(`Constructed Query: ${queryParams.toString()}`);
 
     // Fetch the search results
     fetch(`/courses/search?${queryParams.toString()}`, {

@@ -62,47 +62,46 @@ select all checks in a category
 - passed: yes
 deselect all checks in a category
 - expected: search updates appropriately
-- passed: no
-- remarks: all results are shown
+- passed: yes
 toggle the advanced search display
 - expected: advanced search shows
-- passed: 
+- passed: yes
 spam checks
 - expected: checks keep track of their state correctly & search updates correctly
-- passed: 
+- passed: yes
 spam the advanced search toggle
 - expected: advanced search and toggle continue to operate correctly
-- passed: 
+- passed: yes
 add a course
 - expected: course is added to correct term tab
-- passed: 
+- passed: yes
 remove a course
 - expected: course is removed from correct tab
-- passed: 
-add multiple course
+- passed: yes
+add multiple courses
 - expected: all courses are added to their correct tabs
-- passed: 
+- passed: yes
 remove all courses
 - expected: all courses are removed from their correct tabs
-- passed: 
+- passed: yes
 add a duplicate course
 - expected: no change to the tabs
-- passed: 
+- passed: yes
 spam add courses
 - expected: course tabs update appropriately
-- passed: 
+- passed: yes
 select a course in a term tab
 - expected: course expands to show more info
-- passed: 
+- passed: yes
 remove a selected course
 - expected: course is removed correctly and other courses can be selected
-- passed: 
+- passed: yes
 spam click a course in a tab
 - expected: course expands and stays expanded
-- passed: 
+- passed: yes
 resize the page
 - expected: ui scales reasonably
-- passed: 
+- passed: yes
 resize the page with the advanced search open
 - expected: advanced search maintains reasonable position on the page
-- passed:
+- passed: yes

@@ -35,12 +35,13 @@ const TermTabDisplay = () => {
     // setup the callback for adding a course
     useEffect(() => {
         AddCourseCallback.subscribe((course) => {
-            console.log(JSON.stringify(course));
+            //console.log(JSON.stringify(course));
             const id = course.year + " " + course.term;
 
             setTerms((currterms) => {
                 const idx = currterms.findIndex((term) => term.id === id);
                 if (idx == -1){
+                    setActiveTerm(id);
                     return [...currterms, {id:id, courses:[course]}];
                 } else {
                     if (!currterms[idx].courses.includes(course)){
