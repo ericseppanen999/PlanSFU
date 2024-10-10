@@ -3,7 +3,7 @@
 import React from "react"
 
 import { fetchCourses } from "../components/searchCourses.js"
-import { changeQueryCallback, updateCouseListCallback } from "../components/callback.js"
+import { changeQueryCallback, updateCourseListCallback } from "../components/callback.js"
 // import react components
 import { CourseSearchDisplay } from "../components/course_display.jsx"
 import { TermTabDisplay } from "../components/term_tab.jsx"
@@ -12,8 +12,10 @@ import { SearchBarWithDropdown } from "../components/search_bar_and_dropdown.jsx
 
 // setup query change callback
 
+console.log(updateCourseListCallback);
+
 changeQueryCallback.subscribe((query) => {
-    fetchCourses(updateCouseListCallback.trigger, query);
+    fetchCourses((res) => updateCourseListCallback.trigger(res), query);
 })
 
 // add react elements to index.html

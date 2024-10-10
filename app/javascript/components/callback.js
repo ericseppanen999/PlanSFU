@@ -27,7 +27,7 @@ export const AddCourseCallback = new Callback();
 export const RemoveCourseCallback = new Callback();
 
 // Callback for handling any changes to the search results
-export const updateCouseListCallback = new Callback();
+export const updateCourseListCallback = new Callback();
 
 // Callback for handling any changes to the current search query
 export const changeQueryCallback = new Callback();
