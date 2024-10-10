@@ -35,7 +35,7 @@ navigate to `127.0.0.1:3000/articles` on your browser\
 ## Feature Tracking ##
 We used Trello for feature and bug tracking
 ![Trello1](assets/Trello1.png "Trello1")\
-![Trello2](assets/Trello2.png "Trello2")\
+![Trello2](assets/Trello2.png "Trello2")
 
 ## Test results ##
 QA testing was used with the following test cases:
