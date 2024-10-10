@@ -7,6 +7,7 @@ const TermTabDisplay = () => {
     const [terms, setTerms] = useState([]);
     const [loading, setLoading] = useState(false);
 
+    // setup the callback from removing a course
     useEffect(() => {
         RemoveCourseCallback.subscribe((course) => {
             const id = course.year + " " + course.term;
@@ -26,6 +27,7 @@ const TermTabDisplay = () => {
         }
     )}, [])
 
+    // setup the callback for adding a course
     useEffect(() => {
         AddCourseCallback.subscribe((course) => {
             console.log(JSON.stringify(course));

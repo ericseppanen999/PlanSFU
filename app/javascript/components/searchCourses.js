@@ -1,3 +1,4 @@
+// the default 
 export const defaultQuery = {
   searchstring: "",
   search_in_props: ["title", "description"],
@@ -7,7 +8,9 @@ export const defaultQuery = {
   SQL: ""
 };
 
+// returns a course list to successCallback if courses are successfully fetched, given a search query
 export const fetchCourses = async (successCallback, searchparams = defaultQuery) => {
+
   console.log("checking course fetch...");
 
   const queryParams = new URLSearchParams();

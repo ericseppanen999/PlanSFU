@@ -9,7 +9,7 @@ const CourseSearchDisplay = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // updates the course list whenever a new result is gotten
+  // updates the course list whenever a new result is recieved
   useEffect(() => {
     updateCouseListCallback.subscribe((courses) => {
       setCourses(courses);
