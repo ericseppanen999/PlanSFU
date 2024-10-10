@@ -25,3 +25,9 @@ export const AddCourseCallback = new Callback();
 
 // Callback for handling removing courses from the terms tab
 export const RemoveCourseCallback = new Callback();
+
+// Callback for handling any changes to the search results
+export const updateCouseListCallback = new Callback();
+
+// Callback for handling any changes to the current search query
+export const changeQueryCallback = new Callback();

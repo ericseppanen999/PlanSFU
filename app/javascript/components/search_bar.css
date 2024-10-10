@@ -1,0 +1,15 @@
+.search_icon {
+    justify-self: right;
+}
+
+.search_bar {
+    outline: 1px solid var(--base-dark);
+    display: flex;
+    width: max-content;
+    height: max-content;
+}
+
+.search_bar_input {
+    outline: none;
+    border: none;
+}

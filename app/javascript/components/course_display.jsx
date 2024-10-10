@@ -2,12 +2,20 @@ import React, { useState, useEffect } from "react";
 import { Course } from "./course_panel.jsx";
 import "./course_display.css";
 import { fetchCourses } from "./searchCourses.js";
+import { updateCouseListCallback } from "./callback.js"
 
 // the component used to display the course search results
 const CourseSearchDisplay = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  // updates the course list whenever a new result is gotten
+  useEffect(() => {
+    updateCouseListCallback.subscribe((courses) => {
+      setCourses(courses);
+    })
+  }, []);
+  
   // Runs at startup & populates the courses
   useEffect(() => {
     const loadCourses = async () => {
