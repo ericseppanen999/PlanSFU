@@ -1,39 +1,35 @@
 import React, { useState, useEffect } from "react";
-import { Course } from "./course_panel.jsx"
-import "./course_display.css"
+import { Course } from "./course_panel.jsx";
+import "./course_display.css";
+import { fetchCourses } from "./searchCourses.js";
+import { updateCouseListCallback } from "./callback.js"
 
+// the component used to display the course search results
 const CourseSearchDisplay = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // run at startup or whenever the search updates
+  // updates the course list whenever a new result is gotten
   useEffect(() => {
-    const fetchCourses = async () => {
+    updateCouseListCallback.subscribe((courses) => {
+      setCourses(courses);
+    })
+  }, []);
+  
+  // Runs at startup & populates the courses
+  useEffect(() => {
+    const loadCourses = async () => {
       setLoading(true);
-      let query = ``;
-      const response = await fetch(`/courses/search?searchstring=${encodeURIComponent(query)}&term=${encodeURIComponent(`fall`)}&year=${encodeURIComponent(`2024`)}`, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-      if (response.ok) {
-        let search_res = await response.json();
-        console.log(`response data: ${JSON.stringify(search_res, undefined, 4)}`);
-        setCourses(search_res);
-      } else {
-        throw new Error(
-          `Failed to fetch search result. Response status: ${response.status}`
-        );
-      }
+      fetchCourses(setCourses);
       setLoading(false);
     };
-
-    fetchCourses();
+    
+    loadCourses();
   }, []);
 
   return (
     <div>
+        {/* Display loading graphics */}
         {loading ? 
             <div className="center-content">
                 <img className="loading_img" src="assets/loading.gif"></img>
@@ -45,6 +41,7 @@ const CourseSearchDisplay = () => {
        : <></>}
 
         <div>
+            {/* Render all courses */}
             {courses.map((course) => (
                 <Course key={course.unique_identifier} course={course} operation="add" makeActive={() => {}}/>
             ))}
@@ -53,6 +50,8 @@ const CourseSearchDisplay = () => {
   );
 };
 
+
+// the component used to list courses in the term tabs
 const CourseTermDisplay = ({courses}) => {
   const [activeCourse, setActiveCourse] = useState(undefined);
 
@@ -60,11 +59,19 @@ const CourseTermDisplay = ({courses}) => {
     <div>
         {courses.length === 0 ? 
             <p>No courses entered for this term.</p>
-       : <></>}
+        : <></>}
 
         <div>
+            {/* Render all courses */}
             {courses.map((course) => (
-                <Course key={course.unique_identifier} course={course} operation="remove" minimized={activeCourse !== course.unique_identifier} showGrade={true} makeActive={(unique_identifier) => setActiveCourse(unique_identifier)}/>
+                <Course 
+                  key={course.unique_identifier} 
+                  course={course} 
+                  operation="remove" 
+                  minimized={activeCourse !== course.unique_identifier} 
+                  showGrade={true} 
+                  makeActive={(unique_identifier) => setActiveCourse(unique_identifier)}
+                />
             ))}
         </div>
     </div>

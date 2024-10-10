@@ -113,22 +113,6 @@ header {
   'opsz' 24
 }
 
-.search_icon {
-    justify-self: right;
-}
-
-.search_bar {
-    outline: 1px solid var(--base-dark);
-    display: flex;
-    width: max-content;
-    height: max-content;
-}
-
-.search_bar_input {
-    outline: none;
-    border: none;
-}
-
 .horizontal-stack {
     display: flex;
     flex-wrap: wrap;
@@ -151,16 +135,22 @@ header {
 }
 
 .padding_small {
+    background-color: transparent;
+    border: none;
     width: var(--padding-small);
     height: var(--padding-small);
 }
 
 .padding_medium {
+    background-color: transparent;
+    border: none;
     width: var(--padding-medium);
     height: var(--padding-medium);
 }
 
 .padding_large {
+    background-color: transparent;
+    border: none;
     width: var(--padding-large);
     height: var(--padding-large);
 }

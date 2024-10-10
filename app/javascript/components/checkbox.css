@@ -1,0 +1,11 @@
+.checkbox_container {
+    margin: 0;
+}
+
+.checkbox_input {
+    width: min-content;
+}
+
+.checkbox_label {
+    width: max-content;
+}
