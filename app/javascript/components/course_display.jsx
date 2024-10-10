@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Course } from "./course_panel.jsx";
 import "./course_display.css";
 import { fetchCourses } from "./searchCourses.js";
-import { updateCouseListCallback } from "./callback.js"
+import { updateCourseListCallback } from "./callback.js"
 
 // the component used to display the course search results
 const CourseSearchDisplay = () => {
@@ -11,7 +11,7 @@ const CourseSearchDisplay = () => {
 
   // updates the course list whenever a new result is recieved
   useEffect(() => {
-    updateCouseListCallback.subscribe((courses) => {
+    updateCourseListCallback.subscribe((courses) => {
       setCourses(courses);
     })
   }, []);
