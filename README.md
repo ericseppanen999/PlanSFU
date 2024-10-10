@@ -41,28 +41,29 @@ QA testing was used with the following test cases:
 
 search a string in the bar with results
 - expected: valid results are shown
-- passed: 
+- passed: yes
 search a string in the bar without results
 - expected: no results message is shown
-- passed: 
+- passed: yes
 search an empty string
-- expected: all courses are shown
-- passed: 
+- expected: all courses meeting advanced criteria are shown
+- passed: yes
 search a long string
 - expected: handled cleanly if request is too long
-- passed: 
+- passed: yes
 select a check
 - expected: check is set and search updates appropriately
-- passed: 
+- passed: yes
 deselect a check
 - expected: check is unset and search updates appropriately
-- passed: 
+- passed: yes
 select all checks in a category
 - expected: search updates appropriately
-- passed: 
+- passed: yes
 deselect all checks in a category
 - expected: search updates appropriately
-- passed: 
+- passed: no
+- remarks: all results are shown
 toggle the advanced search display
 - expected: advanced search shows
 - passed: 
