@@ -62,7 +62,7 @@ class CasSessionsController < ApplicationController
   end
 
   def callback_url
-    "#{root_url}cas_sessions/create"  # This URL will now handle both GET and POST
+    "#{root_url}cas_sessions/create"
   end
 
   # Validate CAS ticket and handle response
