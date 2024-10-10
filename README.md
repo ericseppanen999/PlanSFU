@@ -4,8 +4,8 @@ A course planner for undergrads at SFU. A group project for CMPT 276 D300, Fall 
 ## Iteration 1 Features ##
 - Filtered search with options
 - Search by SQL
-- Sign in (with autofill if possible)
-- Server-side state storage when signed in
+- Sign in (with autofill if possible) (postponed)
+- Server-side state storage when signed in (postponed)
 
 ## Running The Server Locally ##
 ### Prerequisites ###
@@ -29,5 +29,11 @@ navigate to `127.0.0.1:3000/articles` on your browser\
     - More feasability work would have saved time wasted on cookies
 - What to change in iteration 2
     - Setup github actions to automate testing
-    - Make a central development server to reflect the current state
+    - Make a central development server to reflect the current state of the project and use for debugging
     - Set weekly development targets
+
+## Feature Tracking ##
+We used Trello for feature and bug tracking
+
+
+## Test results ##
