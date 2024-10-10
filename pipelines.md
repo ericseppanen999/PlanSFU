@@ -14,4 +14,13 @@ Each pipeline should start with an external event and end at some final state
 ... (eric)
 
 #### Sign In Pipeline
-(Ammar)
+1. The user starts the sign-in process by clicking the "Login" button.
+2. Request to /cas_sessions/new received: Routed to cas_sessions#new.
+3. creates the login URL for CAS and sends the user there.
+4. On the CAS server, the user enters credentials.
+5. The CAS server verifies the credentials; if they are correct, it opens a ticket and sends the user back to the app.
+6. Request to /cas_sessions/create received: Routed to cas_sessions#create.
+7. Generate or locate the user; verifies the ticket.
+8. Sets session[:cas_user] with the authenticated user's email.
+9. User is redirected appropriately to original page or root.
+10. User is logged in and ready to use the application.
