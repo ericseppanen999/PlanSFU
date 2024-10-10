@@ -14,7 +14,7 @@ class CoursesController < ApplicationController
   def search
     # get the search parameters from the request
     query = search_params # or params.to_unsafe_h for testing
-
+    puts "Query: #{query.inspect}"
     # extract the search parameters from the query, with default values if not present
     search_string = query[:searchstring].presence || ""
     search_in_props = query[:search_in_props].presence ||[ "title", "dept", "description", "instructors", "campuses" ]
@@ -25,16 +25,11 @@ class CoursesController < ApplicationController
     taken_courses = query[:courses] || []
     # railer.logger.debug("Taken courses: #{taken_courses}")
 
+    terms = terms.map { |t| t.to_h }
+
     if terms == [ { year: "any", term: "any" } ] or terms == [ { year: nil, term: nil } ]
       terms = []
     end
-    if departments == [ "any" ]
-      departments = []
-    end
-    if levels == [ "any" ]
-      levels = []
-    end
-
 
     # perform the search based on our parameters
     results = search_courses(search_string, search_in_props, terms, departments, levels, custom_sql, taken_courses)
@@ -42,6 +37,7 @@ class CoursesController < ApplicationController
     # save_user_search_history(search_string, term, year) # you may have to comment this out
 
     # return the search results as JSON
+    Rails.logger.debug("Final search parameters: terms=#{terms}, departments=#{departments}, levels=#{levels}")
     render json: results
   end
 
@@ -55,73 +51,56 @@ class CoursesController < ApplicationController
   end
 
   def search_courses(search_string, search_in_props, terms, departments, levels, custom_sql, taken_courses = [])
-    # building SQL query based on search parameters
-    # returns: search results
+    sql_query = "SELECT * FROM courses WHERE 1=1"
+    query_values = []
 
-    sql_query = "SELECT * FROM courses WHERE 1=1" # this looks weird but 1=1 is a trick to simplify the query building https://www.sql-easy.com/learn/why-use-where-11-in-sql-queries/
-    query_values = [] # values to be passed to the query
+    # Ensure search_in_props is limited to valid properties
+    allowed_props = [ "title", "dept", "description", "instructors", "campuses" ]
+    search_in_props = search_in_props & allowed_props  # Intersection of allowed props and given props
 
-    # ensure search_in_props is an array
-    search_in_props = Array(search_in_props)
-
+    terms.to_unsafe_h if terms.is_a?(ActionController::Parameters)
     if search_string.present?
-      # create SQL condition for search string
-      search_conditions = search_in_props.map { |prop| "#{prop} LIKE ?" }.join(" OR ") # search_in_props is an array of columns to search in, so we search using LIKE for each col
-      query_values.concat(Array.new(search_in_props.length, "%#{search_string}%")) # append the search string for each col
-      sql_query += " AND (#{search_conditions})" # add conditions to our query
+      search_conditions = search_in_props.map { |prop| "#{prop} LIKE ?" }.join(" OR ")
+      query_values.concat(Array.new(search_in_props.length, "%#{search_string}%"))
+      sql_query += " AND (#{search_conditions})"
     end
 
-    # ensure departments is an array
-    departments = Array(departments)
-
-    unless departments.empty? || departments.first == "any"
-      # create SQL condition for departments
+    # Handle departments array
+    departments = Array(departments).reject { |dept| dept == "any" }
+    unless departments.empty?
       department_conditions = "dept IN (#{departments.map { '?' }.join(', ')})"
-      query_values.concat(departments) # sql condition that matches departments
-      sql_query += " AND (#{department_conditions})" # add conditions to our query
+      query_values.concat(departments)
+      sql_query += " AND (#{department_conditions})"
     end
 
-    # ensure levels is an array
-    levels = Array(levels)
-
-    unless levels.empty? || levels.first == "any"
-      # create SQL condition for levels
-      level_conditions = levels.map { |level| "number LIKE '#{level[0]}%'" }.join(" OR ") # extract the first character of each level (1xx -> 1) and match
-      sql_query += " AND (#{level_conditions})" # add conditions to our query
+    # Handle levels array
+    levels = Array(levels).reject { |level| level == "any" }
+    unless levels.empty?
+      level_conditions = levels.map { |level| "number LIKE '#{level[0]}%'" }.join(" OR ")
+      sql_query += " AND (#{level_conditions})"
     end
 
-    # ensure terms is an array
-    terms_array = Array(terms)
-
-    unless terms_array.empty?
-      term_conditions = terms_array.map do |t|
-        # logic to determine if we should filter by term or year
-        if t[:year] == "any" && t[:term] == "any"
-          nil # skip if both any
-        elsif t[:year] == "any"
-          "(term = ?)"
-        elsif t[:term] == "any"
-          "(year = ?)"
-        else
-          "(term = ? AND year = ?)"
-        end
-      end.compact.join(" OR ")
-
-      query_values.concat(terms_array.flat_map { |t| [ t[:term], t[:year] ].compact }) # add the terms to the query values
-      sql_query += " AND (#{term_conditions})" unless term_conditions.empty? # add conditions to our query
+    # Handle terms array: Skip if both year and term are "any"
+    terms = Array(terms).reject { |term| term["year"] == "any" && term["term"] == "any" }
+    unless terms.empty?
+      term_conditions = terms.map { |t| "(term = ? AND year = ?)" }.join(" OR ")
+      query_values.concat(terms.flat_map { |t| [ t["term"], t["year"] ] })
+      sql_query += " AND (#{term_conditions})"
     end
 
-    if custom_sql.present?
-      # add custom SQL condition
-      sql_query += " AND (#{custom_sql})"
-    end
+    # Log the final SQL query for debugging
+    Rails.logger.debug("SQL Query: #{sql_query}")
+    Rails.logger.debug("Query Values: #{query_values.inspect}")
+    Rails.logger.debug("Number of placeholders in SQL: #{sql_query.scan(/\?/).count}")
+    Rails.logger.debug("Number of values passed: #{query_values.count}")
 
-    # execute the query
+    # Execute the query
     results = Course.find_by_sql([ sql_query, *query_values ])
 
-    # return results
+    # Return the results
     results
   end
+
 
 =begin
   def save_user_search_history(search_string, term, year)
