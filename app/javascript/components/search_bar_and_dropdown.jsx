@@ -5,6 +5,12 @@ import { SearchBar } from "./search_bar.jsx";
 import { Checkbox } from "./checkbox.jsx";
 import { changeQueryCallback } from "./callback.js";
 
+export const all_categories = {
+    search_in_props: ["title", "description", "instructors"],
+    departments: ["math", "cmpt", "macm"],
+    levels: ["1xx", "2xx", "3xx", "4xx"]
+};
+
 // returns if a term is in a list of any is in the list
 function matchesSearch(category, term) {
   return category.findIndex((e) => e === term || e === "any") != -1;
@@ -41,11 +47,16 @@ const SearchBarWithDropdown = () => {
         let idx = query[category].indexOf("any");
         if (idx !== -1) {
           query[category].splice(idx, 1);
-        }
-        // remove target term
-        idx = query[category].indexOf(term);
-        if (idx !== -1) {
-          query[category].splice(idx, 1);
+          // convert any to a list of all options (other than the unselected one)
+          for (const cat_term of all_categories[category]){
+            if (cat_term !== term) query[category].push(cat_term);
+          }
+        } else {
+            // remove target term
+            idx = query[category].indexOf(term);
+            if (idx !== -1) {
+            query[category].splice(idx, 1);
+            }
         }
       }
       changeQueryCallback.trigger(query);
