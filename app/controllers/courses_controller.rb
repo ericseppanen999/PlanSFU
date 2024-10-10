@@ -19,17 +19,18 @@ class CoursesController < ApplicationController
     search_string = query[:searchstring].presence || ""
     search_in_props = query[:search_in_props].presence ||[ "title", "dept", "description", "instructors", "campuses" ]
     terms = query[:terms].presence || [ { year: query[:year], term: query[:term] } ]
-    departments = query[:departments]
-    levels = query[:levels]
+    departments = query[:departments].presence || [ "any" ]
+    levels = query[:levels].presence || [ "any" ]
     custom_sql = query[:SQL].presence
     taken_courses = query[:courses] || []
     # railer.logger.debug("Taken courses: #{taken_courses}")
 
-
+    if terms == [ { year: "any", term: "any" } ] or terms == [ { year: nil, term: nil } ]
+      terms = []
+    end
     if departments == [ "any" ]
       departments = []
     end
-
     if levels == [ "any" ]
       levels = []
     end
@@ -53,14 +54,15 @@ class CoursesController < ApplicationController
     params.permit(:term, :year, :searchstring, :SQL, search_in_props: [], terms: [ :year, :term ], departments: [], levels: [], courses: [ :dept, :number, :term, :year ])
   end
 
-
-
   def search_courses(search_string, search_in_props, terms, departments, levels, custom_sql, taken_courses = [])
     # building SQL query based on search parameters
     # returns: search results
 
     sql_query = "SELECT * FROM courses WHERE 1=1" # this looks weird but 1=1 is a trick to simplify the query building https://www.sql-easy.com/learn/why-use-where-11-in-sql-queries/
     query_values = [] # values to be passed to the query
+
+    # ensure search_in_props is an array
+    search_in_props = Array(search_in_props)
 
     if search_string.present?
       # create SQL condition for search string
@@ -69,10 +71,33 @@ class CoursesController < ApplicationController
       sql_query += " AND (#{search_conditions})" # add conditions to our query
     end
 
-    unless terms.empty?
-      term_conditions = terms.map do |t|
+    # ensure departments is an array
+    departments = Array(departments)
+
+    unless departments.empty? || departments.first == "any"
+      # create SQL condition for departments
+      department_conditions = "dept IN (#{departments.map { '?' }.join(', ')})"
+      query_values.concat(departments) # sql condition that matches departments
+      sql_query += " AND (#{department_conditions})" # add conditions to our query
+    end
+
+    # ensure levels is an array
+    levels = Array(levels)
+
+    unless levels.empty? || levels.first == "any"
+      # create SQL condition for levels
+      level_conditions = levels.map { |level| "number LIKE '#{level[0]}%'" }.join(" OR ") # extract the first character of each level (1xx -> 1) and match
+      sql_query += " AND (#{level_conditions})" # add conditions to our query
+    end
+
+    # ensure terms is an array
+    terms_array = Array(terms)
+
+    unless terms_array.empty?
+      term_conditions = terms_array.map do |t|
+        # logic to determine if we should filter by term or year
         if t[:year] == "any" && t[:term] == "any"
-          nil
+          nil # skip if both any
         elsif t[:year] == "any"
           "(term = ?)"
         elsif t[:term] == "any"
@@ -82,46 +107,8 @@ class CoursesController < ApplicationController
         end
       end.compact.join(" OR ")
 
-      query_values.concat(terms.flat_map do |t|
-        if t[:year] == "any" && t[:term] != "any"
-          [ t[:term] ]
-        elsif t[:term] == "any" && t[:year] != "any"
-          [ t[:year] ]
-        elsif t[:term] != "any" && t[:year] != "any"
-          [ t[:term], t[:year] ]
-        else
-          []
-        end
-      end)
-
-      sql_query += " AND (#{term_conditions})" unless term_conditions.empty?
-    end
-
-    if departments.present?
-      # create SQL condition for departments
-      departments = Array(departments) # make sure departments is an array (may not be necessary)
-      department_conditions = "dept IN (#{departments.map { '?' }.join(', ')})" # sql condition that matches departments
-      query_values.concat(departments)
-      sql_query += " AND (#{department_conditions})" # add conditions to our query
-    end
-
-    if levels.present?
-      # create SQL condition for levels
-      # again, make sure levels is an array although may not be necessary
-      level_conditions = levels.map { |level| "number LIKE '#{level[0]}%'" }.join(" OR ") # extract the first character of each level (1xx -> 1) and match
-      puts "#{level_conditions}"
-      sql_query += " AND (#{level_conditions})" # add conditions to our query
-      puts "#{sql_query}"
-    end
-
-    unless taken_courses.empty?
-      # create SQL condition for taken courses
-      taken_conditions = "NOT (dept IN (#{taken_courses.map { '?' }.join(', ')}) AND number IN (#{taken_courses.map { '?' }.join(', ')}))" # single out our courses
-      query_values.concat(taken_courses.map { |course| course[:dept] })
-      query_values.concat(taken_courses.map { |course| course[:number] })
-      query_values.concat(taken_courses.map { |course| course[:term] })
-      query_values.concat(taken_courses.map { |course| course[:year] })
-      sql_query += " AND #{taken_conditions}" # add conditions to our query
+      query_values.concat(terms_array.flat_map { |t| [ t[:term], t[:year] ].compact }) # add the terms to the query values
+      sql_query += " AND (#{term_conditions})" unless term_conditions.empty? # add conditions to our query
     end
 
     if custom_sql.present?
@@ -130,13 +117,11 @@ class CoursesController < ApplicationController
     end
 
     # execute the query
-    puts "#{sql_query}"
     results = Course.find_by_sql([ sql_query, *query_values ])
 
     # return results
     results
   end
-
 
 =begin
   def save_user_search_history(search_string, term, year)
