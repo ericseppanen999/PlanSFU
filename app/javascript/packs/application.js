@@ -12,8 +12,6 @@ import { SearchBarWithDropdown } from "../components/search_bar_and_dropdown.jsx
 
 // setup query change callback
 
-console.log(updateCourseListCallback);
-
 changeQueryCallback.subscribe((query) => {
     fetchCourses((res) => updateCourseListCallback.trigger(res), query);
 })
