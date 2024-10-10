@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./checkbox.css"
 
+// a component that simplifies making labeled checkboxes
 export const Checkbox = ({ id, label, onChange=(state)=>{}, defaultChecked=false}) => {
     const [checked, setChecked] = useState(defaultChecked);
 

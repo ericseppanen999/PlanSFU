@@ -8,4 +8,10 @@ Each pipeline should start with an external event and end at some final state
 4. Webpack called to add compiled react code to index.html
 5. Compiled html sent to user
 
-#### Sign In
+#### Course Load Pipeline
+1. Search terms updated (`javascript/components/search_bar_and_dropdown.jsx`)
+2. Search terms parsed to url query & request is sent (`javascript/components/searchCourses.js`)
+... (eric)
+
+#### Sign In Pipeline
+(Ammar)

@@ -1,5 +1,7 @@
 import React from "react";
 
+// components for various icons
+
 const Plus = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

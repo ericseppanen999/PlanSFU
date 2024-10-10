@@ -5,14 +5,17 @@ import { SearchBar } from "./search_bar.jsx";
 import { Checkbox } from "./checkbox.jsx";
 import { changeQueryCallback } from "./callback.js";
 
+// returns if a term is in a list of any is in the list
 function matchesSearch(category, term) {
   return category.findIndex((e) => e === term || e === "any") != -1;
 }
 
+// the component for the main searchbar
 const SearchBarWithDropdown = () => {
   const [searchQuery, setSearchQuery] = useState(defaultQuery);
   const [showDropdown, setShowDropdown] = useState(false);
 
+  // set the searchstring when the text input is changed
   const handleSearchChange = (value) => {
     setSearchQuery((query) => {
       query.searchstring = value;
@@ -25,6 +28,7 @@ const SearchBarWithDropdown = () => {
     setShowDropdown(!showDropdown);
   };
 
+  // sets a search parameter in the search query
   const setSearchParam = (category, term, value) => {
     setSearchQuery((query) => {
       if (value) {
