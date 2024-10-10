@@ -106,60 +106,72 @@
 
   <div id="search-results"></div>
 
-  <script>
-    document.getElementById('search-form').addEventListener('submit', function(event) {
-      event.preventDefault();
+<script>
+  document.getElementById('search-form').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-      const searchstring = document.getElementById('searchstring').value;
-      const term = document.getElementById('term').value;
-      const year = document.getElementById('year').value;
-      const departments = Array.from(document.querySelectorAll('input[name="departments[]"]:checked')).map(checkbox => checkbox.value);
-      const levels = Array.from(document.querySelectorAll('input[name="levels[]"]:checked')).map(checkbox => checkbox.value);
-      const search_in_props = Array.from(document.querySelectorAll('input[name="search_in_props[]"]:checked')).map(checkbox => checkbox.value);
+    const searchstring = document.getElementById('searchstring').value;
+    const term = document.getElementById('term').value;
+    const year = document.getElementById('year').value;
+    const departments = Array.from(document.querySelectorAll('input[name="departments[]"]:checked')).map(checkbox => checkbox.value);
+    const levels = Array.from(document.querySelectorAll('input[name="levels[]"]:checked')).map(checkbox => checkbox.value);
+    const search_in_props = Array.from(document.querySelectorAll('input[name="search_in_props[]"]:checked')).map(checkbox => checkbox.value);
 
-      const queryParams = new URLSearchParams({
-        searchstring,
-        term,
-        year
-      });
-
-      departments.forEach(dept => queryParams.append('departments[]', dept));
-      levels.forEach(level => queryParams.append('levels[]', level));
-      search_in_props.forEach(prop => queryParams.append('search_in_props[]', prop));
-
-      fetch(`/courses/search?${queryParams.toString()}`, {
-        method: 'GET',
-        headers: {
-          'Accept': 'application/json'
-        }
-      })
-      .then(response => response.json())
-      .then(data => {
-        const resultsDiv = document.getElementById('search-results');
-        resultsDiv.innerHTML = '';
-
-        if (data.length === 0) {
-          resultsDiv.innerHTML = '<p>No courses found.</p>';
-        } else {
-          data.forEach(course => {
-            const courseDiv = document.createElement('div');
-            courseDiv.classList.add('course');
-            courseDiv.innerHTML = `
-              <h2>${course.dept} ${course.number} - ${course.title}</h2>
-              <p><strong>Term:</strong> ${course.term} ${course.year}</p>
-              <p><strong>Credits:</strong> ${course.credits || 'no credits listed'}</p>
-              <p><strong>Description:</strong> ${course.short_description || 'no description listed'}</p>
-              <p><strong>Instructors:</strong> ${course.instructors.join(', ') || 'no instructor listed'}</p>
-              <p><strong>Campuses:</strong> ${course.campuses.join(', ') || 'no campus listed'}</p>
-              <p><strong>Delivery Methods:</strong> ${course.delivery_methods.join(', ') || 'no delivery meth listed'}</p>
-            `;
-            resultsDiv.appendChild(courseDiv);
-          });
-        }
-      })
-      .catch(error => console.error('error', error));
+    // Construct URLSearchParams
+    const queryParams = new URLSearchParams({
+      searchstring
     });
-  </script>
+
+    // Append search_in_props array without indexing
+    search_in_props.forEach(prop => queryParams.append('search_in_props[]', prop));
+
+    // Append terms as a structured array (term, year)
+    queryParams.append('terms[][year]', year);
+    queryParams.append('terms[][term]', term);
+
+    // Append departments and levels
+    departments.forEach(dept => queryParams.append('departments[]', dept));
+    levels.forEach(level => queryParams.append('levels[]', level));
+
+    // Log constructed query for debugging
+    console.log(`Constructed Query: ${queryParams.toString()}`);
+
+    // Fetch the search results
+    fetch(`/courses/search?${queryParams.toString()}`, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      const resultsDiv = document.getElementById('search-results');
+      resultsDiv.innerHTML = ''; // Clear previous results
+
+      // Handle no results
+      if (data.length === 0) {
+        resultsDiv.innerHTML = '<p>No courses found.</p>';
+      } else {
+        // Display results
+        data.forEach(course => {
+          const courseDiv = document.createElement('div');
+          courseDiv.classList.add('course');
+          courseDiv.innerHTML = `
+            <h2>${course.dept} ${course.number} - ${course.title}</h2>
+            <p><strong>Term:</strong> ${course.term} ${course.year}</p>
+            <p><strong>Credits:</strong> ${course.credits || 'no credits listed'}</p>
+            <p><strong>Description:</strong> ${course.short_description || 'no description listed'}</p>
+            <p><strong>Instructors:</strong> ${course.instructors.join(', ') || 'no instructor listed'}</p>
+            <p><strong>Campuses:</strong> ${course.campuses.join(', ') || 'no campus listed'}</p>
+            <p><strong>Delivery Methods:</strong> ${course.delivery_methods.join(', ') || 'no delivery methods listed'}</p>
+          `;
+          resultsDiv.appendChild(courseDiv);
+        });
+      }
+    })
+    .catch(error => console.error('Error:', error));
+  });
+</script>
 
 </body>
 </html>
