@@ -12,10 +12,10 @@ class CoursesController < ApplicationController
   end
 
   def search
-    # get the search parameters from the request
+    # retrieve the query parameters from the frontend
     query = search_params # or params.to_unsafe_h for testing
-    puts "Query: #{query.inspect}"
-    # extract the search parameters from the query, with default values if not present
+
+    # extract the search parameters from the query, with default values.
     search_string = query[:searchstring].presence || ""
     search_in_props = query[:search_in_props].presence ||[ "title", "dept", "description", "instructors", "campuses" ]
     terms = query[:terms].presence || [ { year: query[:year], term: query[:term] } ]
@@ -23,81 +23,101 @@ class CoursesController < ApplicationController
     levels = query[:levels].presence || [ "any" ]
     custom_sql = query[:SQL].presence
     taken_courses = query[:courses] || []
-    # railer.logger.debug("Taken courses: #{taken_courses}")
 
+    # convert the terms to an array of hashes // not sure if this is 100% correct or necessary
     terms = terms.map { |t| t.to_h }
 
+    # handle the case where the user selects "any" for terms or departments
     if terms == [ { year: "any", term: "any" } ] or terms == [ { year: nil, term: nil } ]
       terms = []
     end
 
-    # perform the search based on our parameters
+    # handle the case where the user selects "any" for departments or levels
+    if departments == [ "any" ]
+      departments = [] # empty array because we don't need to filter by department
+    end
+
+    # handle the case where the user selects "any" for levels
+    if levels == [ "any" ]
+      levels = [] # empty array because we don't need to filter by level
+    end
+
+    # search for courses based on the search parameters
     results = search_courses(search_string, search_in_props, terms, departments, levels, custom_sql, taken_courses)
 
     # save_user_search_history(search_string, term, year) # you may have to comment this out
 
-    # return the search results as JSON
-    Rails.logger.debug("Final search parameters: terms=#{terms}, departments=#{departments}, levels=#{levels}")
+    # return the search results to the frontend as JSON
     render json: results
   end
+
 
   private
 
 
-
   def search_params
-    # permit the parameters we want to use in the search, can be avoided for testing
+    # permit the search parameters from the frontend // or params.to_unsafe_h for testing
     params.permit(:term, :year, :searchstring, :SQL, search_in_props: [], terms: [ :year, :term ], departments: [], levels: [], courses: [ :dept, :number, :term, :year ])
   end
 
+
   def search_courses(search_string, search_in_props, terms, departments, levels, custom_sql, taken_courses = [])
-    sql_query = "SELECT * FROM courses WHERE 1=1"
-    query_values = []
+    # build the SQL query based on the search parameters
+    # retirms the search results
 
-    # Ensure search_in_props is limited to valid properties
+    sql_query = "SELECT * FROM courses WHERE 1=1" # default query
+    query_values = [] # empty query values array initialization
+
+    # filter out invalid search props using intersection
     allowed_props = [ "title", "dept", "description", "instructors", "campuses" ]
-    search_in_props = search_in_props & allowed_props  # Intersection of allowed props and given props
+    search_in_props = search_in_props & allowed_props
 
-    terms.to_unsafe_h if terms.is_a?(ActionController::Parameters)
+
+    # terms.to_unsafe_h if terms.is_a?(ActionController::Parameters) // for testing
+
     if search_string.present?
-      search_conditions = search_in_props.map { |prop| "#{prop} LIKE ?" }.join(" OR ")
-      query_values.concat(Array.new(search_in_props.length, "%#{search_string}%"))
-      sql_query += " AND (#{search_conditions})"
+      # build the search conditions based on the search string and search properties
+      search_conditions = search_in_props.map { |prop| "#{prop} LIKE ?" }.join(" OR ") # build the search conditions
+      query_values.concat(Array.new(search_in_props.length, "%#{search_string}%")) # add the search string to the query values
+      sql_query += " AND (#{search_conditions})" # append the search conditions to the SQL query
     end
 
-    # Handle departments array
-    departments = Array(departments).reject { |dept| dept == "any" }
     unless departments.empty?
-      department_conditions = "dept IN (#{departments.map { '?' }.join(', ')})"
-      query_values.concat(departments)
-      sql_query += " AND (#{department_conditions})"
+      # build the department conditions based on the departments
+      department_conditions = "dept IN (#{departments.map { '?' }.join(', ')})" # build the department conditions
+      query_values.concat(departments) # add the departments to the query values
+      sql_query += " AND (#{department_conditions})" # append the department conditions to the SQL query
     end
 
-    # Handle levels array
-    levels = Array(levels).reject { |level| level == "any" }
     unless levels.empty?
-      level_conditions = levels.map { |level| "number LIKE '#{level[0]}%'" }.join(" OR ")
-      sql_query += " AND (#{level_conditions})"
+      # build the level conditions based on the levels
+      level_conditions = levels.map { |level| "number LIKE ?" }.join(" OR ") # build the level conditions
+      query_values.concat(levels.map { |level| "#{level[0]}%" }) # add the levels to the query values
+      sql_query += " AND (#{level_conditions})" # append the level conditions to the SQL query
     end
 
-    # Handle terms array: Skip if both year and term are "any"
-    terms = Array(terms).reject { |term| term["year"] == "any" && term["term"] == "any" }
+    terms = Array(terms).reject { |term| term["year"] == "any" && term["term"] == "any" } # remove any terms with "any" year and term
     unless terms.empty?
-      term_conditions = terms.map { |t| "(term = ? AND year = ?)" }.join(" OR ")
-      query_values.concat(terms.flat_map { |t| [ t["term"], t["year"] ] })
-      sql_query += " AND (#{term_conditions})"
+      # build the term conditions based on the terms
+      term_conditions = terms.map { |t| "(term = ? AND year = ?)" }.join(" OR ") # build the term conditions
+      query_values.concat(terms.flat_map { |t| [ t["term"], t["year"] ] }) # add the terms to the query values
+      sql_query += " AND (#{term_conditions})" # append the term conditions to the SQL query
     end
 
-    # Log the final SQL query for debugging
+    ## IMPLEMENT HERE ##
+    # taken courses, custom SQL query
+
+    # debug: print the custom SQL query
     Rails.logger.debug("SQL Query: #{sql_query}")
     Rails.logger.debug("Query Values: #{query_values.inspect}")
     Rails.logger.debug("Number of placeholders in SQL: #{sql_query.scan(/\?/).count}")
     Rails.logger.debug("Number of values passed: #{query_values.count}")
 
-    # Execute the query
+    # execute the SQL query to get the search results
     results = Course.find_by_sql([ sql_query, *query_values ])
 
-    # Return the results
+
+    # return results
     results
   end
 
