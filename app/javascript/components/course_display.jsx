@@ -52,11 +52,11 @@ const CourseSearchDisplay = () => {
 
 
 // the component used to list courses in the term tabs
-const CourseTermDisplay = ({courses}) => {
+const CourseTermDisplay = ({courses, visible}) => {
   const [activeCourse, setActiveCourse] = useState(undefined);
 
   return (
-    <div>
+    visible && <div>
         {courses.length === 0 ? 
             <p>No courses entered for this term.</p>
         : <></>}

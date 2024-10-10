@@ -126,6 +126,10 @@ header {
     justify-content: center;
 }
 
+.no-select {
+    user-select: none;
+}
+
 .scroll {
     overflow-y: scroll;
 }

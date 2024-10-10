@@ -5,6 +5,7 @@ import "./term_tab.css"
 
 const TermTabDisplay = () => {
     const [terms, setTerms] = useState([]);
+    const [activeterm, setActiveTerm] = useState(0);
     const [loading, setLoading] = useState(false);
 
     // setup the callback from removing a course
@@ -18,7 +19,11 @@ const TermTabDisplay = () => {
                     const courseidx = currterms[termidx].courses.findIndex((c) => c.unique_identifier === course.unique_identifier);
                     if (courseidx != -1){
                         let newterms = [...currterms];
-                        newterms[termidx].courses.splice(courseidx, 1);
+                        if (newterms[termidx].length == 1){
+                            newterms.splice(termidx, 1);
+                        } else {
+                            newterms[termidx].courses.splice(courseidx, 1);
+                        }
                         return newterms;
                     }
                 }
@@ -74,9 +79,9 @@ const TermTabDisplay = () => {
                 </div>
             : <></>}
 
-            <div className="tab_header">
+            <div className="tab_header horizontal-stack">
                 {terms.map((term) => (
-                    <div className="term_tab_header center-content" key={term.id}>
+                    <div className="term_tab_header center-content no-select" style={{borderBottom: `${term.id === activeterm ? `3px solid var(--base-color)` : `1px solid var(--base-dark)`}`}} key={term.id} onClick={() => {setActiveTerm(term.id)}}>
                         {term.id}
                     </div>
                 ))}
@@ -88,7 +93,7 @@ const TermTabDisplay = () => {
     
             <div className="scroll">
                 {terms.map((term) => (
-                    <CourseTermDisplay key={term.id} courses={term.courses} operation="remove"/>
+                    <CourseTermDisplay key={term.id} courses={term.courses} visible={term.id == activeterm}/>
                 ))}
             </div>
       </div>
