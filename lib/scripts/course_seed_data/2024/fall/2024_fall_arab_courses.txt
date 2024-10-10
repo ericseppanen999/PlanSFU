@@ -1,0 +1,17 @@
+Course.create!(
+  dept: "arab",
+  number: "100",
+  term: "fall",
+  year: "2024",
+  title: "Introductory Arabic I",
+  description: "Introduction to modern standard Arabic for students with no background in that language. Introduces basic written and oral skills. Provides students with a history of Arabic literature alongside key aspects of Middle Eastern and North African cultures.",
+  requisite_description: "",
+  prereq_logic:"", # implement
+  short_description: "Introduction to modern standard Arabic for students with no background in that language. Introduces basic written and oral skills. Provides students with a history of Arabic literature alongside key aspects of Middle Eastern and North African cultures.",
+  credits: 3,
+  instructors: ["Rastin Mehri"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"],
+  requisites: [],
+)
