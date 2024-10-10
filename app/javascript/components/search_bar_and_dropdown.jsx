@@ -59,6 +59,7 @@ const SearchBarWithDropdown = () => {
             }
         }
       }
+
       changeQueryCallback.trigger(query);
       return query;
     });

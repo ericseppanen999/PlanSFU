@@ -10,6 +10,7 @@ class Course < ApplicationRecord
   # define the relationships
   before_save :set_unique_identifier
 
+  ## THE METHODS RELATIG TO PREREQUISITES ARE NOT COMPLETED ##
   # define the validations
   def prerequisites_satisfied?(completed_courses)
     completed_courses_hash = completed_courses.each_with_object({}) do |course, hash|
