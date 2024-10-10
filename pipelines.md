@@ -11,7 +11,12 @@ Each pipeline should start with an external event and end at some final state
 #### Course Load Pipeline
 1. Search terms updated (`javascript/components/search_bar_and_dropdown.jsx`)
 2. Search terms parsed to url query & request is sent (`javascript/components/searchCourses.js`)
-... (eric)
+3. Courses controller receives the request & processes search terms (`app/controllers/courses_controller.rb`)
+4. SQL query is constructed and executed (`app/controllers/courses_controller.rb - search_courses`)
+5. Query results are serialized and sent back as JSON
+6. Frontend receives JSON data from the fetch request (`javascript/components/searchCourses.js`)
+7. The data is passed to a React component and dynamically generates HTML elements.
+
 
 #### Sign In Pipeline
 1. The user starts the sign-in process by clicking the "Login" button.
