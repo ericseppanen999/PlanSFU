@@ -4,7 +4,6 @@
 # The search results are then returned to the frontend as JSON.
 
 class CoursesController < ApplicationController
-  MAX_SEARCH_LENGTH = 1000 # maximum length of the search string
   # you may have to comment this out
   # before_action :set_current_user, only: [ :search ]
 
@@ -18,10 +17,6 @@ class CoursesController < ApplicationController
 
     # extract the search parameters from the query, with default values.
     search_string = query[:searchstring].presence || ""
-    if search_string.length > MAX_SEARCH_LENGTH
-      search_string = search_string[0...MAX_SEARCH_LENGTH] # truncate the search string if it exceeds the maximum length
-      Rails.logger.warn("search string limit exceeded, trimming to #{MAX_SEARCH_LENGTH} characters")
-    end
     search_in_props = query[:search_in_props].presence ||[ "title", "dept", "description", "instructors", "campuses" ]
     terms = query[:terms].presence || [ { year: query[:year], term: query[:term] } ]
     departments = query[:departments].presence || [ "any" ]
