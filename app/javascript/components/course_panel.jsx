@@ -3,7 +3,7 @@ import { Plus, Minus } from "./icons.jsx";
 import { AddCourseCallback, RemoveCourseCallback } from "./callback.js"
 import "./course_panel.css"
 
-// Component to render each item
+// Component to render each course item
 const Course = ({
   course,
   operation = "add",
@@ -11,6 +11,7 @@ const Course = ({
   showGrade = false,
   makeActive
 }) => {
+  // used for comunication with the tab display
   const AddCourseWrapper = useCallback(() => {
     AddCourseCallback.trigger(course);
   })
@@ -22,9 +23,11 @@ const Course = ({
   return (
     <div className="course_item active_panel" onClick={() => makeActive(course.unique_identifier)}>
       <div className="horizontal-stack">
+        {/* title */}
         <h3>
           {course.dept.toUpperCase()} {course.number}: {course.title}
         </h3>
+        {/* add or remove button */}
         {
           operation == "add" ? (
             <button
@@ -46,6 +49,7 @@ const Course = ({
         }
       </div>
 
+      {/* description, switches depending on if it's minimized */}
       {!minimized ? (
         <>
           <p>{course.term}, {course.year}</p>
@@ -60,12 +64,14 @@ const Course = ({
         </>
       )}
 
+      {/* credits */}
       <div className="horizontal-stack">
         <h3 className="course_info_item">Credits:</h3>
         <div className="padding_small"></div>
         <p className="course_info_item">{course.credits}</p>
       </div>
 
+      {/* grade */}
       {showGrade ? (
         <>
           <h3>Grade:</h3>
@@ -75,6 +81,7 @@ const Course = ({
         <></>
       )}
 
+      {/* sections, preqs, instructors, campuses */}
       {!minimized ? (
         <>
           <h3>Prerequisites:</h3>
