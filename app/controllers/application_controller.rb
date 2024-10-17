@@ -24,7 +24,7 @@ JUST REMOVE "=begin" AND "=end" TO REMOVE COMMENTS!
     @current_user
   end
 
-  # Require users to be authenticated before accessing certain actions
+  # Require user to be authenticated before accessing certain actions
   def authenticate_user!
     unless current_user
       Rails.logger.info "User not authenticated. Redirecting to login."  # Log when redirecting to login

@@ -19,7 +19,7 @@ class CasSessionsController < ApplicationController
       user_info = validate_cas_ticket(params[:ticket])
 
       if user_info
-        # Store the user ID (e.g., amb35) in the session
+        # Store the user ID
         session[:cas_user] = user_info[:user_id]
 
         # Find or create the user in the local database
@@ -89,7 +89,7 @@ class CasSessionsController < ApplicationController
 
     # If the ticket is successfully validated, return the user's information
     if response && response.success?
-      { user_id: response.user }  # Return user_id instead of email
+      { user_id: response.user }  # Return user_id
     else
       Rails.logger.warn "CAS ticket validation failed: #{response.inspect}"  # Log failed validation
       nil
