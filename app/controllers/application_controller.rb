@@ -14,8 +14,8 @@ JUST REMOVE "=begin" AND "=end" TO REMOVE COMMENTS!
   def set_current_user
     if session[:cas_user]
       Rails.logger.info "Session CAS user: #{session[:cas_user]}"  # Log session user
-      @current_user = User.find_by(email: session[:cas_user])
-      Rails.logger.info "Current User: #{@current_user&.email}"   # Log if current user found
+      @current_user = User.find_by(user_id: session[:cas_user])  # Using user_id instead of email
+      Rails.logger.info "Current User: #{@current_user&.user_id}"   # Log if current user found
     end
   end
 
@@ -30,7 +30,7 @@ JUST REMOVE "=begin" AND "=end" TO REMOVE COMMENTS!
       Rails.logger.info "User not authenticated. Redirecting to login."  # Log when redirecting to login
       redirect_to login_path
     else
-      Rails.logger.info "User authenticated as #{current_user.email}"   # Log authenticated user
+      Rails.logger.info "User authenticated as #{current_user.user_id}"   # Log authenticated user
     end
   end
 end
