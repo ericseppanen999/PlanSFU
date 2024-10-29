@@ -1,5 +1,0 @@
-class CourseItem {
-    constructor(courseJson){
-
-    }
-}

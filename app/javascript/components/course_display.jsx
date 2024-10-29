@@ -28,24 +28,25 @@ const CourseSearchDisplay = () => {
   }, []);
 
   return (
-    <div>
-        {/* Display loading graphics */}
-        {loading ? 
-            <div className="center-content">
-                <img className="loading_img" src="assets/loading.gif"></img>
-            </div>
-       : <></>}
-
-        {courses.length === 0 ? 
-            <p>No results.</p>
-       : <></>}
-
-        <div>
-            {/* Render all courses */}
-            {courses.map((course) => (
-                <Course key={course.unique_identifier} course={course} operation="add" makeActive={() => {}}/>
-            ))}
+    <div className="course-list scroll">
+      <div class="padding_medium"></div>
+      {/* Display loading graphics */}
+      {loading ? 
+        <div className="center-content">
+          <img className="loading_img" src="assets/loading.gif"></img>
         </div>
+      : <></>}
+
+      {courses.length === 0 ? 
+        <p>No results.</p>
+      : <></>}
+
+      <div>
+        {/* Render all courses */}
+        {courses.map((course) => (
+          <Course key={course.unique_identifier} course={course} operation="add" makeActive={() => {}}/>
+        ))}
+      </div>
     </div>
   );
 };
@@ -56,23 +57,24 @@ const CourseTermDisplay = ({courses, visible}) => {
   const [activeCourse, setActiveCourse] = useState(undefined);
 
   return (
-    visible && <div>
+    visible && <div className="course-list scroll">
+      <div class="padding_medium"></div>
         {courses.length === 0 ? 
-            <p>No courses entered for this term.</p>
+          <p>No courses entered for this term.</p>
         : <></>}
 
         <div>
-            {/* Render all courses */}
-            {courses.map((course) => (
-                <Course 
-                  key={course.unique_identifier} 
-                  course={course} 
-                  operation="remove" 
-                  minimized={activeCourse !== course.unique_identifier} 
-                  showGrade={true} 
-                  makeActive={(unique_identifier) => setActiveCourse(unique_identifier)}
-                />
-            ))}
+          {/* Render all courses */}
+          {courses.map((course) => (
+            <Course 
+              key={course.unique_identifier} 
+              course={course} 
+              operation="remove" 
+              minimized={activeCourse !== course.unique_identifier} 
+              showGrade={true} 
+              makeActive={(unique_identifier) => setActiveCourse(unique_identifier)}
+            />
+          ))}
         </div>
     </div>
   );

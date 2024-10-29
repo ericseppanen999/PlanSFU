@@ -92,7 +92,7 @@ const TermTabDisplay = () => {
                 <p>You have no courses listed. Add courses with the search or sign in to fill in your completed courses.</p>
             : <></>}
     
-            <div className="scroll">
+            <div>
                 {terms.map((term) => (
                     <CourseTermDisplay key={term.id} courses={term.courses} visible={term.id == activeterm}/>
                 ))}

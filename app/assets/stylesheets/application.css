@@ -30,6 +30,9 @@ body {
     margin: 0;
     background-color: var(--primary-color);
     color: var(--text-color);
+    
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
 hr {
@@ -91,6 +94,11 @@ button.flat:active {
 
 header {
     background-color: var(--base-color);
+    padding: var(--padding-medium);
+}
+
+footer {
+    background-color: var(--base-dark);
     padding: var(--padding-medium);
 }
 
@@ -157,4 +165,11 @@ header {
     border: none;
     width: var(--padding-large);
     height: var(--padding-large);
+}
+
+.padding_auto {
+    background-color: transparent;
+    border: none;
+    width: auto;
+    height: auto;
 }
