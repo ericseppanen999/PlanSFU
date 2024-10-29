@@ -50,8 +50,22 @@ class CoursesController < ApplicationController
     # return the search results to the frontend as JSON
     render json: results
   end
+  def check_eligibility
+    user = User.find_by(cas_user_id: params[:cas_user_id])
+    course = Course.find_by(dept: params[:dept], number: params[:number])
 
-
+    if user && course
+      is_eligible = course.user_eligible?(user)
+      render json: { eligible: is_eligible }
+    else
+      if !user
+        render json: { error: "user not found" }, status: :not_found
+      end
+      if !course
+        render json: { error: "course not found" }, status: :not_found
+      end
+    end
+  end
   private
 
 
