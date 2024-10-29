@@ -90,8 +90,16 @@ const Course = ({
           <h3>Sections:</h3>
           <div className="horizontal-stack">
             {course.sections.map((section, index) => (
+              console.log("Section",section),
               <div key={index} className="horizontal-stack">
-                <p className="course_info_item">{section}</p>
+                <a 
+                  href={`https://www.sfu.ca/outlines.html?${course.year}/${course.term}/${course.dept}/${course.number}/${section}`}
+                  className="course_info_item"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  {section}
+                </a>
                 <div className="padding_medium"></div>
               </div>
             ))}

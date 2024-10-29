@@ -12,11 +12,20 @@
     border: 1px solid var(--primary-color);
     --title-color: var(--primary-color);
 }
+.course_item, .horizontal-stack {
+    pointer-events: auto;
+  }
 
 .course_title {
     color: var(--title-color);
 }
 
-.course_info_item {
+.course_info_item a {
+    color: var(--link-color,blue);
     margin: 0;
+}
+
+.course_info_item a:hover {
+    color: var(--hover-link-color,darkblue);
+    cursor: pointer;
 }
