@@ -10,16 +10,32 @@ class Course < ApplicationRecord
   # define the relationships
   before_save :set_unique_identifier
 
-  ## THE METHODS RELATIG TO PREREQUISITES ARE NOT COMPLETED ##
+  ## THE METHODS RELATING TO PREREQUISITES ARE NOT COMPLETED ##
   # define the validations
-  def prerequisites_satisfied?(completed_courses)
-    completed_courses_hash = completed_courses.each_with_object({}) do |course, hash|
-      # https://stackoverflow.com/questions/26634897/each-with-object-ruby-explanation
-      identifier = "#{course['dept']} #{course['number']}"
-      hash[identifier] = course["grade"]
-    end
+  def prerequisites_satisfied?(taken_courses, prereq_logic)
+    return true if prereq_logic == "#no_prereq_logic"
+    logger.debug("Checking prerequisites for #{self.dept} #{self.number} with #{taken_courses} . prereq_logic: #{prereq_logic}")
 
-    evaluate_prerequisites(requisite_description, completed_courses_hash)
+    prereq_logic.gsub!("W_course >= C-", has_w(taken_courses).to_s)
+    prereq_logic.gsub!(/([A-Z]+\s\d+)\s*(>=)\s*([A-F][+-]?)/) do |match|
+      course_code = Regexp.last_match(1)
+      required_grade = Regexp.last_match(3)
+      grade_meets_requirement?(taken_courses, course_code, required_grade).to_s
+    end
+    prereq_logic.gsub!("AND", "&&")
+    prereq_logic.gsub!("OR", "||")
+
+    begin
+      eval(prereq_logic)
+    rescue Exception => e
+      puts "Error evaluating prerequisite logic: #{e.message}"
+      false
+    end
+  end
+
+  def user_eligible?(user)
+    logger.debug("Checking eligibility for user #{user.cas_user_id} with #{user.taken_courses} . prereq_logic: #{self.prereq_logic}")
+    prerequisites_satisfied?(user.taken_courses, self.prereq_logic)
   end
 
   private
@@ -35,50 +51,21 @@ class Course < ApplicationRecord
     Digest::MD5.hexdigest(input_string)
   end
 
-  def evaluate_prerequisites(prereq_string, completed_courses)
-    # debug: print the prerequisite string
-    puts "initial prerequisite string: #{prereq_string}"
-
-    prereq_string = prereq_string.gsub(/\b(\w+ \d+) >= ([A-F][+-]?)\b/i) do |match|
-      course_id, req = match.match(/\b(\w+ \d+) >= ([A-F][+-]?)\b/i).captures
-      # https://apidock.com/ruby/String/gsub
-      actual = completed_courses[course_id]
-
-      result = if actual grade_meets_requirement?(actual, req) ? "true" : "false"
-      else
-        "false"
-      end
-
-      # debug: print each replacement
-      puts "replacing '#{match}' with '#{result}' (actual grade: #{actual || 'not completed'})"
-      result
-    end
-
-    prereq_string = prereq_string.gsub(/\bAND\b/i, "&&").gsub(/\bOR\b/i, "||")
-    prereq_string = prereq_string.gsub(/[^truefalse&|() ]/, "")
-
-    # debug
-    puts "Final string to evaluate: #{prereq_string}"
-
-    begin
-      result = eval(prereq_string)
-      # debug: print the evaluation result
-      puts "Eval result: #{result}"
-      result
-    rescue SyntaxError, StandardError => e
-      puts "eval error: #{e.message}"
-      false
-    end
+  def has_w(taken_courses)
+    taken_courses.any? { |course| course["course_code"].end_with?("W") }
   end
 
-  def grade_meets_requirement?(actual, req)
-    grade_order = %w[A+ A A- B+ B B- C+ C C- D F]
-    reqi = grade_order.index(req)
-    acti = grade_order.index(actual)
+  def grade_meets_requirement?(taken_courses, course_code, required_grade)
+    course = taken_courses.find { |c| c["course_code"].upcase == course_code.upcase }
+    return false if course.nil?
+    grade_to_value(course["grade"]) >= grade_to_value(required_grade)
+  end
 
-    # debug: print the comparison of grades
-    puts "Comparing #{actual} (index #{acti}) to required #{req} (index #{reqi})"
-
-    acti <= reqi
+  def grade_to_value(grade)
+    grade_scale = {
+      "A+" => 12, "A" => 11, "A-" => 10, "B+" => 9, "B" => 8, "B-" => 7,
+      "C+" => 6, "C" => 5, "C-" => 4, "D" => 3, "F" => 0
+    }
+    grade_scale[grade] || 0
   end
 end
