@@ -1,3 +1,7 @@
 .loading_img {
     width: 40px;
 }
+
+.course-list {
+    max-height: 90vh;
+}

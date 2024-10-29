@@ -18,10 +18,23 @@ gem "stimulus-rails"
 gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
+
+
+
 # force bundler to use older version of psych, bc it won't work otherwise
 gem "psych", "< 5"
+
+# include central authentification system
 gem "rubycas-client"
+# include shakapacker (webpack for rails)
 gem "shakapacker"
+
+# silence warnings about standard packages
+gem "ostruct"
+gem "fiddle"
+gem "pstore"
+
+
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
