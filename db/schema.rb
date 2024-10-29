@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_05_225945) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_29_014122) do
   create_table "courses", id: false, force: :cascade do |t|
     t.string "dept", null: false
     t.string "number", null: false
@@ -32,5 +32,13 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_05_225945) do
     t.string "unique_identifier"
     t.index ["dept", "number", "term", "year"], name: "index_courses_on_dept_and_number_and_term_and_year", unique: true
     t.index ["unique_identifier"], name: "index_courses_on_unique_identifier", unique: true
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "cas_user_id", null: false
+    t.json "taken_courses"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cas_user_id"], name: "index_users_on_cas_user_id", unique: true
   end
 end

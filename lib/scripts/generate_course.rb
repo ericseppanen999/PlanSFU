@@ -7,6 +7,8 @@ require "json"
 require "benchmark"
 require "fileutils"
 require "thread"
+require "open3"
+require_relative "prerequisite_parser"
 
 
 def create_course(base_url)
@@ -174,11 +176,22 @@ def get_course_dept_term_year(url)
   return parts[-1], parts[-2], parts[-3], year
 end
 
+def parse_prerequisites(input_string)
+  if !input_string.nil? && input_string != "#no_prereq" && input_string != ""
+    parser = PrerequisiteParser.new
+    parsed_string = parser.get_prereq_string(input_string)
+    parsed_string
+  else
+    nil
+  end
+end
+
 def print_command(first_section, filtered_sections, instructors, campuses, delivery_methods, prerequisite, description, credits, url)
   # generate the command to seed our db
   number, dept, term, year = get_course_dept_term_year(url)
   title = first_section["title"] || "n/a"
   short_description = description || "no short description"
+  prerequisite_logic = parse_prerequisites(prerequisite) || "no prerequisite logic"
 
   course_create_command = <<-RUBY
 Course.create!(
@@ -189,7 +202,7 @@ Course.create!(
   title: "#{title}",
   description: "#{description || "no description available"}",
   requisite_description: "#{prerequisite || "no prerequisite"}",
-  prereq_logic:"", # implement
+  prereq_logic:"#{prerequisite_logic}", # implement
   short_description: "#{short_description}",
   credits: #{credits || "nil"},
   instructors: #{instructors.inspect},
@@ -257,6 +270,8 @@ departments = [
   "ugrad", "urb", "wl"
 ]
 
+departments = [ "cmpt", "macm", "math" ]
+
 def times(year_scope, terms, departments)
   puts "year:"
   year = gets.chomp
@@ -264,25 +279,24 @@ def times(year_scope, terms, departments)
   term = gets.chomp
 
   total_time = Benchmark.measure do
-    threads = [] # threads for parralel processing
+    # threads = [] # threads for parralel processing
 
     departments.each do |dept|
-      threads << Thread.new do
-        if year_scope.include?(year) and terms.include?(term) and departments.include?(dept)
-          time = Benchmark.measure do
-            generate_url(year, term, dept)
-          end
-          puts "dept: #{dept} elapsed in: #{time.real}"
-        else
-          puts "invalid input"
+      # threads << Thread.new do
+      if year_scope.include?(year) and terms.include?(term) and departments.include?(dept)
+        time = Benchmark.measure do
+          generate_url(year, term, dept)
         end
+        puts "dept: #{dept} elapsed in: #{time.real}"
+      else
+        puts "invalid input"
       end
     end
-
-    threads.each(&:join) # wait for threads
-
-    puts "year: #{year} term: #{term} total elapsed in: #{total_time.real}"
   end
+
+  # threads.each(&:join) # wait for threads
+
+  puts "year: #{year} term: #{term} total elapsed in: #{total_time.real}"
 end
 
 times(year_scope, terms, departments)
