@@ -106,6 +106,50 @@
 
   <div id="search-results"></div>
 
+  <h2>create a new user</h2>
+  <form id="userForm">
+    <label for="cas_user_id">CAS user id:</label>
+    <input type="text" id="cas_user_id" name="cas_user_id">
+    <br><br>
+    <button type="button" onclick="createUser()">create user</button>
+  </form>
+
+  <h2>all user ids</h2>
+  <button type="button" onclick="listAllUsers()">list all users</button>
+  <ul id="userList"></ul>
+
+  <h2>add courses to a user</h2>
+  <form id="addCoursesForm">
+    <label for="existingUserId">CAS user id</label>
+    <input type="text" id="existingUserId" name="existingUserId">
+    <br><br>
+    <div id="newCoursesContainer">
+      <div class="course">
+        <label for="new_course_code_0">course code</label>
+        <input type="text" id="new_course_code_0" name="course_code">
+        <br><br>
+        <label for="new_term_0">term:</label>
+        <input type="text" id="new_term_0" name="term">
+        <br><br>
+      </div>
+    </div>
+    <button type="button" onclick="addAnotherCourse()">add another course</button>
+    <br><br>
+    <button type="button" onclick="addCourses()">add courses to user</button>
+  </form>
+
+  <h2>display user</h2>
+  <form id="displayUserForm">
+    <label for="searchUserId">CAS user id:</label>
+    <input type="text" id="searchUserId" name="searchUserId">
+    <br><br>
+    <button type="button" onclick="displayUser()">display</button>
+  </form>
+
+  <h2>User Details</h2>
+  <p id="userDetails"></p>
+</form>
+
 <script>
   document.getElementById('search-form').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -171,6 +215,99 @@
     })
     .catch(error => console.error('Error:', error));
   });
+  let newCourseCount = 1;
+
+  function createUser() {
+    const casUserId = document.getElementById('cas_user_id').value;
+
+    fetch('/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        user: { cas_user_id: casUserId, taken_courses: [] }
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert(data.errors ? `Error: ${data.errors.join(', ')}` : 'ser created successfully');
+    });
+  }
+
+  function listAllUsers() {
+fetch('/users', {
+  method: 'GET',
+  headers: { 'Accept': 'application/json' }
+})
+.then(response => response.json())
+.then(data => {
+  const userList = document.getElementById('userList');
+  userList.innerHTML = '';
+
+  data.forEach(user => {
+    const listItem = document.createElement('li');
+    listItem.textContent = user.cas_user_id;
+    userList.appendChild(listItem);
+  });
+})
+.catch(error => console.error('Error:', error));
+}
+  function addAnotherCourse() {
+    const container = document.getElementById('newCoursesContainer');
+    const courseDiv = document.createElement('div');
+    courseDiv.className = 'course';
+    courseDiv.innerHTML = `
+      <label for="new_course_code_${newCourseCount}">course code:</label>
+      <input type="text" id="new_course_code_${newCourseCount}" name="course_code">
+      <br><br>
+      <label for="new_term_${newCourseCount}">term:</label>
+      <input type="text" id="new_term_${newCourseCount}" name="term">
+      <br><br>
+    `;
+    container.appendChild(courseDiv);
+    newCourseCount++;
+  }
+
+  function addCourses() {
+    const userId = document.getElementById('existingUserId').value;
+    const newCourses = [];
+    for (let i = 0; i < newCourseCount; i++) {
+      const courseCode = document.getElementById(`new_course_code_${i}`).value;
+      const term = document.getElementById(`new_term_${i}`).value;
+      if (courseCode && term) {
+        newCourses.push({ course_code: courseCode, term: term });
+      }
+    }
+    fetch(`/users/${userId}/add_courses`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({ courses: newCourses })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert(data.errors ? `error: ${data.errors.join(', ')}` : 'courses added successfully');
+    });
+  }
+
+  function displayUser() {
+    const userId = document.getElementById('searchUserId').value;
+    fetch(`/users/${userId}`, {
+      method: 'GET',
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => response.json())
+    .then(data => {
+      const details = data.message ? data.message : 
+        `CAS User ID: ${data.cas_user_id}\ntaken courses: ${JSON.stringify(data.taken_courses)}`;
+      document.getElementById('userDetails').innerText = details;
+    });
+  }
+
 </script>
 
 </body>

@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   # Articles routes
   get "/articles", to: "articles#index"
 
-  root 'articles#index'
+  root "articles#index"
 
   # Courses routes
   get "/courses/search_page", to: "courses#search_page"
   get "/courses/search", to: "courses#search" # Route to handle the search request from the front end
 
-=begin 
+=begin
 
 JUST REMOVE "=begin" AND "=end" TO REMOVE COMMENTS!
 
@@ -25,7 +25,11 @@ JUST REMOVE "=begin" AND "=end" TO REMOVE COMMENTS!
   resources :search_histories, only: [ :index ]
 
   # User routes
-  resources :users, only: [ :show, :edit, :update, :destroy ]
+  resources :users, only: [ :create, :show, :index ] do
+    member do
+      patch "add_courses", to: "users#add_courses"
+    end
+  end
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
 
