@@ -79,7 +79,7 @@ class CoursesController < ApplicationController
     # build the SQL query based on the search parameters
     # retirms the search results
 
-    sql_query = "SELECT * FROM courses WHERE 1=1" # default query
+    sql_query = "SELECT unique_identifier, dept, number, term, year, title, description, requisite_description, credits, instructors, campuses, delivery_methods, sections FROM courses WHERE 1=1"
     query_values = [] # empty query values array initialization
 
     # filter out invalid search props using intersection
@@ -128,10 +128,11 @@ class CoursesController < ApplicationController
     Rails.logger.debug("Number of values passed: #{query_values.count}")
 
     # execute the SQL query to get the search results
-    results = Course.find_by_sql([ sql_query, *query_values ])
-
+    sql_query += " LIMIT 50"
 
     # return results
+    results = Course.find_by_sql([ sql_query, *query_values ])
+    puts "Results count: #{results.count}"
     results
   end
 
