@@ -90,7 +90,7 @@ const Course = ({
           <h3>Sections:</h3>
           <div className="horizontal-stack">
             {course.sections.map((section, index) => (
-              console.log("Section",section),
+              // console.log("Section",section),
               <div key={index} className="horizontal-stack">
                 <a 
                   href={`https://www.sfu.ca/outlines.html?${course.year}/${course.term}/${course.dept}/${course.number}/${section}`}
