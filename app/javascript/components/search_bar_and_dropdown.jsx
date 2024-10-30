@@ -68,7 +68,7 @@ const SearchBarWithDropdown = () => {
   return (
     <div className="search_bar_container">
       <div className="horizontal-stack">
-        <SearchBar onChange={handleSearchChange} />
+        <SearchBar id="course_search" name="course_search" onChange={handleSearchChange} />
         <div className="padding_medium"></div>
         <button id="advanced_search_button" onClick={toggleDropdown}>
           Advanced Search
