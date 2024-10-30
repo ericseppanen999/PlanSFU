@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>user test</title>
+</head>
+<body>
+    <h1>user test</h1>
+    <h2>create a new user</h2>
+  <form id="userForm">
+    <label for="cas_user_id">CAS user id:</label>
+    <input type="text" id="cas_user_id" name="cas_user_id">
+    <br><br>
+    <button type="button" onclick="createUser()">create user</button>
+  </form>
+
+  <h2>all user ids</h2>
+  <button type="button" onclick="listAllUsers()">list all users</button>
+  <ul id="userList"></ul>
+
+  <h2>add courses to a user</h2>
+  <form id="addCoursesForm">
+    <label for="existingUserId">CAS user id</label>
+    <input type="text" id="existingUserId" name="existingUserId">
+    <br><br>
+    <div id="newCoursesContainer">
+      <div class="course">
+        <label for="new_course_code_0">course code</label>
+        <input type="text" id="new_course_code_0" name="course_code">
+        <br><br>
+        <label for="new_term_0">term:</label>
+        <input type="text" id="new_term_0" name="term">
+        <br><br>
+        <label for="new_grade_0">grade:</label>
+        <input type="text" id="new_grade_0" name="grade">
+      </div>
+    </div>
+    <button type="button" onclick="addAnotherCourse()">add another course</button>
+    <br><br>
+    <button type="button" onclick="addCourses()">add courses to user</button>
+  </form>
+
+  <h2>display user</h2>
+  <form id="displayUserForm">
+    <label for="searchUserId">CAS user id:</label>
+    <input type="text" id="searchUserId" name="searchUserId">
+    <br><br>
+    <button type="button" onclick="displayUser()">display</button>
+  </form>
+
+  <h2>User Details</h2>
+  <p id="userDetails"></p>
+  <h2>Check Eligibility</h2>
+  <form id="eligibilityForm">
+    <label for="checkCasId">CAS User ID:</label>
+    <input type="text" id="checkCasId" name="checkCasId">
+    <br><br>
+    <label for="courseDept">Course Department:</label>
+    <input type="text" id="courseDept" name="courseDept" placeholder="e.g., CMPT">
+    <br><br>
+    <label for="courseNumber">Course Number:</label>
+    <input type="text" id="courseNumber" name="courseNumber" placeholder="e.g., 225">
+    <br><br>
+    <button type="button" onclick="checkEligibility()">Check Eligibility</button>
+  </form>
+
+<p id="eligibilityResult"></p>
+</form>
+<script>
+
+  function createUser() {
+    const casUserId = document.getElementById('cas_user_id').value;
+
+    fetch('/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        user: { cas_user_id: casUserId, taken_courses: [] }
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert(data.errors ? `Error: ${data.errors.join(', ')}` : 'ser created successfully');
+    });
+  }
+
+  function listAllUsers() {
+fetch('/users', {
+  method: 'GET',
+  headers: { 'Accept': 'application/json' }
+})
+.then(response => response.json())
+.then(data => {
+  const userList = document.getElementById('userList');
+  userList.innerHTML = '';
+
+  data.forEach(user => {
+    const listItem = document.createElement('li');
+    listItem.textContent = user.cas_user_id;
+    userList.appendChild(listItem);
+  });
+})
+.catch(error => console.error('Error:', error));
+}
+  let newCourseCount = 1;
+
+function addAnotherCourse() {
+  const container = document.getElementById('newCoursesContainer');
+  const courseDiv = document.createElement('div');
+  courseDiv.className = 'course';
+  courseDiv.innerHTML = `
+    <label for="new_course_code_${newCourseCount}">Course Code:</label>
+    <input type="text" id="new_course_code_${newCourseCount}" name="course_code">
+    <br><br>
+    <label for="new_term_${newCourseCount}">Term:</label>
+    <input type="text" id="new_term_${newCourseCount}" name="term">
+    <br><br>
+    <label for="new_grade_${newCourseCount}">Grade:</label>
+    <input type="text" id="new_grade_${newCourseCount}" name="grade" placeholder="e.g., A, B+, C-">
+    <br><br>
+  `;
+  container.appendChild(courseDiv);
+  newCourseCount++;
+}
+
+function addCourses() {
+  const userId = document.getElementById('existingUserId').value;
+  const newCourses = [];
+  for (let i = 0; i < newCourseCount; i++) {
+    const courseCode = document.getElementById(`new_course_code_${i}`).value;
+    const term = document.getElementById(`new_term_${i}`).value;
+    const grade = document.getElementById(`new_grade_${i}`).value;
+    if (courseCode && term && grade) {
+      newCourses.push({ course_code: courseCode, term: term, grade: grade });
+    }
+  }
+
+  fetch(`/users/${userId}/add_courses`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({ courses: newCourses })
+  })
+  .then(response => response.json())
+  .then(data => {
+    alert(data.errors ? `Error: ${data.errors.join(', ')}` : 'Courses added successfully');
+  });
+}
+  function displayUser() {
+    const userId = document.getElementById('searchUserId').value;
+    fetch(`/users/${userId}`, {
+      method: 'GET',
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => response.json())
+    .then(data => {
+      const details = data.message ? data.message : 
+        `CAS User ID: ${data.cas_user_id}\ntaken courses: ${JSON.stringify(data.taken_courses)}`;
+      document.getElementById('userDetails').innerText = details;
+    });
+  }
+  function checkEligibility() {
+  const casUserId = document.getElementById('checkCasId').value;
+  const dept = document.getElementById('courseDept').value;
+  const number = document.getElementById('courseNumber').value;
+
+  fetch(`/courses/check_eligibility?cas_user_id=${casUserId}&dept=${dept.toLowerCase()}&number=${number}`, {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(data => {
+    const resultText = data.eligible ? "User is eligible for this course" : "User is NOT eligible for this course";
+    document.getElementById('eligibilityResult').innerText = data.error || resultText;
+  });
+}
+
+</script>
+
+</body>
+</html>
+
