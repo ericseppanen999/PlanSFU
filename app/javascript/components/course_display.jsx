@@ -29,7 +29,7 @@ const CourseSearchDisplay = () => {
 
   return (
     <div className="course-list scroll">
-      <div class="padding_medium"></div>
+      <div className="padding_medium"></div>
       {/* Display loading graphics */}
       {loading ? 
         <div className="center-content">
@@ -57,8 +57,8 @@ const CourseTermDisplay = ({courses, visible}) => {
   const [activeCourse, setActiveCourse] = useState(undefined);
 
   return (
-    visible && <div className="course-list scroll">
-      <div class="padding_medium"></div>
+    visible && <div className="term-course-list scroll">
+      <div className="padding_medium"></div>
         {courses.length === 0 ? 
           <p>No courses entered for this term.</p>
         : <></>}

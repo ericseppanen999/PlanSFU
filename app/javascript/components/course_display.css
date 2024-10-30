@@ -5,3 +5,7 @@
 .course-list {
     max-height: 90vh;
 }
+
+.term-course-list {
+    max-height: 40vh;
+}
