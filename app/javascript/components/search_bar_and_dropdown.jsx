@@ -6,8 +6,8 @@ import { Checkbox } from "./checkbox.jsx";
 import { changeQueryCallback, UpdateTermsCallback } from "./callback.js";
 
 export const all_categories = {
-    search_in_props: ["title", "description", "instructors"],
-    departments: ["math", "cmpt", "macm"],
+    search_in_props: ["title", "description", "instructors", "year", "term"],
+    departments: ["math", "cmpt", "macm", "ensc", "phys", "chem", "stat"],
     levels: ["1xx", "2xx", "3xx", "4xx"]
 };
 
@@ -145,6 +145,28 @@ const SearchBarWithDropdown = () => {
                   setSearchParam("search_in_props", "instructors", checked)
                 }
               />
+              <Checkbox
+                id="search_in_year"
+                label="year"
+                defaultChecked={matchesSearch(
+                  defaultQuery.search_in_props,
+                  "year"
+                )}
+                onChange={(checked) =>
+                  setSearchParam("search_in_props", "year", checked)
+                }
+              />
+              <Checkbox
+                id="search_in_term"
+                label="term"
+                defaultChecked={matchesSearch(
+                  defaultQuery.search_in_props,
+                  "term"
+                )}
+                onChange={(checked) =>
+                  setSearchParam("search_in_props", "term", checked)
+                }
+              />
             </div>
             <div>
               <h3>Departments</h3>
@@ -165,11 +187,35 @@ const SearchBarWithDropdown = () => {
                 }
               />
               <Checkbox
-                id="dept_macm"
-                label="macm"
-                defaultChecked={matchesSearch(defaultQuery.departments, "macm")}
+                id="dept_ensc"
+                label="ensc"
+                defaultChecked={matchesSearch(defaultQuery.departments, "ensc")}
                 onChange={(checked) =>
-                  setSearchParam("departments", "macm", checked)
+                  setSearchParam("departments", "ensc", checked)
+                }
+              />
+              <Checkbox
+                id="dept_phys"
+                label="phys"
+                defaultChecked={matchesSearch(defaultQuery.departments, "phys")}
+                onChange={(checked) =>
+                  setSearchParam("departments", "phys", checked)
+                }
+              />
+              <Checkbox
+                id="dept_chem"
+                label="chem"
+                defaultChecked={matchesSearch(defaultQuery.departments, "chem")}
+                onChange={(checked) =>
+                  setSearchParam("departments", "chem", checked)
+                }
+              />
+              <Checkbox
+                id="dept_stat"
+                label="stat"
+                defaultChecked={matchesSearch(defaultQuery.departments, "stat")}
+                onChange={(checked) =>
+                  setSearchParam("departments", "stat", checked)
                 }
               />
             </div>
