@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_29_014122) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_29_032900) do
   create_table "courses", id: false, force: :cascade do |t|
     t.string "dept", null: false
     t.string "number", null: false
@@ -35,12 +35,13 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_29_014122) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "password_digest", null: false
     t.string "cas_user_id"
-    t.json "taken_courses"
+    t.json "taken_courses", default: []
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"
-    t.string "email"
     t.index ["cas_user_id"], name: "index_users_on_cas_user_id", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 end
