@@ -135,91 +135,108 @@ QA testing was used with the following test cases:
 
 search a string in the bar with results
 - expected: valid results are shown
-- passed: 
+- passed: yes
 
 search a string in the bar without results
 - expected: no results message is shown
-- passed: 
+- passed: yes
 
 search an empty string
 - expected: all courses meeting advanced criteria are shown
-- passed: 
+- passed: yes
 
 search a long string
 - expected: handled cleanly if request is too long
-- passed: 
+- passed: no - when input length > (1024 * 10)
 
 select a check
 - expected: check is set and search updates appropriately
-- passed: 
+- passed: yes
 
 deselect a check
 - expected: check is unset and search updates appropriately
-- passed: 
+- passed: yes
 
 select all checks in a category
 - expected: search updates appropriately
-- passed: 
+- passed: yes
 
 deselect all checks in a category
 - expected: search updates appropriately
-- passed: 
+- passed: yes
 
 toggle the advanced search display
 - expected: advanced search shows
-- passed: 
+- passed: yes
 
 spam checks
 - expected: checks keep track of their state correctly & search updates correctly
-- passed: 
+- passed: yes
 
 spam the advanced search toggle
 - expected: advanced search and toggle continue to operate correctly
-- passed: 
+- passed: yes
 
 add a course
 - expected: course is added to correct term tab
-- passed: 
+- passed: yes
 
 remove a course
 - expected: course is removed from correct tab
-- passed: 
+- passed: yes
 
 add multiple courses
 - expected: all courses are added to their correct tabs
-- passed: 
+- passed: yes
 
 remove all courses
 - expected: all courses are removed from their correct tabs
-- passed: 
+- passed: yes
 
 add a duplicate course
 - expected: no change to the tabs
-- passed: 
+- passed: yes
 
 spam add courses
 - expected: course tabs update appropriately
-- passed: 
+- passed: yes
 
 select a course in a term tab
 - expected: course expands to show more info
-- passed: 
+- passed: yes
 
 remove a selected course
 - expected: course is removed correctly and other courses can be selected
-- passed: 
+- passed: yes
 
 spam click a course in a tab
 - expected: course expands and stays expanded
-- passed: 
+- passed: yes
 
 resize the page
 - expected: ui scales reasonably
-- passed: 
+- passed: yes
 
 resize the page with the advanced search open
 - expected: advanced search maintains reasonable position on the page
-- passed: 
+- passed: yes
+
+sign-in dropdown selects
+- expected: sign-in dropdown with fields should appear
+- passed: yes
+
+sign-in dropdown deselects
+- expected sign-in dropdown with fields should disappear smoothly
+- passed: yes
+
+adding a course filters search results
+- expected adding a course should remove all instances of the course from search results
+- passed: yes
+
+removing a course filters search results
+- expected: removing a course from selected should put that course back into the search results
+- passed: yes
+
 
 
 open course planning section
