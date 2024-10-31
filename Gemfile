@@ -31,7 +31,6 @@ gem "shakapacker"
 
 # silence warnings about standard packages
 gem "ostruct"
-gem "fiddle"
 gem "pstore"
 
 
