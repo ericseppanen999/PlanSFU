@@ -22,6 +22,12 @@ JUST REMOVE "=begin" AND "=end" TO REMOVE COMMENTS!
 
 =end
 
+resource :registration
+resource :password_reset
+resource :password
+resource :session, only: [:new, :create, :destroy]
+
+
   # UserSearchHistory routes
   resources :search_histories, only: [ :index ]
 
