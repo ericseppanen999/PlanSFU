@@ -19,7 +19,7 @@ gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
-
+gem "bcrypt", "~> 3.1.7"
 
 # force bundler to use older version of psych, bc it won't work otherwise
 gem "psych", "< 5"
