@@ -620,197 +620,170 @@ const facultyStructure = {
     },
 
     "Faculty of Health Sciences": {
-        "Health Sciences": {
-            "Health Sciences": [
-                { name: "Health Sciences Major (BA)", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/health-sciences/major/bachelor-of-arts.html"},
-                { name: "Health Sciences Major (BSc)", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/health-sciences/major/bachelor-of-science.html"},
-                { name: "Health Sciences Honours (BA)", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/health-sciences/honours/bachelor-of-arts.html"},
-                { name: "Health Sciences Honours (BSc)", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/health-sciences/honours/bachelor-of-science.html"},
-                { name: "Philosophy and Health Sciences Joint Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/philosophy-and-health-sciences/joint-major/bachelor-of-arts.html"},
-                { name: "Health Sciences Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/health-sciences/minor.html"},
-            ],
-        },
+        "Majors": [
+            { name: "Health Sciences Major (BA)", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/health-sciences/major/bachelor-of-arts.html"},
+            { name: "Health Sciences Major (BSc)", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/health-sciences/major/bachelor-of-science.html"},
+        ],
+        "Honours": [
+            { name: "Health Sciences Honours (BA)", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/health-sciences/honours/bachelor-of-arts.html"},
+            { name: "Health Sciences Honours (BSc)", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/health-sciences/honours/bachelor-of-science.html"},
+        ],
+        "Joint Majors": [
+            { name: "Philosophy and Health Sciences Joint Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/philosophy-and-health-sciences/joint-major/bachelor-of-arts.html"},
+        ],
+        "Minors": [
+            { name: "Health Sciences Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/health-sciences/minor.html"},
+        ],
     },
 
     "Faculty of Science": {
         "Department of Biological Sciences": {
-            "Biological Sciences (Biology)": [
+            "Majors": [
                 { name: "Biological Sciences Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/biological-sciences/major/bachelor-of-science.html"},
+            ],
+            "Honours": [
                 { name: "Biological Sciences Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/biological-sciences/honours/bachelor-of-science.html"},
+            ],
+            "Minors": [
                 { name: "Biological Sciences Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/biological-sciences/minor.html"},
                 { name: "Environmental Toxicology Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/environmental-toxicology/minor.html"},
             ],
         },
         "Department of Biomedical Physiology and Kinesiology": {
-            "Behavioural Neuroscience": [
+            "Majors": [
                 { name: "Behavioural Neuroscience Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/behavioural-neuroscience/major/bachelor-of-science.html"},
-                { name: "Behavioural Neuroscience Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/behavioural-neuroscience/honours/bachelor-of-science.html"},
-            ],
-            "Biomedical Physiology": [
                 { name: "Biomedical Physiology Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/biomedical-physiology/major/bachelor-of-science.html"},
-                { name: "Biomedical Physiology Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/biomedical-physiology/honours/bachelor-of-science.html"},
-                { name: "Biomedical Physiology Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/biomedical-physiology/minor.html"}
-            ],
-            "Kinesiology": [
                 { name: "Kinesiology Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/kinesiology/major/bachelor-of-science.html"},
+            ],
+            "Honours": [
+                { name: "Behavioural Neuroscience Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/behavioural-neuroscience/honours/bachelor-of-science.html"},
+                { name: "Biomedical Physiology Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/biomedical-physiology/honours/bachelor-of-science.html"},
                 { name: "Kinesiology Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/kinesiology/honours/bachelor-of-science.html"},
-        
+            ],
+            "Minors": [
+                { name: "Biomedical Physiology Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/biomedical-physiology/minor.html"},
                 { name: "Kinesiology Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/kinesiology/minor.html"},
             ],
         },
         "Department of Chemistry": {
-            "Chemical Physics": [
-                { name: "Chemical Physics Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemical-physics/major/bachelor-of-science.html"},
-                { name: "Chemical Physics Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemical-physics/honours/bachelor-of-science.html"},
-            ],
-            "Chemistry": [
+            "Majors": [
                 { name: "Chemical Physics Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemical-physics/major/bachelor-of-science.html"},
                 { name: "Chemistry Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemistry/major/bachelor-of-science.html"},
+            ],
+            "Honours": [
                 { name: "Chemical Physics Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemical-physics/honours/bachelor-of-science.html"},
                 { name: "Chemistry Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemistry/honours/bachelor-of-science.html"},
+            ],
+            "Joint Majors": [
                 { name: "Chemistry and Earth Sciences Joint Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemistry-and-earth-sciences/joint-major/bachelor-of-science.html"},
                 { name: "Chemistry and Molecular Biology and Biochemistry Joint Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemistry-and-molecular-biology-and-biochemistry/joint-major/bachelor-of-science.html"},
+            ],
+            "Joint Honours": [
                 { name: "Chemistry and Earth Sciences Joint Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemistry-and-earth-sciences/joint-honours/bachelor-of-science.html"},
                 { name: "Chemistry and Molecular Biology and Biochemistry Joint Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemistry-and-molecular-biology-and-biochemistry/joint-honours/bachelor-of-science.html"},
+            ],
+            "Minors": [
                 { name: "Chemistry Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemistry/minor.html"},
                 { name: "Environmental Chemistry Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/environmental-chemistry/minor.html"},
                 { name: "Nuclear Science Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/nuclear-science/minor.html"},
             ],
-            "Nuclear Science": [
-                { name: "Nuclear Science Minor", url: "https://www.sfu.ca/content/sfu/students/calendar/2025/spring/programs/nuclear-science/minor.html"},
-            ],
         },
         "Department of Earth Sciences": {
-            "Earth Sciences": [
+            "Majors": [
                 { name: "Earth Sciences Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/earth-sciences/major/bachelor-of-science.html"},
-                { name: "Earth Sciences Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/earth-sciences/honours/bachelor-of-science.html"},
-                { name: "Chemistry and Earth Sciences Joint Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemistry-and-earth-sciences/joint-major/bachelor-of-science.html"},
-                { name: "Chemistry and Earth Sciences Joint Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemistry-and-earth-sciences/joint-honours/bachelor-of-science.html"},
-                { name: "Earth Sciences Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/earth-sciences/minor.html"},
             ],
+            "Honours": [
+                { name: "Earth Sciences Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/earth-sciences/honours/bachelor-of-science.html"},
+            ],
+            "Joint Majors": [
+                { name: "Chemistry and Earth Sciences Joint Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemistry-and-earth-sciences/joint-major/bachelor-of-science.html"},
+            ],
+            "Joint Honours": [
+                { name: "Chemistry and Earth Sciences Joint Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemistry-and-earth-sciences/joint-honours/bachelor-of-science.html"},
+            ],
+            "Minors": [
+                { name: "Earth Sciences Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/earth-sciences/minor.html"},
+            ]
         },
         "Department of Mathematics": {
-            "Mathematical Physics": [
-                { name: "Mathematical Physics Honours", url: "https://www.sfu.ca/content/sfu/students/calendar/2025/spring/programs/mathematical-physics/honours/bachelor-of-science.html"},
-            ],
-            "Mathematics": [
+            "Majors": [
                 { name: "Applied Mathematics Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/applied-mathematics/major/bachelor-of-science.html"},
                 { name: "Mathematics Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/mathematics/major/bachelor-of-science.html"},
                 { name: "Operations Research Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/operations-research/major/bachelor-of-science.html"},
-        
+
+            ],
+            "Honours": [
                 { name: "Applied Mathematics Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/applied-mathematics/honours/bachelor-of-science.html"},
                 { name: "Mathematics Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/mathematics/honours/bachelor-of-science.html"},
+                { name: "Mathematical Physics Honours", url: "https://www.sfu.ca/content/sfu/students/calendar/2025/spring/programs/mathematical-physics/honours/bachelor-of-science.html"},
                 { name: "Operations Research Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/operations-research/honours/bachelor-of-science.html"},
-        
-                { name: "Mathematics and Computing Science Joint Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/mathematics-and-computing-science/joint-major/bachelor-of-science.html"},
-                { name: "Mathematics and Computing Science Joint Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/mathematics-and-computing-science/joint-honours/bachelor-of-science.html"},
-        
-                { name: "Mathematics Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/mathematics/minor.html"},
             ],
-            "Operations Research": [
-                { name: "Operations Research Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/operations-research/major/bachelor-of-science.html"},
-                { name: "Operations Research Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/operations-research/honours/bachelor-of-science.html"},
+            "Joint Majors": [
+                { name: "Mathematics and Computing Science Joint Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/mathematics-and-computing-science/joint-major/bachelor-of-science.html"},
+            ],
+            "Joint Honours": [
+                { name: "Mathematics and Computing Science Joint Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/mathematics-and-computing-science/joint-honours/bachelor-of-science.html"},
+            ],
+            "Minors": [
+                { name: "Mathematics Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/mathematics/minor.html"},
             ],
         },
         "Department of Molecular Biology and Biochemistry": {
-            "Molecular Biology and Biochemistry": [
+            "Majors": [
                 { name: "Molecular Biology and Biochemistry Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/molecular-biology-and-biochemistry/major/bachelor-of-science.html"},
+            ],
+            "Honours": [
                 { name: "Molecular Biology and Biochemistry Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/molecular-biology-and-biochemistry/honours/bachelor-of-science.html"},
+            ],
+            "Joint Majors": [
                 { name: "Chemistry and Molecular Biology and Biochemistry Joint Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemistry-and-molecular-biology-and-biochemistry/joint-major/bachelor-of-science.html"},
-        
                 { name: "Molecular Biology and Biochemistry and Business Administration Joint Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/molecular-biology-and-biochemistry-and-business-administration/joint-major/bachelor-of-science.html"},
                 { name: "Molecular Biology and Biochemistry and Computing Science Joint Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/molecular-biology-and-biochemistry-and-computing-science/joint-major/bachelor-of-science.html"},
+            ],
+            "Joint Honours": [
                 { name: "Chemistry and Molecular Biology and Biochemistry Joint Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemistry-and-molecular-biology-and-biochemistry/joint-honours/bachelor-of-science.html"},
                 { name: "Molecular Biology and Biochemistry and Business Administration Joint Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/molecular-biology-and-biochemistry-and-business-administration/joint-honours/bachelor-of-science.html"},
+            ],
+            "Minors": [
                 { name: "Molecular Biology and Biochemistry Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/molecular-biology-and-biochemistry/minor.html"},
             ],
         },
         "Department of Physics": {
-            "Applied Physics": [
+            "Majors": [
                 { name: "Applied Physics Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/applied-physics/major/bachelor-of-science.html"},
-                { name: "Applied Physics Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/applied-physics/honours/bachelor-of-science.html"},
-            ],
-            "Biological Physics": [
                 { name: "Biological Physics Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/biological-physics/major/bachelor-of-science.html"},
-                { name: "Biological Physics Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/biological-physics/honours/bachelor-of-science.html"},
-            ],
-            "Chemical Physics": [
                 { name: "Chemical Physics Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemical-physics/major/bachelor-of-science.html"},
-                { name: "Chemical Physics Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemical-physics/honours/bachelor-of-science.html"},
             ],
-            "Mathematical Physics": [
+            "Honours": [
+                { name: "Applied Physics Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/applied-physics/honours/bachelor-of-science.html"},
+                { name: "Biological Physics Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/biological-physics/honours/bachelor-of-science.html"},
+                { name: "Chemical Physics Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemical-physics/honours/bachelor-of-science.html"},
                 { name: "Mathematical Physics Honours", url: "https://www.sfu.ca/content/sfu/students/calendar/2025/spring/programs/mathematical-physics/honours/bachelor-of-science.html"},
             ],
-            "Nuclear Science": [
+            "Minors": [
                 { name: "Nuclear Science Minor", url: "https://www.sfu.ca/content/sfu/students/calendar/2025/spring/programs/nuclear-science/minor.html"},
-            ],
-            "Physics": [
-                { name: "Applied Physics Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/applied-physics/major/bachelor-of-science.html"},
-                { name: "Biological Physics Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/biological-physics/major/bachelor-of-science.html"},
-                { name: "Chemical Physics Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemical-physics/major/bachelor-of-science.html"},
-                { name: "Physics Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/physics/major/bachelor-of-science.html"},
-        
-                { name: "Applied Physics Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/applied-physics/honours/bachelor-of-science.html"},
-                { name: "Biological Physics Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/biological-physics/honours/bachelor-of-science.html"},
-                { name: "Chemical Physics Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/chemical-physics/honours/bachelor-of-science.html"},
-                { name: "Mathematical Physics Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/mathematical-physics/honours/bachelor-of-science.html"},
-                { name: "Physics Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/physics/honours/bachelor-of-science.html"},
-        
-                { name: "Nuclear Science Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/nuclear-science/minor.html"},
                 { name: "Physics Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/physics/minor.html"},
             ],
         },
         "Department of Statistics and Actuarial Science": {
-            "Actuarial Science": [
+            "Majors": [
                 { name: "Actuarial Science Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/actuarial-science/major/bachelor-of-science.html" },
-                { name: "Actuarial Science Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/actuarial-science/honours/bachelor-of-science.html"},
-            ],
-            "Data Science": [
                 { name: "Data Science Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/data-science/major/bachelor-of-science.html"},
-                { name: "Data Science Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/data-science/honours/bachelor-of-science.html"},
-            ],
-            "Statistics": [
                 { name: "Statistics Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/statistics/major/bachelor-of-science.html"},
+            ],
+            "Honours": [
+                { name: "Actuarial Science Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/actuarial-science/honours/bachelor-of-science.html"},
+                { name: "Data Science Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/data-science/honours/bachelor-of-science.html"},
                 { name: "Statistics Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/statistics/honours/bachelor-of-science.html"},
+            ],
+            "Minors": [
                 { name: "Statistics Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/statistics/minor.html"},
             ],
         },
-        "Environment": {
-            "Environment": [
-                { name: "Environmental Science Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/environmental-science/major/bachelor-of-science.html"},
-                { name: "Environmental Specialty Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/environmental-specialty/major/bachelor-of-arts.html"},
-                { name: "Global Environmental Systems Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/global-environmental-systems/major/bachelor-of-environment.html"},
-                { name: "Resource and Environmental Management Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/resource-and-environmental-management/major/bachelor-of-environment.html"},
-                { name: "Environmental Science Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/environmental-science/honours/bachelor-of-science.html"},
-                { name: "Environmental Specialty Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/environmental-specialty/honours/bachelor-of-arts.html"},
-                { name: "Global Environmental Systems Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/global-environmental-systems/honours/bachelor-of-environment.html"},
-                { name: "Resource and Environmental Management Honours", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/resource-and-environmental-management/honours/bachelor-of-environment.html"},
-        
-                { name: "Sustainable Business Joint Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/sustainable-business/joint-major/bachelor-of-business-administration-or-bachelor-of-environment.html"},
-        
-                { name: "Climate Change and Society Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/climate-change-and-society/minor.html"},
-                { name: "Environmental Chemistry Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/environmental-chemistry/minor.html"},
-                { name: "Environmental Education Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/environmental-education/minor.html"},
-                { name: "Resource and Environmental Management Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/resource-and-environmental-management/minor.html"},
-                { name: "Sustainable Development Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/sustainable-development/minor.html"},
-            ],
-        },
-        "General Studies": {
-            "General Studies": [
-                { name: "General Studies", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/general-studies/bachelor-of-general-studies.html"},
-                { name: "Double Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/double-minor/degree/bachelor-of-general-studies.html"},
-                { name: "General Education Option (BGS)", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/general-education-option/degree/bachelor-of-general-studies.html"},
-                { name: "General Science Double Minor", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/general-science-double-minor/degree/bachelor-of-science.html"},
-                { name: "General Applied Sciences (BGS) ", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/general-applied-sciences/bachelor-of-general-studies.html"},
-            ],
-        },
-        "Dean of Science Office": {
-            "Science, General": [
-                { name: "General Science Double Minor", url: "https://www.sfu.ca/content/sfu/students/calendar/2025/spring/programs/general-science-double-minor/degree/bachelor-of-science.html"},
-            ],
-        }
+        "Science, General": [
+            { name: "General Science Double Minor", url: "https://www.sfu.ca/content/sfu/students/calendar/2025/spring/programs/general-science-double-minor/degree/bachelor-of-science.html"},
+        ]
     },
-
 };
 
 
