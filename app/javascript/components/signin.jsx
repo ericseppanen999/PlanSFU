@@ -1,33 +1,90 @@
 import React, {useState} from "react";
+import { UpdateSessionCallback } from "./callback.js";
 import "./signin.css"
+
 export const SignIn = ({}) => {
     const [showDropdown, setShowDropdown] = useState(false);
     const [loggedIn, setLoggedIn] = useState(false);
     const [activeUsername, setActiveUsername] = useState(undefined);
     const [sessionToken, setSessionToken] = useState(undefined);
 
-    const login = (username, password) => {
-        // send login request (returns session token if successful)
-        // fails if username doesn't exist or if server fails to respond
-        // update loggedIn, activeUsername, and sessionToken if successful
-        if (signin_sucess){
-            setLoggedIn(true);
-            setActiveUsername(username);
-            setSessionToken(new_session_token);
+    // log the user in
+    const login = async (username, password) => {
+        try {
+            const response = await fetch(`/courses/search?username:${username}, password:${password}`, {
+                method: 'GET',
+                headers: { 'Accept': 'application/json' }
+            });
+        
+            if (response.ok) {
+                const login_res = await response.json();
+                setLoggedIn(true);
+                setActiveUsername(username);
+                UpdateSessionCallback.trigger(login_res.session_token);
+                setSessionToken(login_res.session_token);
+            } else {
+                throw new Error(`Failed to log in. Response status: ${response.status}`);
+            }
+        } catch (error) {
+            console.error("Error during sign in:", error);
         }
     }
     
-    const createAccount = (username, password) => {
-        // send create account request (returns session token if successful)
-        // fails if username already exists or if server fails to respond
-        // update loggedIn, activeUsername, and sessionToken if successful
+    // create an account for the user
+    const createAccount = async (username, password) => {
+        try {
+            const response = await fetch(`/courses/search?username:${username}, password:${password}`, {
+                method: 'GET',
+                headers: { 'Accept': 'application/json' }
+            });
+        
+            if (response.ok) {
+                const login_res = await response.json();
+                setLoggedIn(true);
+                setActiveUsername(username);
+                UpdateSessionCallback.trigger(login_res.session_token);
+                setSessionToken(login_res.session_token);
+            } else {
+                throw new Error(`Failed to create account. Response status: ${response.status}`);
+            }
+        } catch (error) {
+            console.error("Error during create account:", error);
+        }
     }
     
-    const signOut = () => {
+    // sign the user out
+    const signOut = async () => {
+        try {
+            const response = await fetch(`/courses/search?username:${username}, password:${password}`, {
+                method: 'GET',
+                headers: { 'Accept': 'application/json' }
+            });
+        
+            if (response.ok) {
+                const logout_res = await response.json();
+                if (logout_res.sucess){
+                    setLoggedIn(false);
+                    setActiveUsername(undefined);
+                    UpdateSessionCallback.trigger(undefined);
+                    setSessionToken(undefined);
+                }
+            } else {
+                throw new Error(`Failed to log out. Response status: ${response.status}`);
+            }
+        } catch (error) {
+            console.error("Error during sign out:", error);
+        }
         // send sign out request (clears session token on server)
         // if server responds with successful logout, reset loggedIn, activeUsername, and sessionToken
+        if (signin_sucess){
+            setLoggedIn(false);
+            setActiveUsername(undefined);
+            UpdateSessionCallback.trigger(undefined);
+            setSessionToken(undefined);
+        }
     }
 
+    // toggle the sign in box
     const toggleDropdown = () => {
         setShowDropdown(!showDropdown);
     };

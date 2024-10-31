@@ -37,3 +37,6 @@ export const SetGradeCallback = new Callback();
 
 // Callback for handling updating the user's terms in the search
 export const UpdateTermsCallback = new Callback();
+
+// Callback for handling updating the user's terms in the search
+export const UpdateSessionCallback = new Callback();

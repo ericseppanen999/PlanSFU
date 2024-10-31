@@ -16,6 +16,7 @@ A course planner for undergrads at SFU. A group project for CMPT 276 D300, Fall 
 - Login functionality
     - The user can sign in with a username and password
     - The user can sign up with a username and password (of at least 6 characters)
+    - The user can sign out
 - Search state storage
     - The current search state is stored to the server if the user is currently signed in
 - Course planning link list
@@ -62,109 +63,124 @@ navigate to `127.0.0.1:3000` on your browser\
 - What didn't:
     - Working without an initial UI sketch
     - More feasability work would have saved time wasted on cookies
-- What to change in iteration 2
+- What to change in iteration 2:
     - Setup github actions to automate testing
     - Make a central development server to reflect the current state of the project and use for debugging
     - Set weekly development targets
 
 ## Iteration 2 Retrospective ##
-- We attempted to solve the final crunch we had in iteration 1 by setting weekly development targets
-    - However, as it was in the middle of exams and due to overly ambitious targets, we quickly flew past the first deadline, leading us to fall behind on development.
-- We were also unable to find a host for our development server
+- What went better:
+    - Tasks were better allocated to team members
+- What we could have improved:
+    - More communication with IT services would have saved us a lot of time on CAS and autofill
+    - Better deadlines could have improved crunch work
+- What we tried to improve from iteration 1:
+    - We attempted to solve the final crunch we had in iteration 1 by setting weekly development targets
+        - However, as it was in the middle of exams and due to overly ambitious targets, we quickly flew past the first deadline, leading us to fall behind on development.
+    - We also spent some time trying to find a development server to run the project on and run github actions, but nothing was found
+- What to do moving forward:
+    - add final features and polish
+    - find host for or host production server ourseleves
+    - add documentation for hypothetical maintainence stage (also to prepare for presentations)
 
 
 ## Feature Tracking ##
 We used Trello for feature and bug tracking
+### Iteration 1: ###
 ![Trello1](assets/Trello1.png "Trello1")\
 ![Trello2](assets/Trello2.png "Trello2")
+### Iteration 2: ###
 
 ## Test results ##
+Unit tests were applied for the following cases:
+
+
 QA testing was used with the following test cases:
 
 search a string in the bar with results
 - expected: valid results are shown
-- passed: yes
+- passed: 
 
 search a string in the bar without results
 - expected: no results message is shown
-- passed: yes
+- passed: 
 
 search an empty string
 - expected: all courses meeting advanced criteria are shown
-- passed: yes
+- passed: 
 
 search a long string
 - expected: handled cleanly if request is too long
-- passed: yes
+- passed: 
 
 select a check
 - expected: check is set and search updates appropriately
-- passed: yes
+- passed: 
 
 deselect a check
 - expected: check is unset and search updates appropriately
-- passed: yes
+- passed: 
 
 select all checks in a category
 - expected: search updates appropriately
-- passed: yes
+- passed: 
 
 deselect all checks in a category
 - expected: search updates appropriately
-- passed: yes
+- passed: 
 
 toggle the advanced search display
 - expected: advanced search shows
-- passed: yes
+- passed: 
 
 spam checks
 - expected: checks keep track of their state correctly & search updates correctly
-- passed: yes
+- passed: 
 
 spam the advanced search toggle
 - expected: advanced search and toggle continue to operate correctly
-- passed: yes
+- passed: 
 
 add a course
 - expected: course is added to correct term tab
-- passed: yes
+- passed: 
 
 remove a course
 - expected: course is removed from correct tab
-- passed: yes
+- passed: 
 
 add multiple courses
 - expected: all courses are added to their correct tabs
-- passed: yes
+- passed: 
 
 remove all courses
 - expected: all courses are removed from their correct tabs
-- passed: yes
+- passed: 
 
 add a duplicate course
 - expected: no change to the tabs
-- passed: yes
+- passed: 
 
 spam add courses
 - expected: course tabs update appropriately
-- passed: yes
+- passed: 
 
 select a course in a term tab
 - expected: course expands to show more info
-- passed: yes
+- passed: 
 
 remove a selected course
 - expected: course is removed correctly and other courses can be selected
-- passed: yes
+- passed: 
 
 spam click a course in a tab
 - expected: course expands and stays expanded
-- passed: yes
+- passed: 
 
 resize the page
 - expected: ui scales reasonably
-- passed: yes
+- passed: 
 
 resize the page with the advanced search open
 - expected: advanced search maintains reasonable position on the page
-- passed: yes
+- passed: 

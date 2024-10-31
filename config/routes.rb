@@ -9,23 +9,11 @@ Rails.application.routes.draw do
   get "/courses/search", to: "courses#search"
   get "/users/test_page", to: "users#test_page"
   get "courses/check_eligibility", to: "courses#check_eligibility"
-=begin
-
-JUST REMOVE "=begin" AND "=end" TO REMOVE COMMENTS!
-
-  # CAS session routes
-  get "/cas_sessions/new", to: "cas_sessions#new", as: :login   # Route to initiate CAS login
-  post "/cas_sessions/create", to: "cas_sessions#create" # Change this to POST
-  delete "/cas_sessions/destroy", to: "cas_sessions#destroy", as: :logout
-
-  match "/cas_sessions/create", to: "cas_sessions#create", via: [:get, :post]
-
-=end
 
 resource :registration
 resource :password_reset
 resource :password
-resource :session, only: [:new, :create, :destroy]
+resource :session, only: [ :new, :create, :destroy ]
 
 
   # UserSearchHistory routes
