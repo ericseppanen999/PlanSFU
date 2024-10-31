@@ -1,7 +1,7 @@
-<h1>course list</h1>
+<h1 class="scalable-text">Course List</h1>
 
 <ul>
-    <% @courses.each do |course| %>
-    <li><%= "#{course.dept} #{course.number}: #{course.title}" %> - <%= course.description %></li>
-    <% end %>
+  <% @courses.each do |course| %>
+    <li class="scalable-text"><%= "#{course.dept} #{course.number}: #{course.title}" %> - <%= course.description %></li>
+  <% end %>
 </ul>

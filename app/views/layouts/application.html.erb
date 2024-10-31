@@ -23,6 +23,25 @@
     <link rel="apple-touch-icon" href="/icon.png">
 
     <%= javascript_pack_tag 'application' %>
+
+    <!-- Additional styles -->
+    <style>
+      .scalable-text {
+        font-size: 1rem;
+      }
+
+      @media (min-width: 768px) {
+        .scalable-text {
+          font-size: 1.25rem;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .scalable-text {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
   </head>
 
   <body>
