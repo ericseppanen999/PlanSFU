@@ -88,7 +88,7 @@ class CoursesController < ApplicationController
     # build the SQL query based on the search parameters
     # retirms the search results
     logger.debug("use_courses: #{use_courses}")
-    sql_query = "SELECT unique_identifier, dept, number, term, year, title, description, requisite_description, credits, instructors, campuses, delivery_methods, sections FROM courses WHERE 1=1"
+    sql_query = "SELECT unique_identifier, dept, number, term, year, title, description, requisite_description, prereq_logic, credits, instructors, campuses, delivery_methods, sections FROM courses WHERE 1=1"
     query_values = [] # empty query values array initialization
 
     # filter out invalid search props using intersection
@@ -148,8 +148,18 @@ class CoursesController < ApplicationController
     sql_query += " LIMIT 50"
 
     # return results
-    results = Course.find_by_sql([ sql_query, *query_values ])
-    puts "Results count: #{results.count}"
-    results
+    raw_results = Course.find_by_sql([ sql_query, *query_values ])
+
+# Filter by eligibility if `use_courses` is true
+=begin
+    if use_courses && user_courses.present?
+      taken_courses = user_courses.map { |course| { "course_code" => course["unique_identifier"], "grade" => course["grade"] || "B" } }
+      raw_results.select! do |course|
+        course.prerequisites_satisfied?(taken_courses, course.prereq_logic)
+      end
+    end
+=end
+
+    raw_results
   end
 end
