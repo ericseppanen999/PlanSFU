@@ -44,13 +44,13 @@ export const SignIn = ({}) => {
                             <tr>
                                 <td>Username:</td>
                                 <td>
-                                    <input type="text" name="username" autocomplete="username"></input>
+                                    <input type="text" name="username" autoComplete="username"></input>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Password (min 6 characters):</td>
                                 <td>
-                                    <input type="password" name="password" minLength="6" autocomplete="current-password new-password"></input>
+                                    <input type="password" name="password" minLength="6" autoComplete="current-password new-password"></input>
                                 </td>
                             </tr>
                         </tbody>
