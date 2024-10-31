@@ -10,6 +10,7 @@ import { TermTabDisplay } from "../components/term_tab.jsx"
 import { createRoot } from 'react-dom/client'
 import { SearchBarWithDropdown } from "../components/search_bar_and_dropdown.jsx"
 import { SignIn } from "../components/signin.jsx"
+import { ExternalLinksSidebar } from "../components/external_links_sidebar.jsx"
 
 // setup query change callback
 
@@ -30,3 +31,6 @@ searchBarDropdownRenderer.render(<SearchBarWithDropdown />);
 
 const signInRenderer = createRoot(document.getElementById('signin_panel'));
 signInRenderer.render(<SignIn />);
+
+const externalLinksSidebarRenderer = createRoot(document.getElementById('external_links_sidebar'));
+externalLinksSidebarRenderer.render(<ExternalLinksSidebar />);
