@@ -74,8 +74,6 @@ export const SignIn = ({}) => {
         } catch (error) {
             console.error("Error during sign out:", error);
         }
-        // send sign out request (clears session token on server)
-        // if server responds with successful logout, reset loggedIn, activeUsername, and sessionToken
         if (signin_sucess){
             setLoggedIn(false);
             setActiveUsername(undefined);

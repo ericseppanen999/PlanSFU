@@ -201,6 +201,14 @@ const SearchBarWithDropdown = () => {
                 }
               />
               <Checkbox
+                id="dept_macm"
+                label="macm"
+                defaultChecked={matchesSearch(defaultQuery.departments, "macm")}
+                onChange={(checked) =>
+                  setSearchParam("departments", "macm", checked)
+                }
+              />
+              <Checkbox
                 id="dept_ensc"
                 label="ensc"
                 defaultChecked={matchesSearch(defaultQuery.departments, "ensc")}
