@@ -1,7 +1,7 @@
 // the default 
 export const defaultQuery = {
   searchstring: "",
-  search_in_props: ["title", "description"],
+  search_in_props: ["title", "description", "year", "term"],
   terms: [{ year: "any", term: "any" }],
   departments: ["any"],
   levels: ["any"],
