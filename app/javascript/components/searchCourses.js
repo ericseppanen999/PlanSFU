@@ -5,7 +5,9 @@ export const defaultQuery = {
   terms: [{ year: "any", term: "any" }],
   departments: ["any"],
   levels: ["any"],
-  SQL: ""
+  SQL: "",
+  courses: [],
+  use_courses: false
 };
 
 // returns a course list to successCallback if courses are successfully fetched, given a search query
@@ -36,7 +38,7 @@ export const fetchCourses = async (successCallback, searchparams = defaultQuery)
   if (searchparams.SQL) {
     queryParams.append("SQL", searchparams.SQL);
   }
-  //console.log(JSON.stringify(searchparams))
+  console.log(JSON.stringify(searchparams))
   //console.log(`queryt: ${queryParams.toString()}`);
 
   try {
@@ -47,7 +49,7 @@ export const fetchCourses = async (successCallback, searchparams = defaultQuery)
 
     if (response.ok) {
       const search_res = await response.json();
-      //console.log(`Received response: ${JSON.stringify(search_res, undefined, 4)}`);
+      console.log(`Received response: ${JSON.stringify(search_res, undefined, 4)}`);
       successCallback(search_res);
     } else {
       throw new Error(`Failed to fetch search result. Response status: ${response.status}`);

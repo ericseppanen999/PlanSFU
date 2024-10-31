@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from "react";
 import { CourseTermDisplay } from "../components/course_display.jsx"
-import { AddCourseCallback, RemoveCourseCallback } from "./callback.js"
+import { AddCourseCallback, RemoveCourseCallback, UpdateTermsCallback } from "./callback.js"
 import "./term_tab.css"
 
 const TermTabDisplay = () => {
@@ -11,7 +11,7 @@ const TermTabDisplay = () => {
     // setup the callback from removing a course
     useEffect(() => {
         RemoveCourseCallback.subscribe((course) => {
-            const id = course.year + " " + course.term;
+            const id = course.term + " " + course.year;
 
             setTerms((currterms) => {
                 const termidx = currterms.findIndex((term) => term.id === id);
@@ -24,9 +24,11 @@ const TermTabDisplay = () => {
                         } else {
                             newterms[termidx].courses.splice(courseidx, 1);
                         }
+                        UpdateTermsCallback.trigger(newterms);
                         return newterms;
                     }
                 }
+                UpdateTermsCallback.trigger(currterms);
                 return currterms;
             })
         }
@@ -36,31 +38,40 @@ const TermTabDisplay = () => {
     useEffect(() => {
         AddCourseCallback.subscribe((course) => {
             //console.log(JSON.stringify(course));
-            const id = course.year + " " + course.term;
+            const id = course.term + " " + course.year;
 
             setTerms((currterms) => {
                 const idx = currterms.findIndex((term) => term.id === id);
                 if (idx == -1){
                     setActiveTerm(id);
-                    return [...currterms, {id:id, courses:[course]}];
+                    const newterms = [...currterms, {id:id, courses:[course]}];
+                    UpdateTermsCallback.trigger(newterms);
+                    return newterms;
                 } else {
-                    if (!currterms[idx].courses.includes(course)){
+                    if (!currterms[idx].courses.some((c) => c.unique_identifier === course.unique_identifier)){
                         const newterms = [...currterms];
                         newterms[idx].courses.push(course);
+                        UpdateTermsCallback.trigger(newterms);
                         return newterms;
                     }
                 }
+                UpdateTermsCallback.trigger(currterms);
                 return currterms;
             })            
         }
     )}, [])
   
-    // run at startup or whenever the search updates
+    // run at startup
     useEffect(() => {
       const fetchTerms = async () => {
         setLoading(true);
         // get content from server on login or on load
+        setTerms((currterms) => {
+            UpdateTermsCallback.trigger(currterms);
+            return currterms;
+        });
         setLoading(false);
+        // needs to be able to get terms (not working bc terms is [] when this function is created)
       };
   
       fetchTerms();
@@ -89,7 +100,7 @@ const TermTabDisplay = () => {
             </div>
     
             {terms.length === 0 ? 
-                <p>You have no courses listed. Add courses with the search or sign in to fill in your completed courses.</p>
+                <p>You have no courses selected. Add courses with the search or sign in to fill in your completed courses.</p>
             : <></>}
     
             <div>

@@ -95,6 +95,15 @@ button.flat:active {
 header {
     background-color: var(--base-color);
     padding: var(--padding-medium);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    outline: 1px solid var(--base-dark);
+    border: none;
+    border-radius: 0;
+    display: flex;
+    height: max-content;
 }
 
 footer {
@@ -170,6 +179,5 @@ footer {
 .padding_auto {
     background-color: transparent;
     border: none;
-    width: auto;
-    height: auto;
+    margin: auto;
 }

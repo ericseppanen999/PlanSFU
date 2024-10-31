@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   # Courses routes
   get "/courses/search_page", to: "courses#search_page"
-  get "/courses/search", to: "courses#search" # Route to handle the search request from the front end
+  get "/courses/search", to: "courses#search"
+  get "/users/test_page", to: "users#test_page"
   get "courses/check_eligibility", to: "courses#check_eligibility"
 =begin
 
@@ -20,6 +21,12 @@ JUST REMOVE "=begin" AND "=end" TO REMOVE COMMENTS!
   match "/cas_sessions/create", to: "cas_sessions#create", via: [:get, :post]
 
 =end
+
+resource :registration
+resource :password_reset
+resource :password
+resource :session, only: [:new, :create, :destroy]
+
 
   # UserSearchHistory routes
   resources :search_histories, only: [ :index ]
