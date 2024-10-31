@@ -11,9 +11,18 @@ export const SignIn = ({}) => {
     // log the user in
     const login = async (username, password) => {
         try {
-            const response = await fetch(`/courses/search?username:${username}, password:${password}`, {
-                method: 'GET',
-                headers: { 'Accept': 'application/json' }
+            const response = await fetch('/session', {
+                method: 'POST',
+                headers: { 
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    user: {
+                        email: username,
+                        password: password
+                    }
+                })
             });
         
             if (response.ok) {
@@ -33,9 +42,18 @@ export const SignIn = ({}) => {
     // create an account for the user
     const createAccount = async (username, password) => {
         try {
-            const response = await fetch(`/courses/search?username:${username}, password:${password}`, {
-                method: 'GET',
-                headers: { 'Accept': 'application/json' }
+            const response = await fetch('/users', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    user: {
+                        email: username,
+                        password: password
+                    }
+                })
             });
         
             if (response.ok) {
@@ -55,9 +73,12 @@ export const SignIn = ({}) => {
     // sign the user out
     const signOut = async () => {
         try {
-            const response = await fetch(`/courses/search?username:${username}, password:${password}`, {
-                method: 'GET',
-                headers: { 'Accept': 'application/json' }
+            const response = await fetch('/session', {
+                method: 'DELETE',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
             });
         
             if (response.ok) {
@@ -99,13 +120,13 @@ export const SignIn = ({}) => {
                             <tr>
                                 <td>Username:</td>
                                 <td>
-                                    <input type="text" name="username" autoComplete="username"></input>
+                                    <input type="text" className="username_input_box" name="username" autoComplete="username"></input>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Password (min 6 characters):</td>
                                 <td>
-                                    <input type="password" name="password" minLength="6" autoComplete="current-password new-password"></input>
+                                    <input type="password" className="password_input_box" name="password" minLength="6" autoComplete="current-password new-password"></input>
                                 </td>
                             </tr>
                         </tbody>
@@ -113,9 +134,23 @@ export const SignIn = ({}) => {
                         <div className="padding_medium"></div>
                         <div className="horizontal-stack submit_panel">
                             <div className="padding_auto"></div>
-                            <button id="sign_up_submit_button" onClick={() => {toggleDropdown(); login(username, password);}}>SIGN UP</button>
+                            <button id="sign_up_submit_button" onClick={() => {
+                                const username = document.querySelector(".username_input_box").value;
+                                const password = document.querySelector(".password_input_box").value;
+                                if (username.length >= 1 && username.length < 100 && password.length >= 6 && password.length < 100){
+                                    toggleDropdown(); 
+                                    login(username, password);
+                                }
+                            }}>SIGN UP</button>
                             <div className="padding_medium"></div>
-                            <button id="sign_in_submit_button" onClick={() => {toggleDropdown(); createAccount(username, password);}}>SIGN IN</button>
+                            <button id="sign_in_submit_button" onClick={() => {
+                                const username = document.querySelector(".username_input_box").value;
+                                const password = document.querySelector(".password_input_box").value;
+                                if (username.length >= 1 && username.length < 100 && password.length >= 6 && password.length < 100){
+                                    toggleDropdown(); 
+                                    createAccount(username, password);
+                                }
+                            }}>SIGN IN</button>
                         </div>
                     </div>
                 ) : (<></>)}

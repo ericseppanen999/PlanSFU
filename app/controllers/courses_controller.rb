@@ -162,21 +162,4 @@ class CoursesController < ApplicationController
 
     raw_results
   end
-
-
-=begin
-  def save_user_search_history(search_string, term, year)
-    if @current_user
-      UserSearchHistory.create(
-        user_id: @current_user.id,
-        search_string: search_string,
-        term: term,
-        year: year
-      )
-    end
-  end
-  def set_current_user
-    @current_user = current_user # Assuming `current_user` is set by CAS authentication
-  end
-=end
 end
