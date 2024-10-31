@@ -1,6 +1,6 @@
 import React, {useCallback, useState} from "react";
 import { Plus, Minus } from "./icons.jsx";
-import { AddCourseCallback, RemoveCourseCallback } from "./callback.js"
+import { AddCourseCallback, RemoveCourseCallback, SetGradeCallback } from "./callback.js"
 import "./course_panel.css"
 
 // Component to render each course item
@@ -18,6 +18,10 @@ const Course = ({
 
   const RemoveCourseWrapper = useCallback(() => {
     RemoveCourseCallback.trigger(course);
+  })
+
+  const setGradeWrapper = useCallback((grade) => {
+    SetGradeCallback.trigger(course, grade);
   })
 
   return (
@@ -60,7 +64,7 @@ const Course = ({
       ) : (
         <>
           <h3>Overview:</h3>
-          <p>{course.short_description}</p>
+          <p>{course.description}</p>
         </>
       )}
 
@@ -73,10 +77,11 @@ const Course = ({
 
       {/* grade */}
       {showGrade ? (
-        <>
-          <h3>Grade:</h3>
-          <p>{course.grade}</p>
-        </>
+        <div className="horizontal-stack">
+          <h3>Grade (%):</h3>
+          <div className="padding_small"></div>
+          <input type="text" className="course_info_item grade_input" size={5} placeholder={course.grade} name="grade" onBlur={(event) => setGradeWrapper(event.target.value)}></input>
+        </div>
       ) : (
         <></>
       )}

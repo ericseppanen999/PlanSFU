@@ -34,6 +34,16 @@ const SearchBarWithDropdown = () => {
     setShowDropdown(!showDropdown);
   };
 
+  const setSearchCourses = (courses) => {
+    search_courses = courses.map((course) => {unique_identifier=course.unique_identifier, grade=course.grade})
+    setSearchQuery((query) => {
+      query.courses = courses;
+
+      changeQueryCallback.trigger(query);
+      return query;
+    });
+  };
+
   // sets a search parameter in the search query
   const setSearchParam = (category, term, value) => {
     setSearchQuery((query) => {

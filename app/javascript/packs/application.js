@@ -9,6 +9,7 @@ import { CourseSearchDisplay } from "../components/course_display.jsx"
 import { TermTabDisplay } from "../components/term_tab.jsx"
 import { createRoot } from 'react-dom/client'
 import { SearchBarWithDropdown } from "../components/search_bar_and_dropdown.jsx"
+import { SignIn } from "../components/signin.jsx"
 
 // setup query change callback
 
@@ -26,3 +27,6 @@ searchDisplayRenderer.render(<CourseSearchDisplay />);
 
 const searchBarDropdownRenderer = createRoot(document.getElementById('searchbar_and_dropdown_display'));
 searchBarDropdownRenderer.render(<SearchBarWithDropdown />);
+
+const signInRenderer = createRoot(document.getElementById('signin_panel'));
+signInRenderer.render(<SignIn />);

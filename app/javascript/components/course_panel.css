@@ -29,3 +29,8 @@
     color: var(--hover-link-color,darkblue);
     cursor: pointer;
 }
+
+.grade_input {
+    margin-top: auto;
+    margin-bottom: auto;
+}
