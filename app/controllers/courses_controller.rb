@@ -76,7 +76,7 @@ class CoursesController < ApplicationController
   end
 
 
-  def search_courses(search_string, search_in_props, terms, departments, levels, custom_sql, user_courses = [])
+  def search_courses(search_string, search_in_props, terms, departments, levels, custom_sql, use_courses, user_courses = [])
     # build the SQL query based on the search parameters
     # retirms the search results
 
