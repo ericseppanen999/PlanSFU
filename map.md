@@ -13,12 +13,11 @@
 │   ├── shakapacker.yml     # shakapacker config (webpack)
 |   ├── application.rb      # rails entrypoint
 |   ...
-├── db
+├── db                      # database data
 |   ├── ...
-├── docs
+├── docs                    # documentation
 |   ├── ...
-├── test
-|   ├──                     # do I look like someone who can spend all day writing fucking selenium and ruby scripts
+├── test                    # testing scripts
 ├── assets                  # assets used in the readme and other documents
 ├── Rakefile                # file for defining rails tasks
 ├── Gemfile                 # ruby packages to include
@@ -26,6 +25,5 @@
 ├── babel.config.js         # config for the js transpiler
 ├── Dockerfile              # config for the production environment
 ├── postcss.config.js       # config for postcss
-├── pipelines.md            # documentation on system interactions
 ├── README.MD
 ...
