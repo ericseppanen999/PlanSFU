@@ -1,9 +1,9 @@
 import React from "react";
 
-// components for various icons
-
 const Plus = () => (
   <svg
+    aria-hidden="true"
+    aria-label="Plus icon"
     xmlns="http://www.w3.org/2000/svg"
     height="24px"
     viewBox="0 -960 960 960"
@@ -16,6 +16,8 @@ const Plus = () => (
 
 const Minus = () => (
   <svg
+    aria-hidden="true"
+    aria-label="Minus icon"
     xmlns="http://www.w3.org/2000/svg"
     height="24px"
     viewBox="0 -960 960 960"
@@ -28,6 +30,8 @@ const Minus = () => (
 
 const Search = () => (
   <svg
+    aria-hidden="true"
+    aria-label="Search icon"
     className="search_icon"
     xmlns="http://www.w3.org/2000/svg"
     height="24px"
@@ -39,4 +43,4 @@ const Search = () => (
   </svg>
 );
 
-export { Plus, Minus, Search }
+export { Plus, Minus, Search };
