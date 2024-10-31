@@ -2,108 +2,80 @@ import React, {useState} from "react";
 import { UpdateSessionCallback } from "./callback.js";
 import "./signin.css"
 
-export const SignIn = ({}) => {
+export const SignIn = () => {
     const [showDropdown, setShowDropdown] = useState(false);
     const [loggedIn, setLoggedIn] = useState(false);
     const [activeUsername, setActiveUsername] = useState(undefined);
     const [sessionToken, setSessionToken] = useState(undefined);
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
-    // log the user in
-    const login = async (username, password) => {
-        try {
-            const response = await fetch('/session', {
-                method: 'POST',
-                headers: { 
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    user: {
-                        email: username,
-                        password: password
-                    }
-                })
-            });
-        
-            if (response.ok) {
-                const login_res = await response.json();
-                setLoggedIn(true);
-                setActiveUsername(username);
-                UpdateSessionCallback.trigger(login_res.session_token);
-                setSessionToken(login_res.session_token);
-            } else {
-                throw new Error(`Failed to log in. Response status: ${response.status}`);
-            }
-        } catch (error) {
-            console.error("Error during sign in:", error);
-        }
-    }
-    
-    // create an account for the user
-    const createAccount = async (username, password) => {
-        try {
-            const response = await fetch('/users', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    user: {
-                        email: username,
-                        password: password
-                    }
-                })
-            });
-        
-            if (response.ok) {
-                const login_res = await response.json();
-                setLoggedIn(true);
-                setActiveUsername(username);
-                UpdateSessionCallback.trigger(login_res.session_token);
-                setSessionToken(login_res.session_token);
-            } else {
-                throw new Error(`Failed to create account. Response status: ${response.status}`);
-            }
-        } catch (error) {
-            console.error("Error during create account:", error);
-        }
-    }
-    
-    // sign the user out
-    const signOut = async () => {
-        try {
-            const response = await fetch('/session', {
-                method: 'DELETE',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+    const login = () => {
+        fetch('/session', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            },
+            body: JSON.stringify({ user: { email: username, password: password } })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.session_token) {
+                    setLoggedIn(true);
+                    setActiveUsername(username);
+                    UpdateSessionCallback.trigger(data.session_token);
+                    setSessionToken(data.session_token);
+                } else {
+                    alert("Login failed.");
                 }
-            });
-        
-            if (response.ok) {
-                const logout_res = await response.json();
-                if (logout_res.sucess){
+            })
+            .catch(error => console.error("Login error:", error));
+    };
+
+    const createAccount = () => {
+        fetch('/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            },
+            body: JSON.stringify({ user: { email: username, password: password } })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.session_token) {
+                    setLoggedIn(true);
+                    setActiveUsername(username);
+                    UpdateSessionCallback.trigger(data.session_token);
+                    setSessionToken(data.session_token);
+                } else {
+                    alert("Account creation failed.");
+                }
+            })
+            .catch(error => console.error("Account creation error:", error));
+    };
+
+    const signOut = () => {
+        fetch('/session', {
+            method: 'DELETE',
+            headers: {
+                'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            }
+        })
+            .then(response => {
+                if (response.ok) {
                     setLoggedIn(false);
                     setActiveUsername(undefined);
                     UpdateSessionCallback.trigger(undefined);
                     setSessionToken(undefined);
+                } else {
+                    alert("Logout failed.");
                 }
-            } else {
-                throw new Error(`Failed to log out. Response status: ${response.status}`);
-            }
-        } catch (error) {
-            console.error("Error during sign out:", error);
-        }
-        if (signin_sucess){
-            setLoggedIn(false);
-            setActiveUsername(undefined);
-            UpdateSessionCallback.trigger(undefined);
-            setSessionToken(undefined);
-        }
-    }
+            })
+            .catch(error => console.error("Logout error:", error));
+    };
 
-    // toggle the sign in box
     const toggleDropdown = () => {
         setShowDropdown(!showDropdown);
     };
@@ -112,53 +84,52 @@ export const SignIn = ({}) => {
         <div>
             {!loggedIn ? (
                 <>
-                <button id="sign_in_button" onClick={toggleDropdown}>SIGN IN</button>
-                {showDropdown ? (
-                    <div className="signin_dropdown">
-                        <table className="username_password_table">
-                        <tbody>
-                            <tr>
-                                <td>Username:</td>
-                                <td>
-                                    <input type="text" className="username_input_box" name="username" autoComplete="username"></input>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Password (min 6 characters):</td>
-                                <td>
-                                    <input type="password" className="password_input_box" name="password" minLength="6" autoComplete="current-password new-password"></input>
-                                </td>
-                            </tr>
-                        </tbody>
-                        </table>
-                        <div className="padding_medium"></div>
-                        <div className="horizontal-stack submit_panel">
-                            <div className="padding_auto"></div>
-                            <button id="sign_up_submit_button" onClick={() => {
-                                const username = document.querySelector(".username_input_box").value;
-                                const password = document.querySelector(".password_input_box").value;
-                                if (username.length >= 1 && username.length < 100 && password.length >= 6 && password.length < 100){
-                                    toggleDropdown(); 
-                                    login(username, password);
-                                }
-                            }}>SIGN UP</button>
+                    <button id="sign_in_button" onClick={toggleDropdown}>SIGN IN</button>
+                    {showDropdown && (
+                        <div className="signin_dropdown">
+                            <table className="username_password_table">
+                                <tbody>
+                                    <tr>
+                                        <td>Username:</td>
+                                        <td>
+                                            <input
+                                                type="text"
+                                                name="username"
+                                                autoComplete="username"
+                                                value={username}
+                                                onChange={(e) => setUsername(e.target.value)}
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Password (min 6 characters):</td>
+                                        <td>
+                                            <input
+                                                type="password"
+                                                name="password"
+                                                minLength="6"
+                                                autoComplete="current-password new-password"
+                                                value={password}
+                                                onChange={(e) => setPassword(e.target.value)}
+                                            />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                             <div className="padding_medium"></div>
-                            <button id="sign_in_submit_button" onClick={() => {
-                                const username = document.querySelector(".username_input_box").value;
-                                const password = document.querySelector(".password_input_box").value;
-                                if (username.length >= 1 && username.length < 100 && password.length >= 6 && password.length < 100){
-                                    toggleDropdown(); 
-                                    createAccount(username, password);
-                                }
-                            }}>SIGN IN</button>
+                            <div className="horizontal-stack submit_panel">
+                                <div className="padding_auto"></div>
+                                <button id="sign_in_submit_button" onClick={() => { toggleDropdown(); login(); }}>SIGN IN</button>
+                                <div className="padding_medium"></div>
+                                <button id="sign_up_submit_button" onClick={() => { toggleDropdown(); createAccount(); }}>SIGN UP</button>
+                            </div>
                         </div>
-                    </div>
-                ) : (<></>)}
+                    )}
                 </>
             ) : (
                 <>
-                <p>{activeUsername}</p>
-                <button id="sign_out_button" onClick={signOut()}>SIGN OUT</button>
+                    <p>{activeUsername}</p>
+                    <button id="sign_out_button" onClick={signOut}>SIGN OUT</button>
                 </>
             )}
         </div>
