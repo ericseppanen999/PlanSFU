@@ -6,7 +6,8 @@ export const defaultQuery = {
   departments: ["any"],
   levels: ["any"],
   SQL: "",
-  use_courses: true
+  courses: [],
+  use_courses: false
 };
 
 // returns a course list to successCallback if courses are successfully fetched, given a search query
@@ -37,7 +38,7 @@ export const fetchCourses = async (successCallback, searchparams = defaultQuery)
   if (searchparams.SQL) {
     queryParams.append("SQL", searchparams.SQL);
   }
-  //console.log(JSON.stringify(searchparams))
+  console.log(JSON.stringify(searchparams))
   //console.log(`queryt: ${queryParams.toString()}`);
 
   try {
