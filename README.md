@@ -8,11 +8,8 @@ A course planner for undergrads at SFU. A group project for CMPT 276 D300, Fall 
 - Server-side state storage when signed in (postponed)
 
 ## New Features in Iteration 2 ##
-- Prereqs are now applied in searches
-    - Prereqisites selected by the user in the term tabs are applied when the checkbox is selected, otherwise the search applies to all courses
 - Courses displayed in the search are now from the actual sfu database
     - Data shown in the search results represent actual courses from the SFU API
-    - *Not all departments are included at the moment
 - Login functionality
     - The user can sign in with a username and password
     - The user can sign up with a username and password (of at least 6 characters)
@@ -24,6 +21,9 @@ A course planner for undergrads at SFU. A group project for CMPT 276 D300, Fall 
 - User can now set their grades for selected courses
     - Grades are stored to the user database
     - Grade requirements are applied to the search results when the checkbox to apply selected courses is checked
+- Refined search functionality
+    - Advanced search now contains 8 SFU departments (CHEM, PHYS, ENSC, CMPT, MATH, MACM, STAT)
+    - The user can search by an expanded list of properties
 
 ## Cut Features in Iteration 2 ##
 - Autofilling courses on sign in
@@ -34,8 +34,13 @@ A course planner for undergrads at SFU. A group project for CMPT 276 D300, Fall 
     - Removed in favor of testing page and automated prequisite generation
 - Extra course and teacher info
     - Removed due to being out of scope for this application
+- Filtering by prerequisites
+    - Removed due to there being no practical way to tokenize the prerequisite description from SFU API.
 
 ## Features Not Yet Implmented in Iteration 2 ##
+- Apply prereqs in search
+    - A user can store their courses and grades
+    - The users information is compared against a tokenized prerequisite logic string
 - Search by SQL query
     - The user can enter an SQL query to filter courses with
     - The SQL query is applied to the search
