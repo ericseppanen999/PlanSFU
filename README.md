@@ -11,16 +11,16 @@ A course planner for undergrads at SFU. A group project for CMPT 276 D300, Fall 
 - Courses displayed in the search are now from the actual sfu database
     - Data shown in the search results represent actual courses from the SFU API
 - Login functionality
-    - The user can sign in with a username and password
+    - The user can sign in with a username and password - incomplete, finish by 11/13
     - The user can sign up with a username and password (of at least 6 characters)
-    - The user can sign out
+    - The user can sign out - incomplete, finish by 11/13
 - Search state storage
-    - The current search state is stored to the server if the user is currently signed in
+    - The current search state is stored to the server if the user is currently signed in - incomplete, finish by 11/13
 - Course planning link list
     - Links to course planning resources can be found for all departments nicely organized
 - User can now set their grades for selected courses
-    - Grades are stored to the user database
-    - Grade requirements are applied to the search results when the checkbox to apply selected courses is checked
+    - *Grades are stored to the user database - incomplete, finish by 11/13
+    - Grade requirements are applied to the search results when the checkbox to apply selected courses is checked - incomplete, finish by 11/13
 - Refined search functionality
     - Advanced search now contains 8 SFU departments (CHEM, PHYS, ENSC, CMPT, MATH, MACM, STAT)
     - The user can search by an expanded list of properties
@@ -220,3 +220,20 @@ resize the page
 resize the page with the advanced search open
 - expected: advanced search maintains reasonable position on the page
 - passed: 
+
+
+open course planning section
+- expected: subcategories are shown
+- passed: yes
+
+close course planning section
+- expected: subcategories are hidden
+- passed: yes
+
+toggle use selected courses
+- expected: courses already taken are hidden/shown
+- passed: yes
+
+enter a grade
+- expected: courses reload to show new results
+- passed: yes
