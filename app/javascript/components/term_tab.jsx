@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from "react";
 import { CourseTermDisplay } from "../components/course_display.jsx"
-import { AddCourseCallback, RemoveCourseCallback, UpdateTermsCallback } from "./callback.js"
+import { AddCourseCallback, RemoveCourseCallback, UpdateTermsCallback , SetGradeCallback} from "./callback.js"
 import "./term_tab.css"
 
 const TermTabDisplay = () => {
@@ -8,7 +8,7 @@ const TermTabDisplay = () => {
     const [activeterm, setActiveTerm] = useState(0);
     const [loading, setLoading] = useState(false);
 
-    // setup the callback from removing a course
+    // setup the callback for removing a course
     useEffect(() => {
         RemoveCourseCallback.subscribe((course) => {
             const id = course.term + " " + course.year;
@@ -58,6 +58,28 @@ const TermTabDisplay = () => {
                 UpdateTermsCallback.trigger(currterms);
                 return currterms;
             })            
+        }
+    )}, [])
+
+    // setup the callback for setting a course grade
+    useEffect(() => {
+        SetGradeCallback.subscribe((course, grade) => {
+            const id = course.term + " " + course.year;
+
+            setTerms((currterms) => {
+                const termidx = currterms.findIndex((term) => term.id === id);
+                if (termidx != -1){
+                    const courseidx = currterms[termidx].courses.findIndex((c) => c.unique_identifier === course.unique_identifier);
+                    if (courseidx != -1){
+                        let newterms = [...currterms];
+                        newterms[termidx].courses[courseidx].grade = grade;
+                        UpdateTermsCallback.trigger(newterms);
+                        return newterms;
+                    }
+                }
+                UpdateTermsCallback.trigger(currterms);
+                return currterms;
+            })
         }
     )}, [])
   
