@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./search_bar_and_dropdown.css";
 import { defaultQuery } from "./searchCourses.js";
 import { SearchBar } from "./search_bar.jsx";
 import { Checkbox } from "./checkbox.jsx";
-import { changeQueryCallback } from "./callback.js";
+import { changeQueryCallback, UpdateTermsCallback } from "./callback.js";
 
 export const all_categories = {
     search_in_props: ["title", "description", "instructors"],
@@ -21,6 +21,21 @@ const SearchBarWithDropdown = () => {
   const [searchQuery, setSearchQuery] = useState(defaultQuery);
   const [showDropdown, setShowDropdown] = useState(false);
 
+  useEffect(() => {
+    UpdateTermsCallback.subscribe((terms) => {
+      let search_courses = [];
+      for (let term of terms){
+        search_courses.push(...(term.courses.map((course) => {return {unique_identifier: course.unique_identifier, grade: course.grade}})));
+      }
+      setSearchQuery((query) => {
+        query.courses = search_courses;
+  
+        changeQueryCallback.trigger(query);
+        return query;
+      });
+    })
+  }, [])
+
   // set the searchstring when the text input is changed
   const handleSearchChange = (value) => {
     setSearchQuery((query) => {
@@ -32,16 +47,6 @@ const SearchBarWithDropdown = () => {
 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
-  };
-
-  const setSearchCourses = (courses) => {
-    search_courses = courses.map((course) => {unique_identifier=course.unique_identifier, grade=course.grade})
-    setSearchQuery((query) => {
-      query.courses = courses;
-
-      changeQueryCallback.trigger(query);
-      return query;
-    });
   };
 
   // sets a search parameter in the search query
@@ -75,7 +80,25 @@ const SearchBarWithDropdown = () => {
     });
   };
 
+  const setSearchUseCourses = (value) => {
+    setSearchQuery((query) => {
+      query.use_courses = value;
+      changeQueryCallback.trigger(query);
+      return query;
+    });
+  };
+
   return (
+    <>
+    <Checkbox
+      id="use_courses"
+      label="Apply Selected Courses"
+      defaultChecked={defaultQuery.use_courses}
+      onChange={(checked) =>
+        setSearchUseCourses(checked)
+      }
+    />
+    <br></br>
     <div className="search_bar_container">
       <div className="horizontal-stack">
         <SearchBar id="course_search" name="course_search" onChange={handleSearchChange} />
@@ -182,6 +205,7 @@ const SearchBarWithDropdown = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
