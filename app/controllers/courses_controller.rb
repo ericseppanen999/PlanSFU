@@ -16,13 +16,14 @@ class CoursesController < ApplicationController
     query = search_params # or params.to_unsafe_h for testing
 
     # extract the search parameters from the query, with default values.
+    use_courses = ActiveModel::Type::Boolean.new.cast(query[:use_courses])
+    user_courses = query[:user_courses].presence || []
     search_string = query[:searchstring].presence || ""
     search_in_props = query[:search_in_props].presence ||[ "title", "dept", "description", "instructors", "campuses" ]
     terms = query[:terms].presence || [ { year: query[:year], term: query[:term] } ]
     departments = query[:departments].presence || [ "any" ]
     levels = query[:levels].presence || [ "any" ]
     custom_sql = query[:SQL].presence
-    taken_courses = query[:courses] || []
 
     # convert the terms to an array of hashes // not sure if this is 100% correct or necessary
     terms = terms.map { |t| t.to_h }
@@ -43,7 +44,7 @@ class CoursesController < ApplicationController
     end
 
     # search for courses based on the search parameters
-    results = search_courses(search_string, search_in_props, terms, departments, levels, custom_sql, taken_courses)
+    results = search_courses(search_string, search_in_props, terms, departments, levels, custom_sql, use_courses, user_courses)
 
     # save_user_search_history(search_string, term, year) # you may have to comment this out
 
@@ -71,11 +72,11 @@ class CoursesController < ApplicationController
 
   def search_params
     # permit the search parameters from the frontend // or params.to_unsafe_h for testing
-    params.permit(:term, :year, :searchstring, :SQL, search_in_props: [], terms: [ :year, :term ], departments: [], levels: [], courses: [ :dept, :number, :term, :year ])
+    params.permit(:term, :year, :searchstring, :use_courses, :SQL, search_in_props: [], terms: [ :year, :term ], departments: [], levels: [], user_courses: [ :unique_identifier, :grade ])
   end
 
 
-  def search_courses(search_string, search_in_props, terms, departments, levels, custom_sql, taken_courses = [])
+  def search_courses(search_string, search_in_props, terms, departments, levels, custom_sql, user_courses = [])
     # build the SQL query based on the search parameters
     # retirms the search results
 
@@ -120,7 +121,15 @@ class CoursesController < ApplicationController
 
     ## IMPLEMENT HERE ##
     # taken courses, custom SQL query
-
+    if use_courses && user_courses.present?
+      taken_course_uuids = user_courses.map { |course| course["unique_identifier"] }
+      taken_courses = Course.where(unique_identifier: taken_course_uuids).pluck(:dept, :number)
+      if taken_courses.any?
+        excluded_conditions = taken_courses.map { |dept, number| "(dept = ? AND number = ?)" }.join(" OR ")
+        query_values.concat(taken_courses.flatten)
+        sql_query += " AND NOT (#{excluded_conditions})"
+      end
+    end
     # debug: print the custom SQL query
     Rails.logger.debug("SQL Query: #{sql_query}")
     Rails.logger.debug("Query Values: #{query_values.inspect}")

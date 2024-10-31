@@ -74,7 +74,7 @@ Course.create!(
   title: "Introduction to Computer Algebra",
   description: "Data structures and algorithms for mathematical objects. Topics include long integer arithmetic, computing polynomial greatest common divisors, the fast Fourier transform, Hensel's lemma and p-adic methods, differentiation and simplification of formulae, and polynomial factorization. Students will use a computer algebra system such as Maple for calculations and programming.",
   requisite_description: "CMPT 307 or ((MATH 340 or MATH 342) and (CMPT 225 or MACM 204)).",
-  prereq_logic:"CMPT 307 >= C- OR (MATH 340 >= C- AND MATH 342 >= C- AND (CMPT 225 >= C- OR MACM 204 >= C-))", # implement
+  prereq_logic:"CMPT 307 >= C- OR ((MATH 340 >= C- OR MATH 342) >= C- AND (CMPT 225 >= C- OR MACM 204 >= C-))", # implement
   short_description: "Data structures and algorithms for mathematical objects. Topics include long integer arithmetic, computing polynomial greatest common divisors, the fast Fourier transform, Hensel's lemma and p-adic methods, differentiation and simplification of formulae, and polynomial factorization. Students will use a computer algebra system such as Maple for calculations and programming.",
   credits: 3,
   instructors: ["Michael Monagan"],

@@ -1,32 +1,27 @@
 <%= stylesheet_link_tag 'index' %>
 <%= stylesheet_pack_tag 'application' %>
 <header class="horizontal-stack">
-    <div id="logo_panel">
-        <img id="logo" src="assets/PlanSFULarge.svg"></img>
-    </div>
-    <div id="title_panel"></div>
-    
-    <% unless user_signed_in? %>
-        <div id="signin_panel" class="center-content">
-            <%= form_with url: session_path, method: :post, local: true do |form| %>
-                <%= form.submit "SIGN IN", id: "sign_in_button" %>
-            <% end %>
-        </div>
-    <% end %>
+  <div id="logo_panel">
+    <img id="logo" src="assets/PlanSFULarge.svg" alt="Plansfu Logo" />
+  </div>
+  <div id="title_panel"></div>
+  <div id="signin_panel" class="center-content"></div>
 </header>
 <div id="main_panel">
-    <div id="info_panel">Add your completed/expected to complete courses and any courses you want to test. Sign in to autofill courses.</div>
-    <div class="padding_medium"></div>
-    <div id="term_tab_display"></div>
-    <div class="padding_medium"></div>
-    <div id="searchbar_and_dropdown_display"></div>
-    <hr>
-    <h3>Courses meeting your prerequisites:</h3>
-    <div id="course_search_display"></div>
+  <div id="info_panel" class="scalable-text">
+    Add your completed/expected to complete courses and any courses you want to test. Sign in to autofill courses.
+  </div>
+  <div class="padding_medium"></div>
+  <div id="term_tab_display"></div>
+  <div class="padding_medium"></div>
+  <div id="searchbar_and_dropdown_display"></div>
+  <hr>
+  <h3 class="scalable-text">Courses meeting your prerequisites:</h3>
+  <div id="course_search_display"></div>
 </div>
 <div class="padding_large"></div>
 <footer class="horizontal-stack">
-    <div class="padding_auto"></div>
-    <p>Not an offical SFU site.</p>
-    <div class="padding_auto"></div>
+  <div class="padding_auto"></div>
+  <p class="scalable-text">Not an official SFU site.</p>
+  <div class="padding_auto"></div>
 </footer>
