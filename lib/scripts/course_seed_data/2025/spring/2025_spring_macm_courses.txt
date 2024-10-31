@@ -40,7 +40,7 @@ Course.create!(
   title: "Computing with Linear Algebra",
   description: "Using a mathematical software package for doing calculations in linear algebra. Development of computer models that analyze and illustrate applications of linear algebra. All calculations and experiments will be done in the Matlab software package. Topics include: large-scale matrix calculations, experiments with cellular automata, indexing, searching and ranking pages on the internet, population models, data fitting and optimization, image analysis, and cryptography.",
   requisite_description: "One of CMPT 102, 120, 126, 128 or 130 and one of MATH 150, 151, 154 or 157 and one of MATH 232 or 240. MATH 232 or 240 can be taken as corequisite. Students in excess of 80 units may not take MACM 203 for further credit.",
-  prereq_logic:"CMPT 102 >= C- OR CMPT 120 >= C- OR CMPT 126 >= C- OR CMPT 128 >= C- OR CMPT 130 >= C- AND MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C- AND MATH 232 >= C- OR MATH 240 >= C-", # implement
+  prereq_logic:"CMPT 102 >= C- OR CMPT 120 >= C- OR CMPT 126 >= C- OR CMPT 128 >= C- OR CMPT 130 >= C- AND MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C- AND (MATH 232 >= C- OR MATH 240 >= C-)", # implement
   short_description: "Using a mathematical software package for doing calculations in linear algebra. Development of computer models that analyze and illustrate applications of linear algebra. All calculations and experiments will be done in the Matlab software package. Topics include: large-scale matrix calculations, experiments with cellular automata, indexing, searching and ranking pages on the internet, population models, data fitting and optimization, image analysis, and cryptography.",
   credits: 2,
   instructors: ["Petr Lisonek"],
@@ -74,7 +74,7 @@ Course.create!(
   title: "Introduction to Computer Algebra",
   description: "Data structures and algorithms for mathematical objects. Topics include long integer arithmetic, computing polynomial greatest common divisors, the fast Fourier transform, Hensel's lemma and p-adic methods, differentiation and simplification of formulae, and polynomial factorization. Students will use a computer algebra system such as Maple for calculations and programming.",
   requisite_description: "CMPT 307 or ((MATH 340 or MATH 342) and (CMPT 225 or MACM 204)).",
-  prereq_logic:"CMPT 307 >= C- OR ((MATH 340 >= C- OR MATH 342) >= C- AND (CMPT 225 >= C- OR MACM 204 >= C-))", # implement
+  prereq_logic:"CMPT 307 >= C- OR (MATH 340 >= C- AND MATH 342 >= C- AND (CMPT 225 >= C- OR MACM 204 >= C-))", # implement
   short_description: "Data structures and algorithms for mathematical objects. Topics include long integer arithmetic, computing polynomial greatest common divisors, the fast Fourier transform, Hensel's lemma and p-adic methods, differentiation and simplification of formulae, and polynomial factorization. Students will use a computer algebra system such as Maple for calculations and programming.",
   credits: 3,
   instructors: ["Michael Monagan"],
@@ -95,7 +95,7 @@ Course.create!(
   short_description: "An introductory treatment of quantum computing with an emphasis on quantum algorithms. Topics include the gate model of quantum computation focusing on the design and implementation of quantum algorithms. Basic knowledge of algorithms and complexity will be an asset, but not required. No prior knowledge of physics or quantum mechanics is necessary, only a solid background in linear algebra.",
   credits: 3,
   instructors: ["Nadish de Silva"],
-  campuses: [nil],
+  campuses: ["Burnaby"],
   delivery_methods: ["In Person"],
   sections: ["d100"],
   requisites: [],

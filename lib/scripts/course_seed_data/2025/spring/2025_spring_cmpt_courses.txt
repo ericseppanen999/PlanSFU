@@ -6,7 +6,7 @@ Course.create!(
   title: "Social Issues and Communication Strategies in Computing Science",
   description: "This course teaches the fundamentals of informative and persuasive communication for professional engineers and computer scientists. A principal goal of this course is to assist students in thinking critically about various contemporary technical, social, and ethical issues. It focuses on communicating technical information clearly and concisely, managing issues of persuasion when communicating with diverse audiences, presentation skills, and teamwork.",
   requisite_description: "",
-  prereq_logic:"no prerequisite logic", # implement
+  prereq_logic:"#no_prereq_logic", # implement
   short_description: "This course teaches the fundamentals of informative and persuasive communication for professional engineers and computer scientists. A principal goal of this course is to assist students in thinking critically about various contemporary technical, social, and ethical issues. It focuses on communicating technical information clearly and concisely, managing issues of persuasion when communicating with diverse audiences, presentation skills, and teamwork.",
   credits: 3,
   instructors: ["Felix Lo", "Harinder Khangura"],
@@ -55,13 +55,11 @@ Course.create!(
   term: "spring",
   year: "2025",
   title: "Introduction to Computer Programming II",
-  description: "A second course in systems-oriented programming and computing science that builds upon the foundation set in CMPT 130 using a systems-oriented language such as C or C++. Topics: a review of the basic elements of programming; introduction to object-oriented programming (OOP); techniques for designing and testing programs; use and implementation of elementary data structures and
-
+  description: "A second course in systems-oriented programming and computing science that builds upon the foundation set in CMPT 130 using a systems-oriented language such as C or C++. Topics: a review of the basic elements of programming; introduction to object-oriented programming (OOP); techniques for designing and testing programs; use and implementation of elementary data structures and
 algorithms; introduction to embedded systems programming.",
   requisite_description: "CMPT 130 with a minimum grade of C-.",
   prereq_logic:"CMPT 130 >= C-", # implement
-  short_description: "A second course in systems-oriented programming and computing science that builds upon the foundation set in CMPT 130 using a systems-oriented language such as C or C++. Topics: a review of the basic elements of programming; introduction to object-oriented programming (OOP); techniques for designing and testing programs; use and implementation of elementary data structures and
-
+  short_description: "A second course in systems-oriented programming and computing science that builds upon the foundation set in CMPT 130 using a systems-oriented language such as C or C++. Topics: a review of the basic elements of programming; introduction to object-oriented programming (OOP); techniques for designing and testing programs; use and implementation of elementary data structures and
 algorithms; introduction to embedded systems programming.",
   credits: 3,
   instructors: ["Harinder Khangura"],
@@ -78,7 +76,7 @@ Course.create!(
   title: "Systems Programming",
   description: "An introduction to a UNIX-like application-OS interface from a programmer's perspective. Introduces operating systems and their interfaces for user-level programs. Students learn how to programmatically interact with an OS efficiently, correctly, and securely. Topics include: command-line tools, programming with memory, processes, threads, IPC, as well as basics of OS security.",
   requisite_description: "(CMPT 125 or CMPT 135) and MACM 101, both with a minimum grade of C-.",
-  prereq_logic:"CMPT 125 >= C- OR CMPT 135 >= C- AND MACM 101 >= C-", # implement
+  prereq_logic:"(CMPT 125 >= C- OR CMPT 135 >= C-) AND MACM 101 >= C-", # implement
   short_description: "An introduction to a UNIX-like application-OS interface from a programmer's perspective. Introduces operating systems and their interfaces for user-level programs. Students learn how to programmatically interact with an OS efficiently, correctly, and securely. Topics include: command-line tools, programming with memory, processes, threads, IPC, as well as basics of OS security.",
   credits: 4,
   instructors: ["Brian Fraser"],
@@ -110,17 +108,13 @@ Course.create!(
   term: "spring",
   year: "2025",
   title: "Object Oriented Design in Java",
-  description: "An introduction to object oriented design using Java. The Java programming language is introduced,
-
-with an emphasis on its advanced features. The course covers the building blocks of object oriented
-
+  description: "An introduction to object oriented design using Java. The Java programming language is introduced,
+with an emphasis on its advanced features. The course covers the building blocks of object oriented
 design including inheritance, polymorphism, interfaces and abstract classes. A number of object oriented design patterns are presented, such as observer, iterator, and singleton. The course also teaches best-practices in code construction. It includes a basic introduction to programming event driven graphical user interfaces.",
   requisite_description: "CMPT 225 with a minimum grade of C-.",
   prereq_logic:"CMPT 225 >= C-", # implement
-  short_description: "An introduction to object oriented design using Java. The Java programming language is introduced,
-
-with an emphasis on its advanced features. The course covers the building blocks of object oriented
-
+  short_description: "An introduction to object oriented design using Java. The Java programming language is introduced,
+with an emphasis on its advanced features. The course covers the building blocks of object oriented
 design including inheritance, polymorphism, interfaces and abstract classes. A number of object oriented design patterns are presented, such as observer, iterator, and singleton. The course also teaches best-practices in code construction. It includes a basic introduction to programming event driven graphical user interfaces.",
   credits: 3,
   instructors: ["Victor Cheung"],
@@ -137,7 +131,7 @@ Course.create!(
   title: "Data Structures and Programming",
   description: "Introduction to a variety of practical and important data structures and methods for implementation and for experimental and analytical evaluation. Topics include: stacks, queues and lists; search trees; hash tables and algorithms; efficient sorting; object-oriented programming; time and space efficiency analysis; and experimental evaluation. ",
   requisite_description: "(MACM 101 and (CMPT 125, CMPT 129 or CMPT 135)) or (ENSC 251 and ENSC 252), all with a minimum grade of C-.",
-  prereq_logic:"MACM 101 >= C- AND (CMPT 125 >= C- AND CMPT 129 >= C- OR CMPT 135 >= C-) OR (ENSC 251 >= C- AND ENSC 252 >= C- AND CGPA >= 2.00)", # implement
+  prereq_logic:"MACM 101 >= C- OR (CMPT 125 >= C- AND (CMPT 129 >= C- OR CMPT 135 >= C-)) OR (ENSC 251 >= C- AND ENSC 252 >= C-)", # implement
   short_description: "Introduction to a variety of practical and important data structures and methods for implementation and for experimental and analytical evaluation. Topics include: stacks, queues and lists; search trees; hash tables and algorithms; efficient sorting; object-oriented programming; time and space efficiency analysis; and experimental evaluation. ",
   credits: 3,
   instructors: ["David Mitchell", "John Edgar"],
@@ -154,7 +148,7 @@ Course.create!(
   title: "Introduction to Software Engineering",
   description: "An overview of various techniques used for software development and software project management. Major tasks and phases in modern software development, including requirements, analysis, documentation, design, implementation, testing,and maintenance. Project management issues are also introduced. Students complete a team project using an iterative development process.",
   requisite_description: "One W course, CMPT 225, (MACM 101 or (ENSC 251 and ENSC 252)) and (MATH 151 or MATH 150), all with a minimum grade of C-. MATH 154 or MATH 157 with at least a B+ may be substituted for MATH 151 or MATH 150.",
-  prereq_logic:"W_course >= C- AND CMPT 225 >= C- AND (MACM 101 >= C- OR (ENSC 251 >= C- AND ENSC 252 >= C-)) AND (MATH 151 >= C- OR MATH 150 >= C- OR MATH 154 >= B+ OR MATH 157 >= B+) AND CGPA >= 2.50", # implement
+  prereq_logic:"CMPT 225 >= C- AND (MACM 101 >= C- OR (ENSC 251 >= C- AND ENSC 252 >= C-)) AND (MATH 151 >= C- OR MATH 150 >= C- OR (MATH 154 >= B+ OR MATH 157 >= B+)) AND W_course >= C-", # implement
   short_description: "An overview of various techniques used for software development and software project management. Major tasks and phases in modern software development, including requirements, analysis, documentation, design, implementation, testing,and maintenance. Project management issues are also introduced. Students complete a team project using an iterative development process.",
   credits: 3,
   instructors: ["Saba Alimadadi"],
@@ -171,7 +165,7 @@ Course.create!(
   title: "Introduction to Computer Systems",
   description: "The curriculum introduces students to topics in computer architecture that are considered fundamental to an understanding of the digital systems underpinnings of computer systems. ",
   requisite_description: "Either (MACM 101 and (CMPT 125 or CMPT 135)) or (MATH 151 and CMPT 102 for students in an Applied Physics program), all with a minimum grade of C-.",
-  prereq_logic:"MACM 101 >= C- OR (CMPT 125 >= C- OR CMPT 135 >= C-) OR MATH 151 >= C- AND CMPT 102 >= C-", # implement
+  prereq_logic:"MACM 101 >= C- OR (CMPT 125 >= C- AND MATH 151 >= C-) OR (CMPT 135 >= C- AND MATH 151 >= C-) AND CGPA >= 2.70", # implement
   short_description: "The curriculum introduces students to topics in computer architecture that are considered fundamental to an understanding of the digital systems underpinnings of computer systems. ",
   credits: 4,
   instructors: ["Arrvindh Shriraman"],
@@ -205,7 +199,7 @@ Course.create!(
   title: "Operating Systems",
   description: "A course teaching the internals of modern operating systems. Topics consist of kernel components of modern OSes, such as system calls, device drivers, virtual memory, scheduling, file systems, synchronization for multi-core, and memory ordering.",
   requisite_description: "CMPT 225, (CMPT 295 or ENSC 254), and (CMPT 201 or ENSC 351), all with a minimum grade of C-.",
-  prereq_logic:"CMPT 225 >= C- AND ((CMPT 295 >= C-) OR (ENSC 254 >= C-)) AND ((CMPT 201 >= C-) OR (ENSC 351 >= C-))", # implement
+  prereq_logic:"CMPT 225 >= C- AND (CMPT 295 >= C- OR ENSC 254 >= C-) AND (CMPT 201 >= C- OR ENSC 351 >= C-)", # implement
   short_description: "A course teaching the internals of modern operating systems. Topics consist of kernel components of modern OSes, such as system calls, device drivers, virtual memory, scheduling, file systems, synchronization for multi-core, and memory ordering.",
   credits: 3,
   instructors: ["Steven Ko"],
@@ -216,33 +210,16 @@ Course.create!(
 )
 Course.create!(
   dept: "cmpt",
-  number: "305",
-  term: "spring",
-  year: "2025",
-  title: "Computer Simulation and Modelling",
-  description: "An introduction to the modelling, analysis, and computer simulation of complex systems. Topics include analytic modelling, discrete event simulation, experimental design, random number generation, and statistical analysis.",
-  requisite_description: "CMPT 225, (MACM 101 or (ENSC 251 and ENSC 252)) and (STAT 270 or STAT 271), all with a minimum grade of C-.",
-  prereq_logic:"CMPT 225 >= C- AND (MACM 101 >= C- OR (ENSC 251 >= C- AND ENSC 252 >= C-)) AND (STAT 270 >= C- OR STAT 271 >= C-)", # implement
-  short_description: "An introduction to the modelling, analysis, and computer simulation of complex systems. Topics include analytic modelling, discrete event simulation, experimental design, random number generation, and statistical analysis.",
-  credits: 3,
-  instructors: [],
-  campuses: [nil],
-  delivery_methods: ["In Person"],
-  sections: ["d100"],
-  requisites: [],
-)
-Course.create!(
-  dept: "cmpt",
   number: "307",
   term: "spring",
   year: "2025",
   title: "Data Structures and Algorithms",
   description: "Design and analysis of efficient data structures and algorithms. General techniques for building and analyzing algorithms (greedy, divide & conquer, dynamic programming, network flows). Introduction to NP-completeness.",
   requisite_description: "CMPT 225, (MACM 201 or CMPT 210), (MATH 150 or MATH 151), and (MATH 232 or MATH 240), all with a minimum grade of C-. MATH 154 or MATH 157 with a grade of at least B+ may be substituted for MATH 150 or MATH 151.",
-  prereq_logic:"CMPT 225 >= C- AND (MACM 201 >= C- OR CMPT 210 >= C-) AND (MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= B+ OR MATH 157 >= B+) AND CGPA >= 2.5", # implement
+  prereq_logic:"CMPT 225 >= C- AND (MACM 201 >= C- OR CMPT 210 >= C-) AND (MATH 150 >= C- OR MATH 151 >= C- OR (MATH 154 >= B+ OR MATH 157 >= B+)) AND (MATH 232 >= C- OR MATH 240 >= C-)", # implement
   short_description: "Design and analysis of efficient data structures and algorithms. General techniques for building and analyzing algorithms (greedy, divide & conquer, dynamic programming, network flows). Introduction to NP-completeness.",
   credits: 3,
-  instructors: ["Qianping Gu", "Kay C Wiese"],
+  instructors: ["Qianping Gu"],
   campuses: ["Burnaby", "Surrey"],
   delivery_methods: ["In Person"],
   sections: ["d100", "d200"],
@@ -290,7 +267,7 @@ Course.create!(
   title: "Biomedical Computing",
   description: "no description available",
   requisite_description: "no prerequisite",
-  prereq_logic:"no prerequisite logic", # implement
+  prereq_logic:"#no_prereq_logic", # implement
   short_description: "no short description",
   credits: nil,
   instructors: [],
@@ -392,7 +369,7 @@ Course.create!(
   title: "Data Communications and Networking",
   description: "Data communication fundamentals (data types, rates, and transmission media). Network architectures for local and wide areas. Communications protocols suitable for various architectures. ISO protocols and internetworking. Performance analysis under various loadings and channel error rates.",
   requisite_description: "CMPT 225 and (MATH 151 or MATH 150), with a minimum grade of C-. MATH 154 or MATH 157 with a grade of at least B+ may be substituted for MATH 151 (MATH 150).",
-  prereq_logic:"CMPT 225 >= C- AND (MATH 151 >= C- OR MATH 150 >= C- OR (MATH 154 >= B+ OR MATH 157 >= B+))", # implement
+  prereq_logic:"CMPT 225 >= C- AND (MATH 151 >= C- OR MATH 150 >= C-) OR (MATH 154 >= B+ OR MATH 157 >= B+)", # implement
   short_description: "Data communication fundamentals (data types, rates, and transmission media). Network architectures for local and wide areas. Communications protocols suitable for various architectures. ISO protocols and internetworking. Performance analysis under various loadings and channel error rates.",
   credits: 3,
   instructors: [],
@@ -494,7 +471,7 @@ Course.create!(
   title: "Cryptography and Cryptographic Protocols",
   description: "The main cryptographic tools and primitives, their use in cryptographic applications; security and weaknesses of the current protocols. The notion of security, standard encryption schemes, digital signatures, zero-knowledge, selected other topics.",
   requisite_description: "(MACM 201 or CMPT 210) with a minimum grade of C-. CMPT 307 and 308 are recommended.",
-  prereq_logic:"MACM 201 >= C- OR CMPT 210 >= C-", # implement
+  prereq_logic:"MACM 201 >= C- OR CMPT 210 >= C- AND CMPT 307 >= C- AND CMPT 308 >= C-", # implement
   short_description: "The main cryptographic tools and primitives, their use in cryptographic applications; security and weaknesses of the current protocols. The notion of security, standard encryption schemes, digital signatures, zero-knowledge, selected other topics.",
   credits: 3,
   instructors: ["Andrei Bulatov"],
@@ -624,30 +601,13 @@ Course.create!(
 )
 Course.create!(
   dept: "cmpt",
-  number: "417",
-  term: "spring",
-  year: "2025",
-  title: "Intelligent Systems",
-  description: "Intelligent Systems using modern constraint programming and heuristic search methods. A survey of this rapidly advancing technology as applied to scheduling, planning, design and configuration. An introduction to constraint programming, heuristic search, constructive (backtrack) search, iterative improvement (local) search, mixed-initiative systems and combinatorial optimization.",
-  requisite_description: "CMPT 225 with a minimum grade of C-.",
-  prereq_logic:"CMPT 225 >= C-", # implement
-  short_description: "Intelligent Systems using modern constraint programming and heuristic search methods. A survey of this rapidly advancing technology as applied to scheduling, planning, design and configuration. An introduction to constraint programming, heuristic search, constructive (backtrack) search, iterative improvement (local) search, mixed-initiative systems and combinatorial optimization.",
-  credits: 3,
-  instructors: [],
-  campuses: [nil],
-  delivery_methods: ["In Person"],
-  sections: ["d100"],
-  requisites: [],
-)
-Course.create!(
-  dept: "cmpt",
   number: "419",
   term: "spring",
   year: "2025",
   title: "Special Topics in Artificial Intelligence",
   description: "Current topics in artificial intelligence depending on faculty and student interest.",
   requisite_description: "",
-  prereq_logic:"no prerequisite logic", # implement
+  prereq_logic:"#no_prereq_logic", # implement
   short_description: "Current topics in artificial intelligence depending on faculty and student interest.",
   credits: 3,
   instructors: ["Angelica Lim", "Nicholas Vincent"],
@@ -868,7 +828,7 @@ Course.create!(
   title: "Networking II",
   description: "This course covers the fundamentals of higher level network functionality such as remote procedure/object calls, name/address resolution, network file systems, network security and high speed connectivity/bridging/switching.",
   requisite_description: "(CMPT 201 or CMPT 300) and CMPT 371, with a minimum grade of C-.",
-  prereq_logic:"CMPT 201 >= C- OR CMPT 300 >= C- AND CMPT 371 >= C-", # implement
+  prereq_logic:"(CMPT 201 >= C- OR CMPT 300 >= C-) AND CMPT 371 >= C-", # implement
   short_description: "This course covers the fundamentals of higher level network functionality such as remote procedure/object calls, name/address resolution, network file systems, network security and high speed connectivity/bridging/switching.",
   credits: 3,
   instructors: [],
@@ -885,7 +845,7 @@ Course.create!(
   title: "Software Testing, Reliability and Security",
   description: "Methods for software quality assurance focusing on reliability and security. Test coverage and test data adequacy including combinatorial testing. MC/DC testing, and mutation testing. Security engineering techniques for vulnerability discovery and mitigation including fuzz testing. Testing techniques will be applied to the assessment of external open source software.",
   requisite_description: "(CMPT 275 or CMPT 276) with a minimum grade of C- and 15 upper division CMPT units.",
-  prereq_logic:"(CMPT 275 >= C- OR CMPT 276 >= C-) AND CGPA >= 2.5", # implement
+  prereq_logic:"CMPT 275 >= C- OR CMPT 276 >= C- AND CGPA >= 2.00", # implement
   short_description: "Methods for software quality assurance focusing on reliability and security. Test coverage and test data adequacy including combinatorial testing. MC/DC testing, and mutation testing. Security engineering techniques for vulnerability discovery and mitigation including fuzz testing. Testing techniques will be applied to the assessment of external open source software.",
   credits: 3,
   instructors: ["Jianliang Wu"],
@@ -919,7 +879,7 @@ Course.create!(
   title: "Requirements Engineering",
   description: "Software succeeds when it is well-matched to its intended purpose. Requirements engineering is the process of discovering that purpose by making requirements explicit and documenting them in a form amenable to analysis, reasoning, and validation, establishing the key attributes of a system prior to its construction. Students will learn methodical approaches to requirements analysis and design specification in early systems development phases, along with best practices and common principles to cope with notoriously changing requirements. ",
   requisite_description: "CMPT 275 or CMPT 276, (MACM 201 or CMPT 210) , all with a minimum grade of C- and 15 units of upper division courses. Recommended: Co-op experience.",
-  prereq_logic:"CMPT 275 >= C- OR CMPT 276 >= C- AND (MACM 201 >= C- OR CMPT 210 >= C-) AND UA >= 15", # implement
+  prereq_logic:"CMPT 275 >= C- OR CMPT 276 >= C- AND (MACM 201 >= C- OR CMPT 210 >= C-) AND CGPA >= 2.50", # implement
   short_description: "Software succeeds when it is well-matched to its intended purpose. Requirements engineering is the process of discovering that purpose by making requirements explicit and documenting them in a form amenable to analysis, reasoning, and validation, establishing the key attributes of a system prior to its construction. Students will learn methodical approaches to requirements analysis and design specification in early systems development phases, along with best practices and common principles to cope with notoriously changing requirements. ",
   credits: 3,
   instructors: [],
@@ -941,23 +901,6 @@ Course.create!(
   credits: 3,
   instructors: [],
   campuses: ["Burnaby"],
-  delivery_methods: ["In Person"],
-  sections: ["d100"],
-  requisites: [],
-)
-Course.create!(
-  dept: "cmpt",
-  number: "479",
-  term: "spring",
-  year: "2025",
-  title: "Special Topics in Computing Systems",
-  description: "Current topics in computing systems depending on faculty and student interest.",
-  requisite_description: "CMPT 201 or CMPT 300, with a minimum grade of C-.",
-  prereq_logic:"CMPT 201 >= C- OR CMPT 300 >= C-", # implement
-  short_description: "Current topics in computing systems depending on faculty and student interest.",
-  credits: 3,
-  instructors: [],
-  campuses: [nil],
   delivery_methods: ["In Person"],
   sections: ["d100"],
   requisites: [],
@@ -1004,7 +947,7 @@ Course.create!(
   title: "Directed Studies",
   description: "Independent study in topics selected in consultation with the supervising instructor(s) that are not covered by existing course offerings. Students must submit a proposal to the undergraduate chair, including the name and signature of the supervising faculty member(s). The proposal must include details of the material to be covered and the work to be submitted.",
   requisite_description: "Students must have completed 90 units, including 15 units of upper division CMPT courses, and have a GPA of at least 3.00. The proposal must be submitted to the undergraduate chair at least 15 days in advance of the term. The proposal must be signed by the supervisor(s) and the undergraduate chair.",
-  prereq_logic:"'#no_prereq_logic'", # implement
+  prereq_logic:"#no_prereq_logic", # implement
   short_description: "Independent study in topics selected in consultation with the supervising instructor(s) that are not covered by existing course offerings. Students must submit a proposal to the undergraduate chair, including the name and signature of the supervising faculty member(s). The proposal must include details of the material to be covered and the work to be submitted.",
   credits: 3,
   instructors: [],
@@ -1025,7 +968,7 @@ Course.create!(
   short_description: "Students will select one project to be completed in their final year of study. Each student must complete a project report and make a project presentation. The project may include: a research survey, a project implementation, a research paper/report. ",
   credits: 6,
   instructors: [],
-  campuses: [],
+  campuses: [nil],
   delivery_methods: ["In Person"],
   sections: ["d100"],
   requisites: [],
@@ -1038,7 +981,7 @@ Course.create!(
   title: "Honours Research Project",
   description: "Students must submit a proposal to the Undergraduate Chair, including the name and signature of the supervising faculty member(s). Students must complete a project report and make a project presentation. This course can satisfy the research project requirements for Computing Science honours students.",
   requisite_description: "Students must have completed 90 units, including 15 units of upper division CMPT courses, and have a GPA of at least 3.00. The proposal must be submitted to the Undergraduate Chair at least 15 days in advance of the term. The proposal must be signed by the supervisor(s) and the undergraduate chair.",
-  prereq_logic:"#no_prereq_logic", # implement
+  prereq_logic:"'#no_prereq_logic", # implement
   short_description: "Students must submit a proposal to the Undergraduate Chair, including the name and signature of the supervising faculty member(s). Students must complete a project report and make a project presentation. This course can satisfy the research project requirements for Computing Science honours students.",
   credits: 6,
   instructors: [],
