@@ -12,19 +12,19 @@ class CoursesController < ApplicationController
   end
 
   def search
+    Rails.logger.debug("Received parameters: #{params.inspect}")
     # retrieve the query parameters from the frontend
     query = search_params # or params.to_unsafe_h for testing
-
     # extract the search parameters from the query, with default values.
-    use_courses = ActiveModel::Type::Boolean.new.cast(query[:use_courses])
-    user_courses = query[:user_courses].presence || []
+    use_courses = query[:use_courses].presence || false
+    user_courses = query[:courses].presence || []
     search_string = query[:searchstring].presence || ""
     search_in_props = query[:search_in_props].presence ||[ "title", "dept", "description", "instructors", "campuses" ]
     terms = query[:terms].presence || [ { year: query[:year], term: query[:term] } ]
     departments = query[:departments].presence || [ "any" ]
     levels = query[:levels].presence || [ "any" ]
     custom_sql = query[:SQL].presence
-
+    logger.debug("use_courses: #{use_courses}")
     # convert the terms to an array of hashes // not sure if this is 100% correct or necessary
     terms = terms.map { |t| t.to_h }
 
@@ -42,6 +42,13 @@ class CoursesController < ApplicationController
     if levels == [ "any" ]
       levels = [] # empty array because we don't need to filter by level
     end
+    if query[:courses].is_a?(ActionController::Parameters)
+      user_courses = query[:courses].values.map(&:to_h)
+    else
+      user_courses = []
+    end
+    use_courses = ActiveModel::Type::Boolean.new.cast(query[:use_courses])
+
 
     # search for courses based on the search parameters
     results = search_courses(search_string, search_in_props, terms, departments, levels, custom_sql, use_courses, user_courses)
@@ -72,14 +79,15 @@ class CoursesController < ApplicationController
 
   def search_params
     # permit the search parameters from the frontend // or params.to_unsafe_h for testing
-    params.permit(:term, :year, :searchstring, :use_courses, :SQL, search_in_props: [], terms: [ :year, :term ], departments: [], levels: [], user_courses: [ :unique_identifier, :grade ])
+    logger.debug("params: #{params.inspect}")
+    params.permit(:term, :year, :searchstring, :use_courses, :SQL, search_in_props: [], terms: [ :year, :term ], departments: [], levels: [], courses: [ :unique_identifier, :grade ])
   end
 
 
   def search_courses(search_string, search_in_props, terms, departments, levels, custom_sql, use_courses, user_courses = [])
     # build the SQL query based on the search parameters
     # retirms the search results
-
+    logger.debug("use_courses: #{use_courses}")
     sql_query = "SELECT unique_identifier, dept, number, term, year, title, description, requisite_description, credits, instructors, campuses, delivery_methods, sections FROM courses WHERE 1=1"
     query_values = [] # empty query values array initialization
 
