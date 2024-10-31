@@ -3,7 +3,7 @@ import "./search_bar_and_dropdown.css";
 import { defaultQuery } from "./searchCourses.js";
 import { SearchBar } from "./search_bar.jsx";
 import { Checkbox } from "./checkbox.jsx";
-import { changeQueryCallback, UpdateTermsCallback } from "./callback.js";
+import { changeQueryCallback, UpdateTermsCallback, UpdateSessionCallback } from "./callback.js";
 
 export const all_categories = {
     search_in_props: ["title", "description", "instructors", "year", "term"],
@@ -21,6 +21,7 @@ const SearchBarWithDropdown = () => {
   const [searchQuery, setSearchQuery] = useState(defaultQuery);
   const [showDropdown, setShowDropdown] = useState(false);
 
+  // update the search courses when term tabs are updated
   useEffect(() => {
     UpdateTermsCallback.subscribe((terms) => {
       let search_courses = [];
@@ -29,6 +30,18 @@ const SearchBarWithDropdown = () => {
       }
       setSearchQuery((query) => {
         query.courses = search_courses;
+  
+        changeQueryCallback.trigger(query);
+        return query;
+      });
+    })
+  }, [])
+
+  // update session token when session is updated
+  useEffect(() => {
+    UpdateSessionCallback.subscribe((session) => {
+      setSearchQuery((query) => {
+        query.session_token = session;
   
         changeQueryCallback.trigger(query);
         return query;
@@ -80,6 +93,7 @@ const SearchBarWithDropdown = () => {
     });
   };
 
+  // update whether or not to apply selected courses to the search
   const setSearchUseCourses = (value) => {
     setSearchQuery((query) => {
       query.use_courses = value;

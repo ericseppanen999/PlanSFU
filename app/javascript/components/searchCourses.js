@@ -7,7 +7,8 @@ export const defaultQuery = {
   levels: ["any"],
   SQL: "",
   courses: [],
-  use_courses: false
+  use_courses: false,
+  session_token: undefined
 };
 
 // returns a course list to successCallback if courses are successfully fetched, given a search query
