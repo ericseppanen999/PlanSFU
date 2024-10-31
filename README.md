@@ -47,6 +47,8 @@ A course planner for undergrads at SFU. A group project for CMPT 276 D300, Fall 
     - Continuation: complete by 11/6
 - Find recommended courses
     - Continuation: complete by 11/13
+-Sign in feature
+    -Sign in and log out still needs to be fixed and updated
 
 ## Running The Server Locally ##
 ### Prerequisites ###
