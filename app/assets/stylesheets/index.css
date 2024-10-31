@@ -8,19 +8,19 @@
 }
 
 #main_panel {
-    width: 80%;
+    width: 90%;
     border-top: var(--padding-small) solid var(--base-dark);
     padding: var(--padding-large);
     margin-left: auto;
     margin-right: auto;
 }
 
-#left_pane {
-    width: 40ch;
+#left_panel {
+    width: 30%;
 }
 
-#right_pane {
-    width: auto;
+#right_panel {
+    width: 70%;
     display: flex;
     flex-direction: column;
     flex-grow: 100;

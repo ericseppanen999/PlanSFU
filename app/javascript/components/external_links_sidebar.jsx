@@ -834,9 +834,9 @@ const NestedGroup = ({ title, content, level }) => {
     };
 
     return (
-        <div className={'nested_group level_${level}'}>
+        <div className={`nested_group level_${level}`}>
             <div className="group_title" onClick={() => setIsOpen(!isOpen)}>
-                {isOpen ? "- " : "+ "}{title}
+                {" ".repeat(level-1) + (isOpen ? "- " : "+ ")}{title}
             </div>
             {isOpen && (
                 <div className="group_content">

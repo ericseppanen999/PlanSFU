@@ -3,6 +3,10 @@
     min-height: calc(100vh - 60px);
 }
 
+.group_title {
+    cursor: pointer;
+}
+
 .external-links-sidebar {
     width: 300px;
     padding: 20px;
