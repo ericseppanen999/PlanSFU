@@ -202,7 +202,7 @@ Course.create!(
   title: "#{title}",
   description: "#{description || "no description available"}",
   requisite_description: "#{prerequisite || "no prerequisite"}",
-  prereq_logic:"#{prerequisite_logic}", # implement
+  prereq_logic:"#{prerequisite_logic}",
   short_description: "#{short_description}",
   credits: #{credits || "nil"},
   instructors: #{instructors.inspect},
@@ -270,7 +270,7 @@ departments = [
   "ugrad", "urb", "wl"
 ]
 
-departments = [ "cmpt", "macm", "math" ]
+departments = [ "cmpt", "macm", "math", "ensc", "phys", "chem", "stat" ]
 
 def times(year_scope, terms, departments)
   puts "year:"
