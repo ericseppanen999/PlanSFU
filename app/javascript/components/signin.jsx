@@ -6,7 +6,7 @@ export const SignIn = ({}) => {
     const [activeUsername, setActiveUsername] = useState(undefined);
     const [sessionToken, setSessionToken] = useState(undefined);
 
-    function login(username, password){
+    const login = (username, password) => {
         // send login request (returns session token if successful)
         // fails if username doesn't exist or if server fails to respond
         // update loggedIn, activeUsername, and sessionToken if successful
@@ -17,13 +17,13 @@ export const SignIn = ({}) => {
         }
     }
     
-    function createAccount(username, password){
+    const createAccount = (username, password) => {
         // send create account request (returns session token if successful)
         // fails if username already exists or if server fails to respond
         // update loggedIn, activeUsername, and sessionToken if successful
     }
     
-    function signOut(){
+    const signOut = () => {
         // send sign out request (clears session token on server)
         // if server responds with successful logout, reset loggedIn, activeUsername, and sessionToken
     }
