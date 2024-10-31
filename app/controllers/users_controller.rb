@@ -8,9 +8,18 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    
     if @user.save
-      render json: { message: "user created successfully", user: @user }, status: :created
+      # Generate session token for the user
+      session_token = SecureRandom.hex(16)
+      
+      # Store session token in user's session (or database if you’re saving tokens)
+      session[:session_token] = session_token
+      
+      # Send the session token to the frontend in a JSON response
+      render json: { session_token: session_token, message: "Account created successfully" }, status: :created
     else
+      # If there’s an error saving the user, return the error messages in JSON
       render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
     end
   end
@@ -49,6 +58,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:cas_user_id, taken_courses: [ :course_code, :term ])
+    params.require(:user).permit(:email, :password)
   end
 end
