@@ -1,0 +1,17 @@
+[
+    {
+        "department": "Computing Science",
+        "dept": "cmpt",
+        "url": "https://www.sfu.ca/fas/schools/computing-science/about.html"
+    },
+    {
+        "department": "Engineering Science",
+        "dept": "ensc",
+        "url": "https://www.sfu.ca/fas/schools/engineering-science/about.html"
+    },
+    {
+        "department": "Mathematics",
+        "dept": "math",
+        "url": "https://www.sfu.ca/math.html"
+    }
+]

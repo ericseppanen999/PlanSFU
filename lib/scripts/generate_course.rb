@@ -191,7 +191,7 @@ def print_command(first_section, filtered_sections, instructors, campuses, deliv
   number, dept, term, year = get_course_dept_term_year(url)
   title = first_section["title"] || "n/a"
   short_description = description || "no short description"
-  prerequisite_logic = parse_prerequisites(prerequisite) || "no prerequisite logic"
+  prerequisite_logic = parse_prerequisites(prerequisite) || "#no_prereq_logic"
 
   course_create_command = <<-RUBY
 Course.create!(
