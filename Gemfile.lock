@@ -320,7 +320,6 @@ DEPENDENCIES
   brakeman
   capybara
   debug
-  fiddle
   groq (~> 0.3.2)
   importmap-rails
   jbuilder
