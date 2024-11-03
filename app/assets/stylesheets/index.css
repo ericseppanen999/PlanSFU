@@ -16,11 +16,11 @@
 }
 
 #left_panel {
-    width: 30%;
+    width: calc(30% - var(--padding-medium) - 1px);
 }
 
 #right_panel {
-    width: 70%;
+    width: calc(70% - var(--padding-medium) - 1px);
     display: flex;
     flex-direction: column;
     flex-grow: 100;

@@ -19,13 +19,18 @@ body {
     --padding-medium: 15px;
     --padding-large: 30px;
 
+    --primary-light: rgb(206, 74, 74);
     --primary-color: brown;
+    --primary-dark: rgb(123, 28, 28);
     --base-color: white;
     --base-dark: rgb(225, 225, 225);
     --base-medium: rgb(235, 235, 235);
 
+    --hover-text-color: var(--primary-light);
+
     --font-h3: bold 14px Oswald, sans-serif;
     --text-color: black;
+    --text-error-color: red;
 
     margin: 0;
     background-color: var(--primary-color);
@@ -33,6 +38,27 @@ body {
     
     display: grid;
     grid-template-rows: auto 1fr auto;
+}
+
+a:link {
+    color: var(--primary-color);
+}
+
+a:visited {
+    color: var(--primary-dark);
+}
+
+a:hover {
+    color: var(--primary-light);
+}
+
+vl {
+    border-left: 1px solid var(--text-color);
+    display: inline;
+    height: 100%;
+    width: 0;
+    margin-left: var(--padding-medium);
+    margin-right: var(--padding-medium);
 }
 
 hr {
@@ -56,6 +82,11 @@ button {
     padding: var(--padding-medium);
     width: fit-content;
     height: fit-content;
+}
+
+button.small {
+    padding: var(--padding-small);
+    height: 2lh;
 }
 
 button:hover {

@@ -9,8 +9,20 @@ export const SignIn = () => {
     const [sessionToken, setSessionToken] = useState(undefined);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [showBadCredError, setBadCredError] = useState(false);
+    const [showSigninError, setSigninError] = useState(false);
+    const [showSignupError, setSignupError] = useState(false);
+    const [showSignoutError, setSignoutError] = useState(false);
+
+    const resetErrors = () => {
+        setBadCredError(false);
+        setSigninError(false);
+        setSignoutError(false);
+        setSignupError(false);
+    }
 
     const login = () => {
+        resetErrors();
         fetch('/session', {
             method: 'POST',
             headers: {
@@ -26,14 +38,16 @@ export const SignIn = () => {
                     setActiveUsername(username);
                     UpdateSessionCallback.trigger(data.session_token);
                     setSessionToken(data.session_token);
+                    setShowDropdown(false);
                 } else {
-                    alert("Login failed.");
+                    setSigninError(true);
                 }
             })
             .catch(error => console.error("Login error:", error));
     };
 
     const createAccount = () => {
+        resetErrors();
         fetch('/users', {
             method: 'POST',
             headers: {
@@ -49,14 +63,16 @@ export const SignIn = () => {
                     setActiveUsername(username);
                     UpdateSessionCallback.trigger(data.session_token);
                     setSessionToken(data.session_token);
+                    setShowDropdown(false);
                 } else {
-                    alert("Account creation failed.");
+                    setSignupError(true);
                 }
             })
             .catch(error => console.error("Account creation error:", error));
     };
 
     const signOut = () => {
+        resetErrors();
         fetch('/session', {
             method: 'DELETE',
             headers: {
@@ -70,7 +86,7 @@ export const SignIn = () => {
                     UpdateSessionCallback.trigger(undefined);
                     setSessionToken(undefined);
                 } else {
-                    alert("Logout failed.");
+                    setSignoutError(true);
                 }
             })
             .catch(error => console.error("Logout error:", error));
@@ -87,49 +103,78 @@ export const SignIn = () => {
                     <button id="sign_in_button" onClick={toggleDropdown}>SIGN IN</button>
                     {showDropdown && (
                         <div className="signin_dropdown">
-                            <table className="username_password_table">
-                                <tbody>
-                                    <tr>
-                                        <td>Username:</td>
-                                        <td>
-                                            <input
-                                                type="text"
-                                                name="username"
-                                                autoComplete="username"
-                                                value={username}
-                                                onChange={(e) => setUsername(e.target.value)}
-                                            />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Password (min 6 characters):</td>
-                                        <td>
-                                            <input
-                                                type="password"
-                                                name="password"
-                                                minLength="6"
-                                                autoComplete="current-password new-password"
-                                                value={password}
-                                                onChange={(e) => setPassword(e.target.value)}
-                                            />
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div className="padding_medium"></div>
-                            <div className="horizontal-stack submit_panel">
-                                <div className="padding_auto"></div>
-                                <button id="sign_in_submit_button" onClick={() => { toggleDropdown(); login(); }}>SIGN IN</button>
+                            <form>
+                                <table className="username_password_table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Username:</td>
+                                            <td>
+                                                <input
+                                                    type="text"
+                                                    name="username"
+                                                    autoComplete="username"
+                                                    value={username}
+                                                    onChange={(e) => setUsername(e.target.value)}
+                                                    required
+                                                />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Password (min 6 characters):</td>
+                                            <td>
+                                                <input
+                                                    type="password"
+                                                    name="password"
+                                                    minLength="6"
+                                                    autoComplete="current-password new-password"
+                                                    value={password}
+                                                    onChange={(e) => setPassword(e.target.value)}
+                                                    required
+                                                />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                                 <div className="padding_medium"></div>
-                                <button id="sign_up_submit_button" onClick={() => { toggleDropdown(); createAccount(); }}>SIGN UP</button>
-                            </div>
+                                <div className="horizontal-stack submit_panel">
+                                    {showBadCredError && (
+                                        <>
+                                            <p className="error_text">Invalid username / password combo</p>
+                                        </>
+                                    )}
+                                    {showSigninError && (
+                                        <>
+                                            <p className="error_text">Failed to sign in</p>
+                                        </>
+                                    )}
+                                    {showSignupError && (
+                                        <>
+                                            <p className="error_text">Failed to sign up</p>
+                                        </>
+                                    )}
+                                    <div className="padding_auto"></div>
+                                    <button className="small" type="submit" id="sign_in_submit_button" onClick={login}>SIGN IN</button>
+                                    <div className="padding_medium"></div>
+                                    <button className="small" type="submit" id="sign_up_submit_button" onClick={createAccount}>SIGN UP</button>
+                                </div>
+                            </form>
                         </div>
                     )}
                 </>
             ) : (
                 <>
-                    <p>{activeUsername}</p>
-                    <button id="sign_out_button" onClick={signOut}>SIGN OUT</button>
+                    <div className="horizontal-stack">
+                        <p>{activeUsername}</p>
+                        <div className="padding_medium"></div>
+                        <div className="center-content">
+                            <button className="small" id="sign_out_button" onClick={signOut}>SIGN OUT</button>
+                        </div>
+                    </div>
+                    {showSignoutError && (
+                        <>
+                            <p className="error_text">Failed to sign out</p>
+                        </>
+                    )}
                 </>
             )}
         </div>

@@ -3,8 +3,27 @@
     min-height: calc(100vh - 60px);
 }
 
+ul.minus_list {
+    list-style-type: "− ";
+}
+
+ul.plus_list {
+    list-style-type: "+ ";
+}
+
+ul.box_list {
+    list-style-type: "□ ";
+}
+
 .group_title {
     cursor: pointer;
+    user-select: none;
+}
+
+.group_title:hover {
+    cursor: pointer;
+    user-select: none;
+    color: var(--hover-text-color);
 }
 
 .external-links-sidebar {

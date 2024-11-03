@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { Plus, Minus } from "./icons.jsx";
 import "./external_links_sidebar.css";
 
-const facultyStructure = {
+import facultyStructure from "./external_links.json";
+
+
+/*const facultyStructure = {
     "Beedie School of Business": {
             "Majors": [
                 { name: "Business Major", url: "https://www.sfu.ca/students/calendar/2025/spring/programs/business/major/bachelor-of-business-administration.html"},
@@ -784,7 +788,7 @@ const facultyStructure = {
             { name: "General Science Double Minor", url: "https://www.sfu.ca/content/sfu/students/calendar/2025/spring/programs/general-science-double-minor/degree/bachelor-of-science.html"},
         ]
     },
-};
+};*/
 
 
 const NestedGroup = ({ title, content, level }) => {
@@ -792,13 +796,17 @@ const NestedGroup = ({ title, content, level }) => {
 
     const renderContent = () => {
         if (Array.isArray(content)) {
-            return content.map((link, index) => (
-                <li key={index}>
-                    <a href={link.url} target="_blank" rel="noopener noreferrer">
-                        {link.name}
-                    </a>
-                </li>
-            ));
+            return (
+                <ul className="box_list">
+                    {content.map((link, index) => (
+                        <li key={index}>
+                            <a href={link.url} target="_blank" rel="noopener noreferrer">
+                                {link.name}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            );
         } else {
             return Object.entries(content).map(([key, value]) => (
                 <NestedGroup key={key} title={key} content={value} level={level + 1} />
@@ -807,20 +815,16 @@ const NestedGroup = ({ title, content, level }) => {
     };
 
     return (
-        <div className={`nested_group level_${level}`}>
-            <div className="group_title" onClick={() => setIsOpen(!isOpen)}>
-                {" ".repeat(level-1) + (isOpen ? "- " : "+ ")}{title}
-            </div>
-            {isOpen && (
-                <div className="group_content">
-                    {Array.isArray(content) ? (
-                        <ul>{renderContent()}</ul>
-                    ) : (
-                        renderContent()
-                    )}
-                </div>
-            )}
-        </div>
+        <ul className={isOpen ? "minus_list" : "plus_list"}>
+            <li className={`nested_group level_${level}`}>                        
+                <div className="group_title" onClick={() => setIsOpen(!isOpen)}>{title}</div>
+                {isOpen && (
+                    <div className="group_content">
+                        {renderContent()}
+                    </div>
+                )}
+            </li>
+        </ul>
     );
 };
 
