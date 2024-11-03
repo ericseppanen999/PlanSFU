@@ -10,6 +10,11 @@
     animation: fadeIn 0.3s;
 }
 
+.error_text {
+    color: var(--text-error-color);
+    margin: var(--padding-small);
+}
+
 .username_password_table {
     border: none;
 }
