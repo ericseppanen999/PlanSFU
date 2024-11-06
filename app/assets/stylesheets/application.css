@@ -129,12 +129,24 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-input {
+input[type="checkbox"] {
+    accent-color: var(--primary-color);
+}
+
+input:is([type="text"], [type="password"], [type="email"], [type="search"], [type="url"]) {
     outline: 1px solid var(--base-dark);
     border: none;
     border-radius: 0;
     display: flex;
     height: max-content;
+}
+
+input:is([type="text"], [type="password"], [type="email"], [type="search"], [type="url"]):is(:focus, :hover) {
+    outline: 1px solid var(--primary-color);
+}
+
+input:is([type="text"], [type="password"], [type="email"], [type="search"], [type="url"]):active:focus {
+    outline: 1px solid var(--primary-light);
 }
 
 footer {
