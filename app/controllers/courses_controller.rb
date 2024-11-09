@@ -12,14 +12,17 @@ class CoursesController < ApplicationController
   end
 
   def search
-    Rails.logger.debug("Received parameters: #{params.inspect}")
+    # Rails.logger.debug("Received parameters: #{params.inspect}")
     # retrieve the query parameters from the frontend
+
     query = search_params # or params.to_unsafe_h for testing
     # extract the search parameters from the query, with default values.
+
     use_courses = query[:use_courses].presence || false
     user_courses = query[:courses].presence || []
+    session_token = query[:session_token].presence || nil
     search_string = query[:searchstring].presence || ""
-    search_in_props = query[:search_in_props].presence ||[ "title", "dept", "description", "instructors", "campuses" ]
+    search_in_props = query[:search_in_props].presence ||[ "title", "term", "description", "instructors", "year" ]
     terms = query[:terms].presence || [ { year: query[:year], term: query[:term] } ]
     departments = query[:departments].presence || [ "any" ]
     levels = query[:levels].presence || [ "any" ]
@@ -49,15 +52,34 @@ class CoursesController < ApplicationController
     end
     use_courses = ActiveModel::Type::Boolean.new.cast(query[:use_courses])
 
+    if session_token
+      user = User.find_by(session_token: session_token)
+      user_courses = user.taken_courses if user
+    end
+
+    if use_courses && user_courses.any?
+      user_courses = user_courses.map do |course|
+        db_course = Course.find_by(unique_identifier: course[:unique_identifier])
+        {
+          "dept" => "#{db_course.dept}",
+          "number" => "#{db_course.number}",
+          "grade" => course[:grade] || "B"
+        } if db_course
+      end.compact
+    else
+      user_courses = []
+    end
 
     # search for courses based on the search parameters
-    results = search_courses(search_string, search_in_props, terms, departments, levels, custom_sql, use_courses, user_courses)
+    results = search_courses(search_string, search_in_props, terms, departments, levels, custom_sql, use_courses, user_courses, session_token)
 
     # save_user_search_history(search_string, term, year) # you may have to comment this out
 
     # return the search results to the frontend as JSON
     render json: results
   end
+
+  
   def check_eligibility
     user = User.find_by(cas_user_id: params[:cas_user_id])
     course = Course.find_by(dept: params[:dept], number: params[:number])
@@ -79,20 +101,21 @@ class CoursesController < ApplicationController
 
   def search_params
     # permit the search parameters from the frontend // or params.to_unsafe_h for testing
-    logger.debug("params: #{params.inspect}")
-    params.permit(:term, :year, :searchstring, :use_courses, :SQL, search_in_props: [], terms: [ :year, :term ], departments: [], levels: [], courses: [ :unique_identifier, :grade ])
+    # logger.debug("params: #{params.inspect}")
+    params.permit(:term, :year, :searchstring, :use_courses, :session_token, :SQL, search_in_props: [], terms: [ :year, :term ], departments: [], levels: [], courses: [ :unique_identifier, :grade ])
   end
 
 
-  def search_courses(search_string, search_in_props, terms, departments, levels, custom_sql, use_courses, user_courses = [])
+
+  def search_courses(search_string, search_in_props, terms, departments, levels, custom_sql, use_courses, user_courses = [], session_token = nil)
     # build the SQL query based on the search parameters
     # retirms the search results
-    logger.debug("use_courses: #{use_courses}")
+    # logger.debug("use_courses: #{use_courses}")
     sql_query = "SELECT unique_identifier, dept, number, term, year, title, description, requisite_description, prereq_logic, credits, instructors, campuses, delivery_methods, sections FROM courses WHERE 1=1"
     query_values = [] # empty query values array initialization
 
     # filter out invalid search props using intersection
-    allowed_props = [ "title", "dept", "description", "instructors", "campuses" ]
+    allowed_props = [ "title", "year", "description", "instructors", "term" ]
     search_in_props = search_in_props & allowed_props
 
 
@@ -129,37 +152,24 @@ class CoursesController < ApplicationController
 
     ## IMPLEMENT HERE ##
     # taken courses, custom SQL query
-    if use_courses && user_courses.present?
-      taken_course_uuids = user_courses.map { |course| course["unique_identifier"] }
-      taken_courses = Course.where(unique_identifier: taken_course_uuids).pluck(:dept, :number)
-      if taken_courses.any?
-        excluded_conditions = taken_courses.map { |dept, number| "(dept = ? AND number = ?)" }.join(" OR ")
-        query_values.concat(taken_courses.flatten)
-        sql_query += " AND NOT (#{excluded_conditions})"
-      end
+    Rails.logger.debug(user_courses)
+    if use_courses && user_courses.any?
+      exclusion_clauses = user_courses.map { |course| "(dept = ? AND number = ?)" }.join(" OR ")
+      query_values.concat(user_courses.flat_map { |course| [ course["dept"], course["number"] ] })
+      sql_query += " AND NOT (#{exclusion_clauses})"
     end
-    # debug: print the custom SQL query
+
+    sql_query += " LIMIT 50"
     Rails.logger.debug("SQL Query: #{sql_query}")
     Rails.logger.debug("Query Values: #{query_values.inspect}")
-    Rails.logger.debug("Number of placeholders in SQL: #{sql_query.scan(/\?/).count}")
-    Rails.logger.debug("Number of values passed: #{query_values.count}")
 
-    # execute the SQL query to get the search results
-    sql_query += " LIMIT 50"
-
-    # return results
     raw_results = Course.find_by_sql([ sql_query, *query_values ])
 
-# Filter by eligibility if `use_courses` is true
-=begin
     if use_courses && user_courses.present?
-      taken_courses = user_courses.map { |course| { "course_code" => course["unique_identifier"], "grade" => course["grade"] || "B" } }
       raw_results.select! do |course|
-        course.prerequisites_satisfied?(taken_courses, course.prereq_logic)
+        course.prerequisites_satisfied?(user_courses, course.prereq_logic)
       end
     end
-=end
-
     raw_results
   end
 end

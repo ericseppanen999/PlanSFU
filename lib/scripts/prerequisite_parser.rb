@@ -11,20 +11,81 @@ class PrerequisiteParser
     sleep(1)
     begin
       response = @client.chat(
-        "Convert the following prerequisite sentence into a structured logical expression with comparison operators for grades. Follow these rules:
+        "Task: Convert the following course prerequisite descriptions into logical expressions using the specified format.
 
-        Only include 'W_course >= C-' if 'One W course' is explicitly mentioned in the input.
-        Ignore permissions (e.g., 'Permission of Instructor' or 'Permission of Department') or other non-course instructions.
-        Include only course codes and GPA/CGPA requirements. Assume a minimum grade of C- unless specified otherwise.
-        Use >= for grade requirements and replace 'and'/'or' with 'AND'/'OR'.
-        Respond only with the resulting logical string, without any additional text. If no valid courses or GPA are provided, respond with an empty string or '#no_prereq_logic
-        Be specific, don't forget about GPA requirements
-        For example: Input: 'CMPT 225, MATH 154 with at least a B+, and a minimum CGPA of 2.50.'
+        **Instructions:**
 
-        Example Output: CMPT 225 >= C- AND MATH 154 >= B+ AND CGPA >= 2.50
+        - **Ignore** unnecessary text such as permissions and recommendations.
+        - **Do not include** statements about permissions required or recommendations in the logical expressions.
+        - **Focus only on** the core prerequisites that are necessary for enrollment.
 
-        Input: #{input_string}"
+        **Format Rules:**
 
+        - **Course Codes**: Use uppercase course codes without spaces (e.g., CMPT125).
+        - **Minimum Grades**: Represent minimum grade requirements as `(COURSE_CODE >= 'GRADE')`.
+        - **Logical Operators**: Use uppercase `AND`, `OR`, `NOT` for logical operations.
+        - **Grouping**: Use parentheses `()` for grouping expressions.
+        - **Credits**: Use `(Credits >= X)` for credit requirements.
+        - **GPA Requirements**: Use `(GPA >= X.XX)` for GPA requirements.
+        - **Special Cases**:
+          - **Grade Substitutions**: Include alternative courses with their required grades.
+          - **Corequisites**: Treat corequisites the same as prerequisites.
+          - **Test Scores**: Ignore test scores
+          - **General Statements**: Ignore general statements about prerequisites.
+          - **Program Specifics**: Ignore program-specific prerequisites.
+        - **No Prerequisites Case**: If there are no prerequisites, return `#no_prereq_logic`.
+        **Examples:**
+
+        1. **Prerequisite**: 'CMPT 120 or CMPT 130, with a minimum grade of C-.'
+          - **Logical Expression**:
+            ```
+            ( (CMPT120 >= 'C-') OR (CMPT130 >= 'C-') )
+            ```
+
+        2. **Prerequisite**: '(CMPT 125 or CMPT 135) and MACM 101, both with a minimum grade of C-.'
+          - **Logical Expression**:
+            ```
+            ( ( (CMPT125 >= 'C-') OR (CMPT135 >= 'C-') ) AND (MACM101 >= 'C-') )
+            ```
+
+        3. **Prerequisite**: 'MATH 150 or 151 or 154 or 157, with a minimum grade of C-.'
+          - **Logical Expression**:
+            ```
+            ( (MATH150 >= 'C-') OR (MATH151 >= 'C-') OR (MATH154 >= 'C-') OR (MATH157 >= 'C-') )
+            ```
+
+        4. **Prerequisite**: 'MATH 154 or MATH 157 with a grade of at least B may be substituted for MATH 150 or MATH 151.'
+          - **Logical Expression**:
+            ```
+            ( (MATH150 >= 'C-') OR (MATH151 >= 'C-') OR (MATH154 >= 'B') OR (MATH157 >= 'B') )
+            ```
+
+        5. **Prerequisite**: 'Pre-Calculus 12 (or equivalent) with a grade of at least B+, or MATH 100 with a grade of at least B-.'
+          - **Logical Expression**:
+            ```
+            ( (PreCalc12 >= 'B+') OR (MATH100 >= 'B-') )
+            ```
+
+        **Now, please convert the following prerequisites into logical expressions following the above instructions and format:**
+
+        ---
+
+        **Course Prerequisite:**
+        #{input_string}
+        ---
+
+        **Instructions for Each Prerequisite:**
+
+        - Read the prerequisite carefully.
+        - Identify all required courses and their minimum grade requirements.
+        - Use logical operators to represent the relationships between courses.
+        - Ignore any unnecessary text such as permissions, recommendations, or notes to consult advisors.
+        - Represent corequisites in the same format, noting they may be taken concurrently.
+        - Ensure the logical expression accurately reflects the prerequisite requirements.
+
+        **Your Task:**
+
+        Convert each of the above prerequisites into logical expressions according to the format rules and instructions provided. Respond in only one line containing the parsed prerequisite logic AND NOTHING ELSE WHATSOVER"
 
       )
       response["content"]
