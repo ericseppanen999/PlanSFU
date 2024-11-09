@@ -14,21 +14,22 @@ class Course < ApplicationRecord
   # define the validations
   def prerequisites_satisfied?(taken_courses, prereq_logic)
     return true if prereq_logic == "#no_prereq_logic"
-    logger.debug("Checking prerequisites for #{self.dept} #{self.number} with #{taken_courses} . prereq_logic: #{prereq_logic}")
+    # logger.debug("Checking prerequisites for #{self.dept} #{self.number}")
 
     prereq_logic.gsub!("W_course >= C-", has_w(taken_courses).to_s)
-    prereq_logic.gsub!(/([A-Z]+\s\d+)\s*(>=)\s*([A-F][+-]?)/) do |match|
+
+    prereq_logic.gsub!(/([A-Z]+\s\d+[A-Z]*)\s*(>=)\s*([A-F][+-]?)/) do |match|
       course_code = Regexp.last_match(1)
       required_grade = Regexp.last_match(3)
       grade_meets_requirement?(taken_courses, course_code, required_grade).to_s
     end
     prereq_logic.gsub!("AND", "&&")
     prereq_logic.gsub!("OR", "||")
-
     begin
+      Rails.logger.debug("Checking prerequisites for #{self.dept} #{self.number} == #{eval(prereq_logic)}")
       eval(prereq_logic)
     rescue Exception => e
-      puts "Error evaluating prerequisite logic: #{e.message}"
+      Rails.logger.debug("Error evaluating prerequisite logic: #{e.message}")
       false
     end
   end
@@ -39,24 +40,24 @@ class Course < ApplicationRecord
   end
 
   private
-
-  # method to set unique identifier before saving
   def set_unique_identifier
     self.unique_identifier = generate_unique_identifier
   end
 
-  # method to generate unique identifier based on course attributes using MD5 hash
   def generate_unique_identifier
     input_string = "#{year}-#{term}-#{dept}-#{number}"
     Digest::MD5.hexdigest(input_string)
   end
 
   def has_w(taken_courses)
-    taken_courses.any? { |course| course["course_code"].end_with?("W") }
+    taken_courses.any? do |course|
+      course["dept"].end_with?("W")
+    end
   end
 
   def grade_meets_requirement?(taken_courses, course_code, required_grade)
-    course = taken_courses.find { |c| c["course_code"].upcase == course_code.upcase }
+    dept, number = course_code.split
+    course = taken_courses.find { |c| c["dept"].upcase == dept.upcase && c["number"] == number }
     return false if course.nil?
     grade_to_value(course["grade"]) >= grade_to_value(required_grade)
   end

@@ -191,8 +191,8 @@ def print_command(first_section, filtered_sections, instructors, campuses, deliv
   number, dept, term, year = get_course_dept_term_year(url)
   title = first_section["title"] || "n/a"
   short_description = description || "no short description"
+  # prerequisite_logic = parse_prerequisites(prerequisite) || "#no_prereq_logic"
   prerequisite_logic = parse_prerequisites(prerequisite) || "#no_prereq_logic"
-
   course_create_command = <<-RUBY
 Course.create!(
   dept: "#{dept}",
@@ -212,7 +212,12 @@ Course.create!(
   requisites: [],
 )
   RUBY
-
+  begin
+    File.open("output.txt", "a") { |file| file.puts("#{dept} #{number}, #{term} #{year} : #{prerequisite_logic}") } # write into the file
+  rescue IOError => e
+    puts "Error writing to file: #{e}"
+  end
+=begin
   base_directory = "course_seed_data"
   # create directory if it doesn't exist with the specific name, year, and term
   folder_path = File.join(base_directory, year, term)
@@ -225,6 +230,7 @@ Course.create!(
   rescue IOError => e
     puts "Error writing to file: #{e}"
   end
+=end
 end
 
 # scrape sfu rest api for all course data
