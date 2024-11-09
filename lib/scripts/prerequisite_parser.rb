@@ -38,33 +38,23 @@ class PrerequisiteParser
 
         1. **Prerequisite**: 'CMPT 120 or CMPT 130, with a minimum grade of C-.'
           - **Logical Expression**:
-            ```
             ( (CMPT120 >= 'C-') OR (CMPT130 >= 'C-') )
-            ```
 
         2. **Prerequisite**: '(CMPT 125 or CMPT 135) and MACM 101, both with a minimum grade of C-.'
           - **Logical Expression**:
-            ```
             ( ( (CMPT125 >= 'C-') OR (CMPT135 >= 'C-') ) AND (MACM101 >= 'C-') )
-            ```
 
         3. **Prerequisite**: 'MATH 150 or 151 or 154 or 157, with a minimum grade of C-.'
           - **Logical Expression**:
-            ```
             ( (MATH150 >= 'C-') OR (MATH151 >= 'C-') OR (MATH154 >= 'C-') OR (MATH157 >= 'C-') )
-            ```
 
         4. **Prerequisite**: 'MATH 154 or MATH 157 with a grade of at least B may be substituted for MATH 150 or MATH 151.'
           - **Logical Expression**:
-            ```
             ( (MATH150 >= 'C-') OR (MATH151 >= 'C-') OR (MATH154 >= 'B') OR (MATH157 >= 'B') )
-            ```
 
         5. **Prerequisite**: 'Pre-Calculus 12 (or equivalent) with a grade of at least B+, or MATH 100 with a grade of at least B-.'
           - **Logical Expression**:
-            ```
             ( (PreCalc12 >= 'B+') OR (MATH100 >= 'B-') )
-            ```
 
         **Now, please convert the following prerequisites into logical expressions following the above instructions and format:**
 
