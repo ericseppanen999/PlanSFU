@@ -1,0 +1,40 @@
+.info_hover_tag {
+    all: initial !important;
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    display: inline;
+    width: min-content;
+    height: min-content;
+    margin: var(--padding-small);
+    padding: 0;
+}
+
+.info_hover_tag.show_active {
+    background-color: var(--base-dark);
+}
+
+.info_button_icon {
+    width: 1lh;
+    height: 1lh;
+}
+
+.info_popup_rect {
+    background: var(--note-color);
+    border: 1px solid var(--base-dark);
+    padding: var(--padding-small);
+    margin-left: 0;
+    width: 150px;
+    height: 80px;
+    display: inline-block;
+}
+
+.info_popup_panel {
+    background-color: transparent;
+    position: absolute;
+    z-index: 1000;
+}
+
+.info_popup_panel.hide_panel {
+    display: none;
+}

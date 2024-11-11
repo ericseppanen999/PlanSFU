@@ -1,9 +1,9 @@
 .folding_panel {
     position: absolute;
-    background: white;
-    border: 1px solid #ccc;
+    background: var(--base-color);
+    border: 1px solid var(--base-dark);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 15px;
+    padding: var(--padding-medium);
     width: max-content;
     transition: height 0.3s ease, padding 0.3s ease;
     z-index: 1000;

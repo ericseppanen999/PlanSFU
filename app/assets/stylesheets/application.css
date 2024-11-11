@@ -25,6 +25,7 @@ body {
     --base-color: white;
     --base-dark: rgb(225, 225, 225);
     --base-medium: rgb(235, 235, 235);
+    --note-color: rgb(255, 246, 212);
 
     --hover-text-color: var(--primary-light);
 

@@ -5,6 +5,7 @@ import { SearchBar } from "./search_bar.jsx";
 import { Checkbox } from "./checkbox.jsx";
 import { changeQueryCallback, UpdateTermsCallback, UpdateSessionCallback } from "./callback.js";
 import { FoldingPanel } from "./folding_panel.jsx";
+import { InfoPopup } from "./info_popup.jsx";
 
 export const all_categories = {
     search_in_props: ["title", "description", "instructors", "year", "term"],
@@ -105,14 +106,18 @@ const SearchBarWithDropdown = () => {
 
   return (
     <>
-    <Checkbox
-      id="use_courses"
-      label="Apply Selected Courses"
-      defaultChecked={defaultQuery.use_courses}
-      onChange={(checked) =>
-        setSearchUseCourses(checked)
-      }
-    />
+    <div className="horizontal-stack">
+      <Checkbox
+        id="use_courses"
+        label="Apply Selected Courses"
+        defaultChecked={defaultQuery.use_courses}
+        onChange={(checked) =>
+          setSearchUseCourses(checked)
+        }
+      />
+      <div className="padding_medium"></div>
+      <InfoPopup>Toggles whether course prereqs apply to the search results.</InfoPopup>
+    </div>
     <br></br>
     <div className="search_bar_container">
       <div className="horizontal-stack">
@@ -125,7 +130,11 @@ const SearchBarWithDropdown = () => {
           <FoldingPanel className="search_dropdown" is_open={showDropdown} set_open_callback={setShowDropdown}>
             <div className="dropdown_menu">
               <div>
-                <h3>Search in</h3>
+                <div className="horizontal-stack">
+                  <h3>Search in</h3>
+                  <div className="padding_medium"></div>
+                  <InfoPopup>Select course attributes to apply the search string to.</InfoPopup>
+                </div>
                 <Checkbox
                   id="search_in_title"
                   label="title"
@@ -183,7 +192,11 @@ const SearchBarWithDropdown = () => {
                 />
               </div>
               <div>
-                <h3>Departments</h3>
+                <div className="horizontal-stack">
+                  <h3>Departments</h3>
+                  <div className="padding_medium"></div>
+                  <InfoPopup>Select departments to include in the results.</InfoPopup>
+                </div>
                 <Checkbox
                   id="dept_math"
                   label="math"
@@ -243,7 +256,11 @@ const SearchBarWithDropdown = () => {
               </div>
 
               <div>
-                <h3>Levels</h3>
+                <div className="horizontal-stack">
+                  <h3>Levels</h3>
+                  <div className="padding_medium"></div>
+                  <InfoPopup>Select levels of course to search in. (eg: CMPT 276 would be in 2xx)</InfoPopup>
+                </div>
                 <Checkbox
                   id="level_1"
                   label="1xx"
