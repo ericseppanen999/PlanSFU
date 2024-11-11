@@ -1,5 +1,5 @@
 import React, {useCallback, useState} from "react";
-import { Plus, Minus } from "./icons.jsx";
+import { PlusIcon, MinusIcon } from "./icons.jsx";
 import { AddCourseCallback, RemoveCourseCallback, SetGradeCallback } from "./callback.js"
 import "./course_panel.css"
 
@@ -38,14 +38,14 @@ const Course = ({
               className="flat course_add_remove_button"
               onClick={AddCourseWrapper}
             >
-              <Plus />
+              <PlusIcon />
             </button>
           ) : operation =="remove" ? (
             <button
               className="flat course_add_remove_button"
               onClick={RemoveCourseWrapper}
             >
-              <Minus />
+              <MinusIcon />
             </button>
           ) : (
             <></>
