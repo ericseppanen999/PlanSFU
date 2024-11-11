@@ -7,8 +7,8 @@ class RegistrationsController < ApplicationController
     def create
         @user = User.new(registration_params)
         if @user.save
-            login @user
-            redirect_to root_path
+            session[:user_id] = @user.id # Set session ID on successful signup
+            redirect_to root_path, notice: "Account created successfully"
         else
             render :new, status: :unprocessable_entity
         end
