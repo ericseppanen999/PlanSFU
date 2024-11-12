@@ -1,236 +1,210 @@
 cmpt 105w, fall 2024 : #no_prereq_logic
+cmpt 105w, fall 2024 : #no_prereq_logic
 cmpt 120, fall 2024 : #no_prereq_logic
-cmpt 125, fall 2024 : ( (CMPT120 >= 'C-') OR (CMPT130 >= 'C-') )
-cmpt 130, fall 2024 : ```
-(BCMath12 >= 'C-' OR (MATH100 >= 'C-') OR (MATH150 >= 'C-') OR (MATH151 >= 'C-') OR (MATH154 >= 'C-') OR (MATH157 >= 'C-'))
-```
-cmpt 201, fall 2024 : ( (CMPT125 >= 'C-') OR (CMPT135 >= 'C-') ) AND (MACM101 >= 'C-')
-cmpt 210, fall 2024 : ( (MACM101 >= 'C-') AND (MATH152 >= 'C-') AND ( (CMPT125 >= 'C-') OR (CMPT135 >= 'C-') ) AND ( (MATH240 >= 'C-') OR (MATH232 >= 'C-') ) )
-cmpt 213, fall 2024 : `(CMPT225 >= 'C-')`
-cmpt 225, fall 2024 : ((MACM101 >= 'C-') AND ((CMPT125 >= 'C-') OR (CMPT129 >= 'C-') OR (CMPT135 >= 'C-'))) OR ((ENSC251 >= 'C-') AND (ENSC252 >= 'C-'))
-cmpt 263, fall 2024 : ( (CMPT125 >= 'C-') OR (CMPT135 >= 'C-') )
-cmpt 272, fall 2024 : ( (CMPT120 >= 'C-') OR (CMPT130 >= 'C-') OR (CMPT128 >= 'C-') )
-cmpt 276, fall 2024 : ( (Wcourse >= 'C-') AND (CMPT225 >= 'C-') AND ((MACM101 >= 'C-') OR ((ENSC251 >= 'C-') AND (ENSC252 >= 'C-'))) AND ((MATH151 >= 'C-') OR (MATH150 >= 'C-') OR ((MATH154 >= 'B+') OR (MATH157 >= 'B+'))))
-cmpt 295, fall 2024 : `
-( ((MACM101 >= 'C-') AND ((CMPT125 >= 'C-') OR (CMPT135 >= 'C-'))) ) OR ( (MATH151 >= 'C-') AND (CMPT102 >= 'C-') ) )
-cmpt 307, fall 2024 : ((CMPT225 >= 'C-') AND ((MACM201 >= 'C-') OR (CMPT210 >= 'C-')) AND ((MATH232 >= 'C-') OR (MATH240 >= 'C-')) AND ((MATH150 >= 'C-') OR (MATH151 >= 'C-') OR (MATH154 >= 'B+') OR (MATH157 >= 'B+')))
-cmpt 310, fall 2024 : ((CMPT225 >= 'C-') AND ((MACM101 >= 'C-') OR ((ENSC251 >= 'C-') AND (ENSC252 >= 'C-'))))
-cmpt 318, fall 2024 : (CMPT225 >= 'C-')
+cmpt 125, fall 2024 : CMPT 120 >= C- OR CMPT 130 >= C-
+cmpt 130, fall 2024 : BC MATH 12 >= C- OR MATH 100 >= C- OR MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C-
+cmpt 201, fall 2024 : CMPT 125 >= C- OR CMPT 135 >= C- AND MACM 101 >= C-
+cmpt 210, fall 2024 : MACM 101 >= C- AND MATH 152 >= C- AND (CMPT 125 >= C- OR CMPT 135 >= C-) AND (MATH 240 >= C- OR MATH 232 >= C-)
+cmpt 213, fall 2024 : CMPT 225 >= C-
+cmpt 225, fall 2024 : MACM 101 >= C- AND (CMPT 125 >= C- OR CMPT 129 >= C- OR CMPT 135 >= C-) OR (ENSC 251 >= C- AND ENSC 252 >= C-)
+cmpt 263, fall 2024 : CMPT 125 >= C- OR CMPT 135 >= C-
+cmpt 272, fall 2024 : CMPT 120 >= C- OR CMPT 130 >= C- OR CMPT 128 >= C-
+cmpt 276, fall 2024 : W_course >= C- AND CMPT 225 >= C- AND (MACM 101 >= C- OR ENSC 251 >= C- AND ENSC 252 >= C-) AND ((MATH 151 >= C- OR MATH 150 >= C-) OR (MATH 154 >= B+ AND MATH 157 >= B+))
+cmpt 295, fall 2024 : MACM 101 >= C- AND (CMPT 125 >= C- OR CMPT 135 >= C-) OR MATH 151 >= C- AND CMPT 102 >= C-
+cmpt 307, fall 2024 : CMPT 225 >= C- AND (MACM 201 >= C- OR CMPT 210 >= C-) AND (MATH 150 >= C- OR MATH 151 >= C- OR MATH 232 >= C- OR MATH 240 >= C-) AND (MATH 232 >= C- OR MATH 240 >= C- OR MATH 154 >= B+ OR MATH 157 >= B+)
+cmpt 310, fall 2024 : CMPT 225 >= C- AND MACM 101 >= C- OR ENSC 251 >= C- AND ENSC 252 >= C-
+cmpt 318, fall 2024 : CMPT 225 >= C-
 cmpt 340, fall 2024 : #no_prereq_logic
-cmpt 353, fall 2024 : ```
-( CMPT225 >= 'C-' ) AND ( (BUS232 >= 'C-') OR (STAT201 >= 'C-') OR (STAT203 >= 'C-') OR (STAT205 >= 'C-') OR (STAT270 >= 'C-') OR (STAT271 >= 'C-') OR (ENSC280 >= 'C-') OR (MSE210 >= 'C-') OR (SEE241 >= 'C-') )
-```
-cmpt 354, fall 2024 : ((CMPT225 >= 'C-') AND ((MACM101 >= 'C-') OR ((ENSC251 >= 'C-') AND (ENSC252 >= 'C-'))))
-cmpt 361, fall 2024 : ( (CMPT225 >= 'C-') AND ( (MATH232 >= 'C-') OR (MATH240 >= 'C-') ) )
-cmpt 362, fall 2024 : (CMPT225 >= 'C-')
-cmpt 365, fall 2024 : (CMPT225 >= 'C-')
-cmpt 371, fall 2024 : ```
-( (CMPT225 >= 'C-') AND ( (MATH151 >= 'C-') OR (MATH150 >= 'C-') ) ) OR ( (MATH154 >= 'B+') OR (MATH157 >= 'B+') )
-cmpt 373, fall 2024 : ( (CMPT276 >= 'C-') OR (CMPT275 >= 'C-') )
-cmpt 376w, fall 2024 : ((CMPT105W >= 'C-') AND ((CMPT275 >= 'C-') OR (CMPT276 >= 'C-')))
-cmpt 383, fall 2024 : `( (CMPT225 >= 'C-') AND ( (MACM101 >= 'C-') OR ( (ENSC251 >= 'C-') AND (ENSC252 >= 'C-') ) ) )`
-cmpt 405, fall 2024 : (CMPT307 >= 'C-')
-cmpt 409, fall 2024 : (CMPT307 >= 'C-')
-cmpt 410, fall 2024 : `( (CMPT310 >= 'C-') AND (MACM316 >= 'C-') )`
-cmpt 412, fall 2024 : ```
-( (CMPT361 >= 'C-') AND (MATH152 >= 'C-') )
-```
+cmpt 353, fall 2024 : CMPT 225 >= C- AND (BUS 232 >= C- OR STAT 201 >= C- OR STAT 203 >= C- OR STAT 205 >= C- OR STAT 270 >= C- OR STAT 271 >= C- OR ENSC 280 >= C- OR MSE 210 >= C- OR SEE 241 >= C-)
+cmpt 354, fall 2024 : CMPT 225 >= C- AND (MACM 101 >= C- OR ENSC 251 >= C- AND ENSC 252 >= C-)
+cmpt 361, fall 2024 : CMPT 225 >= C- AND MATH 232 >= C- OR MATH 240 >= C-
+cmpt 362, fall 2024 : CMPT 225 >= C-
+cmpt 365, fall 2024 : CMPT 225 >= C-
+cmpt 371, fall 2024 : CMPT 225 >= C- AND (MATH 151 >= C- OR MATH 150 >= C-)
+cmpt 373, fall 2024 : CMPT 276 >= C- OR CMPT 275 >= C-
+cmpt 376w, fall 2024 : CMPT 105W >= C- AND (CMPT 275 >= C- OR CMPT 276 >= C-)
+cmpt 383, fall 2024 : CMPT 225 >= C- AND (MACM 101 >= C- OR ENSC 251 >= C- AND ENSC 252 >= C-)
+cmpt 405, fall 2024 : CMPT 307 >= C-
+cmpt 409, fall 2024 : CMPT 307 >= C-
+cmpt 410, fall 2024 : CMPT 310 >= C- AND MACM 316 >= C-
+cmpt 412, fall 2024 : CMPT 361 >= C- AND MATH 152 >= C-
 cmpt 415, fall 2024 : #no_prereq_logic
 cmpt 416, fall 2024 : #no_prereq_logic
-cmpt 417, fall 2024 : Here is the converted logical expression:
-
-(CMPT225 >= 'C-')
-cmpt 426, fall 2024 : ( CGPA >= 2.50 AND (CMPT275 >= 'C+' OR CMPT276 >= 'C+') AND (Credits >= 45) )
-cmpt 427, fall 2024 : (GPA >= 2.50)
-cmpt 428, fall 2024 : (GPA >= 2.50)
-cmpt 429, fall 2024 : (GPA >= 2.50)
-cmpt 430, fall 2024 : (GPA >= 2.50)
-cmpt 431, fall 2024 :  `( (CMPT300 >= 'C-') AND (CMPT371 >= 'C-') )`
-cmpt 441, fall 2024 : (CMPT307 >= 'C-')
-cmpt 450, fall 2024 : (CMPT295 >= 'C-')
-cmpt 454, fall 2024 : ( (CMPT300 >= 'C-') AND (CMPT354 >= 'C-') )
-cmpt 459, fall 2024 : (CMPT354 >= 'C-')
-cmpt 464, fall 2024 : ((CMPT361 >= 'C-') AND (MACM316 >= 'C-'))
-cmpt 469, fall 2024 : (CMPT361 >= 'C-')
-cmpt 473, fall 2024 : `( (CMPT275 >= 'C-') OR (CMPT276 >= 'C-') ) AND (Credits >= 15) `
-cmpt 475, fall 2024 : ( (CMPT275 >= 'C-') OR (CMPT276 >= 'C-') ) AND ( (MACM201 >= 'C-') OR (CMPT210 >= 'C-') ) AND (Credits >= 15)
-cmpt 477, fall 2024 : (CMPT275 >= 'C-') OR (CMPT276 >= 'C-')
-cmpt 479, fall 2024 : (CMPT300 >= 'C-')
-cmpt 489, fall 2024 : (CMPT383 >= 'C-')
-cmpt 494, fall 2024 : `(Credits(CMPT) >= 15)`
-cmpt 495, fall 2024 : ( (CMPT494 >= 'C-') AND (CMPT495 >= 'C-') )
-cmpt 496, fall 2024 : (CMPT >= 'X') AND (Credits >= 90) AND (Credits.upper >= 15) AND (GPA >= 3.00)
-cmpt 497, fall 2024 : #no_prereq_logic
-cmpt 498, fall 2024 : Here is the parsed prerequisite logic for the given course:
-
-( (Credits >= 90) AND (CMPT >= '3.00') )
-macm 101, fall 2024 : (BCMath12 >= 'no_grade' OR (MATH100 >= 'no_grade') OR (MATH150 >= 'no_grade') OR (MATH151 >= 'no_grade') OR (MATH154 >= 'no_grade') OR (MATH157 >= 'no_grade'))
-macm 201, fall 2024 : `(MACM101 >= 'C-') OR ((ENSC251 >= 'C-') AND ( (MATH232 >= 'C-') OR (MATH240 >= 'C-') ))`
-macm 204, fall 2024 : `( (CMPT102 >= '??') OR (CMPT120 >= '??') OR (CMPT126 >= '??') OR (CMPT128 >= '??') OR (CMPT130 >= '??') ) AND (MATH251 >= '??')`
-macm 316, fall 2024 : ( (MATH152 >= 'X') OR (MATH155 >= 'X') OR (MATH158 >= 'X') ) AND ( (MATH232 >= 'X') OR (MATH240 >= 'X') )
-macm 416, fall 2024 : ((MATH260 >= 'C-') OR (MATH310 >= 'C-')) AND (MACM316 >= 'C-')
-math 100, fall 2024 : ( (PreCalc11 >= 'B') OR (FoundaMATH11 >= 'B') ) OR ( (PreCalc12 >= 'C') AND (SFUFanCredit OR (SFUX99 >= 'B-')) )
-math 130, fall 2024 : (PreCalc12 >= 'B') OR (FoundOfMath12 >= 'B') OR (MATH100 >= 'C')
-math 150, fall 2024 : +(PreCalc12 >= 'B+') OR (MATH100 >= 'B+')
-math 151, fall 2024 : (PreCalc12 >= 'A') OR (MATH100 >= 'B')
-math 152, fall 2024 : ( (MATH150 >= 'C-') OR (MATH151 >= 'C-') ) OR ( (MATH154 >= 'B') OR (MATH157 >= 'B') )
-math 154, fall 2024 : ((PreCalc12 >= 'B') OR (MATH100 >= 'C-'))
-math 157, fall 2024 : ((PreCalc12 >= 'B') OR (MATH100 >= 'C') OR (CalculusReadinessTest >= 'Satisfactory'))
-math 190, fall 2024 : ((PreCalc11 >= 'B') OR (FoundationsOfMath11 >= 'B') OR (SFUFanX99 >= 'C'))
-math 232, fall 2024 : `( (MATH150 >= 'C-') OR (MATH151 >= 'C-') OR (MACM101 >= 'C-') ) OR ( (MATH154 >= 'B') AND (MATH157 >= 'B') )`
-math 240, fall 2024 : *((MATH150 >= 'C-') OR (MATH151 >= 'C-') OR (MACM101 >= 'C-')) OR ((MATH154 >= 'B') AND (MATH157 >= 'B'))
-math 251, fall 2024 : `(MATH152 >= 'C-') OR ((MATH155 >= 'B') OR (MATH158 >= 'B'))`
-math 260, fall 2024 : ((MATH152 >= 'C-') OR ((MATH155 >= 'B') OR (MATH158 >= 'B')) OR ((MATH232 >= 'C-') OR (MATH240 >= 'C-')))
-math 292, fall 2024 : Please provide the course prerequisites, and I'll convert them into logical expressions according to the format rules and instructions.
-math 303, fall 2024 : ( (MATH152 >= 'C-') OR (MATH155 >= 'C-') OR (MATH158 >= 'C-') ) AND ( (MATH232 >= 'C-') OR (MATH240 >= 'C-') )
-math 308, fall 2024 : ```
-( (MATH150 >= 'C-') OR (MATH151 >= 'C-') OR (MATH154 >= 'C-') OR (MATH157 >= 'C-') ) AND ( (MATH240 >= 'C-') OR (MATH232 >= 'C-') )
-```
-math 309, fall 2024 : `( (MATH232 >= 'C-') OR (MATH240 >= 'C-') ) AND (MATH251 >= 'C-')`
-math 322, fall 2024 : (MATH251 >= 'C-')
-math 336, fall 2024 : (GPA >= 2.5)
-math 337, fall 2024 : (#no_prereq_logic)
-
-Note: The given prerequisite does not specify any required courses or minimum grade requirements, so the logical expression would be `#no_prereq_logic`.
-math 340, fall 2024 : ( (MATH240 >= 'C-') OR (MATH232 >= 'B') )
-math 343, fall 2024 : (MACM201 >= 'C-')
-math 345, fall 2024 : (MACM201 >= 'C-')
-math 360, fall 2024 : ((MATH260 >= 'C-') OR (MATH155 >= 'A-'))
-math 408, fall 2024 : (MATH308 >= 'C-')
-math 418, fall 2024 : ( (MATH260 >= 'C-') OR (MATH310 >= 'C-') ) AND ( (MATH314 >= 'C-') OR (MATH320 >= 'C-') OR (MATH322 >= 'C-') OR (PHYS384 >= 'C-') ) OR ( ((MATH252 >= 'A-') AND (MATH260 >= 'A-')) OR ((MATH252 >= 'A-') AND (MATH310 >= 'A-')) OR ((MATH254 >= 'A-') AND (MATH260 >= 'A-')) OR ((MATH254 >= 'A-') AND (MATH310 >= 'A-')) )
-math 436, fall 2024 : #no_prereq_logic
-math 437, fall 2024 : (MATH436 >= '')
-math 447, fall 2024 : ((MATH340 >= 'C-') OR (MATH332 >= 'C-'))
-math 450, fall 2024 : `( (MATH242 >= 'C-') AND (MATH340 >= 'C-') )`
-math 480w, fall 2024 : ( (MACM201 >= 'B') OR ((MACM201 >= 'A') OR (MATH240 >= 'A') OR (MATH242 >= 'A') OR (MATH251 >= 'A') OR (MATH252 >= 'A')) OR ((MACM203 >= 'A') AND (MACM204 >= 'A')) )
-math 486, fall 2024 : #no_prereq_logic
-math 498, fall 2024 : #no_prereq_logic
-math 499w, fall 2024 : (GPA >= 3.0) AND (Credits >= 18) AND (CMPT498 NOT #no_prereq_logic)
+cmpt 417, fall 2024 : CMPT 225 >= C-
+cmpt 426, fall 2024 : CMPT 275 >= C- OR CMPT 276 >= C- AND CREDITS >= 45 AND CGPA >= 2.50
+cmpt 427, fall 2024 : CMPT 426 >= C- AND CGPA >= 2.50
+cmpt 428, fall 2024 : CMPT 427 >= C- AND CGPA >= 2.50
+cmpt 429, fall 2024 : CMPT 428 >= C- AND CGPA >= 2.50
+cmpt 430, fall 2024 : CMPT 429 >= C- AND CGPA >= 2.5
+cmpt 431, fall 2024 : CMPT 300 >= C- AND CMPT 371 >= C-
+cmpt 441, fall 2024 : CMPT 307 >= C-
+cmpt 450, fall 2024 : CMPT 295 >= C-
+cmpt 454, fall 2024 : CMPT 300 >= C- AND CMPT 354 >= C-
+cmpt 459, fall 2024 : CMPT 354 >= C-
+cmpt 464, fall 2024 : CMPT 361 >= C- AND MACM 316 >= C-
+cmpt 469, fall 2024 : CMPT 361 >= C-
+cmpt 473, fall 2024 : CMPT 275 >= C- OR CMPT 276 >= C- AND CREDITS >= 15 AND (CMPT 275 >= C- OR CMPT 276 >= C- OR ... more CMPT units ... >= C-)
+cmpt 475, fall 2024 : CMPT 275 >= C- OR CMPT 276 >= C- AND (MACM 201 >= C- OR CMPT 210 >= C-) AND CREDITS >= 15 AND (GPA >= 2.00)
+cmpt 477, fall 2024 : CMPT 275 >= C- OR CMPT 276 >= C-
+cmpt 479, fall 2024 : CMPT 300 >= C-
+cmpt 489, fall 2024 : CMPT 383 >= C-
+cmpt 494, fall 2024 : CREDITS >= 15 AND (CMPT >= C-)
+cmpt 495, fall 2024 : CMPT 494 >= C- AND CMPT 495 >= C-
+cmpt 496, fall 2024 : CREDITS >= 90 AND (Upper_div CMPT_courses >= C-) AND GPA >= 3.00
+cmpt 497, fall 2024 : CAPSTONE PROJECT PROPOSAL >= C-
+cmpt 498, fall 2024 : CREDITS >= 90 AND (CMPT >= 3*'C-') AND GPA >= 3.00
+macm 101, fall 2024 : BC MATH 12 >= C- OR MATH 100 >= C- OR MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C-
+macm 201, fall 2024 : MACM 101 >= C- OR ENSC 251 >= C- AND (MATH 232 >= C- OR MATH 240 >= C-)
+macm 204, fall 2024 : CMPT 102 >= C- OR CMPT 120 >= C- OR CMPT 126 >= C- OR CMPT 128 >= C- OR CMPT 130 >= C- AND MATH 251 >= C-
+macm 316, fall 2024 : MATH 152 >= C- OR MATH 155 >= C- OR MATH 158 >= C- AND MATH 232 >= C- OR MATH 240 >= C-
+macm 416, fall 2024 : MATH 260 >= C- OR MATH 310 >= C- AND MACM 316 >= C-
+math 100, fall 2024 : MATH 11 >= B OR MATH 11 >= C AND (FAN >= B- OR X99 >= B-) OR QPT >=
+math 130, fall 2024 : MATH 100 >= C- OR Foundations of Mathematics 12 >= B OR Pre-Calculus 12 >= B
+math 150, fall 2024 : MATH 12 >= B+ OR MATH 100 >= B- OR CALCULUS_READINESS_TEST >= C-
+math 151, fall 2024 : MATH 12 >= C- OR MATH 100 >= B OR SFU Calculus Readiness Test >= C-
+math 152, fall 2024 : MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= B OR MATH 157 >= B
+math 154, fall 2024 : MATH 12 >= B OR MATH 100 >= C- OR Calculator_Readiness_Test >= Satisfactory
+math 157, fall 2024 : MATH12 >= B OR MATH 100 >= C OR SFU Calculus Readiness Test >= C-
+math 190, fall 2024 : 'MATH 190 >= B OR MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C-'
+math 232, fall 2024 : MATH 150 >= C- OR MATH 151 >= C- OR MACM 101 >= C- OR MATH 154 >= B OR MATH 157 >= B
+math 240, fall 2024 : MATH 150 >= C- OR MATH 151 >= C- OR MACM 101 >= C- OR MATH 154 >= B OR MATH 157 >= B
+math 251, fall 2024 : MATH 152 >= C- OR MATH 155 >= B OR MATH 158 >= B
+math 260, fall 2024 : MATH 152 >= C- OR (MATH 155 >= B OR MATH 158 >= B) AND MATH 232 >= C- OR MATH 240 >= C-
+math 292, fall 2024 : GPA >= 2.75 AND CREDITS >= 45
+math 303, fall 2024 : MATH 152 >= C- OR MATH 155 >= C- OR MATH 158 >= C- AND MATH 232 >= C- OR MATH 240 >= C-
+math 308, fall 2024 : MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C- AND MATH 240 >= C- OR MATH 232 >= C-
+math 309, fall 2024 : MATH 232 >= C- OR MATH 240 >= C- AND MATH 251 >= C-
+math 322, fall 2024 : MATH 251 >= C-
+math 336, fall 2024 : #no_prereq_logic
+math 337, fall 2024 : MATH 336 >= C-
+math 340, fall 2024 : MATH 240 >= C- OR MATH 232 >= B
+math 343, fall 2024 : MACM 201 >= C-
+math 345, fall 2024 : MACM 201 >= C-
+math 360, fall 2024 : MATH 260 >= C- OR MATH 155 >= A- AND #no_computing_platform_expérience
+math 408, fall 2024 : MATH 308 >= C-
+math 418, fall 2024 : MATH 260 >= C- OR MATH 310 >= C- AND (MATH 314 >= C- OR MATH 320 >= C- OR MATH 322 >= C- OR PHYS 384 >= C-).
+math 436, fall 2024 : MATH 337 >= C-
+math 437, fall 2024 : MATH 436 >= C-
+math 447, fall 2024 : MATH 340 >= C- OR MATH 332 >= C-
+math 450, fall 2024 : MATH 242 >= C- AND MATH 340 >= C-
+math 480w, fall 2024 : MACM 201 >= B AND (MACM 201 >= A OR MATH 240 >= A OR MATH 242 >= A OR MATH 251 >= A OR MATH 252 >= A OR MACM 203 >= A AND MACM 204 >= A)
 ensc 100w, fall 2024 : #no_prereq_logic
 ensc 105w, fall 2024 : #no_prereq_logic
-ensc 120, fall 2024 : (PreCalc12 >= 'A') AND (BCPhysics12 >= 'A')
-ensc 151, fall 2024 : ((BCMath12 >= 'C-') OR (MATH100 >= 'C-') OR (MATH150 >= 'C-') OR (MATH151 >= 'C-') OR (MATH154 >= 'C-') OR (MATH157 >= 'C-'))
+ensc 120, fall 2024 : '(CREDITS >= 120 AND (BC Pre-Calculus 12 >= C- OR BC Physics 12 >= C-))'
+ensc 151, fall 2024 : (MATH 12 >= C- OR (MATH 100 >= C- OR MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C-))
 ensc 194, fall 2024 : #no_prereq_logic
 ensc 195, fall 2024 : #no_prereq_logic
 ensc 196, fall 2024 : #no_prereq_logic
 ensc 204, fall 2024 : #no_prereq_logic
-ensc 220, fall 2024 : ( (PHYS121 >= 'C-') OR (PHYS126 >= 'C-') OR (PHYS141 >= 'C-') ) AND (ENSC120 >= 'C-') AND (MATH232 >= 'C-') AND ((MATH260 >= 'C-') OR (MATH310 >= 'C-'))
-ensc 225, fall 2024 : ((ENSEC220 >= 'C-') OR (MSE250 >= 'C-')) AND (MATH232 >= 'C-') AND ((MATH260 >= 'C-') OR (MATH310 >= 'C-'))
-ensc 251, fall 2024 : ( (ENSC151 >= 'C-') OR (CMPT135 >= 'C-') OR ((CMPT125 >= 'C-') AND (CMPT127 >= 'C-')) )
-ensc 252, fall 2024 : ((ENSC151 >= 'C-') OR (CMPT125 >= 'C-') OR (CMPT126 >= 'C-') OR (CMPT135 >= 'C-'))
-ensc 295, fall 2024 : (ENSC195 >= 'C-') OR (ENSC196 >= 'C-')
-ensc 296, fall 2024 : `( (ENSC195 >= 'C') OR (ENSC196 >= 'C') )`
-ensc 316, fall 2024 : `( (MATH251 >= 'C-') AND ( (ENSC220 >= 'C-') OR (MSE250 >= 'C-') ) )`
-ensc 324, fall 2024 : ((ENSC220 >= 'C-') OR (MSE250 >= 'C-')) AND (MATH232 >= 'C-') AND ((MATH260 >= 'C-') OR (MATH310 >= 'C-'))
-ensc 350, fall 2024 : ((ENSC215 >= 'C-') AND ((ENSC250 >= 'C-') OR (CMPT250 >= 'C-'))) OR ((ENSC252 >= 'C-') AND (ENSC254 >= 'C-'))
-ensc 351, fall 2024 : ((ENSC151 >= 'C-') AND (ENSC215 >= 'C-') AND (ENSC250 >= 'C-')) OR ((ENSC254 >= 'C-')) OR ((CMPT225 >= 'C-') AND ((CMPT250 >= 'C-') OR (CMPT295 >= 'C-')))
-ensc 370, fall 2024 : (Credits >= 25)
-ensc 380, fall 2024 : ( (ENSC180 >= 'C-') AND (ENSC220 >= 'C-') OR (MSE250 >= 'C-') ) AND ( (MATH260 >= 'C-') OR (MATH310 >= 'C-') )
-ensc 385, fall 2024 : ( (PHYS120 >= 'C-') OR (PHYS140 >= 'C-') ) AND (MATH152 >= 'C-')
-ensc 395, fall 2024 : ( (ENSC295 >= 'unknown') OR (ENSC296 >= 'unknown') ) AND (Credits >= 75)
-ensc 396, fall 2024 : ( (ENSC295 >= '#') OR (ENSC296 >= '#') )
-ensc 403, fall 2024 : #no_prereq_logic
-ensc 440, fall 2024 : (ENSC405W >= 'C-)
-ensc 453, fall 2024 : ( (ENSC350 >= 'C-') AND (ENSC351 >= 'C-') )
-ensc 477, fall 2024 : ( (ENSC380 >= 'C-') OR (MSE280 >= 'C-') )
-ensc 498, fall 2024 : (#no_prereq_logic)
-ensc 499, fall 2024 : (ENSC498 >= 'P')
-phys 100, fall 2024 : ((BCPreCalc12 >= 'C-') OR (MATH100 >= 'C-'))
-phys 101, fall 2024 : Here is the parsed prerequisite logic:
-
- `( (BCPrinciplesOfPhysics12 >= 'C-') OR (PHYS100 >= 'C-') OR EQUIVALENT >= 'C-' ) AND (MATH150 >= 'C-' OR MATH151 >= 'C-' OR MATH154 >= 'C-' OR MATH157 >= 'C-') AND (BISC100 >= 'C-' OR BISC101 >= 'C-' OR BISC102 >= 'C-')`
-phys 102, fall 2024 : ((PHYS101 >= 'C-' OR PHYS120 >= 'C-' OR PHYS125 >= 'C-' OR PHYS140 >= 'C-' AND MATH150 >= 'C-' OR MATH151 >= 'C-' OR MATH154 >= 'C-' OR MATH157 >= 'C-' AND (BISC100 >= 'C-' OR BISC101 >= 'C-' OR BISC102 >= 'C-')) OR (PHYS101 >= 'C-' OR PHYS120 >= 'C-' OR PHYS125 >= 'C-' OR PHYS140 >= 'C-' AND MATH152 >= 'C-' OR MATH155 >= 'C-' OR MATH158 >= 'C-') OR (PHYS133 >= 'C-'))
-phys 120, fall 2024 : ```
-( (BCPrinciplesOfPhysics12 >= 'C-') OR (PHYS100 >= 'C-') ) AND ( (MATH150 >= 'C-') OR (MATH151 >= 'C-') OR (MATH154 >= 'C-') )
-phys 125, fall 2024 : **(MATH151 >= 'C-')**
+ensc 220, fall 2024 : ((PHYS 121 >= C- OR PHYS 126 >= C- OR PHYS 141 >= C-) AND ENSC 120 >= C- AND MATH 232 >= C- AND (MATH 260 >= C- OR MATH 310 >= C-))
+ensc 225, fall 2024 : (ENSC 220 >= C- OR MSE 250 >= C- AND MATH 232 >= C- AND (MATH 260 >= C- OR MATH 310 >= C-))
+ensc 251, fall 2024 : (ENSC 151 >= C- OR CMPT 135 >= C- OR (CMPT 125 >= C- AND CMPT 127 >= C-))
+ensc 252, fall 2024 : (ENSC 151 >= C- OR CMPT 125 >= C- OR CMPT 126 >= C- OR CMPT 135 >= C-)
+ensc 295, fall 2024 : (ENSC 195 >= C- OR ENSC 196 >= C-)
+ensc 296, fall 2024 : (ENSC 195 >= C- OR ENSC 196 >= C- AND (W_course >= C-))
+ensc 316, fall 2024 : (MATH 251 >= C- AND (ENSEC 220 >= C- OR MSE 250 >= C-))
+ensc 324, fall 2024 : (ENSC 220 >= C- OR MSE 250 >= C- AND MATH 232 >= C- AND (MATH 260 >= C- OR MATH 310 >= C-))
+ensc 350, fall 2024 : (ENSC 215 >= C- AND (ENSC 250 >= C- OR CMPT 250 >= C-)) OR (ENSC 252 >= C- AND ENSC 254 >= C-)
+ensc 351, fall 2024 : (ENSC 151 >= C- AND ENSC 215 >= C- AND ENSC 250 >= C- AND CREDITS >= 60) OR ENSC 254 >= C- OR (CMPT 225 >= C- AND (CMPT 250 >= C- OR CMPT 295 >= C-))
+ensc 370, fall 2024 : ENSC >= C-
+ensc 380, fall 2024 : (ENSC 180 >= C- AND ENSC 220 >= C- OR MSE 250 >= C- AND (MATH 260 >= C- OR MATH 310 >= C-))
+ensc 385, fall 2024 : (PHYS 120 >= C- OR PHYS 140 >= C- AND MATH 152 >= C-)
+ensc 395, fall 2024 : (ENSC 295 >= C- OR ENSC 296 >= C- AND CREDITS >= 75)
+ensc 396, fall 2024 : (ENSC 295 >= C- OR ENSC 296 >= C- AND CREDITS >= 75 AND approval_of_internship_coordinator)
+ensc 403, fall 2024 : '(CREDITS >= 100)'
+ensc 440, fall 2024 : (ENSC 405W >= C-)
+ensc 453, fall 2024 : (ENSC 350 >= C- AND ENSC 351 >= C-)
+ensc 477, fall 2024 : (ENSC 380 >= C- OR MSE 280 >= C- AND CREDITS >= 80)
+ensc 498, fall 2024 : (CREDITS >= 115 OR 'Permission of academic supervisor')
+ensc 499, fall 2024 : (ENSC 498 >= P-)
+phys 100, fall 2024 : BC Pre-Calculus 12 >= C- OR MATH 100 >= C-
+phys 101, fall 2024 : (PHYS 12 >= C- OR PHYS 100 >= C- OR (MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C-) AND BISC 100 >= C- OR BISC 101 >= C- OR BISC 102 >= C-)
+phys 102, fall 2024 : (PHYS 101 >= C- OR PHYS 120 >= C- OR PHYS 125 >= C- OR PHYS 140 >= C- AND MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C- AND (BISC 100 >= C- OR BISC 101 >= C- OR BISC 102 >= C-))
+phys 120, fall 2024 : (BC Principles of Physics 12 >= C- OR PHYS 100 >= C-) AND (MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C-)
+phys 125, fall 2024 : #no_prereq_logic
 phys 132, fall 2024 : #no_prereq_logic
-phys 140, fall 2024 : ( (BCPrinciplesOfPhysics12 >= 'C-') OR (PHYS100 >= 'C-') OR (equivalent >= 'C-') ) AND ( (MATH150 >= 'C-') OR (MATH151 >= 'C-') OR (MATH154 >= 'C-') )
+phys 140, fall 2024 : '(PHYS 100 >= C- OR BC Principles of Physics 12 >= C-) AND (MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C-)'
 phys 190, fall 2024 : #no_prereq_logic
-phys 201, fall 2024 : ```
-( (PHYS121 >= 'C-') OR (PHYS126 >= 'C-') OR (PHYS141 >= 'C-') OR (PHYS102 >= 'B') )
-phys 233, fall 2024 : `( (PHYS133 >= 'C-') OR (PHYS141 >= 'C-') OR (ENSC120 >= 'C-') )`
-phys 255, fall 2024 : ( (PHYS126 >= 'C-') OR (PHYS121 >= 'C-') OR (PHYS141 >= 'C-') OR (PHYS102 >= 'B') ) AND (MATH251 >= 'C-') AND ( (MATH232 >= 'C-') OR (MATH240 >= 'C-') )
-phys 326, fall 2024 : `(PHYS234 >= 'C-')`
-phys 335, fall 2024 : Here is the converted logical expression:
-
-`(GPA >= 2.75)`
-phys 336, fall 2024 : (PHYS335 >= '')
-phys 344, fall 2024 : ((PHYS121 >= 'C-') OR (PHYS126 >= 'C-') OR (PHYS141 >= 'C-') OR (PHYS102 >= 'B')) AND (MATH251 >= 'C-')
+phys 201, fall 2024 : (PHYS 121 >= C- OR PHYS 126 >= C- OR PHYS 141 >= C- OR PHYS 102 >= B)
+phys 233, fall 2024 : (PHYS 133 >= C- OR PHYS 141 >= C- OR ENSC 120 >= C-)
+phys 255, fall 2024 : (PHYS 126 >= C- OR PHYS 121 >= C- OR PHYS 141 >= C- OR PHYS 102 >= B AND MATH 251 >= C- AND (MATH 232 >= C- OR MATH 240 >= C-))
+phys 326, fall 2024 : (PHYS 234 >= C-)
+phys 335, fall 2024 : (CREDITS >= 30 AND GPA >= 2.75)
+phys 336, fall 2024 : (phys 335 >= C- AND CREDITS >= 12 AND CGPA >= 2.75)
+phys 344, fall 2024 : (PHYS 121 >= C- OR PHYS 126 >= C- OR PHYS 141 >= C- OR PHYS 102 >= B) AND MATH 251 >= C-
 phys 365, fall 2024 : #no_prereq_logic
-phys 384, fall 2024 : ( (MATH252 >= 'C-') OR (MATH254 >= 'C-') ) AND ( (MATH260 >= 'C-') OR (MATH310 >= 'C-') ) AND (PHYS211 >= 'C-') AND ( (PHYS255 >= 'C-') OR (ENSC320 >= 'C-') )
-phys 385, fall 2024 : ((MATH252 >= 'C-') OR (MATH254 >= 'C-')) AND (MATH260 >= 'C-') AND ((PHYS255 >= 'C-') OR (PHYS285 >= 'C-') OR (ENSC380 >= 'C-') OR (CHEM260 >= 'C-'))
-phys 413, fall 2024 : ( (PHYS384 >= 'C-') OR (MATH252 >= 'C-') OR (MATH260 >= 'C-') OR (MATH310 >= 'C-') OR (PHYS211 >= 'C-') )
-phys 421, fall 2024 : **(PHYS321 >= 'C-') AND (PHYS255 >= 'C-') AND (PHYS255 OR ENSC380) >= 'C-'**
+phys 384, fall 2024 : (MATH 252 >= C- OR MATH 254 >= C- AND MATH 260 >= C- OR MATH 310 >= C- AND PHYS 211 >= C- AND PHYS 255 >= C- OR ENSC 320 >= C-)
+phys 385, fall 2024 : (MATH 252 >= C- OR MATH 254 >= C- AND MATH 260 >= C- AND PHYS 255 >= C- AND (PHYS 285 >= C- OR ENSC 380 >= C- OR CHEM 260 >= C-))
+phys 413, fall 2024 : (PHYS 384 >= C- OR MATH 252 >= C- OR MATH 260 >= C- OR MATH 310 >= C- OR PHYS 211 >= C-)
+phys 421, fall 2024 : (PHYS 321 >= C- AND (PHYS 255 >= C- OR ENSC 380 >= C- AND CGPA >= 2.50)
 phys 432, fall 2024 : #no_prereq_logic
-phys 435, fall 2024 : (PHYS336 >= '') AND (Credits >= 60) AND (GPA >= 2.75)
-phys 436, fall 2024 : ( PHYS435 >= 'X' )
-phys 437, fall 2024 : (PHYS436 >= 'C') AND (GPA >= 2.75)
-phys 465, fall 2024 : ( (PHYS385 >= 'C-') OR (CHEM364 >= 'C-') )
-phys 490, fall 2024 : ( (PHYS313 >= 'C-') AND (PHYS384 >= 'C-') )
-chem 110, fall 2024 : (PreCalc12 >= 'B+') OR (MATH100 >= 'B+')
-chem 111, fall 2024 : ((PreCalc12 >= 'C-') OR (MATH100 >= 'C-'))
-chem 120, fall 2024 : (Chem12 >= 'B') OR ((CHEM110 >= 'C-') OR (CHEM111 >= 'C-'))
-chem 121, fall 2024 : ((Chemistry12 >= 'B') OR ((CHEM109 >= 'C-') OR (CHEM111 >= 'C-')))
-chem 122, fall 2024 : `( (CHEM120 >= 'C-') OR (CHEM121 >= 'C-') )`
+phys 435, fall 2024 : (CREDITS >= 60 AND PHYS 336 >= C- AND CGPA >= 2.75)
+phys 436, fall 2024 : (CREDITS >= 12 AND PHYS 435 >= C- AND CGPA >= 2.75)
+phys 437, fall 2024 : (PHYS 436 >= C- AND CGPA >= 2.75)
+phys 465, fall 2024 : (PHYS 385 >= C- OR CHEM 364 >= C-)
+phys 490, fall 2024 : (PHYS 313 >= C- AND PHYS 384 >= C-)
+chem 110, fall 2024 : (MATH 12 >= C- OR permission of the Department)
+chem 111, fall 2024 : (MATH 100 >= C- OR Pre-Calculus 12 >= C- OR #no_prereq_logic)
+chem 120, fall 2024 : (CHEM 12 >= B OR CHEM 110 >= C- OR CHEM 111 >= C-)
+chem 121, fall 2024 : (Chemistry 12 >= B OR CHEM 109 >= C- OR CHEM 111 >= C-)
+chem 122, fall 2024 : (CHEM 120 >= C- OR CHEM 121 >= C-)
 chem 125, fall 2024 : #no_prereq_logic
 chem 126, fall 2024 : #no_prereq_logic
-chem 180, fall 2024 : (CHEM121 >= 'C-')
-chem 210, fall 2024 : (CHEM122 >= 'C-')
+chem 180, fall 2024 : (CHEM 121 >= C-)
+chem 210, fall 2024 : (CHEM 122 >= C-)
 chem 216, fall 2024 : #no_prereq_logic
-chem 230, fall 2024 : (CHEM122 >= 'C-')
+chem 230, fall 2024 : (CHEM 122 >= C- AND (CHEM 230 >= C- AND CHEM 236W >= C-))
 chem 236w, fall 2024 : #no_prereq_logic
-chem 260, fall 2024 : ((CHEM122 >= 'C-') AND (MATH152 >= 'C-') AND ((PHYS121 >= 'C-') OR (PHYS126 >= 'C-') OR (PHYS141 >= 'C-') OR (PHYS102 >= 'B')))
-chem 281, fall 2024 : ( (CHEM121 >= 'C-') AND (CHEM122 >= 'C-') )
-chem 282, fall 2024 : (CHEM281 >= 'C-')
-chem 283, fall 2024 : (CHEM281 >= 'C-')
-chem 284, fall 2024 :  ``(CHEM282 >= 'C+') ``
+chem 260, fall 2024 : (CHEM 122 >= C- AND MATH 152 >= C- AND (PHYS 121 >= C- OR (PHYS 126 >= C- OR PHYS 141 >= C- OR (PHYS 102 >= B))))
+chem 281, fall 2024 : (CHEM 121 >= C- AND CHEM 122 >= C-)
+chem 282, fall 2024 : (CHEM 281 >= C-)
+chem 283, fall 2024 : (CHEM 281 >= C-)
+chem 284, fall 2024 : (CHEM 282 >= C+ OR (CHEM 282 >= C-))
 chem 285, fall 2024 : #no_prereq_logic
 chem 286, fall 2024 : #no_prereq_logic
 chem 296, fall 2024 : #no_prereq_logic
-chem 306, fall 2024 : (Calculus >= 'A') AND (Chemistry >= 'A') AND (Physics >= 'A') AND (CGPA >= '2.67')
-chem 307, fall 2024 : (CHEM306 AND (Credits >= 42) AND (GPA >= '2.67'))
-chem 316, fall 2024 : `( (CHEM210 >= 'C-') AND (CHEM216 >= 'C-') AND (CHEM260 >= 'C-') )`
-chem 340, fall 2024 : (CHEM230 >= 'C-')
-chem 364, fall 2024 : ```
-( (CHEM260 >= 'C-') OR (PHYS285 >= 'C-') ) AND (MATH232 >= 'C-') AND (MATH251 >= 'C-')
-chem 366w, fall 2024 : `(CHEM266 >= 'C-' AND (CHEM360 >= 'C-'))`
-chem 380, fall 2024 : ( (CHEM282 >= 'C-') OR (CHEM283 >= 'C-') OR (CHEM284 >= 'C-') ) AND (CHEM286 >= 'C-')
+chem 306, fall 2024 : '(CREDITS >= 28 AND (CMPT 100 >= C- OR CHEM 100 >= C- OR PHYS 100 >= C-) AND CGPA >= 2.67)'
+chem 307, fall 2024 : (CHEM 306 >= C- AND CREDITS >= 42 AND CGPA >= 2.67) OR (PERMISSION_OF_COOP_COORDINATOR)
+chem 316, fall 2024 : (CHEM 210 >= C- AND CHEM 216 >= C- AND CHEM 260 >= C- OR Permission_of_the_department)
+chem 340, fall 2024 : (CREDITS >= 60 AND (CHEM >= C- OR PHYS >= C- OR MATH >= C-))
+chem 364, fall 2024 : (MATH 232 >= C- AND MATH 251 >= C- AND (CHEM 260 >= C- OR PHYS 285 >= C-))
+chem 366w, fall 2024 : (CHEM 266 >= C- AND CHEM 360 >= C-)
+chem 380, fall 2024 : (CHEM 282 >= C- OR CHEM 283 >= C- OR CHEM 284 >= C- AND CHEM 286 >= C-) OR (Permission of the department)
 chem 396, fall 2024 : #no_prereq_logic
-chem 406, fall 2024 : `(CHEM307 >= 'X') AND (Units >= 56) AND (GPA >= 2.67)`
-chem 407, fall 2024 : (CHEM406 >= 'no grade required')
-chem 408, fall 2024 : (CHEM407 >= ' ')
-chem 419, fall 2024 : (CHEM316 >= 'C-')
-chem 439, fall 2024 : (CHEM332 >= 'C-')
-chem 452, fall 2024 : ( (CHEM380 >= 'C-) AND (MBB222 >= 'C-) )
-chem 459, fall 2024 : (CHEM380 >= 'C-')
+chem 406, fall 2024 : (CHEM 307 >= C- AND CREDITS >= 56 AND CGPA >= 2.67)
+chem 407, fall 2024 : (CHEM 406 >= C- AND CGPA >= 2.67)
+chem 408, fall 2024 : (CHEM 407 >= C-)
+chem 419, fall 2024 : (CHEM 316 >= C-)
+chem 439, fall 2024 : (CHEM 332 >= C-)
+chem 452, fall 2024 : (CHEM 380 >= C- AND MBB 222 >= C- OR Permission of the Department)
+chem 459, fall 2024 : (CHEM 380 >= C- OR (W_course >= C-))
 chem 481, fall 2024 : #no_prereq_logic
 chem 482, fall 2024 : #no_prereq_logic
 chem 483, fall 2024 : #no_prereq_logic
 chem 484, fall 2024 : #no_prereq_logic
 stat 100, fall 2024 : #no_prereq_logic
-stat 180, fall 2024 : `(STAT270 >= 'C-')`
-stat 201, fall 2024 : #no_prereq_logic
-stat 203, fall 2024 : (#no_prereq_logic)
-stat 260, fall 2024 : ( (STAT201 >= 'C-') OR (STAT203 >= 'C-') OR (STAT205 >= 'C-') OR (STAT270 >= 'C-') OR (BUS232 >= 'C-') OR (ECON233 >= 'C-') OR (POL201 >= 'C-') )
-stat 270, fall 2024 : ( (MATH152 >= 'C-') OR (MATH155 >= 'C-') OR (MATH158 >= 'C-') )
-stat 271, fall 2024 : (CMPT210 >= 'C-')
-stat 285, fall 2024 : ((STAT270 >= 'C-') AND ((MATH152 >= 'C-') OR (MATH155 >= 'C-') OR (MATH158 >= 'C-')))
-stat 302, fall 2024 : ( (STAT201 >= 'C-') OR (STAT203 >= 'C-') OR (STAT205 >= 'C-') OR (STAT270 >= 'C-') OR (BUS232 >= 'C-') OR (ECON233 >= 'C-') )
-stat 305, fall 2024 : `( (STAT201 >= 'C-') OR (STAT203 >= 'C-') OR (STAT205 >= 'C-') OR (STAT270 >= 'C-') OR (BUS232 >= 'C-') OR (ECON233 >= 'C-') )`
-stat 310, fall 2024 : ( (STAT201 >= 'C-') OR (STAT203 >= 'C-') OR (STAT205 >= 'C-') OR (STAT270 >= 'C-') OR (BUS232 >= 'C-') OR (ECON233 >= 'C-') OR (POL201 >= 'C-') ) AND (Credits >= 60)
-stat 330, fall 2024 : ((STAT285 >= 'C-') AND (MATH251 >= 'C-') AND ((MATH232 >= 'C-') OR (MATH240 >= 'C-')))
-stat 336, fall 2024 : (GPA >= 2.5) AND (Credits >= 45)
-stat 337, fall 2024 : (STAT336 >= 'C') OR (JobPracticumI >= 'C')
-stat 342, fall 2024 : ```
-( (STAT285 >= 'C-') OR (STAT302 >= 'C-') OR (STAT305 >= 'C-') OR (ECON333 >= 'C-') )
-stat 350, fall 2024 : ((STAT260 >= 'C-') AND (STAT285 >= 'C-') AND (MATH251 >= 'C-') AND ((MATH232 >= 'C-') OR (MATH240 >= 'C-')))
-stat 430, fall 2024 : (STAT350 >= 'C-')
-stat 436, fall 2024 : `( STAT337 >= '0' ) OR (JobPracticumII >= '0' )`
-stat 437, fall 2024 : `( (STAT436 >= 'C+') OR (JobPracticumIII >= 'C+') )`
-stat 438, fall 2024 : `(STAT437 >= 'any') OR (JobPracticumIV >= 'any')`
-stat 440, fall 2024 : ((STAT350 >= 'C-') AND ((STAT341 >= 'C-') OR (STAT260 >= 'C-') OR (CMPT225 >= 'C-') OR (instructor_approval)))
-stat 450, fall 2024 : (STAT330 >= 'C-')
-stat 452, fall 2024 : `( (STAT260 >= 'C-') AND ( (STAT302 >= 'C-') OR (STAT305 >= 'C-') OR (STAT350 >= 'C-') OR (ECON333 >= 'C-') ) )`
-stat 485, fall 2024 : *((STAT260 >= 'C-') AND ( (STAT285 >= 'C-') OR (STAT302 >= 'C-') OR (STAT305 >= 'C-') OR (ECON333 >= 'C-') ))
-stat 490, fall 2024 : (Depended >= 'B+')
+stat 180, fall 2024 : (STAT 270 >= C- OR (MAJOR 'Statistics or Actuarial Science'))
+stat 201, fall 2024 : CREDITS >= 30
+stat 203, fall 2024 : (SA 255 >= C- OR CRIM 220 >= C- OR POL 200W >= C-)
+stat 260, fall 2024 : (STAT 201 >= C- OR STAT 203 >= C- OR STAT 205 >= C- OR STAT 270 >= C- OR BUS 232 >= C- OR ECON 233 >= C- OR POL 201 >= C-)
+stat 270, fall 2024 : (MATH 152 >= C- OR MATH 155 >= C- OR MATH 158 >= C-)
+stat 271, fall 2024 : CMPT 210 >= C-
+stat 285, fall 2024 : (W_course >= C- AND (STAT 270 >= C- AND (MATH 152 >= C- OR MATH 155 >= C- OR MATH 158 >= C-)))
+stat 302, fall 2024 : ((STAT 201 >= C- OR STAT 203 >= C- OR STAT 205 >= C- OR STAT 270 >= C- OR BUS 232 >= C- OR ECON 233 >= C-))
+stat 305, fall 2024 : (STAT 201 >= C- OR STAT 203 >= C- OR STAT 205 >= C- OR STAT 270 >= C- OR BUS 232 >= C- OR ECON 233 >= C-)
+stat 310, fall 2024 : (CREDITS >= 60 AND SUBJECT NOT IN (SCIENCE AND APPLIED SCIENCES) AND (STAT 201 >= C- OR STAT 203 >= C- OR STAT 205 >= C- OR STAT 270 >= C- OR BUS 232 >= C- OR ECON 233 >= C- OR POL 201 >= C-))
+stat 330, fall 2024 : (CREDITS >= C- AND STAT 285 >= C- AND MATH 251 >= C- AND (MATH 232 >= C- OR MATH 240 >= C-))
+stat 336, fall 2024 : #no_prereq_logic
+stat 337, fall 2024 : (STAT 336 >= C- OR Job Practicum I >= C-)
+stat 342, fall 2024 : (STAT 285 >= C- OR STAT 302 >= C- OR STAT 305 >= C- OR ECON 333 >= C-)
+stat 350, fall 2024 : (STAT 260 >= C- AND STAT 285 >= C- AND MATH 251 >= C- AND (MATH 232 >= C- OR MATH 240 >= C-))
+stat 430, fall 2024 : (STAT 350 >= C-)
+stat 436, fall 2024 : '(STAT 337 >= C- OR Job Practicum II >= C-)'
+stat 437, fall 2024 : (STAT 436 >= C- OR Job Practicum III >= C-)
+stat 438, fall 2024 : (STAT 437 >= C- OR ... >= C-)
+stat 440, fall 2024 : (CREDITS >= 90 AND STAT 350 >= C- AND (STAT 341 >= C- OR STAT 260 >= C- OR CMPT 225 >= C- OR INSTRUCTOR_APPROVAL))
+stat 450, fall 2024 : (STAT 330 >= C-)
+stat 452, fall 2024 : (STAT 260 >= C- AND (STAT 302 >= C- OR STAT 305 >= C- OR STAT 350 >= C- OR ECON 333 >= C-))
+stat 485, fall 2024 : STAT 260 >= C- AND (STAT 285 >= C- OR STAT 302 >= C- OR STAT 305 >= C- OR ECON 333 >= C-)
+stat 490, fall 2024 : (COURSE 320 >= C- AND COURSE 321 >= C- AND COURSE 421 >= C- AND COURSE 331 >= C- AND CGPA >= 2.0)
 stat 495, fall 2024 : #no_prereq_logic
