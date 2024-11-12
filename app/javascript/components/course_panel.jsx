@@ -83,7 +83,7 @@ const Course = ({
       {/* grade */}
       {showGrade ? (
         <div className="horizontal-stack">
-          <h3>Grade (%):</h3>
+          <h3>Grade:</h3>
           <div className="padding_small"></div>
           <input type="text" className="course_info_item grade_input" size={5} placeholder={course.grade} name="grade" onBlur={(event) => setGradeWrapper(event.target.value)}></input>
           <div className="padding_medium"></div>

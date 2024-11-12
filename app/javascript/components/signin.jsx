@@ -1,69 +1,60 @@
-import React, { useState } from "react";
-import { UpdateSessionCallback } from "./callback.js";
-import { FoldingPanel } from "./folding_panel.jsx";
-import "./signin.css"
+// app/javascript/components/SignIn.jsx
+import React, { useState, useContext } from 'react';
+import { AuthContext } from './auth';
+import "./signin.css";
 
 export const SignIn = () => {
-    const [loggedIn, setLoggedIn] = useState(false);
-    const [activeUsername, setActiveUsername] = useState(undefined);
-    const [sessionToken, setSessionToken] = useState(undefined);
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
+    const { login } = useContext(AuthContext);
+    const [credentials, setCredentials] = useState({
+        username: '',
+        password: ''
+    });
+    const [error, setError] = useState('');
 
-    // Function to get the CSRF token
     const getCSRFToken = () => document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-    // Login function
-    const login = () => {
-        setError("");
-        fetch('/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-Token': getCSRFToken()
-            },
-            body: JSON.stringify({ user: { email: username, password: password } })
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.session_token) {
-                    setLoggedIn(true);
-                    setActiveUsername(username);
-                    UpdateSessionCallback.trigger(data.session_token);
-                    setSessionToken(data.session_token);
-                } else {
-                    setError("Invalid username or password");
-                }
-            })
-            .catch(error => {
-                console.error("Login error:", error);
-                setError("An error occurred. Please try again.");
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError('');
+
+        try {
+            const response = await fetch('/api/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-Token': getCSRFToken()
+                },
+                body: JSON.stringify({
+                    user: {
+                        username: credentials.username,
+                        password: credentials.password
+                    }
+                })
             });
-    };
 
-    // Create account function
-    const createAccount = () => {
-        window.location.href = "/registration";
-    };
+            const data = await response.json();
 
-    // Sign out function
-    const signOut = () => {
-        fetch('/logout', {
-            method: 'DELETE',
-            headers: {
-                'X-CSRF-Token': getCSRFToken()
+            if (data.session_token) {
+                login({
+                    username: credentials.username,
+                    token: data.session_token,
+                    courses: data.courses || []
+                });
+
+                // Store session token in localStorage
+                localStorage.setItem('session_token', data.session_token);
+                localStorage.setItem('username', credentials.username);
+            } else {
+                setError(data.error || 'Invalid username or password');
             }
-        })
-            .then(response => {
-                if (response.ok) {
-                    setLoggedIn(false);
-                    setActiveUsername(undefined);
-                    UpdateSessionCallback.trigger(undefined);
-                    setSessionToken(undefined);
-                }
-            })
-            .catch(error => console.error("Logout error:", error));
+        } catch (err) {
+            setError('An error occurred during sign in');
+            console.error('Login error:', err);
+        }
+    };
+
+    const createAccount = () => {
+        window.location.href = "/registration"; // Redirect to the registration path
     };
 
     return (

@@ -26,13 +26,12 @@
   </head>
 
   <body>
-    <% if session[:user_id] %>
-      <%= link_to 'Sign out', logout_path, method: :delete, class: "btn btn-primary" %>
-    <% else %>
-      <%= link_to 'Sign in', login_path, class: "btn btn-primary" %>
-      <%= link_to 'Sign up', new_registration_path, class: "btn btn-secondary" %>
-    <% end %>
-    
-    <%= yield %>
-  </body>
+  <% if session[:user_id] %>
+    <%= link_to 'Sign out', logout_path, method: :delete, class: "btn btn-primary" %>
+  <% else %>
+    <%= link_to 'Sign in', login_path, class: "btn btn-primary" %>
+    <%= link_to 'Sign up', signup_path, class: "btn btn-secondary" %> 
+  <% end %>
+  <%= yield %>
+</body>
 </html>

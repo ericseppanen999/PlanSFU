@@ -15,14 +15,29 @@ class Course < ApplicationRecord
   def prerequisites_satisfied?(taken_courses, prereq_logic)
     return true if prereq_logic == "#no_prereq_logic"
     # logger.debug("Checking prerequisites for #{self.dept} #{self.number}")
-
+    Rails.logger.debug("Checking prerequisites for #{self.dept} #{self.number} with #{taken_courses}")
     prereq_logic.gsub!("W_course >= C-", has_w(taken_courses).to_s)
+
+    if prereq_logic.include?("CGPA") || prereq_logic.include?("CREDITS")
+      gpa, credits = calculate_gpa(taken_courses)
+    end
 
     prereq_logic.gsub!(/([A-Z]+\s\d+[A-Z]*)\s*(>=)\s*([A-F][+-]?)/) do |match|
       course_code = Regexp.last_match(1)
       required_grade = Regexp.last_match(3)
       grade_meets_requirement?(taken_courses, course_code, required_grade).to_s
     end
+
+    prereq_logic.gsub!(/CREDITS\s*>=\s*(\d+)/) do
+      required_credits = Regexp.last_match(1).to_i
+      (credits >= required_credits).to_s
+    end
+
+    prereq_logic.gsub!(/CGPA\s*>=\s*(\d+(\.\d+)?)/) do
+      required_cgpa = Regexp.last_match(1).to_f
+      (gpa >= required_cgpa).to_s
+    end
+
     prereq_logic.gsub!("AND", "&&")
     prereq_logic.gsub!("OR", "||")
     begin
@@ -55,17 +70,47 @@ class Course < ApplicationRecord
     end
   end
 
+  def calculate_gpa(taken_courses)
+    total_credits = 0
+    total_grade_points = 0
+
+    taken_courses.each do |course|
+      course_grade = course["grade"]
+      grade_points = grade_to_value(course_grade)
+
+      course_record = Course.find_by(dept: course["dept"], number: course["number"])
+
+      if course_record&.credits
+        credits = course_record.credits
+        total_grade_points += grade_points * credits
+        total_credits += credits
+      end
+    end
+
+    gpa = total_credits > 0 ? (total_grade_points.to_f / total_credits) : 0
+    [ gpa, total_credits ]
+  end
+
   def grade_meets_requirement?(taken_courses, course_code, required_grade)
     dept, number = course_code.split
-    course = taken_courses.find { |c| c["dept"].upcase == dept.upcase && c["number"] == number }
-    return false if course.nil?
-    grade_to_value(course["grade"]) >= grade_to_value(required_grade)
+
+    matching_course = taken_courses.find do |course|
+      course_dept = course["dept"].upcase
+      course_number = course["number"]
+      course_dept == dept.upcase && course_number == number
+    end
+
+    return false if matching_course.nil?
+
+    actual_grade = grade_to_value(matching_course["grade"])
+    required_grade = grade_to_value(required_grade)
+    actual_grade >= required_grade
   end
 
   def grade_to_value(grade)
     grade_scale = {
       "A+" => 12, "A" => 11, "A-" => 10, "B+" => 9, "B" => 8, "B-" => 7,
-      "C+" => 6, "C" => 5, "C-" => 4, "D" => 3, "F" => 0
+      "C+" => 6, "C" => 5, "C-" => 4, "P" => 4, "D" => 3, "F" => 0
     }
     grade_scale[grade] || 0
   end
