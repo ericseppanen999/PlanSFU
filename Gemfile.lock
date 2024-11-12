@@ -130,7 +130,9 @@ GEM
     jbuilder (2.13.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    json (2.8.1)
+    json (2.7.2)
+    jwt (2.9.3)
+      base64
     language_server-protocol (3.17.0.3)
     logger (1.6.1)
     loofah (2.23.1)
@@ -321,6 +323,7 @@ DEPENDENCIES
   groq (~> 0.3.2)
   importmap-rails
   jbuilder
+  jwt
   ostruct
   pstore
   psych (< 5)
