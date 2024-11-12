@@ -48,3 +48,4 @@ yarn-debug.log*
 # ignore the weird number files
 [0-9]
 [0-9].[0-9][0-9][0-9][0-9]s
+.vscode/settings.json
