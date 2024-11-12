@@ -1,34 +1,27 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { UpdateSessionCallback } from "./callback.js";
 import { FoldingPanel } from "./folding_panel.jsx";
 import "./signin.css"
 
 export const SignIn = () => {
-    const [showDropdown, setShowDropdown] = useState(false);
     const [loggedIn, setLoggedIn] = useState(false);
     const [activeUsername, setActiveUsername] = useState(undefined);
     const [sessionToken, setSessionToken] = useState(undefined);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [showBadCredError, setBadCredError] = useState(false);
-    const [showSigninError, setSigninError] = useState(false);
-    const [showSignupError, setSignupError] = useState(false);
-    const [showSignoutError, setSignoutError] = useState(false);
+    const [error, setError] = useState("");
 
-    const resetErrors = () => {
-        setBadCredError(false);
-        setSigninError(false);
-        setSignoutError(false);
-        setSignupError(false);
-    }
+    // Function to get the CSRF token
+    const getCSRFToken = () => document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
+    // Login function
     const login = () => {
-        resetErrors();
-        fetch('/session', {
+        setError("");
+        fetch('/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                'X-CSRF-Token': getCSRFToken()
             },
             body: JSON.stringify({ user: { email: username, password: password } })
         })
@@ -39,45 +32,27 @@ export const SignIn = () => {
                     setActiveUsername(username);
                     UpdateSessionCallback.trigger(data.session_token);
                     setSessionToken(data.session_token);
-                    setShowDropdown(false);
                 } else {
-                    setSigninError(true);
+                    setError("Invalid username or password");
                 }
             })
-            .catch(error => console.error("Login error:", error));
+            .catch(error => {
+                console.error("Login error:", error);
+                setError("An error occurred. Please try again.");
+            });
     };
 
+    // Create account function
     const createAccount = () => {
-        resetErrors();
-        fetch('/users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-            },
-            body: JSON.stringify({ user: { email: username, password: password } })
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.session_token) {
-                    setLoggedIn(true);
-                    setActiveUsername(username);
-                    UpdateSessionCallback.trigger(data.session_token);
-                    setSessionToken(data.session_token);
-                    setShowDropdown(false);
-                } else {
-                    setSignupError(true);
-                }
-            })
-            .catch(error => console.error("Account creation error:", error));
+        window.location.href = "/registration";
     };
 
+    // Sign out function
     const signOut = () => {
-        resetErrors();
-        fetch('/session', {
+        fetch('/logout', {
             method: 'DELETE',
             headers: {
-                'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                'X-CSRF-Token': getCSRFToken()
             }
         })
             .then(response => {
@@ -86,8 +61,6 @@ export const SignIn = () => {
                     setActiveUsername(undefined);
                     UpdateSessionCallback.trigger(undefined);
                     setSessionToken(undefined);
-                } else {
-                    setSignoutError(true);
                 }
             })
             .catch(error => console.error("Logout error:", error));
