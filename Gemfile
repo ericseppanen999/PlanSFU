@@ -28,6 +28,8 @@ gem "psych", "< 5"
 gem "rubycas-client"
 # include shakapacker (webpack for rails)
 gem "shakapacker"
+# include brotli for better compression
+gem "brotli"
 
 # silence warnings about standard packages
 gem "ostruct"

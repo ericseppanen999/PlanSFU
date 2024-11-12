@@ -82,6 +82,7 @@ GEM
       msgpack (~> 1.2)
     brakeman (6.2.1)
       racc
+    brotli (0.6.0)
     builder (3.3.0)
     capybara (3.40.0)
       addressable
@@ -108,7 +109,6 @@ GEM
       logger
     faraday-net_http (3.3.0)
       net-http
-    fiddle (1.1.2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     groq (0.3.2)
@@ -318,6 +318,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
   brakeman
+  brotli
   capybara
   debug
   groq (~> 0.3.2)

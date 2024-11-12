@@ -25,12 +25,15 @@ body {
     --base-color: white;
     --base-dark: rgb(225, 225, 225);
     --base-medium: rgb(235, 235, 235);
+    
+    --accent-dark: rgb(53, 54, 59);
     --note-color: rgb(255, 246, 212);
 
     --hover-text-color: var(--primary-light);
 
     --font-h3: bold 14px Oswald, sans-serif;
     --text-color: black;
+    --light-text-color: rgb(229, 229, 229);
     --text-error-color: red;
 
     margin: 0;
@@ -151,8 +154,12 @@ input:is([type="text"], [type="password"], [type="email"], [type="search"], [typ
 }
 
 footer {
-    background-color: var(--base-dark);
+    background-color: var(--accent-dark);
     padding: var(--padding-medium);
+}
+
+.transparent {
+    background-color: transparent;
 }
 
 .active_panel {

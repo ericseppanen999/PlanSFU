@@ -39,7 +39,7 @@ export const InfoPopup = ({className, children}) => {
 
     return (
         <>
-            <button ref={button_ref} className={`info_hover_tag ${showPanel ? ` show_active` : ``}`} onClick={toggleShow} onMouseEnter={showWeak} onMouseLeave={hideWeak}>
+            <button name="show-note" aria-label="Show note" ref={button_ref} className={`info_hover_tag ${showPanel ? ` show_active` : ``}`} onClick={toggleShow} onMouseEnter={showWeak} onMouseLeave={hideWeak}>
                 <InfoIcon className="info_button_icon"/>
                 <div ref={panel_ref} className={`info_popup_panel horizontal-stack ${className ? className : ``} ${!showPanel ? ` hide_panel` : ``}`}>
                     <div className="info_popup_rect">

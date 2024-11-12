@@ -29,6 +29,9 @@ default: &default
   # Location for manifest.json, defaults to {public_output_path}/manifest.json if unset
   # manifest_path: public/packs/manifest.json
 
+
+  compress: true
+
   # Additional paths webpack should look up modules
   # ['app/assets', 'engine/foo/app/assets']
   additional_paths: []
@@ -104,15 +107,18 @@ development:
 test:
   <<: *default
   compile: true
+  compress: true
 
   # Compile test packs to a separate directory
   public_output_path: packs-test
 
 production:
   <<: *default
-
+  inline_css: true
   # Production depends on precompilation of packs prior to booting for performance.
   compile: false
+
+  compress: true
 
   # Use content hash for naming assets. Cannot be overridden by for production.
   useContentHash: true

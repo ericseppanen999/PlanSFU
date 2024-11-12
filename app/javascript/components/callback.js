@@ -40,3 +40,6 @@ export const UpdateTermsCallback = new Callback();
 
 // Callback for handling updating the user session token
 export const UpdateSessionCallback = new Callback();
+
+// Callback for handling failed searches
+export const SearchFailCallback = new Callback();

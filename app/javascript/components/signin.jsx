@@ -97,16 +97,17 @@ export const SignIn = () => {
         <div>
             {!loggedIn ? (
                 <>
-                    <button id="sign_in_button" onClick={() => setShowDropdown(true)}>SIGN IN</button>
+                    <button id="sign_in_button" name="sign_in_button" onClick={() => setShowDropdown(true)}>SIGN IN</button>
                     <FoldingPanel className="signin_dropdown" is_open={showDropdown} set_open_callback={setShowDropdown}>
                         <form>
                             <table className="username_password_table">
                                 <tbody>
                                     <tr>
-                                        <td>Username:</td>
+                                        <td><label htmlFor="username_input_box">Username:</label></td>
                                         <td>
                                             <input
                                                 type="text"
+                                                id="username_input_box"
                                                 name="username"
                                                 autoComplete="username"
                                                 value={username}
@@ -116,12 +117,13 @@ export const SignIn = () => {
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Password (min 6 characters):</td>
+                                        <td><label htmlFor="password_input_box">Password (min 6 characters):</label></td>
                                         <td>
                                             <input
                                                 type="password"
                                                 name="password"
                                                 minLength="6"
+                                                id="password_input_box"
                                                 autoComplete="current-password new-password"
                                                 value={password}
                                                 onChange={(e) => setPassword(e.target.value)}
@@ -149,9 +151,9 @@ export const SignIn = () => {
                                     </>
                                 )}
                                 <div className="padding_auto"></div>
-                                <button className="small" type="submit" id="sign_in_submit_button" onClick={login}>SIGN IN</button>
+                                <button className="small" type="submit" id="sign_in_submit_button" name="sign_in_submit_button" onClick={login}>SIGN IN</button>
                                 <div className="padding_medium"></div>
-                                <button className="small" type="submit" id="sign_up_submit_button" onClick={createAccount}>SIGN UP</button>
+                                <button className="small" type="submit" id="sign_up_submit_button" name="sign_up_submit_button" onClick={createAccount}>SIGN UP</button>
                             </div>
                         </form>
                     </FoldingPanel>
@@ -162,7 +164,7 @@ export const SignIn = () => {
                         <p>{activeUsername}</p>
                         <div className="padding_medium"></div>
                         <div className="center-content">
-                            <button className="small" id="sign_out_button" onClick={signOut}>SIGN OUT</button>
+                            <button className="small" id="sign_out_button" name="sign_out_button" onClick={signOut}>SIGN OUT</button>
                         </div>
                     </div>
                     {showSignoutError && (
