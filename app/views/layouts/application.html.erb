@@ -8,9 +8,9 @@
     <meta charset="UTF-8">
     <meta name="description" content="An undergraduate course planner for SFU students. Search for courses and find course planning information.">
 
-    <!-- needed for google material icons -->
+    <!-- Needed for Google Material Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="assets/application.css" />
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -22,10 +22,17 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <% if session[:user_id] %>
+      <%= link_to 'Sign out', logout_path, method: :delete, class: "btn btn-primary" %>
+    <% else %>
+      <%= link_to 'Sign in', login_path, class: "btn btn-primary" %>
+      <%= link_to 'Sign up', new_registration_path, class: "btn btn-secondary" %>
+    <% end %>
+    
     <%= yield %>
   </body>
 </html>
