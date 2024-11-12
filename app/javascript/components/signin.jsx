@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { UpdateSessionCallback } from "./callback.js";
-import "./signin.css";
+import { FoldingPanel } from "./folding_panel.jsx";
+import "./signin.css"
 
 export const SignIn = () => {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -68,24 +69,66 @@ export const SignIn = () => {
     return (
         <div>
             {!loggedIn ? (
-                <div>
-                    {/* Form for signing in */}
-                    <input
-                        type="email"
-                        placeholder="Enter your email"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
-                    <input
-                        type="password"
-                        placeholder="Enter your password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                    {error && <p className="error">{error}</p>} {/* Display error message */}
-                    <button id="sign_in_button" onClick={login}>SIGN IN</button>
-                    <button id="sign_up_button" onClick={createAccount}>SIGN UP</button>
-                </div>
+                <>
+                    <button id="sign_in_button" onClick={() => setShowDropdown(true)}>SIGN IN</button>
+                    <FoldingPanel className="signin_dropdown" is_open={showDropdown} set_open_callback={setShowDropdown}>
+                        <form>
+                            <table className="username_password_table">
+                                <tbody>
+                                    <tr>
+                                        <td>Username:</td>
+                                        <td>
+                                            <input
+                                                type="text"
+                                                name="username"
+                                                autoComplete="username"
+                                                value={username}
+                                                onChange={(e) => setUsername(e.target.value)}
+                                                required
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Password (min 6 characters):</td>
+                                        <td>
+                                            <input
+                                                type="password"
+                                                name="password"
+                                                minLength="6"
+                                                autoComplete="current-password new-password"
+                                                value={password}
+                                                onChange={(e) => setPassword(e.target.value)}
+                                                required
+                                            />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div className="padding_medium"></div>
+                            <div className="horizontal-stack submit_panel">
+                                {showBadCredError && (
+                                    <>
+                                        <p className="error_text">Invalid username / password combo</p>
+                                    </>
+                                )}
+                                {showSigninError && (
+                                    <>
+                                        <p className="error_text">Failed to sign in</p>
+                                    </>
+                                )}
+                                {showSignupError && (
+                                    <>
+                                        <p className="error_text">Failed to sign up</p>
+                                    </>
+                                )}
+                                <div className="padding_auto"></div>
+                                <button className="small" type="submit" id="sign_in_submit_button" onClick={login}>SIGN IN</button>
+                                <div className="padding_medium"></div>
+                                <button className="small" type="submit" id="sign_up_submit_button" onClick={createAccount}>SIGN UP</button>
+                            </div>
+                        </form>
+                    </FoldingPanel>
+                </>
             ) : (
                 <div>
                     <p>Welcome, {activeUsername}</p>

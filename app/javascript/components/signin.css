@@ -1,13 +1,6 @@
 .signin_dropdown {
     position: absolute;
     right: var(--padding-medium);
-    background: white;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    width: max-content;
-    z-index: 1000;
-    animation: fadeIn 0.3s;
 }
 
 .error_text {

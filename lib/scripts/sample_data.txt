@@ -1,0 +1,227 @@
+cmpt 105w, fall 2024 : 
+cmpt 120, fall 2024 : BC Math 12 or equivalent is recommended.
+cmpt 125, fall 2024 : CMPT 120 or CMPT 130, with a minimum grade of C-.
+cmpt 130, fall 2024 : BC Math 12 (or equivalent, or any of MATH 100, 150, 151, 154, or 157, with a minimum grade of C-).
+cmpt 201, fall 2024 : (CMPT 125 or CMPT 135) and MACM 101, both with a minimum grade of C-.
+cmpt 210, fall 2024 : MACM 101, MATH 152, CMPT 125 or CMPT 135, and (MATH 240 or MATH 232), all with a minimum grade of C-.
+cmpt 213, fall 2024 : CMPT 225 with a minimum grade of C-.
+cmpt 225, fall 2024 : (MACM 101 and (CMPT 125, CMPT 129 or CMPT 135)) or (ENSC 251 and ENSC 252), all with a minimum grade of C-.
+cmpt 263, fall 2024 : CMPT 125 or CMPT 135, with a minimum grade of C-.
+cmpt 272, fall 2024 : CMPT 120 or CMPT 130 or CMPT 128, with a minimum grade of C-.
+cmpt 276, fall 2024 : One W course, CMPT 225, (MACM 101 or (ENSC 251 and ENSC 252)) and (MATH 151 or MATH 150), all with a minimum grade of C-. MATH 154 or MATH 157 with at least a B+ may be substituted for MATH 151 or MATH 150.
+cmpt 295, fall 2024 : Either (MACM 101 and (CMPT 125 or CMPT 135)) or (MATH 151 and CMPT 102 for students in an Applied Physics program), all with a minimum grade of C-.
+cmpt 307, fall 2024 : CMPT 225, (MACM 201 or CMPT 210), (MATH 150 or MATH 151), and (MATH 232 or MATH 240), all with a minimum grade of C-. MATH 154 or MATH 157 with a grade of at least B+ may be substituted for MATH 150 or MATH 151.
+cmpt 310, fall 2024 : CMPT 225 and (MACM 101 or (ENSC 251 and ENSC 252)), all with a minimum grade of C-.
+cmpt 318, fall 2024 : CMPT 225 with a minimum grade of C-. Additional prerequisites to be determined by the instructor subject to approval by the undergraduate program chair.
+cmpt 340, fall 2024 : 
+cmpt 353, fall 2024 : CMPT 225 and (BUS 232, STAT 201, STAT 203, STAT 205, STAT 270, STAT 271, ENSC 280, MSE 210, or SEE 241), with a minimum grade of C-.
+cmpt 354, fall 2024 : CMPT 225 and (MACM 101 or (ENSC 251 and ENSC 252)), all with a minimum grade of C-.
+cmpt 361, fall 2024 : CMPT 225 and MATH 232 or 240, all with a minimum grade of C-.
+cmpt 362, fall 2024 : CMPT 225 with a minimum grade of C-.
+cmpt 365, fall 2024 : CMPT 225 with a minimum grade of C-.
+cmpt 371, fall 2024 : CMPT 225 and (MATH 151 or MATH 150), with a minimum grade of C-. MATH 154 or MATH 157 with a grade of at least B+ may be substituted for MATH 151 (MATH 150).
+cmpt 373, fall 2024 : CMPT 276 or 275, with a minimum grade of C-.
+cmpt 376w, fall 2024 : CMPT 105W and (CMPT 275 or CMPT 276), with a minimum grade of C-.
+cmpt 383, fall 2024 : CMPT 225 and (MACM 101 or (ENSC 251 and ENSC 252)), all with a minimum grade of C-.
+cmpt 405, fall 2024 : CMPT 307 with a minimum grade of C-.
+cmpt 409, fall 2024 : CMPT 307 with a minimum grade of C-.
+cmpt 410, fall 2024 : CMPT 310 and MACM 316, both with a minimum grade of C-.
+cmpt 412, fall 2024 : CMPT 361 and MATH 152, both with a minimum grade of C-.
+cmpt 415, fall 2024 : Permission of Instructor and School.
+cmpt 416, fall 2024 : Permission of the department.
+cmpt 417, fall 2024 : CMPT 225 with a minimum grade of C-.
+cmpt 426, fall 2024 : Students must complete Bridging Online (visit www.sfu.ca/coop/bol for further details) at least two terms before their anticipated co-op placement. Students must then enroll with the co-op program by the second week of the term preceding the work term. Normally, students will have completed a minimum of 45 units by the end of the term of application, CMPT 275 or 276, and have a minimum CGPA of 2.50.
+cmpt 427, fall 2024 : CMPT 426, CGPA of 2.50.
+cmpt 428, fall 2024 : CMPT 427, CGPA of 2.50.
+cmpt 429, fall 2024 : CMPT 428, CGPA of 2.50.
+cmpt 430, fall 2024 : CMPT 429, CGPA of 2.50.
+cmpt 431, fall 2024 : CMPT 300, 371, both with a minimum grade of C-.
+cmpt 441, fall 2024 : CMPT 307 with a minimum grade of C-.
+cmpt 450, fall 2024 : CMPT 295 with a minimum grade of C-.
+cmpt 454, fall 2024 : CMPT 300 and 354, with a minimum grade of C-.
+cmpt 459, fall 2024 : CMPT 354 with a minimum grade of C-.
+cmpt 464, fall 2024 : CMPT 361, MACM 316, both with a minimum grade of C-.
+cmpt 469, fall 2024 : CMPT 361 with a minimum grade of C-.
+cmpt 473, fall 2024 : (CMPT 275 or CMPT 276) with a minimum grade of C- and 15 upper division CMPT units.
+cmpt 475, fall 2024 : CMPT 275 or CMPT 276, (MACM 201 or CMPT 210) , all with a minimum grade of C- and 15 units of upper division courses. Recommended: Co-op experience.
+cmpt 477, fall 2024 : CMPT 275 or 276, with a minimum grade of C-.
+cmpt 479, fall 2024 : CMPT 300 with a minimum grade of C-.
+cmpt 489, fall 2024 : CMPT 383 with a minimum grade of C-.
+cmpt 494, fall 2024 : Students must have completed at least 15 units of upper division CMPT courses. Successful Capstone Project Proposal.
+cmpt 495, fall 2024 : CMPT 494 with a minimum grade of C-. CMPT 495 must be taken in the term immediately following the successful completion of CMPT 494 and must be for the same project and faculty supervisor.
+cmpt 496, fall 2024 : Students must have completed 90 units, including 15 units of upper division CMPT courses, and have a GPA of at least 3.00. The proposal must be submitted to the undergraduate chair at least 15 days in advance of the term. The proposal must be signed by the supervisor(s) and the undergraduate chair.
+cmpt 497, fall 2024 : Submission of a satisfactory capstone project proposal.
+cmpt 498, fall 2024 : Students must have completed 90 units, including 15 units of upper division CMPT courses, and have a GPA of at least 3.00. The proposal must be submitted to the Undergraduate Chair at least 15 days in advance of the term. The proposal must be signed by the supervisor(s) and the undergraduate chair.
+macm 101, fall 2024 : BC Math 12 (or equivalent), or any of MATH 100, 150, 151, 154, 157.
+macm 201, fall 2024 : MACM 101 or (ENSC 251 and one of MATH 232 or MATH 240).
+macm 204, fall 2024 : One of CMPT 102, 120, 126, 128 or 130 and MATH 251. MATH 251 can be taken as a corequisite. Students in excess of 80 units may not take MACM 204 for further credit.
+macm 316, fall 2024 : MATH 152 or 155 or 158, and MATH 232 or 240, and computing experience.
+macm 416, fall 2024 : (MATH 260 or MATH 310) and MACM 316.
+math 100, fall 2024 : Pre-Calculus 11 or Foundations of Mathematics 11 (or equivalent)
+with a grade of at least B or Pre-Calculus 12 (or equivalent), with a grade of at least C and SFU FAN credit, or SFU FAN X99 course with a grade of at least B-, or achieving a satisfactory grade on the Simon Fraser University Quantitative Placement Test. MATH 100 may not be counted towards the mathematics minor, major or honours degree requirements.
+math 130, fall 2024 : Pre-Calculus 12 or Foundations of
+
+Mathematics 12 (or equivalent) with a
+
+grade of at least B, or MATH 100 with a grade of at least C.
+math 150, fall 2024 : Pre-Calculus 12 (or equivalent) with a grade of at least B+, or MATH 100 with a grade of at least B-, or achieving a satisfactory grade on the Simon Fraser University Calculus Readiness Test.
+math 151, fall 2024 : Pre-Calculus 12 (or equivalent) with a grade of at least A, or MATH 100 with a grade of at least B, or achieving a satisfactory grade on the Simon Fraser University Calculus Readiness Test.
+math 152, fall 2024 : MATH 150 or 151, with a minimum grade of C-; or MATH 154 or 157 with a grade of at least B.
+math 154, fall 2024 : Pre-Calculus 12 (or equivalent) with a grade of at least B, or MATH 100 with a grade of at least C-, or achieving a satisfactory grade on the Simon Fraser University Calculus Readiness Test.
+math 157, fall 2024 : Pre-Calculus 12 (or equivalent) with a grade of at least B, or MATH 100 with a grade of at least C, or achieving a
+
+satisfactory grade on the Simon Fraser University Calculus
+
+Readiness Test.
+math 190, fall 2024 : Pre-Calculus 11 or Foundations of Mathematics 11 (or equivalent)
+
+with a grade of at least B, or SFU FAN X99 course with a grade of at least C, or achieving a satisfactory grade on the Simon Fraser University Quantitative Placement Test. This course may not be counted toward the Mathematics minor, major or honours degree requirements. Students who have taken, have received transfer credit for, or are currently taking MATH 150, 151, 154 or 157 may not take MATH 190 for credit without permission from the Department of Mathematics. Intended to be particularly accessible to students who are not specializing in mathematics.
+math 232, fall 2024 : MATH 150 or 151 or MACM 101, with a minimum grade of C-; or MATH 154 or 157, both with a grade of at least B.
+math 240, fall 2024 : MATH 150 or 151 or MACM 101, with a minimum grade of C-; or MATH 154 or 157, both with a grade of at least B.
+math 251, fall 2024 : MATH 152 with a minimum grade of C-; or MATH 155 or MATH 158 with a grade of at least B. Recommended: It is recommended that MATH 240 or 232 be taken before or concurrently with MATH 251.
+math 260, fall 2024 : MATH 152 with a minimum grade of C-; or MATH 155 or 158, with a grade of at least B; MATH 232 or 240, with a minimum grade of C-.
+math 292, fall 2024 : Prerequisites will be specified according to the particular topic or topics offered.
+math 303, fall 2024 : MATH 152 or 155 or 158, and MATH 232 or 240, all with a minimum grade of C-. There may be additional prerequisites depending on the specific course topic.
+math 308, fall 2024 : MATH 150, 151, 154, or 157 and MATH 240 or 232, all with a minimum grade of C-.
+math 309, fall 2024 : MATH 232 or 240, and 251, all with a minimum grade of C-.
+math 322, fall 2024 : MATH 251 with a minimum grade of C-.
+math 336, fall 2024 : Students must apply to and receive permission from the co-op co-ordinator at least one, preferably two, terms in advance. They will normally be required to have completed 45 units with a GPA of 2.5. This course will be graded on a pass/withdraw basis. A course fee is required.
+math 337, fall 2024 : MATH 336 and permission of the co-op co-ordinator; students must apply at least one term in advance.
+math 340, fall 2024 : MATH 240 with a minimum grade of C- or MATH 232 with a grade of at least B.
+math 343, fall 2024 : MACM 201 with a minimum grade of C-. Recommended: Knowledge of a programming language.
+math 345, fall 2024 : MACM 201 with a minimum grade of C-.
+math 360, fall 2024 : MATH 260 with a minimum grade of C- OR MATH 155 with a minimum grade of A-. Strongly Recommended: Experience with a computing platform such as R, MATLAB, or Python.
+math 408, fall 2024 : MATH 308 with a minimum grade of C-.
+math 418, fall 2024 : (MATH 260 or MATH 310) and one of MATH 314, MATH 320, MATH 322, PHYS 384, all with a minimum grade of C-. An alternative to the above prerequisite is both of (MATH 252 or MATH 254) and (MATH 260 or MATH 310), both with grades of at least A-.
+math 436, fall 2024 : MATH 337 and permission of the co-op co-ordinator; students must apply at least one term in advance.
+math 437, fall 2024 : MATH 436 and permission of the co-op co-ordinator; students must apply at least one term in advance.
+math 447, fall 2024 : MATH 340 or 332, with a minimum grade of C-.
+math 450, fall 2024 : MATH 242 and MATH 340, with a minimum grade of C-.
+math 480w, fall 2024 : MACM 201 with a grade of at least B. At least one of MACM 201, MATH 240, MATH 242, MATH 251, MATH 252 with a grade of at least A, or both of MACM 203, MACM 204 with a grade of at least A. Or permission of the instructor.
+math 486, fall 2024 : MATH 437 and permission of the co-op co-ordinator. Students must apply at least one term in advance.
+math 498, fall 2024 : 
+math 499w, fall 2024 : 18 units of upper division MATH or MACM courses. Must be in an honours program with a GPA of at least 3.0. Corequisite: MATH 498. Students must have an approved project prior to enrollment.
+ensc 100w, fall 2024 : 
+ensc 105w, fall 2024 : 
+ensc 120, fall 2024 : BC Pre-Calculus 12 and BC Physics 12 (or equivalents).
+ensc 151, fall 2024 : BC Math 12 (or equivalent, or any of MATH 100, 150, 151, 154, or 157, with a minimum grade of C-).
+ensc 194, fall 2024 : 
+ensc 195, fall 2024 : 
+ensc 196, fall 2024 : 
+ensc 204, fall 2024 : 
+ensc 220, fall 2024 : (PHYS 121 or PHYS 126 or PHYS 141), ENSC 120, MATH 232 and (MATH 260 or MATH 310), all with a minimum grade of C-. MATH 260 may be taken concurrently.
+ensc 225, fall 2024 : (ENSC 220 or MSE 250), MATH 232, and (MATH 260 or MATH 310), all with a minimum grade of C-.
+ensc 251, fall 2024 : ENSC 151 or CMPT 135 or (CMPT 125 and CMPT 127), all with a minimum grade of C-.
+ensc 252, fall 2024 : ENSC 151 or CMPT 125 or CMPT 126 or CMPT 135, with a minimum grade of C-. ENSC 252 is a required course for all engineering science majors and honours students (no course substitutions are permitted).
+ensc 295, fall 2024 : ENSC 195 or 196.
+ensc 296, fall 2024 : ENSC 195 or 196 and approval of internship co-ordinator required.
+ensc 316, fall 2024 : MATH 251 and (ENSC 220 or MSE 250), all with a minimum grade of C-.
+ensc 324, fall 2024 : (ENSC 220 or MSE 250), MATH 232, and (MATH 260 or MATH 310), all with a minimum grade of C-.
+ensc 350, fall 2024 : (ENSC 215 and either ENSC 250 or CMPT 250) or (ENSC 252 and ENSC 254), all with a minimum grade of C-.
+ensc 351, fall 2024 : (ENSC 151 and ENSC 215 and ENSC 250) or ENSC 254 or (CMPT 225 and (CMPT 250 or CMPT 295)), all with a minimum grade of C- and a minimum of 60 units. ENSC 351 is a required course for all engineering science major and honours students (no course substitutions are permitted).
+ensc 370, fall 2024 : Completion of at least 25 units of engineering science (ENSC) courses.
+ensc 380, fall 2024 : ENSC 180, ENSC 220 (or MSE 250) and (MATH 260 or MATH 310), all with a minimum grade of C-.
+ensc 385, fall 2024 : (PHYS 120 or PHYS 140) and MATH 152, all with a minimum grade of C-.
+ensc 395, fall 2024 : ENSC 295 or 296 and a minimum of 75 units.
+ensc 396, fall 2024 : ENSC 295 or 296, a minimum of 75 units and approval of internship co-ordinator required.
+ensc 403, fall 2024 : A minimum of 100 units and permission of the chair of the undergraduate curriculum committee.
+ensc 440, fall 2024 : ENSC 405W with a minimum grade of C-. Students will be automatically enrolled in ENSC 440 in the term immediately following successful completion of ENSC 405W.
+ensc 453, fall 2024 : ENSC 350 and ENSC 351, both with a minimum grade of C-.
+ensc 477, fall 2024 : (ENSC 380 or MSE 280) with a minimum grade of C- and a minimum of 80 units.
+ensc 498, fall 2024 : At least 115 units or permission of the academic supervisor.
+ensc 499, fall 2024 : ENSC 498 with a minimum grade of P.
+phys 100, fall 2024 : BC Pre-Calculus 12 (or equivalent) or MATH 100, with a minimum grade of C-. BC Physics 11 (or equivalent) is recommended.
+phys 101, fall 2024 : BC Principles of Physics 12 or PHYS 100 or equivalent, with a minimum grade of C-. This prerequisite may be waived, at the discretion of the department, as determined by the student's performance on a regularly scheduled PHYS 100 final exam. Please consult the physics advisor for further details. Corequisite: MATH 150 or 151 or 154 or 157; BISC 100 or 101 or 102. Recommended Corequisite: PHYS 132.
+phys 102, fall 2024 : PHYS 101 or 120 or 125 or 140; MATH 150 or 151 or 154 or 157; both with a minimum grade of C-. Corequisite: BISC 100 or 101 or 102. Recommended Corequisites: MATH 152, 155 or 158; PHYS 133.
+phys 120, fall 2024 : BC Principles of Physics 12 or PHYS 100 or equivalent, with a minimum grade of C-. This prerequisite may be waived, at the discretion of the department, as determined by the student's performance on a regularly scheduled PHYS 100 final exam. Please consult the physics advisor for further details. Corequisite: MATH 150 or 151 or 154. Recommended Corequisite: PHYS 132.
+phys 125, fall 2024 : Permission of the department. Corequisite: MATH 151. Recommended Corequisite: PHYS 132.
+phys 132, fall 2024 : 
+phys 140, fall 2024 : BC Principles of Physics 12, or PHYS 100 or equivalent, with a minimum grade of C-. Corequisite: MATH 150 or 151 or 154.
+phys 190, fall 2024 : 
+phys 201, fall 2024 : PHYS 121 or PHYS 126 or PHYS 141, with a minimum grade of C-, or PHYS 102 with a minimum grade of B.
+phys 233, fall 2024 : PHYS 133 or PHYS 141 or ENSC 120, with a minimum grade of C-. Recommended Prerequisite: CMPT 120.
+phys 255, fall 2024 : PHYS 126 or PHYS 121 or PHYS 141, with a minimum grade of C-, or PHYS 102 with a minimum grade of B. Corequisite: MATH 251; MATH 232 or MATH 240. Recommended Corequisite: MATH 260 or MATH 310.
+phys 326, fall 2024 : PHYS 234 with a minimum grade of C-.
+phys 335, fall 2024 : Completion of 30 units, with a minimum GPA of 2.75 in the physics program. Students should apply to the department at least one term in advance.
+phys 336, fall 2024 : PHYS 335 followed by 12 units. A minimum cumulative GPA of 2.75. Students should apply to the department at least one term in advance.
+phys 344, fall 2024 : PHYS 121 or PHYS 126 or PHYS 141 (or PHYS 102 with a minimum grade of B); MATH 251; both with a minimum grade of C-.
+phys 365, fall 2024 : 
+phys 384, fall 2024 : MATH 252 or 254; MATH 260 or MATH 310; PHYS 211; PHYS 255 or ENSC 320. All prerequisite courses require a minimum grade of C-.
+phys 385, fall 2024 : MATH 252 or MATH 254; MATH 260; PHYS 255; PHYS 285 or ENSC 380 or CHEM 260. All prerequisite courses require a minimum grade of C-. Recommended Prerequisite: PHYS 211.
+phys 413, fall 2024 : PHYS 384 or permission of the department. Non-physics majors may enter with MATH 252; MATH 260 or MATH 310; PHYS 211. All prerequisite courses require a minimum grade of C-.
+phys 421, fall 2024 : PHYS 321 (no substitution); PHYS 255 or ENSC 380; both with a minimum grade of C-.
+phys 432, fall 2024 : All students interested in taking this course must consult with their faculty supervisor regarding prerequisites.
+phys 435, fall 2024 : PHYS 336 and 60 units with a minimum cumulative GPA of 2.75.
+phys 436, fall 2024 : PHYS 435 followed by 12 units. A minimum cumulative GPA of 2.75.
+phys 437, fall 2024 : PHYS 436 and a minimum cumulative GPA of 2.75. Students should apply to the department at least one term in advance.
+phys 465, fall 2024 : PHYS 385 or CHEM 364, with a minimum grade of C-.
+phys 490, fall 2024 : PHYS 313 and PHYS 384, both with a minimum grade of C-.
+chem 110, fall 2024 : Pre-Calculus 12 (or equivalent), MATH 100 (may be taken concurrently), or permission of the Department. No previous training in chemistry is required for this course.
+chem 111, fall 2024 : Pre-Calculus 12 (or equivalent), MATH 100 (may be taken concurrently), or permission of the Department. No previous training in chemistry is required for this course.
+chem 120, fall 2024 : Chemistry 12 with a minimum grade of B, or CHEM 110 or 111 with a minimum grade of C-.
+chem 121, fall 2024 : Chemistry 12 with a minimum grade of B, or CHEM 109 or 111 with a minimum grade of C-.
+chem 122, fall 2024 : CHEM 120 or 121 with a minimum grade of C-.
+chem 125, fall 2024 : 
+chem 126, fall 2024 : 
+chem 180, fall 2024 : CHEM 121 with a minimum grade of C-.
+chem 210, fall 2024 : CHEM 122 with a minimum grade of C-.
+chem 216, fall 2024 : 
+chem 230, fall 2024 : CHEM 122 with a minimum grade of C-. Students who expect to take further courses in inorganic chemistry should take CHEM 230 concurrently with CHEM 236W.
+chem 236w, fall 2024 : 
+chem 260, fall 2024 : CHEM 122, MATH 152, and PHYS 121, 126 or 141 (or PHYS 102 with a minimum grade of B), all with a minimum grade of C-. Recommended: MATH 232.
+chem 281, fall 2024 : CHEM 121 with a minimum grade of C-. Corequisite: CHEM 122.
+chem 282, fall 2024 : CHEM 281 with a minimum grade of C-.
+chem 283, fall 2024 : CHEM 281 with a minimum grade of C-.
+chem 284, fall 2024 : CHEM 282 with a minimum of C+, or permission of the Department.
+chem 285, fall 2024 : 
+chem 286, fall 2024 : 
+chem 296, fall 2024 : 
+chem 306, fall 2024 : Completion of 28 units in a science program, including first-year calculus, chemistry and physics. Minimum CGPA 2.67 (or permission of co-op co-ordinator).
+chem 307, fall 2024 : CHEM 306 and completion of 42 units toward a BSc degree. Minimum CGPA 2.67 (or permission of co-op co-ordinator).
+chem 316, fall 2024 : CHEM 210, 216, and 260, all with a minimum grade of C-, or permission of the department.
+chem 340, fall 2024 : Completion of 60 units in a science or applied science program, including first year chemistry, physics and calculus. CHEM 230 is strongly recommended.
+chem 364, fall 2024 : CHEM 260 or PHYS 285, MATH 232, and MATH 251, all with a minimum grade of C-. Recommended: MATH 260 or MATH 310.
+chem 366w, fall 2024 : CHEM 266 with a minimum grade of C-. Corequisite: CHEM 360.
+chem 380, fall 2024 : (CHEM 282 or 283 or 284) and CHEM 286, both with a minimum grade of C-, or permission of the department.
+chem 396, fall 2024 : 
+chem 406, fall 2024 : CHEM 307 and completion of 56 units toward a BSc degree. Minimum CGPA of 2.67 (or permission of co-op co-ordinator).
+chem 407, fall 2024 : CHEM 406. Minimum CGPA of 2.67 (or permission of co-op co-ordinator).
+chem 408, fall 2024 : CHEM 407.
+chem 419, fall 2024 : CHEM 316 with a minimum grade of C-.
+chem 439, fall 2024 : CHEM 332 with a minimum grade of C-.
+chem 452, fall 2024 : CHEM 380 and MBB 222, both with a minimum grade of C-, or permission of the Department.
+chem 459, fall 2024 : CHEM 380 with a minimum grade of C-, or permission of the instructor.
+chem 481, fall 2024 : 
+chem 482, fall 2024 : 
+chem 483, fall 2024 : 
+chem 484, fall 2024 : 
+stat 100, fall 2024 : 
+stat 180, fall 2024 : Enrollment in the Statistics or Actuarial Science major or honours program, or STAT 270 with a minimum grade of C-.
+stat 201, fall 2024 : Recommended: 30 units.
+stat 203, fall 2024 : Recommended: 30 units including a research methods course such as SA 255, CRIM 220, POL 200W, or equivalent.
+stat 260, fall 2024 : One of STAT 201, STAT 203, STAT 205, STAT 270, BUS 232, ECON 233, or POL 201, with a grade of at least C- or permission of the instructor.
+stat 270, fall 2024 : or Corequisite: MATH 152 or 155 or 158, with a minimum grade of C-. Students wishing an intuitive appreciation of a broad range of statistical strategies may wish to take STAT 100 first.
+stat 271, fall 2024 : CMPT 210 with a minimum grade of C-.
+stat 285, fall 2024 : STAT 270 and one of MATH 152, MATH 155, or MATH 158, all with a minimum grade of C-.
+stat 302, fall 2024 : One of STAT 201, STAT 203, STAT 205, STAT 270, BUS 232, or ECON 233, with a minimum grade of C-.
+stat 305, fall 2024 : One of STAT 201, STAT 203, STAT 205, STAT 270, BUS 232, or ECON 233, with a minimum grade of C-.
+stat 310, fall 2024 : 60 units in subjects outside of the Faculties of Science and Applied Sciences and one of STAT 201, STAT 203, STAT 205, STAT 270, BUS 232, ECON 233, or POL 201, with a minimum grade of C-.
+stat 330, fall 2024 : STAT 285, MATH 251, and one of MATH 232 or MATH 240, all with a minimum grade of C-.
+stat 336, fall 2024 : Students must apply and receive permission from the co-op co-ordinator at least one but preferably two terms in advance. They will normally be required to have completed 45 units with a GPA of 2.5 before they may take this practicum course.
+stat 337, fall 2024 : STAT 336 or Job Practicum I from another department. Students must apply and receive permission from the co-op co-ordinator at least one term in advance.
+stat 342, fall 2024 : STAT 285 or STAT 302 or STAT 305 or ECON 333, with a minimum grade of C-.
+stat 350, fall 2024 : STAT 260, STAT 285, MATH 251, and one of MATH 232 or MATH 240, all with a minimum grade of C-.
+stat 430, fall 2024 : STAT 350 with a minimum grade of C-.
+stat 436, fall 2024 : STAT 337 or Job Practicum II from another department. Students must apply and receive permission from the co-op co-ordinator at least one term in advance.
+stat 437, fall 2024 : STAT 436 or Job Practicum III from another department. Students must apply and receive permission from the co-op co-ordinator at least one term in advance.
+stat 438, fall 2024 : STAT 437 or Job Practicum IV from another department. Students must apply and receive permission from the co-op co-ordinator at least one term in advance.
+stat 440, fall 2024 : 90 units including STAT 350 with a minimum grade of C- and one of STAT 341, STAT 260, or CMPT 225, with a minimum grade of C-, or instructor approval. STAT 240 is also recommended.
+stat 450, fall 2024 : STAT 330 with a minimum grade of C-.
+stat 452, fall 2024 : STAT 260 and one of STAT 302 or STAT 305 or STAT 350 or ECON 333 or equivalent, with a minimum grade of C-.
+stat 485, fall 2024 : STAT 260 and one of STAT 285 or STAT 302 or STAT 305 or ECON 333 or equivalent, with a minimum grade of C-.
+stat 490, fall 2024 : Dependent on the topic covered.
+stat 495, fall 2024 : Written permission of the department undergraduate studies committee.
+cmpt 105w, fall 2024 : 
+cmpt 120, fall 2024 : BC Math 12 or equivalent is recommended.
+cmpt 125, fall 2024 : CMPT 120 or CMPT 130, with a minimum grade of C-.
+cmpt 130, fall 2024 : BC Math 12 (or equivalent, or any of MATH 100, 150, 151, 154, or 157, with a minimum grade of C-).
