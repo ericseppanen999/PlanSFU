@@ -43,6 +43,7 @@ export const fetchCourses = async (successCallback, searchparams = defaultQuery)
 
   searchparams.courses.forEach((course, index) => {
     queryParams.append(`courses[${index}][unique_identifier]`, course.unique_identifier);
+    queryParams.append(`courses[${index}][grade]`, course.grade);
   });
   console.log(JSON.stringify(searchparams))
   console.log(`queryt: ${queryParams.toString()}`);

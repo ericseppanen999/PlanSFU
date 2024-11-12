@@ -217,7 +217,6 @@ Course.create!(
   rescue IOError => e
     puts "Error writing to file: #{e}"
   end
-=begin
   base_directory = "course_seed_data"
   # create directory if it doesn't exist with the specific name, year, and term
   folder_path = File.join(base_directory, year, term)
@@ -230,7 +229,6 @@ Course.create!(
   rescue IOError => e
     puts "Error writing to file: #{e}"
   end
-=end
 end
 
 # scrape sfu rest api for all course data
@@ -277,6 +275,8 @@ departments = [
 ]
 
 departments = [ "cmpt", "macm", "math", "ensc", "phys", "chem", "stat" ]
+
+departments = [ "ensc", "phys", "chem", "stat" ]
 
 def times(year_scope, terms, departments)
   puts "year:"
