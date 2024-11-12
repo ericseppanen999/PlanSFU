@@ -1,3 +1,5 @@
+import { SearchFailCallback } from "./callback";
+
 // the default 
 export const defaultQuery = {
   searchstring: "",
@@ -45,8 +47,8 @@ export const fetchCourses = async (successCallback, searchparams = defaultQuery)
     queryParams.append(`courses[${index}][unique_identifier]`, course.unique_identifier);
     queryParams.append(`courses[${index}][grade]`, course.grade);
   });
-  console.log(JSON.stringify(searchparams))
-  console.log(`queryt: ${queryParams.toString()}`);
+  //console.log(JSON.stringify(searchparams))
+  //console.log(`queryt: ${queryParams.toString()}`);
 
   try {
     const response = await fetch(`/courses/search?${queryParams.toString()}`, {
@@ -59,9 +61,11 @@ export const fetchCourses = async (successCallback, searchparams = defaultQuery)
       // console.log(`Received response: ${JSON.stringify(search_res, undefined, 4)}`);
       successCallback(search_res);
     } else {
+      SearchFailCallback.trigger("Failed to fetch search result.");
       throw new Error(`Failed to fetch search result. Response status: ${response.status}`);
     }
   } catch (error) {
+    SearchFailCallback.trigger("Error during course fetch.");
     console.error("Error during course fetch:", error);
   }
 };

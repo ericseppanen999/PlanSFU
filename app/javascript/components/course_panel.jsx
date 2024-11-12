@@ -1,6 +1,7 @@
 import React, {useCallback, useState} from "react";
 import { PlusIcon, MinusIcon } from "./icons.jsx";
 import { AddCourseCallback, RemoveCourseCallback, SetGradeCallback } from "./callback.js"
+import { InfoPopup } from "./info_popup.jsx";
 import "./course_panel.css"
 
 // Component to render each course item
@@ -36,6 +37,8 @@ const Course = ({
           operation == "add" ? (
             <button
               className="flat course_add_remove_button"
+              name="add-course"
+              title="Add course to selection"
               onClick={AddCourseWrapper}
             >
               <PlusIcon />
@@ -43,6 +46,8 @@ const Course = ({
           ) : operation =="remove" ? (
             <button
               className="flat course_add_remove_button"
+              name="remove-course"
+              title="Remove course from selection"
               onClick={RemoveCourseWrapper}
             >
               <MinusIcon />
@@ -81,6 +86,8 @@ const Course = ({
           <h3>Grade:</h3>
           <div className="padding_small"></div>
           <input type="text" className="course_info_item grade_input" size={5} placeholder={course.grade} name="grade" onBlur={(event) => setGradeWrapper(event.target.value)}></input>
+          <div className="padding_medium"></div>
+          <InfoPopup>Set a grade for this course. Defaults to 55% (C-) when unset.</InfoPopup>
         </div>
       ) : (
         <></>

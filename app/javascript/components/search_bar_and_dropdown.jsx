@@ -124,7 +124,7 @@ const SearchBarWithDropdown = () => {
         <SearchBar id="course_search" name="course_search" onChange={handleSearchChange} />
         <div className="padding_medium"></div>
         <div>
-          <button id="advanced_search_button" onClick={toggleDropdown}>
+          <button name="advanced_search_button" id="advanced_search_button" title="Show advanced search dropdown" onClick={toggleDropdown}>
             Advanced Search
           </button>
           <FoldingPanel className="search_dropdown" is_open={showDropdown} set_open_callback={setShowDropdown}>

@@ -58,46 +58,86 @@ export const SignIn = () => {
     };
 
     return (
-        <div className="signin_dropdown">
-            <form onSubmit={handleSubmit}>
-                <table className="username_password_table">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <input
-                                    type="text"
-                                    value={credentials.username}
-                                    onChange={(e) => setCredentials({
-                                        ...credentials,
-                                        username: e.target.value
-                                    })}
-                                    placeholder="Username"
-                                    required
-                                />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input
-                                    type="password"
-                                    value={credentials.password}
-                                    onChange={(e) => setCredentials({
-                                        ...credentials,
-                                        password: e.target.value
-                                    })}
-                                    placeholder="Password"
-                                    required
-                                />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                {error && <div className="error_text">{error}</div>}
-                <div className="submit_panel">
-                    <button type="submit">Sign In</button>
-                    <button type="button" onClick={createAccount}>Sign Up</button>
-                </div>
-            </form>
+        <div>
+            {!loggedIn ? (
+                <>
+                    <button id="sign_in_button" name="sign_in_button" onClick={() => setShowDropdown(true)}>SIGN IN</button>
+                    <FoldingPanel className="signin_dropdown" is_open={showDropdown} set_open_callback={setShowDropdown}>
+                        <form>
+                            <table className="username_password_table">
+                                <tbody>
+                                    <tr>
+                                        <td><label htmlFor="username_input_box">Username:</label></td>
+                                        <td>
+                                            <input
+                                                type="text"
+                                                id="username_input_box"
+                                                name="username"
+                                                autoComplete="username"
+                                                value={username}
+                                                onChange={(e) => setUsername(e.target.value)}
+                                                required
+                                            />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><label htmlFor="password_input_box">Password (min 6 characters):</label></td>
+                                        <td>
+                                            <input
+                                                type="password"
+                                                name="password"
+                                                minLength="6"
+                                                id="password_input_box"
+                                                autoComplete="current-password new-password"
+                                                value={password}
+                                                onChange={(e) => setPassword(e.target.value)}
+                                                required
+                                            />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div className="padding_medium"></div>
+                            <div className="horizontal-stack submit_panel">
+                                {showBadCredError && (
+                                    <>
+                                        <p className="error_text">Invalid username / password combo</p>
+                                    </>
+                                )}
+                                {showSigninError && (
+                                    <>
+                                        <p className="error_text">Failed to sign in</p>
+                                    </>
+                                )}
+                                {showSignupError && (
+                                    <>
+                                        <p className="error_text">Failed to sign up</p>
+                                    </>
+                                )}
+                                <div className="padding_auto"></div>
+                                <button className="small" type="submit" id="sign_in_submit_button" name="sign_in_submit_button" onClick={login}>SIGN IN</button>
+                                <div className="padding_medium"></div>
+                                <button className="small" type="submit" id="sign_up_submit_button" name="sign_up_submit_button" onClick={createAccount}>SIGN UP</button>
+                            </div>
+                        </form>
+                    </FoldingPanel>
+                </>
+            ) : (
+                <>
+                    <div className="horizontal-stack">
+                        <p>{activeUsername}</p>
+                        <div className="padding_medium"></div>
+                        <div className="center-content">
+                            <button className="small" id="sign_out_button" name="sign_out_button" onClick={signOut}>SIGN OUT</button>
+                        </div>
+                    </div>
+                    {showSignoutError && (
+                        <>
+                            <p className="error_text">Failed to sign out</p>
+                        </>
+                    )}
+                </>
+            )}
         </div>
     );
 };

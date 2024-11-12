@@ -84,6 +84,7 @@ GEM
       msgpack (~> 1.2)
     brakeman (6.2.2)
       racc
+    brotli (0.6.0)
     builder (3.3.0)
     capybara (3.40.0)
       addressable
@@ -318,6 +319,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
   brakeman
+  brotli
   capybara
   debug
   groq (~> 0.3.2)

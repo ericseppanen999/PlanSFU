@@ -29,7 +29,7 @@ const NestedGroup = ({ title, content, level }) => {
     return (
         <ul className={isOpen ? "minus_list" : "plus_list"}>
             <li className={`nested_group level_${level}`}>                        
-                <div className="group_title" onClick={() => setIsOpen(!isOpen)}>{title}</div>
+                <div role="button" className="group_title" onClick={() => setIsOpen(!isOpen)}>{title}</div>
                 {isOpen && (
                     <div className="group_content">
                         {renderContent()}
