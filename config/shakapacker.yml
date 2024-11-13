@@ -116,7 +116,7 @@ production:
   <<: *default
   inline_css: true
   # Production depends on precompilation of packs prior to booting for performance.
-  compile: false
+  compile: true
 
   compress: true
 
