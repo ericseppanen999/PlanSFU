@@ -48,7 +48,7 @@ export const fetchCourses = async (successCallback, searchparams = defaultQuery)
     queryParams.append(`courses[${index}][grade]`, course.grade);
   });
   //console.log(JSON.stringify(searchparams))
-  //console.log(`queryt: ${queryParams.toString()}`);
+  console.log(`queryt: ${queryParams.toString()}`);
 
   try {
     const response = await fetch(`/courses/search?${queryParams.toString()}`, {
