@@ -7,31 +7,22 @@ const options = {
   resolve: {
     extensions: [".css", ".js", ".jsx"],
   },
+  plugins: [
+    new CompressionPlugin({
+      filename: "[path][base].gz",
+      algorithm: "gzip",
+      test: /\.(js|css|html|svg)$/,
+      threshold: 10240,
+      minRatio: 0.8,
+    }),
+
+    new BrotliPlugin({
+      filename: "[path][base].br",
+      test: /\.(js|css|html|svg)$/,
+      threshold: 10240,
+      minRatio: 0.8,
+    }),
+  ],
 };
 
-//generateWebpackConfig(options);
-
-const webpackConfig = {
-    resolve: {
-      extensions: [".css", ".js", ".jsx"],
-    },
-
-    plugins: [
-        new CompressionPlugin({
-          filename: "[path][base].gz",
-          algorithm: "gzip",
-          test: /\.(js|css|html|svg)$/,
-          threshold: 10240,
-          minRatio: 0.8,
-        }),
-      
-        new BrotliPlugin({
-          filename: "[path][base].br",
-          test: /\.(js|css|html|svg)$/,
-          threshold: 10240,
-          minRatio: 0.8,
-        })
-    ]
-}
-
-module.exports = webpackConfig;
+module.exports = generateWebpackConfig(options);

@@ -39,7 +39,5 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_12_031949) do
     t.json "taken_courses", default: []
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "username", null: false
-    t.index ["username"], name: "index_users_on_username", unique: true
   end
 end

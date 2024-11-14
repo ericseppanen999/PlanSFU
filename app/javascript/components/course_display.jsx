@@ -100,9 +100,7 @@ const CourseTermDisplay = ({ courses, visible }) => {
               operation="remove"
               minimized={activeCourse !== course.unique_identifier}
               showGrade={true}
-              makeActive={(unique_identifier) =>
-                setActiveCourse(unique_identifier)
-              }
+              makeActive={(unique_identifier) => setActiveCourse(unique_identifier)}
             />
           ))}
         </div>
