@@ -1,10 +1,9 @@
-// app/javascript/components/SignIn.jsx
 import React, { useState, useContext } from 'react';
 import { AuthContext } from './auth';
 import "./signin.css";
 
 export const SignIn = () => {
-    const { login } = useContext(AuthContext);
+    const { login, logout } = useContext(AuthContext);
     const [credentials, setCredentials] = useState({
         username: '',
         password: ''
@@ -57,13 +56,35 @@ export const SignIn = () => {
         window.location.href = "/registration"; // Redirect to the registration path
     };
 
+    const handleSignOut = async () => {
+        try {
+            const response = await fetch('/logout', {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRF-Token': getCSRFToken()
+                }
+            });
+
+            if (response.ok) {
+                logout();
+                localStorage.removeItem('session_token');
+                localStorage.removeItem('username');
+            } else {
+                setError('Failed to sign out');
+            }
+        } catch (err) {
+            setError('An error occurred during sign out');
+            console.error('Sign out error:', err);
+        }
+    };
+
     return (
         <div>
             {!loggedIn ? (
                 <>
                     <button id="sign_in_button" name="sign_in_button" onClick={() => setShowDropdown(true)}>SIGN IN</button>
                     <FoldingPanel className="signin_dropdown" is_open={showDropdown} set_open_callback={setShowDropdown}>
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <table className="username_password_table">
                                 <tbody>
                                     <tr>
@@ -74,8 +95,8 @@ export const SignIn = () => {
                                                 id="username_input_box"
                                                 name="username"
                                                 autoComplete="username"
-                                                value={username}
-                                                onChange={(e) => setUsername(e.target.value)}
+                                                value={credentials.username}
+                                                onChange={(e) => setCredentials({ ...credentials, username: e.target.value })}
                                                 required
                                             />
                                         </td>
@@ -89,8 +110,8 @@ export const SignIn = () => {
                                                 minLength="6"
                                                 id="password_input_box"
                                                 autoComplete="current-password new-password"
-                                                value={password}
-                                                onChange={(e) => setPassword(e.target.value)}
+                                                value={credentials.password}
+                                                onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
                                                 required
                                             />
                                         </td>
@@ -99,25 +120,13 @@ export const SignIn = () => {
                             </table>
                             <div className="padding_medium"></div>
                             <div className="horizontal-stack submit_panel">
-                                {showBadCredError && (
-                                    <>
-                                        <p className="error_text">Invalid username / password combo</p>
-                                    </>
-                                )}
-                                {showSigninError && (
-                                    <>
-                                        <p className="error_text">Failed to sign in</p>
-                                    </>
-                                )}
-                                {showSignupError && (
-                                    <>
-                                        <p className="error_text">Failed to sign up</p>
-                                    </>
+                                {error && (
+                                    <p className="error_text">{error}</p>
                                 )}
                                 <div className="padding_auto"></div>
-                                <button className="small" type="submit" id="sign_in_submit_button" name="sign_in_submit_button" onClick={login}>SIGN IN</button>
+                                <button className="small" type="submit" id="sign_in_submit_button" name="sign_in_submit_button">SIGN IN</button>
                                 <div className="padding_medium"></div>
-                                <button className="small" type="submit" id="sign_up_submit_button" name="sign_up_submit_button" onClick={createAccount}>SIGN UP</button>
+                                <button className="small" type="button" id="sign_up_submit_button" name="sign_up_submit_button" onClick={createAccount}>SIGN UP</button>
                             </div>
                         </form>
                     </FoldingPanel>
@@ -125,16 +134,14 @@ export const SignIn = () => {
             ) : (
                 <>
                     <div className="horizontal-stack">
-                        <p>{activeUsername}</p>
+                        <p>{credentials.username}</p>
                         <div className="padding_medium"></div>
                         <div className="center-content">
-                            <button className="small" id="sign_out_button" name="sign_out_button" onClick={signOut}>SIGN OUT</button>
+                            <button className="small" id="sign_out_button" name="sign_out_button" onClick={handleSignOut}>SIGN OUT</button>
                         </div>
                     </div>
-                    {showSignoutError && (
-                        <>
-                            <p className="error_text">Failed to sign out</p>
-                        </>
+                    {error && (
+                        <p className="error_text">{error}</p>
                     )}
                 </>
             )}
