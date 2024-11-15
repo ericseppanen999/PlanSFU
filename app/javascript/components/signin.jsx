@@ -1,4 +1,3 @@
-// signin.jsx
 import React, { useState, useEffect } from 'react';
 import { login, logout, signup } from './authentification';
 import "./signin.css";
@@ -6,37 +5,48 @@ import { FoldingPanel } from './folding_panel';
 import { UserChangeCallback } from './callback';
 
 export const SignIn = () => {
-    const { loggedIn, setLoggedIn } = useState(false);
-    const [error, setError] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(false);
+    const [error, setError] = useState(null);
     const [username, setUsername] = useState(undefined);
     const [showDropdown, setShowDropdown] = useState(false);
 
     useEffect(() => {
         UserChangeCallback.subscribe((user) => {
-          setLoggedIn(user.sessionToken != undefined);
-          setUsername(user.username);
-        })
-    }, [])
+            setLoggedIn(user.sessionToken !== undefined);
+            setUsername(user.username);
+        });
+    }, []);
 
     const handleSignOut = async () => {
-        if (logout() != 0) {
-            setError(true);
+        const result = await logout();
+        if (result !== 0) {
+            setError("Error logging out.");
+        } else {
+            setError(null);
         }
     };
 
-    const handleSignUp = async () => {
+    const handleSignUp = async (event) => {
+        event.preventDefault();
         const newusername = document.getElementById("username_input_box").value;
         const newpassword = document.getElementById("password_input_box").value;
-        if (signup(newusername, newpassword) != 0) {
-            setError(true);
+        const result = await signup(newusername, newpassword);
+        if (result !== 0) {
+            setError("Error signing up.");
+        } else {
+            setError(null);
         }
     };
 
-    const handleSignIn = async () => {
+    const handleSignIn = async (event) => {
+        event.preventDefault();
         const tryusername = document.getElementById("username_input_box").value;
         const trypassword = document.getElementById("password_input_box").value;
-        if (login(tryusername, trypassword) != 0) {
-            setError(true);
+        const result = await login(tryusername, trypassword);
+        if (result !== 0) {
+            setError("Error signing in.");
+        } else {
+            setError(null);
         }
     };
 
@@ -79,7 +89,7 @@ export const SignIn = () => {
                             <div className="padding_medium"></div>
                             <div className="horizontal-stack submit_panel">
                                 {error && (
-                                    <p className="error_text">this is an error</p>
+                                    <p className="error_text">{error}</p>
                                 )}
                                 <div className="padding_auto"></div>
                                 <button className="small" type="submit" id="sign_in_submit_button" name="sign_in_submit_button" onClick={handleSignIn}>SIGN IN</button>
