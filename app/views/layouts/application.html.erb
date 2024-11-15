@@ -26,19 +26,6 @@
   </head>
 
   <body>
-    <% if session[:user_id] %>
-      <%= link_to 'Sign out', logout_path, method: :delete, class: "btn btn-primary" %>
-    <% else %>
-      <%= link_to 'Sign in', login_path, class: "btn btn-primary" %>
-      <%= link_to 'Sign up', signup_path, class: "btn btn-secondary" %> 
-    <% end %>
-    
-    <div id="term_tab_display"></div>
-    <div id="course_search_display"></div>
-    <div id="searchbar_and_dropdown_display"></div>
-    <div id="signin_display"></div>
-    <div id="external_links_sidebar_display"></div>
-
     <%= yield %>
   </body>
 </html>
