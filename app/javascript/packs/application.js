@@ -1,6 +1,14 @@
 // this is the react / js entrypoint for the main page
 
 import React from "react"
+import Rails from "@rails/ujs"
+import Turbolinks from "turbolinks"
+import * as ActiveStorage from "@rails/activestorage"
+
+
+Rails.start()
+Turbolinks.start()
+ActiveStorage.start()
 
 import { fetchCourses } from "../components/searchCourses.js"
 import { changeQueryCallback, updateCourseListCallback } from "../components/callback.js"

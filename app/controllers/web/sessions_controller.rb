@@ -1,4 +1,3 @@
-# app/controllers/web/sessions_controller.rb
 module Web
   class SessionsController < ApplicationController
     def new
