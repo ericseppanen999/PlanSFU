@@ -1,14 +1,17 @@
+// signin.jsx
 import React, { useState, useContext } from 'react';
 import { AuthContext } from './auth';
 import "./signin.css";
+import { FoldingPanel } from './folding_panel';
 
 export const SignIn = () => {
-    const { login, logout } = useContext(AuthContext);
+    const { login, logout, user } = useContext(AuthContext);
     const [credentials, setCredentials] = useState({
         username: '',
         password: ''
     });
     const [error, setError] = useState('');
+    const [showDropdown, setShowDropdown] = useState(false);
 
     const getCSRFToken = () => document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
@@ -80,7 +83,7 @@ export const SignIn = () => {
 
     return (
         <div>
-            {!loggedIn ? (
+            {!user ? (
                 <>
                     <button id="sign_in_button" name="sign_in_button" onClick={() => setShowDropdown(true)}>SIGN IN</button>
                     <FoldingPanel className="signin_dropdown" is_open={showDropdown} set_open_callback={setShowDropdown}>
