@@ -11,12 +11,15 @@ module Plansfu
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.2
     # use text compression for faster loads
-    # config.middleware.use Rack::Deflater, include: [ "text/html", "application/json", "application/javascript", "text/css" ], brotli: true
+    config.middleware.use Rack::Deflater, include: [ "text/html", "application/json", "application/javascript", "text/css" ], brotli: true
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
+
+    config.assets.compress = true
+    # config.assets.js_compressor = :uglifier
 
     # Configuration for the application, engines, and railties goes here.
     #

@@ -31,11 +31,13 @@ gem "shakapacker"
 # include brotli for better compression
 gem "brotli"
 
+gem "uglifier"
+
 # silence warnings about standard packages
 gem "ostruct"
 gem "pstore"
 
-gem 'jwt'
+gem "jwt"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"

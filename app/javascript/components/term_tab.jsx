@@ -19,7 +19,8 @@ const TermTabDisplay = () => {
                     const courseidx = currterms[termidx].courses.findIndex((c) => c.unique_identifier === course.unique_identifier);
                     if (courseidx != -1){
                         let newterms = [...currterms];
-                        if (newterms[termidx].length == 1){
+                        if (newterms[termidx].courses.length === 1){
+                            console.log("ran");
                             newterms.splice(termidx, 1);
                         } else {
                             newterms[termidx].courses.splice(courseidx, 1);

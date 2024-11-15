@@ -10,7 +10,7 @@ const Course = ({
   operation = "add",
   minimized = false,
   showGrade = false,
-  toggleActive
+  makeActive
 }) => {
   // used for comunication with the tab display
   const AddCourseWrapper = useCallback(() => {
@@ -26,7 +26,7 @@ const Course = ({
   })
 
   return (
-    <div className="course_item active_panel" onClick={() => toggleActive(course.unique_identifier)}>
+    <div className="course_item active_panel" onClick={() => makeActive(course.unique_identifier)}>
       <div className="horizontal-stack">
         {/* title */}
         <h3>
