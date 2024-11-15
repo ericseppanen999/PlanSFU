@@ -31,6 +31,7 @@
     "react-router-dom": "^6.28.0",
     "shakapacker": "8.0.2",
     "style-loader": "^4.0.0",
+    "terser": "^5.36.0",
     "terser-webpack-plugin": "^5.3.10",
     "webpack": "^5.94.0",
     "webpack-assets-manifest": "^5.2.1",
