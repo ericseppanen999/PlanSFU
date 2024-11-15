@@ -51,7 +51,6 @@ import Rails from "@rails/ujs";
 import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
 import { createRoot } from 'react-dom/client';
-import { AuthProvider } from "../components/auth";
 
 Rails.start();
 Turbolinks.start();
@@ -78,35 +77,25 @@ changeQueryCallback.subscribe((query) => {
 // add react elements to index.html
 const tabDisplayRenderer = createRoot(document.getElementById('term_tab_display'));
 tabDisplayRenderer.render(
-    <AuthProvider>
-        <TermTabDisplay />
-    </AuthProvider>
+    <TermTabDisplay />
 );
 
 const searchDisplayRenderer = createRoot(document.getElementById('course_search_display'));
 searchDisplayRenderer.render(
-    <AuthProvider>
-        <CourseSearchDisplay />
-    </AuthProvider>
+    <CourseSearchDisplay />
 );
 
 const searchBarDropdownRenderer = createRoot(document.getElementById('searchbar_and_dropdown_display'));
 searchBarDropdownRenderer.render(
-    <AuthProvider>
-        <SearchBarWithDropdown />
-    </AuthProvider>
+    <SearchBarWithDropdown />
 );
 
 const signInRenderer = createRoot(document.getElementById('signin_display'));
 signInRenderer.render(
-    <AuthProvider>
-        <SignIn />
-    </AuthProvider>
+    <SignIn />
 );
 
 const externalLinksSidebarRenderer = createRoot(document.getElementById('external_links_sidebar_display'));
 externalLinksSidebarRenderer.render(
-    <AuthProvider>
-        <ExternalLinksSidebar />
-    </AuthProvider>
+    <ExternalLinksSidebar />
 );

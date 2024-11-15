@@ -43,3 +43,9 @@ export const UpdateSessionCallback = new Callback();
 
 // Callback for handling failed searches
 export const SearchFailCallback = new Callback();
+
+// Callback for handling login failiures
+export const LoginFailCallback = new Callback();
+
+// Callback for handling changes to the user state
+export const UserChangeCallback = new Callback();
