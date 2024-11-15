@@ -1,5 +1,5 @@
 // signin.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { login, logout, signup } from './authentification';
 import "./signin.css";
 import { FoldingPanel } from './folding_panel';
