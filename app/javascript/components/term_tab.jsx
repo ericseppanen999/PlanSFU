@@ -1,13 +1,30 @@
 import React, { useState, useEffect} from "react";
 import { CourseTermDisplay } from "../components/course_display.jsx"
-import { AddCourseCallback, RemoveCourseCallback, UpdateTermsCallback , SetGradeCallback} from "./callback.js"
+import { UserChangeCallback, AddCourseCallback, RemoveCourseCallback, UpdateTermsCallback , SetGradeCallback} from "./callback.js"
 import "./term_tab.css"
+import { getSessionToken } from "./authentification.js"
+import fetchTerms from "./fetchTerms.js"
+let refetchTerms = null;
 
 const TermTabDisplay = () => {
     const [terms, setTerms] = useState([]);
     const [activeterm, setActiveTerm] = useState(0);
     const [loading, setLoading] = useState(false);
 
+    useEffect(() => {
+        refetchTerms = () => fetchTerms(setTerms, setActiveTerm, setLoading);
+        refetchTerms();
+    }, []);
+
+    useEffect(() => {
+        UserChangeCallback.subscribe((new_user) => {
+            if (!new_user.sessionToken) {
+                setTerms([]);
+                setActiveTerm(0);
+            }
+        });
+    }, []);
+    
     // setup the callback for removing a course
     useEffect(() => {
         RemoveCourseCallback.subscribe((course) => {
@@ -85,6 +102,7 @@ const TermTabDisplay = () => {
     )}, [])
   
     // run at startup
+    {/*
     useEffect(() => {
       const fetchTerms = async () => {
         setLoading(true);
@@ -99,7 +117,7 @@ const TermTabDisplay = () => {
   
       fetchTerms();
     }, []);
-
+    */}
     // loading: grey out pane, display elipsis
     // one tab for each closed term + open term
     // if no terms, tell user to add courses
@@ -134,5 +152,4 @@ const TermTabDisplay = () => {
       </div>
     );
   };
-
-export { TermTabDisplay };
+export { TermTabDisplay, refetchTerms };

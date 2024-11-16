@@ -20,14 +20,15 @@ class CoursesController < ApplicationController
 
     use_courses = query[:use_courses].presence || false
     user_courses = query[:courses].presence || []
-    session_token = query[:session_token].presence || nil
+    session_token = query[:session_token].presence
+
     search_string = query[:searchstring].presence || ""
     search_in_props = query[:search_in_props].presence ||[ "title", "term", "description", "instructors", "year" ]
     terms = query[:terms].presence || [ { year: query[:year], term: query[:term] } ]
     departments = query[:departments].presence || [ "any" ]
     levels = query[:levels].presence || [ "any" ]
     custom_sql = query[:SQL].presence
-    logger.debug("use_courses: #{use_courses}")
+    # logger.debug("use_courses: #{use_courses}")
     # convert the terms to an array of hashes // not sure if this is 100% correct or necessary
     terms = terms.map { |t| t.to_h }
 
@@ -45,31 +46,39 @@ class CoursesController < ApplicationController
     if levels == [ "any" ]
       levels = [] # empty array because we don't need to filter by level
     end
+
     if query[:courses].is_a?(ActionController::Parameters)
       user_courses = query[:courses].values.map(&:to_h)
     else
       user_courses = []
     end
-    use_courses = ActiveModel::Type::Boolean.new.cast(query[:use_courses])
 
-    if session_token
+    use_courses = ActiveModel::Type::Boolean.new.cast(query[:use_courses])
+    logger.debug("session token #{session_token}")
+    if session_token != "none"
       user = User.find_by(session_token: session_token)
       user_courses = user.taken_courses if user
+
+      # logger.debug("user: #{user.inspect} user_courses: #{user_courses.inspect}")
     end
 
     if user_courses.any?
+      unique_identifiers = user_courses.map { |course| course["unique_identifier"] }
+      db_courses = Course.where(unique_identifier: unique_identifiers).index_by(&:unique_identifier)
+
       user_courses = user_courses.map do |course|
-        user_grade = validate_grade(course[:grade])
-        db_course = Course.find_by(unique_identifier: course[:unique_identifier])
-        {
-          "dept" => "#{db_course.dept}",
-          "number" => "#{db_course.number}",
-          "grade" => "#{user_grade}"
-        } if db_course
+        db_course = db_courses[course["unique_identifier"]]
+        if db_course
+          {
+            "dept" => db_course.dept,
+            "number" => db_course.number,
+            "grade" => validate_grade(course["grade"]),
+            "credits" => db_course.credits
+          }
+        end
       end.compact
-    else
-      user_courses = []
     end
+    # Rails.logger.debug("final user_courses: #{user_courses}")
 
     # search for courses based on the search parameters
     results = search_courses(search_string, search_in_props, terms, departments, levels, custom_sql, use_courses, user_courses, session_token)
@@ -80,12 +89,23 @@ class CoursesController < ApplicationController
     render json: results
   end
 
+  def fetch_courses
+    uuids = params[:uuids]
+    if uuids.is_a?(Array)
+      courses = Course.where(unique_identifier: uuids)
+      # Rails.logger.debug("courses: #{courses}")
+      render json: courses
+    else
+      render json: { error: "invalid request" }, status: :bad_request
+    end
+  end
+
   def validate_grade(grade)
     grade = grade.to_s.strip
     if [ "A+", "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "P", "D", "F" ].include?(grade)
       grade
     else
-      "C"
+      "C-"
     end
   end
 
@@ -221,18 +241,35 @@ class CoursesController < ApplicationController
       query_values, sql_query = filter_terms_conditions(terms, query_values, sql_query)
     end
 
-    if user_courses.any?
-      query_values, sql_query = filter_taken_courses(user_courses, query_values, sql_query)
-      # gpa, credits = calculate_gpa(user_courses)
-    end
+    # if user_courses.any?
+    # query_values, sql_query = filter_taken_courses(user_courses, query_values, sql_query)
+    # gpa, credits = calculate_gpa(user_courses)
+    # end
 
-    sql_query += " LIMIT 50"
-    results = Course.find_by_sql([ sql_query, *query_values ])
+    sql_query_with_limit = sql_query + " LIMIT 50"
+    results = Course.find_by_sql([ sql_query_with_limit, *query_values ])
 
     if use_courses && user_courses.any?
       # pass in GPA, credits
       results = filter_prerequisites_satisfied(user_courses, query_values, sql_query, results)
     end
+=begin
+    while results.size < 50
+      offset = results.size
+      sql_query_with_offset = sql_query + " LIMIT 50 OFFSET #{offset}"
+      additional_results = Course.find_by_sql([ sql_query_with_offset, *query_values ])
+
+      break if additional_results.empty?
+
+      if use_courses && user_courses.any?
+        additional_results = filter_prerequisites_satisfied(user_courses, query_values, sql_query, additional_results)
+      end
+
+      results.concat(additional_results)
+
+      results = results.first(50)
+    end
+=end
     results
   end
 end

@@ -13,6 +13,24 @@ def create_course_with_error_handle(course_data)
   end
 end
 
+Course.create!(
+  dept: "ensc",
+  number: "100w",
+  term: "fall",
+  year: "2025",
+  title: "Engineering, Science and Society",
+  description: "We study the history of engineering, its changing relationship to the sciences, and its effects upon society. We cover the ethical and environmental implications of engineering choices. We briefly explore the fundamental concepts in artificial intelligence, information theory, and thermodynamics. Students in the course will work together in small teams to complete a practical engineering design project.",
+  requisite_description: "",
+  prereq_logic: "#no_prereq_logic",
+  short_description: "We study the history of engineering, its changing relationship to the sciences, and its effects upon society. We cover the ethical and environmental implications of engineering choices. We briefly explore the fundamental concepts in artificial intelligence, information theory, and thermodynamics. Students in the course will work together in small teams to complete a practical engineering design project.",
+  credits: 3,
+  instructors: [ "Michael Hegedus" ],
+  campuses: [ "Burnaby" ],
+  delivery_methods: [ "In Person" ],
+  sections: [ "d100" ],
+  requisites: [],
+)
+
 create_course_with_error_handle(
   dept: "ensc",
   number: "100w",

@@ -15,7 +15,7 @@ class Course < ApplicationRecord
   def prerequisites_satisfied?(taken_courses, prereq_logic)
     return true if prereq_logic == "#no_prereq_logic"
     # logger.debug("Checking prerequisites for #{self.dept} #{self.number}")
-    Rails.logger.debug("Checking prerequisites for #{self.dept} #{self.number} with #{taken_courses}")
+    # Rails.logger.debug("Checking prerequisites for #{self.dept} #{self.number} with #{taken_courses}")
     prereq_logic.gsub!("W_course >= C-", has_w(taken_courses).to_s)
 
     if prereq_logic.include?("CGPA") || prereq_logic.include?("CREDITS")
@@ -41,17 +41,12 @@ class Course < ApplicationRecord
     prereq_logic.gsub!("AND", "&&")
     prereq_logic.gsub!("OR", "||")
     begin
-      Rails.logger.debug("Checking prerequisites for #{self.dept} #{self.number} == #{eval(prereq_logic)}")
+      # Rails.logger.debug("Checking prerequisites for #{self.dept} #{self.number} == #{eval(prereq_logic)}")
       eval(prereq_logic)
     rescue Exception => e
       Rails.logger.debug("Error evaluating prerequisite logic: #{e.message}")
       false
     end
-  end
-
-  def user_eligible?(user)
-    logger.debug("Checking eligibility for user #{user.cas_user_id} with #{user.taken_courses} . prereq_logic: #{self.prereq_logic}")
-    prerequisites_satisfied?(user.taken_courses, self.prereq_logic)
   end
 
   private
@@ -71,23 +66,22 @@ class Course < ApplicationRecord
   end
 
   def calculate_gpa(taken_courses)
+    unique_identifiers = taken_courses.map { |course| course["unique_identifier"] }
+    db_courses = Course.where(unique_identifier: unique_identifiers).index_by(&:unique_identifier)
+
     total_credits = 0
     total_grade_points = 0
 
     taken_courses.each do |course|
-      course_grade = course["grade"]
-      grade_points = grade_to_value(course_grade)
+      db_course = db_courses[course["unique_identifier"]]
+      next unless db_course&.credits
 
-      course_record = Course.find_by(dept: course["dept"], number: course["number"])
-
-      if course_record&.credits
-        credits = course_record.credits
-        total_grade_points += grade_points * credits
-        total_credits += credits
-      end
+      grade_points = grade_to_value(course["grade"])
+      total_grade_points += grade_points * db_course.credits
+      total_credits += db_course.credits
     end
 
-    gpa = total_credits > 0 ? (total_grade_points.to_f / total_credits) : 0
+    gpa = total_credits.positive? ? (total_grade_points.to_f / total_credits) : 0
     [ gpa, total_credits ]
   end
 
