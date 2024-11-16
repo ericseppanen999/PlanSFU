@@ -9,7 +9,7 @@ module Web
 
       if params[:user].present?
         user = User.find_by(username: params[:user][:username])&.authenticate(params[:user][:password])
-        
+
         if user
           login user
           redirect_to root_path, notice: "You have signed in successfully."

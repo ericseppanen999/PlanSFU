@@ -3,6 +3,7 @@ import { PlusIcon, MinusIcon } from "./icons.jsx";
 import { AddCourseCallback, RemoveCourseCallback, SetGradeCallback } from "./callback.js"
 import { InfoPopup } from "./info_popup.jsx";
 import "./course_panel.css"
+import { getSessionToken } from "./authentification.js"
 
 // Component to render each course item
 const Course = ({
@@ -19,11 +20,62 @@ const Course = ({
 
   const RemoveCourseWrapper = useCallback(() => {
     RemoveCourseCallback.trigger(course);
-  })
+    fetch("/users/remove_course", {
+      method: "PATCH",
+      headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${getSessionToken()}`, // Ensure sessionToken is available
+      },
+      body: JSON.stringify({
+          unique_identifier: course.unique_identifier,
+      }),
+    })
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error("Failed to remove course");
+        }
+        return response.json();
+    })
+    .then((data) => {
+        console.log("Course removed successfully:", data);
+    })
+    .catch((error) => {
+        console.error("Error removing course:", error);
+    });
+  }, [course]);
 
   const setGradeWrapper = useCallback((grade) => {
     SetGradeCallback.trigger(course, grade);
-  })
+
+    if(getSessionToken() == undefined) {
+      console.warn("user is not signed in");
+      return;
+    }
+
+    fetch("/users/update_grade", {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${getSessionToken()}`,
+        },
+        body: JSON.stringify({
+            unique_identifier: course.unique_identifier,
+            grade: grade,
+        }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("failed to update grade");
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("grade updated successfully:", data);
+    })
+    .catch(error => {
+        console.error("error updating grade:", error);
+    });
+});
 
   return (
     <div className="course_item active_panel" onClick={() => makeActive(course.unique_identifier)}>

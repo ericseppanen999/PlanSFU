@@ -1,7 +1,7 @@
 # class ApplicationController < ActionController::Base
 #   before_action :set_current_user
 
-#   private 
+#   private
 
 #   def authenticate_user!
 #     redirect_to login_path, alert: "You must be logged in to do that." unless user_signed_in?
@@ -42,7 +42,6 @@
 # app/controllers/application_controller.rb
 class ApplicationController < ActionController::Base
   protect_from_forgery unless: -> { request.format.json? }
-
   private
 
   def current_user
@@ -54,7 +53,7 @@ class ApplicationController < ActionController::Base
     unless current_user
       respond_to do |format|
         format.html { redirect_to login_path, alert: "You must be logged in." }
-        format.json { render json: { error: 'Unauthorized' }, status: :unauthorized }
+        format.json { render json: { error: "Unauthorized" }, status: :unauthorized }
       end
     end
   end

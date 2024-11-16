@@ -1,7 +1,7 @@
 module Api
   class AuthController < ApplicationController
     skip_before_action :verify_authenticity_token
-    before_action :authenticate_user, except: [:login, :signup]
+    before_action :authenticate_user, except: [ :login, :signup ]
 
     def login
       user = User.find_by(username: params[:username])
@@ -12,12 +12,13 @@ module Api
           session_token: session_token,
           user: {
             username: user.username,
-            id: user.id
+            id: user.id,
+            taken_courses: user.taken_courses
           },
           courses: user.user_search_histories
         }
       else
-        render json: { error: 'Invalid username or password' }, status: :unauthorized
+        render json: { error: "Invalid username or password" }, status: :unauthorized
       end
     end
 
@@ -30,7 +31,8 @@ module Api
           session_token: session_token,
           user: {
             username: user.username,
-            id: user.id
+            id: user.id,
+            taken_courses: user.taken_courses
           }
         }, status: :created
       else
@@ -43,7 +45,7 @@ module Api
         @current_user.update(session_token: nil)
         head :no_content
       else
-        render json: { error: 'Unauthorized' }, status: :unauthorized
+        render json: { error: "Unauthorized" }, status: :unauthorized
       end
     end
 
@@ -54,16 +56,22 @@ module Api
     end
 
     def generate_session_token(user)
-      SecureRandom.hex(10)
+      session_token = SecureRandom.hex(10)
+      user.update(session_token: session_token)
+      session_token
     end
 
-    def authenticate_user
-      if request.headers['Authorization'].present?
-        token = request.headers['Authorization'].split(' ').last
+    def authenticate_user # does this actually do anything?
+      token = request.headers["Authorization"]&.split(" ")&.last
+      logger.debug("authenticating user")
+      logger.debug "Authorization Header: #{request.headers['Authorization']}"
+      logger.debug "Current User: #{@current_user.inspect}"
+      if request.headers["Authorization"].present?
+        token = request.headers["Authorization"].split(" ").last
         @current_user = User.find_by(session_token: token)
-        render json: { error: 'Unauthorized' }, status: :unauthorized unless @current_user
+        render json: { error: "Unauthorized" }, status: :unauthorized unless @current_user
       else
-        render json: { error: 'Unauthorized' }, status: :unauthorized
+        render json: { error: "Unauthorized" }, status: :unauthorized
       end
     end
   end
