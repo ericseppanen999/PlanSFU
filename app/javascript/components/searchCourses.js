@@ -1,4 +1,6 @@
 import { SearchFailCallback } from "./callback";
+import { getSessionToken } from "./authentification";
+import addCoursesToUser from "./addCoursesToUser";
 
 // the default 
 export const defaultQuery = {
@@ -10,13 +12,16 @@ export const defaultQuery = {
   SQL: "",
   courses: [],
   use_courses: false,
-  session_token: undefined
 };
+
 
 // returns a course list to successCallback if courses are successfully fetched, given a search query
 export const fetchCourses = async (successCallback, searchparams = defaultQuery) => {
 
   //console.log("checking course fetch...");
+  //session_token = getSessionToken();
+  // console.log(`session_token: ${user.session_token}`);
+  const session_token = getSessionToken();
 
   const queryParams = new URLSearchParams();
   queryParams.append("searchstring", searchparams.searchstring);
@@ -47,19 +52,28 @@ export const fetchCourses = async (successCallback, searchparams = defaultQuery)
     queryParams.append(`courses[${index}][unique_identifier]`, course.unique_identifier);
     queryParams.append(`courses[${index}][grade]`, course.grade);
   });
-  console.log(JSON.stringify(searchparams))
+  if (session_token===undefined) {
+    queryParams.append("session_token", "none");
+  } else {
+    queryParams.append("session_token", session_token);
+  }
+  //console.log(JSON.stringify(searchparams))
   //console.log(`queryt: ${queryParams.toString()}`);
 
   try {
     const response = await fetch(`/courses/search?${queryParams.toString()}`, {
       method: 'GET',
-      headers: { 'Accept': 'application/json' }
+      headers: { 'Accept': 'application/json', 'Authorization': `Bearer ${session_token}`
+       }
     });
 
     if (response.ok) {
       const search_res = await response.json();
       // console.log(`Received response: ${JSON.stringify(search_res, undefined, 4)}`);
       successCallback(search_res);
+      if (searchparams.courses.length > 0 && session_token) {
+        addCoursesToUser(searchparams.courses, session_token)
+      }
     } else {
       SearchFailCallback.trigger("Failed to fetch search result.");
       throw new Error(`Failed to fetch search result. Response status: ${response.status}`);

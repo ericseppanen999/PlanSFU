@@ -30,7 +30,7 @@ class User < ApplicationRecord
   def self.find_by_token(token)
     return nil unless token
     decoded = JWT.decode(token, Rails.application.credentials.secret_key_base)[0]
-    User.find(decoded['user_id'])
+    User.find(decoded["user_id"])
   rescue JWT::DecodeError
     nil
   end

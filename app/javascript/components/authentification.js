@@ -1,10 +1,15 @@
-import { UserChangeCallback } from './callback';
-
-let user = { username: undefined, sessionToken: undefined, grades: [], courses: [] };
+import { UpdateTermsCallback, UserChangeCallback } from './callback';
+import { refetchTerms } from './term_tab';
+export let user = { username: undefined, sessionToken: undefined, grades: [], courses: [] };
 
 UserChangeCallback.subscribe((new_user) => {
-    user = new_user;
+    user.username = new_user.username;
+    user.sessionToken = new_user.sessionToken;
+    user.grades = new_user.grades || [];
+    user.courses = new_user.courses || [];
 });
+
+export const getSessionToken = () => user.sessionToken
 
 export const login = async (username, password) => {
     // check if user is already logged in
@@ -21,6 +26,7 @@ export const login = async (username, password) => {
             if (response.ok) {
                 const data = await response.json();
                 UserChangeCallback.trigger({ username: data.user.username, sessionToken: data.session_token, grades: data.grades, courses: data.courses });
+                refetchTerms();
                 return 0; // no errors
             } else {
                 if (response.status === 401) {
@@ -83,6 +89,7 @@ export const logout = async () => {
 
             if (response.ok) {
                 UserChangeCallback.trigger({ username: undefined, sessionToken: undefined, grades: [], courses: [] });
+                UpdateTermsCallback.trigger([]);
                 return 0; // no errors
             } else {
                 return 1; // error
@@ -94,3 +101,4 @@ export const logout = async () => {
     }
     return 1; // error if no session token
 };
+
