@@ -6,9 +6,19 @@ import { UserChangeCallback } from './callback';
 
 export const SignIn = () => {
     const [loggedIn, setLoggedIn] = useState(false);
-    const [error, setError] = useState(null);
+    const [showBadCredErr, setShowBadCredErr] = useState(false);
+    const [showUsernameAlreadyExistErr, setShowUsernameAlreadyExistErr] = useState(false);
+    const [showUnknownAuthErr, setShowUnknownAuthErr] = useState(false);
+    const [showUnknownLogoutErr, setShowUnknownLogoutErr] = useState(false);
     const [username, setUsername] = useState(undefined);
     const [showDropdown, setShowDropdown] = useState(false);
+
+    const clearErrors = async () => {
+        setShowBadCredErr(false);
+        setShowUnknownAuthErr(false);
+        setShowUnknownLogoutErr(false);
+        setShowUsernameAlreadyExistErr(false);
+    };
 
     useEffect(() => {
         UserChangeCallback.subscribe((user) => {
@@ -18,35 +28,40 @@ export const SignIn = () => {
     }, []);
 
     const handleSignOut = async () => {
+        clearErrors();
         const result = await logout();
-        if (result !== 0) {
-            setError("Error logging out.");
-        } else {
-            setError(null);
+        if (result != 0) {
+            setShowUnknownLogoutErr(true);
         }
     };
 
     const handleSignUp = async (event) => {
         event.preventDefault();
+        clearErrors();
         const newusername = document.getElementById("username_input_box").value;
         const newpassword = document.getElementById("password_input_box").value;
         const result = await signup(newusername, newpassword);
         if (result !== 0) {
-            setError("Error signing up.");
-        } else {
-            setError(null);
+            if (result == 1){
+                setShowUsernameAlreadyExistErr(true);
+            } else {
+                setShowUnknownAuthErr(true);
+            }
         }
     };
 
     const handleSignIn = async (event) => {
         event.preventDefault();
+        clearErrors();
         const tryusername = document.getElementById("username_input_box").value;
         const trypassword = document.getElementById("password_input_box").value;
         const result = await login(tryusername, trypassword);
         if (result !== 0) {
-            setError("Error signing in.");
-        } else {
-            setError(null);
+            if (result == 1){
+                setShowBadCredErr(true);
+            } else {
+                setShowUnknownAuthErr(true);
+            }
         }
     };
 
@@ -88,8 +103,14 @@ export const SignIn = () => {
                             </table>
                             <div className="padding_medium"></div>
                             <div className="horizontal-stack submit_panel">
-                                {error && (
-                                    <p className="error_text">{error}</p>
+                                {showBadCredErr && (
+                                    <p className="error_text">Invalid Credentials</p>
+                                )}
+                                {showUsernameAlreadyExistErr && (
+                                    <p className="error_text">Username is already taken</p>
+                                )}
+                                {showUnknownAuthErr && (
+                                    <p className="error_text">Authentification failed</p>
                                 )}
                                 <div className="padding_auto"></div>
                                 <button className="small" type="submit" id="sign_in_submit_button" name="sign_in_submit_button" onClick={handleSignIn}>SIGN IN</button>
@@ -108,8 +129,8 @@ export const SignIn = () => {
                             <button className="small" id="sign_out_button" name="sign_out_button" onClick={handleSignOut}>SIGN OUT</button>
                         </div>
                     </div>
-                    {error && (
-                        <p className="error_text">{error}</p>
+                    {showUnknownLogoutErr && (
+                        <p className="error_text">Log out failed</p>
                     )}
                 </>
             )}
