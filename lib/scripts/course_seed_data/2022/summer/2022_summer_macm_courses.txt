@@ -1,0 +1,30 @@
+Course.create!(
+  dept: "macm",
+  number: "101",
+  term: "summer",
+  year: "2022",
+  title: "Discrete Mathematics I",
+  description: "Introduction to counting, induction, automata theory, formal reasoning, modular arithmetic.",
+  requisite_description: "BC Math 12 (or equivalent), or any of MATH 100, 150, 151, 154, 157.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Brad Bart"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["e100"]
+)
+Course.create!(
+  dept: "macm",
+  number: "316",
+  term: "summer",
+  year: "2022",
+  title: "Numerical Analysis I",
+  description: "A presentation of the problems commonly arising in numerical analysis and scientific computing and the basic methods for their solutions.",
+  requisite_description: "MATH 152 or 155 or 158, and MATH 232 or 240, and computing experience.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["JF Williams"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)

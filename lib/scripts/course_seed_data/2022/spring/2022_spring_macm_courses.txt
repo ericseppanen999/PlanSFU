@@ -1,0 +1,60 @@
+Course.create!(
+  dept: "macm",
+  number: "101",
+  term: "spring",
+  year: "2022",
+  title: "Discrete Mathematics I",
+  description: "Introduction to counting, induction, automata theory, formal reasoning, modular arithmetic.",
+  requisite_description: "BC Math 12 (or equivalent), or any of MATH 100, 150, 151, 154, 157.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Milan Tofiloski", "Harinder Khangura"],
+  campuses: ["Burnaby", "Surrey"],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200"]
+)
+Course.create!(
+  dept: "macm",
+  number: "201",
+  term: "spring",
+  year: "2022",
+  title: "Discrete Mathematics II",
+  description: "A continuation of MACM 101. Topics covered include graph theory, trees, inclusion-exclusion, generating functions, recurrence relations, and optimization and matching.",
+  requisite_description: "MACM 101 or (ENSC 251 and one of MATH 232 or MATH 240).",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Bojan Mohar", "Mahdieh Malekian", "Amarpreet Rattan"],
+  campuses: ["Burnaby", "Surrey", nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "d300", "op01", "op02", "op03"]
+)
+Course.create!(
+  dept: "macm",
+  number: "203",
+  term: "spring",
+  year: "2022",
+  title: "Computing with Linear Algebra",
+  description: "Using a mathematical software package for doing calculations in linear algebra. Development of computer models that analyze and illustrate applications of linear algebra. All calculations and experiments will be done in the Matlab software package. Topics include: large-scale matrix calculations, experiments with cellular automata, indexing, searching and ranking pages on the internet, population models, data fitting and optimization, image analysis, and cryptography.",
+  requisite_description: "One of CMPT 102, 120, 126, 128 or 130 and one of MATH 150, 151, 154 or 157 and one of MATH 232 or 240. MATH 232 or 240 can be taken as corequisite. Students in excess of 80 units may not take MACM 203 for further credit.",
+  prereq_logic:"#not_applicable",
+  credits: 2,
+  instructors: ["Petr Lisonek"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "macm",
+  number: "316",
+  term: "spring",
+  year: "2022",
+  title: "Numerical Analysis I",
+  description: "A presentation of the problems commonly arising in numerical analysis and scientific computing and the basic methods for their solutions.",
+  requisite_description: "MATH 152 or 155 or 158, and MATH 232 or 240, and computing experience.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Steven Ruuth"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)

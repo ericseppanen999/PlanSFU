@@ -12,16 +12,15 @@ class Course < ApplicationRecord
 
   ## THE METHODS RELATING TO PREREQUISITES ARE NOT COMPLETED ##
   # define the validations
-  def prerequisites_satisfied?(taken_courses, prereq_logic)
+  def prerequisites_satisfied?(taken_courses, prereq_logic, gpa:nil, total_credits:nil)
     return true if prereq_logic == "#no_prereq_logic"
     # logger.debug("Checking prerequisites for #{self.dept} #{self.number}")
     # Rails.logger.debug("Checking prerequisites for #{self.dept} #{self.number} with #{taken_courses}")
     prereq_logic.gsub!("W_course >= C-", has_w(taken_courses).to_s)
-
-    if prereq_logic.include?("CGPA") || prereq_logic.include?("CREDITS")
-      gpa, credits = calculate_gpa(taken_courses)
+    #Rails.logger.debug("gpas: #{gpa} #{total_credits}")
+    if gpa.nil? || total_credits.nil?
+      gpa, total_credits = calculate_gpa(taken_courses)
     end
-
     prereq_logic.gsub!(/([A-Z]+\s\d+[A-Z]*)\s*(>=)\s*([A-F][+-]?)/) do |match|
       course_code = Regexp.last_match(1)
       required_grade = Regexp.last_match(3)
@@ -30,7 +29,7 @@ class Course < ApplicationRecord
 
     prereq_logic.gsub!(/CREDITS\s*>=\s*(\d+)/) do
       required_credits = Regexp.last_match(1).to_i
-      (credits >= required_credits).to_s
+      (total_credits >= required_credits).to_s
     end
 
     prereq_logic.gsub!(/CGPA\s*>=\s*(\d+(\.\d+)?)/) do
@@ -66,14 +65,18 @@ class Course < ApplicationRecord
   end
 
   def calculate_gpa(taken_courses)
-    unique_identifiers = taken_courses.map { |course| course["unique_identifier"] }
-    db_courses = Course.where(unique_identifier: unique_identifiers).index_by(&:unique_identifier)
+    db_courses = Course.where(
+      year: taken_courses.map { |c| c["year"] },
+      term: taken_courses.map { |c| c["term"] },
+      dept: taken_courses.map { |c| c["dept"] },
+      number: taken_courses.map { |c| c["number"] }
+    ).index_by { |c| [c.year, c.term, c.dept, c.number] }
 
     total_credits = 0
     total_grade_points = 0
 
     taken_courses.each do |course|
-      db_course = db_courses[course["unique_identifier"]]
+      db_course = db_courses[[course["year"], course["term"], course["dept"], course["number"]]]
       next unless db_course&.credits
 
       grade_points = grade_to_value(course["grade"])
@@ -82,19 +85,12 @@ class Course < ApplicationRecord
     end
 
     gpa = total_credits.positive? ? (total_grade_points.to_f / total_credits) : 0
-    [ gpa, total_credits ]
+    [gpa, total_credits]
   end
-
   def grade_meets_requirement?(taken_courses, course_code, required_grade)
     dept, number = course_code.split
-
-    matching_course = taken_courses.find do |course|
-      course_dept = course["dept"].upcase
-      course_number = course["number"]
-      course_dept == dept.upcase && course_number == number
-    end
-
-    return false if matching_course.nil?
+    matching_course = taken_courses.find { |c| c["dept"].upcase == dept.upcase && c["number"] == number }
+    return false unless matching_course
 
     actual_grade = grade_to_value(matching_course["grade"])
     required_grade = grade_to_value(required_grade)

@@ -72,6 +72,8 @@ class CoursesController < ApplicationController
           {
             "dept" => db_course.dept,
             "number" => db_course.number,
+            "term" => db_course.term,
+            "year" => db_course.year,
             "grade" => validate_grade(course["grade"]),
             "credits" => db_course.credits
           }
@@ -190,11 +192,12 @@ class CoursesController < ApplicationController
     [ query_values, sql_query ]
   end
 
-  def filter_prerequisites_satisfied(user_courses, query_values, sql_query, results)
-    results.select! do |course|
-      course.prerequisites_satisfied?(user_courses, course.prereq_logic)
+  def filter_prerequisites_satisfied(user_courses, results)
+    gpa, total_credits = calculate_gpa(user_courses)
+    # Rails.logger.debug("GPA: #{gpa}, Total Credits: #{total_credits}")
+    results.select do |course|
+      course.prerequisites_satisfied?(user_courses, course.prereq_logic, gpa: gpa, total_credits: total_credits)
     end
-    results
   end
 
   def grade_to_value(grade)
@@ -202,7 +205,29 @@ class CoursesController < ApplicationController
     grade_scale[grade] || 0.0
   end
 
+  def calculate_gpa(taken_courses)
+    db_courses = Course.where(
+      year: taken_courses.map { |c| c["year"] },
+      term: taken_courses.map { |c| c["term"] },
+      dept: taken_courses.map { |c| c["dept"] },
+      number: taken_courses.map { |c| c["number"] }
+    ).index_by { |c| [c.year, c.term, c.dept, c.number] }
 
+    total_credits = 0
+    total_grade_points = 0
+
+    taken_courses.each do |course|
+      db_course = db_courses[[course["year"], course["term"], course["dept"], course["number"]]]
+      next unless db_course&.credits
+
+      grade_points = grade_to_value(course["grade"])
+      total_grade_points += grade_points * db_course.credits
+      total_credits += db_course.credits
+    end
+
+    gpa = total_credits.positive? ? (total_grade_points.to_f / total_credits) : 0
+    [gpa, total_credits]
+  end
 
   def search_courses(search_string, search_in_props, terms, departments, levels, custom_sql, use_courses, user_courses = [], session_token = nil)
     # build the SQL query based on the search parameters
@@ -245,31 +270,22 @@ class CoursesController < ApplicationController
     # query_values, sql_query = filter_taken_courses(user_courses, query_values, sql_query)
     # gpa, credits = calculate_gpa(user_courses)
     # end
+    if use_courses && user_courses.any?
+      sql_query += " AND term = ? AND year = ?"
+      query_values += ["spring", "2025"]
+    end
 
-    sql_query_with_limit = sql_query + " LIMIT 50"
+    sql_query_with_limit = sql_query + " LIMIT 200"
     results = Course.find_by_sql([ sql_query_with_limit, *query_values ])
 
     if use_courses && user_courses.any?
-      # pass in GPA, credits
-      results = filter_prerequisites_satisfied(user_courses, query_values, sql_query, results)
+      filtered_courses = filter_prerequisites_satisfied(user_courses, results)
+    else
+      filtered_courses = results
     end
-=begin
-    while results.size < 50
-      offset = results.size
-      sql_query_with_offset = sql_query + " LIMIT 50 OFFSET #{offset}"
-      additional_results = Course.find_by_sql([ sql_query_with_offset, *query_values ])
 
-      break if additional_results.empty?
+    final_results = filtered_courses.first(50)
 
-      if use_courses && user_courses.any?
-        additional_results = filter_prerequisites_satisfied(user_courses, query_values, sql_query, additional_results)
-      end
-
-      results.concat(additional_results)
-
-      results = results.first(50)
-    end
-=end
-    results
+    final_results
   end
 end

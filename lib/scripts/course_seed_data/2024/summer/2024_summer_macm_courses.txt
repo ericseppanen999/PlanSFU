@@ -1,0 +1,30 @@
+Course.create!(
+  dept: "macm",
+  number: "101",
+  term: "summer",
+  year: "2024",
+  title: "Discrete Mathematics I",
+  description: "Introduction to graph theory, trees, induction, automata theory, formal reasoning, modular arithmetic.",
+  requisite_description: "BC Math 12 (or equivalent), or any of MATH 100, 150, 151, 154, 157.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Steve Pearce"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "macm",
+  number: "316",
+  term: "summer",
+  year: "2024",
+  title: "Numerical Analysis I",
+  description: "A presentation of the problems commonly arising in numerical analysis and scientific computing and the basic methods for their solutions.",
+  requisite_description: "MATH 152 or 155 or 158, and MATH 232 or 240, and computing experience.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Jane MacDonald"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)

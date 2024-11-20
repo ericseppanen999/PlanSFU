@@ -1,0 +1,493 @@
+Course.create!(
+  dept: "math",
+  number: "100",
+  term: "spring",
+  year: "2025",
+  title: "Precalculus",
+  description: "Designed to prepare students for first year Calculus courses. Topics include language and notation of mathematics; problem solving; algebraic, exponential, logarithmic and trigonometric functions and their graphs. ",
+  requisite_description: "Pre-Calculus 11 or Foundations of Mathematics 11 (or equivalent)
+with a grade of at least B or Pre-Calculus 12 (or equivalent), with a grade of at least C and SFU FAN credit, or SFU FAN X99 course with a grade of at least B-, or achieving a satisfactory grade on the Simon Fraser University Quantitative Placement Test. MATH 100 may not be counted towards the mathematics minor, major or honours degree requirements.",
+  prereq_logic:"#no_prereq_logic",
+  credits: 3,
+  instructors: ["Justin Gray", "Tian Chen"],
+  campuses: ["Burnaby", "Surrey"],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d400", "op01", "op02"]
+)
+Course.create!(
+  dept: "math",
+  number: "130",
+  term: "spring",
+  year: "2025",
+  title: "Geometry for Computer Graphics",
+  description: "An introductory course in the application of geometry and linear algebra principles to computer graphical representation.  Vector and matrix algebra, two and three dimensional transformations, homogeneous coordinates, perspective geometry.",
+  requisite_description: "Pre-Calculus 12 or Foundations of
+
+Mathematics 12 (or equivalent) with a
+
+grade of at least B, or MATH 100 with a grade of at least C.",
+  prereq_logic:"#no_prereq_logic",
+  credits: 3,
+  instructors: ["Justin Chan"],
+  campuses: ["Surrey"],
+  delivery_methods: ["In Person"],
+  sections: ["d400"]
+)
+Course.create!(
+  dept: "math",
+  number: "150",
+  term: "spring",
+  year: "2025",
+  title: "Calculus I with Review",
+  description: "Designed for students specializing in mathematics, physics, chemistry, computing science and engineering. Topics as for Math 151 with a more extensive review of functions, their properties and their graphs. Recommended for students with no previous knowledge of Calculus. In addition to regularly scheduled lectures, students enrolled in this course are encouraged to come for assistance to the Calculus Workshop (Burnaby), or Math Open Lab (Surrey). ",
+  requisite_description: "Pre-Calculus 12 (or equivalent) with a grade of at least B+, or MATH 100 with a grade of at least B-, or achieving a satisfactory grade on the Simon Fraser University Calculus Readiness Test.",
+  prereq_logic:"#no_prereq_logic",
+  credits: 4,
+  instructors: ["Vijaykumar Singh"],
+  campuses: ["Burnaby", "Surrey"],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d400", "op01", "op02"]
+)
+Course.create!(
+  dept: "math",
+  number: "152",
+  term: "spring",
+  year: "2025",
+  title: "Calculus II",
+  description: "Riemann sum, Fundamental Theorem of Calculus, definite, indefinite and improper integrals, approximate integration, integration techniques, applications of integration. First-order separable differential equations and growth models. Sequences and series, series tests, power series, convergence and applications of power series.",
+  requisite_description: "MATH 150 or 151 or 155, with a minimum grade of C-; or MATH 154 or 157, with a grade of at least B.",
+  prereq_logic:"(MATH 150 >= C- OR MATH 151 >= C- OR MATH 155 >= C- OR MATH 154 >= B OR MATH 157 >= B)",
+  credits: 3,
+  instructors: ["Nathan Ilten", "Jamie Mulholland", "Seda Albayrak", "Abraham Punnen"],
+  campuses: ["Burnaby", "Surrey"],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "d300", "d400", "op01", "op02"]
+)
+Course.create!(
+  dept: "math",
+  number: "154",
+  term: "spring",
+  year: "2025",
+  title: "Mathematics for the Life Sciences I",
+  description: "Designed for students specializing in the life sciences. Topics include: limits, growth rate and the derivative; elementary functions, optimization and approximation methods, and their applications, integration, and differential equations; mathematical models of biological processes and their implementation and analysis using software.",
+  requisite_description: "Pre-Calculus 12 (or equivalent) with a grade of at least B, or MATH 100 with a grade of at least C-, or achieving a satisfactory grade on the Simon Fraser University Calculus Readiness Test.",
+  prereq_logic:"#no_prereq_logic",
+  credits: 3,
+  instructors: ["Ralf Wittenberg"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "op01"]
+)
+Course.create!(
+  dept: "math",
+  number: "155",
+  term: "spring",
+  year: "2025",
+  title: "Mathematics for the Life Sciences II",
+  description: "Designed for students specializing in the life sciences. Topics include: vectors and matrices, partial derivatives, multi-dimensional integrals, systems of differential equations, compartment models, graphs and networks, and their applications to the life sciences; mathematical models of multi-component biological processes and their implementation and analysis using software. Students planning to take MATH 251 are recommended to consider MATH 152 as the prerequisite pathway. See an advisor to determine what may be best for you.",
+  requisite_description: "MATH 150, 151 or 154, with a minimum grade of C-; or MATH 157 with a grade of at least B.",
+  prereq_logic:"(MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C-) OR (MATH 157 >= B)",
+  credits: 3,
+  instructors: ["JF Williams", "Justin Chan"],
+  campuses: ["Burnaby", "Surrey"],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d400", "op01", "op02"]
+)
+Course.create!(
+  dept: "math",
+  number: "157",
+  term: "spring",
+  year: "2025",
+  title: "Calculus I for the Social Sciences",
+  description: "Designed for students specializing in business or the social sciences. Topics include: limits, growth rate and the derivative; logarithmic, exponential and trigonometric functions and their application to business, economics, optimization and approximation methods; introduction to functions of several variables with emphasis on partial derivatives and extrema.",
+  requisite_description: "Pre-Calculus 12 (or equivalent) with a grade of at least B, or MATH 100 with a grade of at least C, or achieving a
+
+satisfactory grade on the Simon Fraser University Calculus
+
+Readiness Test.",
+  prereq_logic:"#no_prereq_logic",
+  credits: 3,
+  instructors: ["Jonathan Jedwab", "Randall Pyke"],
+  campuses: ["Burnaby", "Surrey"],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d400", "op01", "op02"]
+)
+Course.create!(
+  dept: "math",
+  number: "158",
+  term: "spring",
+  year: "2025",
+  title: "Calculus II for the Social Sciences",
+  description: "Designed for students specializing in business or the social sciences. Topics include: theory of integration, integration techniques, applications of integration; functions of several variables with emphasis on double and triple integrals and their applications; introduction to differential equations with emphasis on some special first-order equations and their applications; sequences and series.",
+  requisite_description: "MATH 150 or 151 or 154 or 157, with a minimum grade of C-.",
+  prereq_logic:"MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C-",
+  credits: 3,
+  instructors: ["Jessica Stockdale"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["e200", "op03"]
+)
+Course.create!(
+  dept: "math",
+  number: "190",
+  term: "spring",
+  year: "2025",
+  title: "Principles of Mathematics for Teachers",
+  description: "Designed for students pursuing a career as an elementary school teacher. Topics are drawn from number systems as well as plane, solid, and metric geometry. Examination of the historical and cultural development of mathematical ideas and their place in contemporary mathematics. Emphasis on deep understanding of mathematical concepts and on multiple representations: physical, pictorial, and symbolic. Detailed topics include: problem solving, bases, whole and fractional numbers and their arithmetic operations, number theory, ratios, rates, percent, polygons, polyhedra, symmetries, transformations, and measurements.",
+  requisite_description: "Pre-Calculus 11 or Foundations of Mathematics 11 (or equivalent)
+
+with a grade of at least B, or SFU FAN X99 course with a grade of at least C, or achieving a satisfactory grade on the Simon Fraser University Quantitative Placement Test. This course may not be counted toward the Mathematics minor, major or honours degree requirements. Students who have taken, have received transfer credit for, or are currently taking MATH 150, 151, 154 or 157 may not take MATH 190 for credit without permission from the Department of Mathematics. Intended to be particularly accessible to students who are not specializing in mathematics.",
+  prereq_logic:"((COURSE CODE >= B) OR (FAN X99 >= C) OR (SFU Quantitative Placement Test >= S))",
+  credits: 4,
+  instructors: ["Joanna Niezen"],
+  campuses: ["Burnaby", nil],
+  delivery_methods: ["Blended", "Online", "In Person"],
+  sections: ["b100", "ol01", "op01"]
+)
+Course.create!(
+  dept: "math",
+  number: "208w",
+  term: "spring",
+  year: "2025",
+  title: "Introduction to Operations Research",
+  description: "Introduction to methods of operations research: linear and nonlinear programming, simulation, and heuristic methods. Applications to transportation, assignment, scheduling, and game theory. Exposure to mathematical models of industry and technology. Emphasis on computation for analysis and simulation.",
+  requisite_description: "MATH 150 or 151 or 154 or 157, with a minimum grade of C-.",
+  prereq_logic:"MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C-",
+  credits: 3,
+  instructors: ["Tamon Stephen"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "math",
+  number: "232",
+  term: "spring",
+  year: "2025",
+  title: "Applied Linear Algebra",
+  description: "Linear equations, matrices, determinants. Introduction to vector spaces and linear transformations and bases. Complex numbers. Eigenvalues and eigenvectors; diagonalization. Inner products and orthogonality; least squares problems. An emphasis on applications involving matrix and vector calculations.",
+  requisite_description: "MATH 150 or 151 or MACM 101, with a minimum grade of C-; or MATH 154 or 157, both with a grade of at least B.",
+  prereq_logic:"(MATH 150 >= C- OR MATH 151 >= C- OR MACM 101 >= C-) OR (MATH 154 >= B OR MATH 157 >= B)",
+  credits: 3,
+  instructors: ["Luis Goddyn", "Marni Julie Mishna", "Saieed Akbari Feyzaabaadi", "Randall Pyke"],
+  campuses: ["Burnaby", "Surrey"],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "d400", "op01", "op02"]
+)
+Course.create!(
+  dept: "math",
+  number: "240",
+  term: "spring",
+  year: "2025",
+  title: "Algebra I: Linear Algebra",
+  description: "Linear equations, matrices, determinants. Real and abstract vector spaces, subspaces and linear transformations; basis and change of basis. Complex numbers. Eigenvalues and eigenvectors; diagonalization. Inner products and orthogonality; least squares problems. Applications. Subject is presented with an abstract emphasis and includes proofs of the basic theorems.",
+  requisite_description: "MATH 150 or 151 or MACM 101, with a minimum grade of C-; or MATH 154 or 157, both with a grade of at least B.",
+  prereq_logic:"(MATH 150 >= C- OR MATH 151 >= C- OR MACM 101 >= C-) OR (MATH 154 >= B OR MATH 157 >= B)",
+  credits: 3,
+  instructors: ["Katrina Honigs"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "op01"]
+)
+Course.create!(
+  dept: "math",
+  number: "242",
+  term: "spring",
+  year: "2025",
+  title: "Introduction to Analysis I",
+  description: "Mathematical induction. Limits of real sequences and real functions. Continuity and its consequences. The mean value theorem. The fundamental theorem of calculus. Series.",
+  requisite_description: "MATH 152 with a minimum grade of C-; or MATH 155 or 158 with a grade of B.",
+  prereq_logic:"(MATH 152 >= C- OR (MATH 155 >= B OR MATH 158 >= B))",
+  credits: 3,
+  instructors: ["Benjamin Adcock"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "math",
+  number: "251",
+  term: "spring",
+  year: "2025",
+  title: "Calculus III",
+  description: "Rectangular, cylindrical and spherical coordinates. Vectors, lines, planes, cylinders, quadric surfaces. Vector functions, curves, motion in space. Differential and integral calculus of several variables. Vector fields, line integrals, fundamental theorem for line integrals, Green's theorem.",
+  requisite_description: "MATH 152 with a minimum grade of C-; or MATH 158 with a grade of at least B. Also, for students in the life sciences, MATH 154 with a minimum grade of C- and MATH 155 with a minimum grade of A-. Recommended: It is recommended that MATH 240 or 232 be taken before or concurrently with MATH 251.",
+  prereq_logic:"((MATH 152 >= C-) OR (MATH 158 >= B)) OR (MATH 154 >= C- AND MATH 155 >= A-)",
+  credits: 3,
+  instructors: ["Lucas Villagra Torcomian"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "op01"]
+)
+Course.create!(
+  dept: "math",
+  number: "252",
+  term: "spring",
+  year: "2025",
+  title: "Vector Calculus",
+  description: "Vector calculus, divergence, gradient and curl; line, surface and volume integrals; conservative fields, theorems of Gauss, Green and Stokes; general curvilinear coordinates and tensor notation. Introduction to orthogonality of functions, orthogonal polynomials and Fourier series. ",
+  requisite_description: "MATH 240 or 232, and 251, all with a minimum grade of C-. MATH 240 or 232 may be taken concurrently.",
+  prereq_logic:"(MATH 240 >= C- OR MATH 232 >= C-) AND MATH 251 >= C-",
+  credits: 3,
+  instructors: ["Weiran Sun"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "math",
+  number: "260",
+  term: "spring",
+  year: "2025",
+  title: "Introduction to Ordinary Differential Equations",
+  description: "First-order differential equations, second- and higher-order linear equations, series solutions, introduction to Laplace transform, systems and numerical methods, applications in the physical, biological and social sciences.",
+  requisite_description: "MATH 152 with a minimum grade of C-; or MATH 155 or 158, with a grade of at least B; MATH 232 or 240, with a minimum grade of C-.",
+  prereq_logic:"(MATH 152 >= C- OR MATH 155 >= B OR MATH 158 >= B) AND (MATH 232 >= C- OR MATH 240 >= C-)",
+  credits: 3,
+  instructors: ["Ralf Wittenberg"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "math",
+  number: "304",
+  term: "spring",
+  year: "2025",
+  title: "Mathematical Journeys IV",
+  description: "A focused exploration of a special topic (varying from term to term) that builds on mathematical ideas from lower division courses and provides further challenges in quantitative and deductive reasoning. Each Journeys course is designed to appeal particularly to mathematics minor students and others with a broad interest in mathematics. Students may repeat this course for further credit under a different topic.",
+  requisite_description: "MATH 152 or 155 or 158, and MATH 232 or 240, all with a minimum grade of C-. There may be additional prerequisites depending on the specific course topic.",
+  prereq_logic:"(MATH 152 >= C- OR MATH 155 >= C- OR MATH 158 >= C-) AND (MATH 232 >= C- OR MATH 240 >= C-)",
+  credits: 3,
+  instructors: ["Matthew DeVos"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["e100"]
+)
+Course.create!(
+  dept: "math",
+  number: "308",
+  term: "spring",
+  year: "2025",
+  title: "Linear Optimization",
+  description: "Linear programming modelling. The simplex method and its variants. Duality theory. Post-optimality analysis. Applications and software. Additional topics may include: game theory, network simplex algorithm, and convex sets.",
+  requisite_description: "MATH 150, 151, 154, or 157 and MATH 240 or 232, all with a minimum grade of C-.",
+  prereq_logic:"((MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C-) AND (MATH 240 >= C- OR MATH 232 >= C-))",
+  credits: 3,
+  instructors: ["Maxwell Levit"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "math",
+  number: "314",
+  term: "spring",
+  year: "2025",
+  title: "Introduction to Fourier Methods and Partial Differential Equations",
+  description: "Fourier series, ODE boundary and eigenvalue problems. Separation of variables for the diffusion wave and Laplace/Poisson equations. Polar and spherical co-ordinate systems. Symbolic and numerical computing, and graphics for PDEs.",
+  requisite_description: "MATH 260 or MATH 310, with a minimum grade of C-; and one of MATH 251 with a grade of B+, or one of MATH 252 or 254, with a minimum grade of C-.",
+  prereq_logic:"(MATH 260 >= C- OR MATH 310 >= C- AND (MATH 251 >= B+ OR MATH 252 >= C- OR MATH 254 >= C-))",
+  credits: 3,
+  instructors: ["David Muraki"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "math",
+  number: "320",
+  term: "spring",
+  year: "2025",
+  title: "Introduction to Analysis II",
+  description: "Sequences and series of functions, topology of sets in Euclidean space, introduction to metric spaces, functions of several variables.",
+  requisite_description: "MATH 242 and 251, with a minimum grade of C-.",
+  prereq_logic:"(MATH 242 >= C- AND MATH 251 >= C-)",
+  credits: 3,
+  instructors: ["Nilima Nigam"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "math",
+  number: "336",
+  term: "spring",
+  year: "2025",
+  title: "Job Practicum I",
+  description: "This is the first term of work experience in a co-operative education program available to mathematics students. Interested students should contact departmental advisors as early in their careers as possible, for proper counselling. Units from this course do not count towards the units required for an SFU degree.",
+  requisite_description: "Students must apply to and receive permission from the co-op co-ordinator at least one, preferably two, terms in advance. They will normally be required to have completed 45 units with a GPA of 2.5. This course will be graded on a pass/withdraw basis. A course fee is required.",
+  prereq_logic:"#no_prereq_logic",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "math",
+  number: "337",
+  term: "spring",
+  year: "2025",
+  title: "Job Practicum II",
+  description: "This is the second term of work experience in a co-operative education program available to mathematics students. Units from this course do not count towards the units required for an SFU degree. This course will be graded on a pass/withdraw basis. A course fee is required.",
+  requisite_description: "MATH 336 and permission of the co-op co-ordinator; students must apply at least one term in advance.",
+  prereq_logic:"(MATH 336 >= C-)",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "math",
+  number: "341",
+  term: "spring",
+  year: "2025",
+  title: "Algebra III: Groups",
+  description: "Finite groups and subgroups. Cyclic groups and permutation groups. Cosets, normal subgroups and factor groups. Homomorphisms and isomorphisms. Fundamental theorem of finite abelian groups. Sylow theorems.",
+  requisite_description: "MATH 340 or 342 or 332, with a minimum grade of C-.",
+  prereq_logic:"(MATH 340 >= C- OR MATH 342 >= C- OR MATH 332 >= C-)",
+  credits: 3,
+  instructors: ["Amarpreet Rattan"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "math",
+  number: "348",
+  term: "spring",
+  year: "2025",
+  title: "Stochastic Modelling and Simulation",
+  description: "Modelling of real-life systems as Markov chains, including transient behaviour, limiting behaviour and classification of states, and using the exponential distribution and Poisson processes. Computational topics include generating and sampling random numbers, combinatorial objects and probability functions. Applications may include queueing systems, chemical kinetics, infectious diseases, and statistical physics.",
+  requisite_description: "STAT 270 and (MATH 232 or MATH 240), all with a minimum grade of C-. Strongly Recommended: Experience with a computing platform such as R, MATLAB, or Python.",
+  prereq_logic:"(STAT 270 >= C- AND (MATH 232 >= C- OR MATH 240 >= C-))",
+  credits: 3,
+  instructors: ["Ailene MacPherson"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "math",
+  number: "381w",
+  term: "spring",
+  year: "2025",
+  title: "Mathematics Undergraduate Seminar",
+  description: "A writing and presentation-intensive study of an area of mathematics. Students will read and prepare written and oral comments on material in the mathematics literature.",
+  requisite_description: "Six units of mathematics at the 300-division or higher, or permission of the instructor. Students are strongly advised to have completed both MATH 242 and MATH 251 or equivalent.",
+  prereq_logic:"CREDITS >= 6"
+  credits: 3,
+  instructors: ["Tom Archibald"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "math",
+  number: "402w",
+  term: "spring",
+  year: "2025",
+  title: "Operations Research Clinic",
+  description: "Problems from operations research will be presented and discussed in class. Students will also work on a problem of
+
+their choice and present their solution in report form as well as a presentation.",
+  requisite_description: "MATH 308 with a minimum grade of C-.",
+  prereq_logic:"MATH 308 >= C-",
+  credits: 4,
+  instructors: ["Alexander Rutherford"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "math",
+  number: "436",
+  term: "spring",
+  year: "2025",
+  title: "Job Practicum III",
+  description: "This is the third term of work experience in a co-operative education program available to mathematics students. Units from this course do not count towards the units required for an SFU degree. This course will be graded on a pass/withdraw basis. A course fee is required.",
+  requisite_description: "MATH 337 and permission of the co-op co-ordinator; students must apply at least one term in advance.",
+  prereq_logic:"(MATH 337 >= C-)",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "math",
+  number: "437",
+  term: "spring",
+  year: "2025",
+  title: "Job Practicum IV",
+  description: "This is the fourth term of work experience in a co-operative education program available to mathematics students. Units from this course do not count towards the units required for an SFU degree. This course will be graded on a pass/withdraw basis. A course fee is required.",
+  requisite_description: "MATH 436 and permission of the co-op co-ordinator; students must apply at least one term in advance.",
+  prereq_logic:"(MATH 436 >= C-)",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "math",
+  number: "440",
+  term: "spring",
+  year: "2025",
+  title: "Galois Theory",
+  description: "An introduction to the theory of fields, with emphasis on Galois theory.",
+  requisite_description: "MATH 340 or 332, with a minimum grade of C-.",
+  prereq_logic:"(MATH 340 >= C- OR MATH 332 >= C-)",
+  credits: 3,
+  instructors: ["Nils Bruin"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "math",
+  number: "467",
+  term: "spring",
+  year: "2025",
+  title: "Dynamical Systems",
+  description: "Stability and bifurcation in continuous and discrete dynamical systems, with applications. The study of the local and global behaviour of linear and nonlinear systems, including equilibria and periodic orbits, phase plane analysis, conservative systems, limit cycles, the Poincare-Bendixson theorem, Hopf bifurcation and an introduction to chaos.",
+  requisite_description: "MATH 260 or MATH 310, with a minimum grade of C-.",
+  prereq_logic:"(MATH 260 >= C- OR MATH 310 >= C-)",
+  credits: 3,
+  instructors: ["Razvan Fetecau"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "math",
+  number: "469",
+  term: "spring",
+  year: "2025",
+  title: "Topics in Graphs and Trees in Biomathematics",
+  description: "A survey of contemporary methods and applications of discrete mathematical models focusing on graphs, networks, and trees in evolutionary biology, ecology, and epidemiology. Using discrete models and integrating real data, students will focus on understanding, analyzing, and applying recent scientific literature. Course may be repeated for credit under a different topic.",
+  requisite_description: "One of MATH 343, MATH 345, MATH 360, with a minimum grade of C-. Strongly Recommended: Experience with a computing platform such as R, MATLAB, or Python.",
+  prereq_logic:"(MATH 343 >= C- OR MATH 345 >= C- OR MATH 360 >= C-)",
+  credits: 3,
+  instructors: ["Caroline Colijn"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "math",
+  number: "486",
+  term: "spring",
+  year: "2025",
+  title: "Job Practicum V",
+  description: "This is an optional fifth term of work experience in a co-operative education program available to mathematics and statistics students. Units from this course do not count towards the units required for an SFU degree. This course may be repeated for additive credit.",
+  requisite_description: "MATH 437 and permission of the co-op co-ordinator. Students must apply at least one term in advance.",
+  prereq_logic:"(MATH 437 >= C-)",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)

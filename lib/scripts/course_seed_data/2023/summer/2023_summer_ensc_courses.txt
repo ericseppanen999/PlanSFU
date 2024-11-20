@@ -1,0 +1,390 @@
+Course.create!(
+  dept: "ensc",
+  number: "151",
+  term: "summer",
+  year: "2023",
+  title: "Introduction to Software Development for Engineers",
+  description: "An introduction to software development for students in engineering and related programs covering theory and practicum of software design, testing, and debugging. This includes basic C++ programming language elements such as basic types, variables, expressions, statements, exception handling, functions, simple classes, and an introduction to the C++ standard library.",
+  requisite_description: "BC Math 12 (or equivalent, or any of MATH 100, 150, 151, 154, or 157, with a minimum grade of C-).",
+  prereq_logic:"#not_applicable",
+  credits: 4,
+  instructors: [],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "194",
+  term: "summer",
+  year: "2023",
+  title: "Optional Job Practicum",
+  description: "Four month internship of a non-technical nature. May be taken at any point during the program but will not count toward one of the three mandatory co-op work terms. Credit is awarded as in ENSC 195. Units from this course do not count towards the units required for an SFU degree.",
+  requisite_description: "",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "195",
+  term: "summer",
+  year: "2023",
+  title: "Industrial Internship I",
+  description: "First four month internship in industry. Credit is given as pass/withdraw/fail (P/W/F) only, based on the employer's and co-operative education co-ordinator's evaluations. Units from this course do not count towards the units required for an SFU degree.",
+  requisite_description: "",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "196",
+  term: "summer",
+  year: "2023",
+  title: "Special Internship I",
+  description: "Four month internship in industry or university research environment. Credit is awarded as in ENSC 195. Prior approval of Internship Co-ordinator required. Units from this course do not count towards the units required for an SFU degree.",
+  requisite_description: "",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "220",
+  term: "summer",
+  year: "2023",
+  title: "Electric Circuits I",
+  description: "Fundamental electrical circuit quantities, and circuit elements; circuits laws such as Ohm law, Kirchoff's voltage and current laws, along with series and parallel circuits; operational amplifiers; network theorems; nodal and mesh methods; analysis of natural and step response of first (RC and RL), as well as second order (RLC) circuits; real, reactive and rms power concepts. In addition, the course will discuss the worker safety implications of both electricity and common laboratory practices such as soldering.",
+  requisite_description: "(PHYS 121 or PHYS 126 or PHYS 141), ENSC 120, MATH 232 and (MATH 260 or MATH 310), all with a minimum grade of C-. MATH 260 may be taken concurrently.",
+  prereq_logic:"#not_applicable",
+  credits: 4,
+  instructors: [],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "225",
+  term: "summer",
+  year: "2023",
+  title: "Microelectronics I",
+  description: "This course teaches analog/digital electronics and basic device physics in the context of modern silicon integrated circuits technology. Topics include: qualitative device physics and terminal characteristics; implementations and models of basic semiconductor devices (diodes, BJTs and MOSFETs); circuit simulation via SPICE; basic diode circuits; transistors as amplifiers and switching elements; temperature effects and compensation; single-stage transistor amplifiers; biasing, current sources and mirrors. ",
+  requisite_description: "(ENSC 220 or MSE 250), MATH 232, and (MATH 260 or MATH 310), all with a minimum grade of C-.",
+  prereq_logic:"#not_applicable",
+  credits: 4,
+  instructors: [],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["e100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "251",
+  term: "summer",
+  year: "2023",
+  title: "Software Design and Analysis for Engineers",
+  description: "Fundamentals for designing and implementing modular programs using a modern object-oriented programming language with a focus on understanding the performance implications of design choices on non-traditional computing platforms. Lecture topics include: classes; objects; debugging, testing & verification; design analysis & abstraction; error handling; fundamental data structures such as lists, trees, and graphs; and big-0 complexity analysis.",
+  requisite_description: "ENSC 151 or CMPT 135 or (CMPT 125 and CMPT 127), all with a minimum grade of C-.",
+  prereq_logic:"#not_applicable",
+  credits: 4,
+  instructors: [],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "252",
+  term: "summer",
+  year: "2023",
+  title: "Fundamentals of Digital Logic & Design",
+  description: "Design of digital systems. In particular, students will learn basic digital design concepts including the implementation of synthesizable combinational and sequential logic using HDL and computer based design tools to implement their designs on a FPGA.",
+  requisite_description: "ENSC 151 or CMPT 125 or CMPT 126 or CMPT 135, with a minimum grade of C-. ENSC 252 is a required course for all engineering science majors and honours students (no course substitutions are permitted).",
+  prereq_logic:"#not_applicable",
+  credits: 4,
+  instructors: [],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "254",
+  term: "summer",
+  year: "2023",
+  title: "Introduction to Computer Organization",
+  description: "Fundamentals of microprocessor architecture and operation; this includes instruction formats, assembly language programming (procedures and parameter passing, interrupts, etc), and memory and I/O port interfaces.",
+  requisite_description: "(ENSC 251 & ENSC 252) or (CMPT 150 & CMPT 225 & enrolled as a Computing Science Major), all with a minimum grade of C-. ENSC 254 is a required course for all Engineering Science Majors and Honours students (no course substitutions are permitted).",
+  prereq_logic:"#not_applicable",
+  credits: 4,
+  instructors: [],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "280",
+  term: "summer",
+  year: "2023",
+  title: "Engineering Measurement and Data Analysis",
+  description: "Methods to collect and analyze engineering data. Topics include: engineering data representation, discrete and continuous probability density functions, engineering measurements, error analysis, test of hypotheses, linear and nonlinear regression, and design of experiments. This course includes a significant laboratory component comprising: laboratory measurements and statistical analysis of electronic circuits, introduction to electronic device behaviour, instrument noise.   ",
+  requisite_description: "((PHYS 121 and ENSC 120) or PHYS 141) and (MATH 251 and MATH 232), all with a minimum grade of C-. MATH 251 and/or MATH 232 may be taken concurrently with ENSC 280. Engineering Science Majors and Honours students are required to take ENSC 280 (no course substitutions will be accepted).",
+  prereq_logic:"#not_applicable",
+  credits: 4,
+  instructors: [],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "295",
+  term: "summer",
+  year: "2023",
+  title: "Industrial Internship II",
+  description: "Second four month internship in industry. Credit is awarded as in ENSC 195. Units from this course do not count towards the units required for an SFU degree.",
+  requisite_description: "ENSC 195 or 196.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "296",
+  term: "summer",
+  year: "2023",
+  title: "Special Internship II",
+  description: "Four month internship in industry or university research environment. Credit is awarded as in ENSC 195. Units from this course do not count towards the units required for an SFU degree.",
+  requisite_description: "ENSC 195 or 196 and approval of internship co-ordinator required.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "320",
+  term: "summer",
+  year: "2023",
+  title: "Electric Circuits II",
+  description: "Topics covered include: use of Laplace transform in circuit analysis, including poles and zeros, frequency response and impulse response: convolution as a method for computing circuit responses: resonant and bandpass circuits; magnetically coupled circuits; two port circuits; and filtering. Also includes a laboratory component dealing with the design and implementation of active filters.",
+  requisite_description: "(ENSC 220 or MSE 250), MATH 232, and (MATH 260 or MATH 310), all with a minimum grade of C-.",
+  prereq_logic:"#not_applicable",
+  credits: 4,
+  instructors: [],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["e100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "395",
+  term: "summer",
+  year: "2023",
+  title: "Industrial Internship III",
+  description: "Third four month internship in industry. Credit is awarded as in ENSC 195. Units from this course do not count towards the units required for an SFU degree.",
+  requisite_description: "ENSC 295 or 296 and a minimum of 75 units.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "396",
+  term: "summer",
+  year: "2023",
+  title: "Special Internship III",
+  description: "Four month internship in industry or university research environment. Approved entrepreneurial projects will also be accepted. Credit is awarded as in ENSC 195. Units from this course do not count towards the units required for an SFU degree.",
+  requisite_description: "ENSC 295 or 296, a minimum of 75 units and approval of internship co-ordinator required.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "405w",
+  term: "summer",
+  year: "2023",
+  title: "Capstone A: Project Design, Management, and Documentation",
+  description: "This is the first course in a group-based, two-course capstone sequence: ENSC 405W, ENSC 440. Topics include group writing processes, project documentation and engineering design, group dynamics, engineering standards, project management, dispute resolution, intellectual property, entrepreneurship, and user interface design. These groups will be maintained for the completion of the capstone project in ENSC 440. Students must take ENSC 440 in the term directly following successful completion of ENSC 405W.",
+  requisite_description: "(ENSC 105W or MSE 101W), ENSC 204, all with a minimum grade of C-, completion of a minimum of 22 units of required upper division ENSC courses, and completion of (or concurrent enrollment in) two upper division technical electives meeting the requirements of the program. Students are required to complete at least two co-ops before enrolling in ENSC 440 Capstone B. Capstone B must be taken in the term immediately following Capstone A. Enrollment into Capstone A is by approval of the department via Capstone application form.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: [],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "406",
+  term: "summer",
+  year: "2023",
+  title: "Engineering Ethics, Law, and Professional Practice",
+  description: "This course provides an introduction to the engineering profession, professional practice, engineering law and ethics, including the issues of worker and public safety.  It also offers opportunities to explore the social implications and environmental impacts of technologies, including sustainability, and to consider engineers' responsibility to society.",
+  requisite_description: "100 units including one of ENSC 100, ENSC 106, CMPT 106, or MSE 102, with a minimum grade of C-.",
+  prereq_logic:"#not_applicable",
+  credits: 2,
+  instructors: [],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "425",
+  term: "summer",
+  year: "2023",
+  title: "Electronic System Design",
+  description: "The principles and processes involved in designing analog circuits, emphasizing the functional blocks that comprise subsystems of a larger analog signal processing system. Topics include linear and nonlinear amplifiers, active filters, signal generators, signal modulators, switchmode power converters and analog/digital data conversion. The effects of non-ideal aspects of IC operational amplifiers on system performance are discussed and verified using laboratory projects. Students should be familiar with the behaviour and application of discrete semiconductor devices. ",
+  requisite_description: "ENSC 320, ENSC 325, (ENSC 380 or MSE 280), all with a minimum grade of C- and a minimum of 80 units.",
+  prereq_logic:"#not_applicable",
+  credits: 4,
+  instructors: [],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "426",
+  term: "summer",
+  year: "2023",
+  title: "High Frequency Electronics",
+  description: "Transmission lines and waveguides, microwave devices, travelling wave devices. An introduction to the theory of radiation, antennae and wave propagation, and microwave scattering theory. The design of complete communication systems incorporating microwave, optical and satellite channels. Laboratory work is included in this course.Physics students with credit for PHYS 326 and PHYS 421 may take this course with permission of the instructor.",
+  requisite_description: "Completion of 80 units including (ENSC 416 or PHYS 421) and ENSC 325, with a minimum grade of C-.",
+  prereq_logic:"#not_applicable",
+  credits: 4,
+  instructors: [],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "428",
+  term: "summer",
+  year: "2023",
+  title: "Digital Communications",
+  description: "This course will cover the physical-layer design issues in digital communication systems. The major topics covered are: information measures and the notion of channel capacity; link budgets; digital modulation techniques, including the signal space concept and optimal detectors, error performance in noise, suboptimal detectors, pulse shaping, synchronization, and equalization; error control techniques such as block and conventional codes, as well as comparisons between FEC and ARQ. Laboratory work is included in this course. ",
+  requisite_description: "ENSC 327 with a minimum grade of C- and a minimum of 80 units.",
+  prereq_logic:"#not_applicable",
+  credits: 4,
+  instructors: [],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["e100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "429",
+  term: "summer",
+  year: "2023",
+  title: "Digital Signal Processing",
+  description: "Discrete time signals and systems, sampling and quantization. The Discrete Fourier Transform and fast transforms. Digital filters, IIR and FIR, design procedures and implementations. Quantization noise in digital filters and transforms. Random signals, the response to linear systems to random signals. Introduction to adaptive systems. Introduction to system architectures for digital signal processing. Laboratory work includes familiarization with digital signal processing software packages. ",
+  requisite_description: "(ENSC 327 or ENSC 328), (ENSC 380 or MSE 280), all with a minimum grade of C- and a minimum of 80 units.",
+  prereq_logic:"#not_applicable",
+  credits: 4,
+  instructors: [],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "440",
+  term: "summer",
+  year: "2023",
+  title: "Capstone B: Engineering Design Project",
+  description: "This is the second course in the group-based, two-course capstone sequence: ENSC 405W (Capstone A), and ENSC 440 (Capstone B). The capstone design course is based around a group project that consists of researching, designing, building and testing the hardware implementation of a working system. The course also includes material on how to design for safety and a shop training workshop. In order to obtain credit, students must successfully complete both courses. Students may not take Capstone B and Co-op in the same term.",
+  requisite_description: "ENSC 405W with a minimum grade of C-. Students will be automatically enrolled in ENSC 440 in the term immediately following successful completion of ENSC 405W.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: [],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "470",
+  term: "summer",
+  year: "2023",
+  title: "Optical and Laser Engineering Applications",
+  description: "A practical, hands-on introduction to optical engineering and lasers. Covers the concepts of light, optics (geometric optics, Gaussian optics, multiple optical elements, lens aberrations), laser concepts, operational details of major laser types, laser interactions with optical systems, laser applications in engineering and medicine, complex optical system design and fiber optics. Labs cover optical systems, lasers measurements, optical CAD design, holography.",
+  requisite_description: "Completion of 80 units including (PHYS 121 or 126 or 141) and (MATH 260 or MATH 310), with a minimum grade of C-.",
+  prereq_logic:"#not_applicable",
+  credits: 4,
+  instructors: [],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "482",
+  term: "summer",
+  year: "2023",
+  title: "Introduction to Decision Making in Engineering",
+  description: "Covers topics from decision theory, pattern classification and optimization theory. In addition, it introduces students to the design and development of interactive decision making tools which can assist designers during the design process. ",
+  requisite_description: "MATH 232, MACM 316, (ENSC 280 or MSE 210 or PHYS 231), all with a minimum grade of C- and a minimum of 80 units.",
+  prereq_logic:"#not_applicable",
+  credits: 4,
+  instructors: [],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "498",
+  term: "summer",
+  year: "2023",
+  title: "Engineering Science Thesis Proposal",
+  description: "Supervised study, research and preliminary work leading to a formal proposal for the thesis project work in ENSC 499. This activity can be directly augmented by other course work and by directed study. The locale of the work may be external to the University or within a University laboratory, or may bridge the two locations. Supervision may be by technical personnel at an external organization, or by faculty members, or through some combination. At least one of the supervisors must be a registered professional engineer. A plan for the student's ENSC 498 activities must be submitted to the school at the time of enrolment in the course. Completion of the undergraduate thesis project proposal is the formal requirement of this course and the basis upon which it is graded. Grading will be on a pass/fail basis.",
+  requisite_description: "At least 115 units or permission of the academic supervisor.",
+  prereq_logic:"#not_applicable",
+  credits: 1,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "ensc",
+  number: "499",
+  term: "summer",
+  year: "2023",
+  title: "Engineering Science Undergraduate Thesis",
+  description: "A thesis is based on the research or  development project that incorporates a significant level of engineering design. This work is typically undertaken in the student's final year, but in no case before the student has completed 115 units. Registration for ENSC 499 takes place in the term in which the thesis will be presented and defended. The locale of the work, supervision and other arrangements follow those for ENSC 498. Grading of the thesis will be on a pass/fail basis, but recognition will be given to outstanding work.",
+  requisite_description: "ENSC 498 with a minimum grade of C-.",
+  prereq_logic:"#not_applicable",
+  credits: 9,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)

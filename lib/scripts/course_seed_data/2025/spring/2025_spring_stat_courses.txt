@@ -1,0 +1,330 @@
+Course.create!(
+  dept: "stat",
+  number: "100",
+  term: "spring",
+  year: "2025",
+  title: "Chance and Data Analysis",
+  description: "Chance phenomena and data analysis are studied through simulation and examination of real world contexts including sports, investment, lotteries and environmental issues. Intended to be particularly accessible to students who are not specializing in Statistics. ",
+  requisite_description: "",
+  prereq_logic:"#no_prereq_logic",
+  credits: 3,
+  instructors: ["Wei Lin"],
+  campuses: ["Burnaby", nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "op01"]
+)
+Course.create!(
+  dept: "stat",
+  number: "201",
+  term: "spring",
+  year: "2025",
+  title: "Statistics for the Life Sciences",
+  description: "Research methodology and associated statistical analysis techniques for students with training in the life sciences. Intended to be particularly accessible to students who are not specializing in Statistics. ",
+  requisite_description: "Recommended: 30 units.",
+  prereq_logic:"#no_prereq_logic",
+  credits: 3,
+  instructors: ["Wei Lin"],
+  campuses: ["Surrey", "Burnaby"],
+  delivery_methods: ["In Person", "Online"],
+  sections: ["d900", "ol01", "op09"]
+)
+Course.create!(
+  dept: "stat",
+  number: "203",
+  term: "spring",
+  year: "2025",
+  title: "Introduction to Statistics for the Social Sciences",
+  description: "Descriptive and inferential statistics aimed at students in the social sciences. Scales of measurement. Descriptive statistics. Measures of association. Hypothesis tests and confidence intervals. Students in Sociology and Anthropology are expected to take SA 255 before this course. Intended to be particularly accessible to students who are not specializing in Statistics. ",
+  requisite_description: "Recommended: 30 units including a research methods course such as SA 255, CRIM 220, POL 200W, or equivalent.",
+  prereq_logic:"#no_prereq_logic",
+  credits: 3,
+  instructors: ["Joan Hu", "Wei Lin"],
+  campuses: ["Burnaby", nil],
+  delivery_methods: ["In Person", "Online"],
+  sections: ["d100", "ol01", "op01"]
+)
+Course.create!(
+  dept: "stat",
+  number: "240",
+  term: "spring",
+  year: "2025",
+  title: "Introduction to Data Science",
+  description: "Introduction to modern tools and methods for data acquisition, management, and visualization capable of scaling to Big Data.",
+  requisite_description: "One of STAT 201, STAT 203, STAT 205, STAT 270, BUS 232, or ECON 233, and one of CMPT 102, CMPT 120, CMPT 125, CMPT 128, CMPT 129, CMPT 130, all with a minimum grade of C- or permission of the instructor. STAT 260 is also recommended.",
+  prereq_logic:"(CMPT 102 >= C- OR CMPT 120 >= C- OR CMPT 125 >= C- OR CMPT 128 >= C- OR CMPT 129 >= C- OR CMPT 130 >= C-) AND (STAT 201 >= C- OR STAT 203 >= C- OR STAT 205 >= C- OR STAT 270 >= C- OR BUS 232 >= C- OR ECON 233 >= C-)",
+  credits: 3,
+  instructors: ["Owen Ward"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "260",
+  term: "spring",
+  year: "2025",
+  title: "Introductory R for Data Science",
+  description: "An introduction to the R programming language for data science. Exploring data: visualization, transformation and summaries. Data wrangling: reading, tidying, and data types. No prior computer programming experience required.",
+  requisite_description: "One of STAT 201, STAT 203, STAT 205, STAT 270, BUS 232, ECON 233, or POL 201, with a grade of at least C- or permission of the instructor.",
+  prereq_logic:"(STAT 201 >= C- OR STAT 203 >= C- OR STAT 205 >= C- OR STAT 270 >= C- OR BUS 232 >= C- OR ECON 233 >= C- OR POL 201 >= C-)",
+  credits: 3,
+  instructors: ["Haolun Shi"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "270",
+  term: "spring",
+  year: "2025",
+  title: "Introduction to Probability and Statistics",
+  description: "Basic laws of probability, sample distributions. Introduction to statistical inference and applications. ",
+  requisite_description: "or Corequisite: MATH 152 or 155 or 158, with a minimum grade of C-. Students wishing an intuitive appreciation of a broad range of statistical strategies may wish to take STAT 100 first.",
+  prereq_logic:"MATH 152 >= C- OR MATH 155 >= C- OR MATH 158 >= C-",
+  credits: 3,
+  instructors: ["Richard Lockhart", "Jinko Graham"],
+  campuses: ["Burnaby", nil],
+  delivery_methods: ["In Person", "Online"],
+  sections: ["d100", "ol01", "op01"]
+)
+Course.create!(
+  dept: "stat",
+  number: "271",
+  term: "spring",
+  year: "2025",
+  title: "Probability and Statistics for Computing Science",
+  description: "This is an introductory course in probability and statistics that is designed for Computer Science students. Mainly covers basic probability theory and statistical methods for designing and analyzing computing algorithms and systems. Topics include continuous probability distributions, random variables, multivariate normal distributions, parameter estimation and inference theory, as well as design and analysis of statistical studies, including hypothesis testing and presentation of statistical data.",
+  requisite_description: "CMPT 210 with a minimum grade of C-.",
+  prereq_logic:"(CMPT 210 >= C-)",
+  credits: 3,
+  instructors: ["Gary Parker"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "285",
+  term: "spring",
+  year: "2025",
+  title: "Intermediate Probability and Statistics",
+  description: "This course is a continuation of STAT 270. Review of probability models. Procedures for statistical inference using survey results and experimental data. Statistical model building. Elementary design of experiments. Regression methods. Introduction to categorical data analysis.",
+  requisite_description: "STAT 270 and one of MATH 152, MATH 155, or MATH 158, all with a minimum grade of C-.",
+  prereq_logic:"(STAT 270 >= C- AND (MATH 152 >= C- OR MATH 155 >= C- OR MATH 158 >= C-))",
+  credits: 3,
+  instructors: ["Liangliang Wang"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "300w",
+  term: "spring",
+  year: "2025",
+  title: "Statistics Communication",
+  description: "Guided experiences in written and oral communication of statistical ideas and results with both scientific and lay audiences.",
+  requisite_description: "Admission to the major or honours programs in statistics; STAT 350 with a minimum grade of C- or permission of the instructor; prior completion of a lower division W course.",
+  prereq_logic:"(W_course >= C- AND STAT 350 >= C-)",
+  credits: 3,
+  instructors: ["Sessional"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "302",
+  term: "spring",
+  year: "2025",
+  title: "Analysis of Experimental and Observational Data",
+  description: "The standard techniques of multiple regression analysis, analysis of variance, and analysis of covariance, and their role in observational and experimental studies. This course may not be used to satisfy the upper division requirements of the following programs: statistics major, statistics honours, actuarial science major, and actuarial science honours.",
+  requisite_description: "One of STAT 201, STAT 203, STAT 205, STAT 270, BUS 232, or ECON 233, with a minimum grade of C-.",
+  prereq_logic:"(STAT 201 >= C- OR STAT 203 >= C- OR STAT 205 >= C- OR STAT 270 >= C- OR BUS 232 >= C- OR ECON 233 >= C-)",
+  credits: 3,
+  instructors: ["Brad McNeney"],
+  campuses: ["Burnaby", nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "op01"]
+)
+Course.create!(
+  dept: "stat",
+  number: "336",
+  term: "spring",
+  year: "2025",
+  title: "Job Practicum I",
+  description: "This is the first term of work experience in a co-operative education program available to statistics students. Interested students should contact their departmental advisors as early in their career as possible for proper counselling. Units from this course do not count towards the units required for an SFU degree. The course will be graded on a pass/withdraw basis. A course fee is required.",
+  requisite_description: "Students must apply and receive permission from the co-op co-ordinator at least one but preferably two terms in advance. They will normally be required to have completed 45 units with a GPA of 2.5 before they may take this practicum course.",
+  prereq_logic:"#no_prereq_logic",
+  credits: 3,
+  instructors: ["Natalie Erickson"],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "337",
+  term: "spring",
+  year: "2025",
+  title: "Job Practicum II",
+  description: "This is the second term of work experience in a co-operative education program available to statistics students. Units from this course do not count towards the units required for an SFU degree.  The course will be graded on a pass/withdraw basis. A course fee is required.",
+  requisite_description: "STAT 336 or Job Practicum I from another department. Students must apply and receive permission from the co-op co-ordinator at least one term in advance.",
+  prereq_logic:"(STAT 336 >= C-)",
+  credits: 3,
+  instructors: ["Natalie Erickson"],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "350",
+  term: "spring",
+  year: "2025",
+  title: "Linear Models in Applied Statistics",
+  description: "Theory and application of linear regression. Normal distribution theory. Hypothesis tests and confidence intervals. Model selection. Model diagnostics. Introduction to weighted least squares and generalized linear models.",
+  requisite_description: "STAT 260, STAT 285, MATH 251, and one of MATH 232 or MATH 240, all with a minimum grade of C-.",
+  prereq_logic:"(STAT 260 >= C- AND STAT 285 >= C- AND MATH 251 >= C- AND (MATH 232 >= C- OR MATH 240 >= C-))",
+  credits: 3,
+  instructors: ["Boxin Tang"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "360",
+  term: "spring",
+  year: "2025",
+  title: "Advanced R for Data Science",
+  description: "Advanced R programming methods for data science. Tools for reproducible research. Version control. Data structures, subsetting, functions, environments, and debugging. Functional programming. Code performance: profiling, memory, integrating R and C++.",
+  requisite_description: "One of STAT 260 or STAT 341 and one of STAT 302, STAT 305, STAT 350, or ECON 333, all with a minimum grade of C-. CMPT 125 or CMPT 129 is also recommended.",
+  prereq_logic:"(STAT 260 >= C- OR STAT 341 >= C-) AND (STAT 302 >= C- OR STAT 305 >= C- OR STAT 350 >= C- OR ECON 333 >= C-)",
+  credits: 3,
+  instructors: ["Sessional"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "380",
+  term: "spring",
+  year: "2025",
+  title: "Introduction to Stochastic Processes",
+  description: "Review of discrete and continuous probability models and relationships between them. Exploration of conditioning and conditional expectation. Markov chains. Random walks. Continuous time processes. Poisson process. Markov processes. Gaussian processes.",
+  requisite_description: "STAT 330, or all of: STAT 285, MATH 208W, and MATH 251, all with a minimum grade of C-.",
+  prereq_logic:"STAT 330 >= C- OR (STAT 285 >= C- AND MATH 208W >= C- AND MATH 251 >= C-)",
+  credits: 3,
+  instructors: ["Samopriya Basu"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "403",
+  term: "spring",
+  year: "2025",
+  title: "Intermediate Sampling and Experimental Design",
+  description: "A practical introduction to useful sampling techniques and intermediate level experimental designs. This course may not be used to satisfy the upper division requirements of the statistics major or honours program.",
+  requisite_description: "STAT 260 and one of STAT 302, 305 or 350 or ECON 333, all with a minimum grade of C-.",
+  prereq_logic:"STAT 260 >= C- AND (STAT 302 >= C- OR STAT 305 >= C- OR STAT 350 >= C- OR ECON 333 >= C-)",
+  credits: 3,
+  instructors: ["Derek Bingham"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "436",
+  term: "spring",
+  year: "2025",
+  title: "Job Practicum III",
+  description: "This is the third term of work experience in a co-operative education program available to statistics students. Units from this course do not count towards the units required for an SFU degree. The course will be graded on a pass/withdraw basis. A course fee is required.",
+  requisite_description: "STAT 337 or Job Practicum II from another department. Students must apply and receive permission from the co-op co-ordinator at least one term in advance.",
+  prereq_logic:"(STAT 337 >= C-)",
+  credits: 3,
+  instructors: ["Natalie Erickson"],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "437",
+  term: "spring",
+  year: "2025",
+  title: "Job Practicum IV",
+  description: "This is the fourth term of work experience in a co-operative education program available to statistics students. Units from this course do not count towards the units required for an SFU degree. The course will be graded on a pass-withdraw basis. A course fee is required.  ",
+  requisite_description: "STAT 436 or Job Practicum III from another department. Students must apply and receive permission from the co-op co-ordinator at least one term in advance.",
+  prereq_logic:"(STAT 436 >= C-)",
+  credits: 3,
+  instructors: ["Natalie Erickson"],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "438",
+  term: "spring",
+  year: "2025",
+  title: "Job Practicum V",
+  description: "This is an optional fifth term of work experience in a co-operative education program available to statistics students. Units from this course do not count towards the units required for an SFU degree. The course will be graded on a pass/withdraw basis. A course fee is required. This course may be repeated for additive credit.",
+  requisite_description: "STAT 437 or Job Practicum IV from another department. Students must apply and receive permission from the co-op co-ordinator at least one term in advance.",
+  prereq_logic:"(STAT 437 >= C-)",
+  credits: 3,
+  instructors: ["Natalie Erickson"],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "445",
+  term: "spring",
+  year: "2025",
+  title: "Applied Multivariate Analysis",
+  description: "Introduction to principal components, cluster analysis, and other commonly used multivariate techniques.",
+  requisite_description: "STAT 260 and one of STAT 285 or STAT 302 or STAT 305 or ECON 333 or equivalent, with a minimum grade of C-.",
+  prereq_logic:"((STAT 260 >= C- AND (STAT 285 >= C- OR STAT 302 >= C- OR STAT 305 >= C- OR ECON 333 >= C-)))",
+  credits: 3,
+  instructors: [],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["e100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "475",
+  term: "spring",
+  year: "2025",
+  title: "Applied Discrete Data Analysis",
+  description: "Introduction to standard methodology for analyzing categorical data including chi-squared tests for two- and multi-way contingency tables, logistic regression, and loglinear (Poisson) regression.",
+  requisite_description: "STAT 260 and one of STAT 302 or STAT 305 or STAT 350 or ECON 333 or equivalent, with a minimum grade of C-.",
+  prereq_logic:"(STAT 260 >= C- AND (STAT 302 >= C- OR STAT 305 >= C- OR STAT 350 >= C- OR ECON 333 >= C-))",
+  credits: 3,
+  instructors: [],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "490",
+  term: "spring",
+  year: "2025",
+  title: "Selected Topics in Probability and Statistics",
+  description: "Topics in areas of probability and statistics not covered in the regular undergraduate curriculum of the department.",
+  requisite_description: "Dependent on the topic covered.",
+  prereq_logic:"#no_prereq_logic",
+  credits: 3,
+  instructors: ["Chi-Liang Tsai", "Barbara Sanders"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200"]
+)
