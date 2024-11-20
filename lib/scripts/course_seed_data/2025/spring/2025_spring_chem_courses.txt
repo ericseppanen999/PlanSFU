@@ -1,0 +1,600 @@
+Course.create!(
+  dept: "chem",
+  number: "110",
+  term: "spring",
+  year: "2025",
+  title: "Introductory Chemistry",
+  description: "General fundamental concepts and nomenclature; stoichiometry and chemical calculations; nuclear and atomic structures, chemical bonding; properties of gases, liquids, solids and solutions; chemical kinetics and chemical equilibrium. This course has the same lecture component as CHEM 111 but no laboratory work. Students who intend to take further laboratory courses in chemistry should take CHEM 111 instead.",
+  requisite_description: "Pre-Calculus 12 (or equivalent), MATH 100 (may be taken concurrently), or permission of the department. No previous training in chemistry is required for this course.",
+  prereq_logic:"'#no_prereq_logic'",
+  credits: 3,
+  instructors: ["Sophie Lavieri"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["Online"],
+  sections: ["ol01"]
+)
+Course.create!(
+  dept: "chem",
+  number: "111",
+  term: "spring",
+  year: "2025",
+  title: "Introductory Chemistry and Laboratory",
+  description: "General fundamental concepts and nomenclature; stoichiometry and chemical calculations; nuclear and atomic structures, chemical bonding; properties of gases, liquids, solids and solutions; chemical kinetics and chemical equilibrium. This course includes a laboratory component.",
+  requisite_description: "Pre-Calculus 12 (or equivalent), MATH 100 (may be taken concurrently), or permission of the department. No previous training in chemistry is required for this course.",
+  prereq_logic:"#no_prereq_logic",
+  credits: 4,
+  instructors: ["Sophie Lavieri", "Rebecca Goyan"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["Blended"],
+  sections: ["b100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "120",
+  term: "spring",
+  year: "2025",
+  title: "General Chemistry I",
+  description: "Atomic and molecular structure; chemical bonding; thermochemistry; elements; periodic table; gases, liquids, solids, and solutions. This course has the same lecture component as CHEM 121 but no laboratory work. Students who intend to take further courses in chemistry should also take CHEM 125 or alternatively take CHEM 121 instead.",
+  requisite_description: "Chemistry 12 with a minimum grade of B, or CHEM 110 or 111 with a minimum grade of C-.",
+  prereq_logic:"#no_prereq_logic",
+  credits: 3,
+  instructors: [],
+  campuses: ["Surrey"],
+  delivery_methods: ["In Person"],
+  sections: ["d400"]
+)
+Course.create!(
+  dept: "chem",
+  number: "121",
+  term: "spring",
+  year: "2025",
+  title: "General Chemistry and Laboratory I",
+  description: "Atomic and molecular structure; chemical bonding; thermochemistry; elements; periodic table; gases liquids, solids, and solutions. This course includes a laboratory component. ",
+  requisite_description: "Chemistry 12 with a minimum grade of B, or CHEM 109 or 111 with a minimum grade of C-.",
+  prereq_logic:"#no_prereq_logic",
+  credits: 4,
+  instructors: ["Garry Mund"],
+  campuses: ["Burnaby", "Surrey"],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d300"]
+)
+Course.create!(
+  dept: "chem",
+  number: "122",
+  term: "spring",
+  year: "2025",
+  title: "General Chemistry II",
+  description: "Chemical equilibria; electrochemistry; chemical thermodynamics; kinetics. Students who intend to take further laboratory courses in chemistry should take CHEM 122 concurrently with CHEM 126.",
+  requisite_description: "CHEM 120 or 121 with a minimum grade of C-.",
+  prereq_logic:"(CHEM 120 >= C- OR CHEM 121 >= C-)",
+  credits: 2,
+  instructors: ["Andrew Bennet", "Corina Andreoiu"],
+  campuses: ["Burnaby", "Surrey"],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "d300"]
+)
+Course.create!(
+  dept: "chem",
+  number: "126",
+  term: "spring",
+  year: "2025",
+  title: "General Chemistry Laboratory II",
+  description: "Experiments in chemical equilibrium, acids and bases, qualitative analysis, electrochemistry and chemical kinetics.",
+  requisite_description: "CHEM 121 with a minimum grade of C-",
+  prereq_logic:"CHEM 121 >= C-",
+  credits: 2,
+  instructors: ["Rebecca Goyan"],
+  campuses: ["Burnaby","Surrey"],
+  delivery_methods: ["In Person"],
+  sections: ["LA03","LA04","LA06","LC01","LC02","LC06"]
+)
+Course.create!(
+  dept: "chem",
+  number: "210",
+  term: "spring",
+  year: "2025",
+  title: "Introduction to Analytical Chemistry",
+  description: "The principles of analytical chemistry and their practical application to solution samples. Titrimetric and electrochemical methods. This course has the same lecture component as CHEM 215 but no laboratory work.",
+  requisite_description: "CHEM 122 with a minimum grade of C-.",
+  prereq_logic:"(CHEM 122 >= C-)",
+  credits: 2,
+  instructors: ["Paul Li"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "216",
+  term: "spring",
+  year: "2025",
+  title: "Introduction to Analytical Chemistry Laboratory",
+  description: "Experiments in analytical chemistry, including analysis of solution samples, titrimetric and electroanalytical methods. This course has the same laboratory component as CHEM 215.",
+  requisite_description: "CHEM 122 and CHEM 126, both with a minimum grade of C-.",
+  prereq_logic:"CHEM 122 >= C- AND CHEM 126 >= C-",
+  credits: 2,
+  instructors: ["Paul Li"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["LA01","LA02"]
+)
+Course.create!(
+  dept: "chem",
+  number: "260",
+  term: "spring",
+  year: "2025",
+  title: "Atoms, Molecules, Spectroscopy",
+  description: "Elements of physical chemistry from the molecular point of view. Introduction to quantum chemistry, atomic and molecular structure, and spectroscopy.",
+  requisite_description: "CHEM 122, MATH 152, and PHYS 121, 126 or 141 (or PHYS 102 with a minimum grade of B), all with a minimum grade of C-. Recommended: MATH 232.",
+  prereq_logic:"(CHEM 122 >= C- AND MATH 152 >= C- AND (PHYS 121 >= C- OR PHYS 126 >= C- OR PHYS 141 >= C- OR PHYS 102 >= B))",
+  credits: 4,
+  instructors: ["Gary Leach"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "266",
+  term: "spring",
+  year: "2025",
+  title: "Physical Chemistry Laboratory I",
+  description: "Fundamental principles of experimental physical chemistry from the microscopic perspective. Modern experiments in atomic and molecular spectroscopy and structure.",
+  requisite_description: "CHEM 260 with a minimum grade of C-.",
+  prereq_logic:"CHEM 260 >= C-",
+  credits: 2,
+  instructors: ["Carla Pretorius"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["LA01","LA02"]
+)
+Course.create!(
+  dept: "chem",
+  number: "281",
+  term: "spring",
+  year: "2025",
+  title: "Organic Chemistry and Laboratory I",
+  description: "Structure, bonding, physical and chemical properties of simple organic compounds. Introduction to spectroscopy. Kinetics and mechanisms of organic reactions. This course includes a laboratory component.",
+  requisite_description: "CHEM 121 with a minimum grade of C-. Corequisite: CHEM 122.",
+  prereq_logic:"(CHEM 121 >= C-)",
+  credits: 4,
+  instructors: ["Patricia Somers", "Uwe Kreis"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "282",
+  term: "spring",
+  year: "2025",
+  title: "Organic Chemistry II",
+  description: "Polyfunctional organic compounds and complex organic reactions. Introduction to natural products.",
+  requisite_description: "CHEM 281 with a minimum grade of C-.",
+  prereq_logic:"(CHEM 281 >= C-)",
+  credits: 2,
+  instructors: ["Pete Wilson"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "283",
+  term: "spring",
+  year: "2025",
+  title: "Organic Chemistry IIb",
+  description: "An advanced treatment of Organic Chemistry II. Topics include dienes and their reactivity, conjugation and aromaticity, aromatic substitution reactions, carboxylic acids and their derivatives, ketones and aldehydes, biological molecules, radical reactions, organometallic reagents, pericyclic reactions and planning multi-step synthesis.",
+  requisite_description: "CHEM 281 with a minimum grade of C-.",
+  prereq_logic:"(CHEM 281 >= C-)",
+  credits: 3,
+  instructors: ["Pete Wilson"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "284",
+  term: "spring",
+  year: "2025",
+  title: "Organic Chemistry IIb",
+  description: "Intended for students planning to take upper division organic chemistry courses. Advanced treatment of topics beyond those covered in CHEM 281 and CHEM 282, including radical reactions, organometallic reagents and metal-based catalysis, pericyclic reactions and planning multi-step syntheses.",
+  requisite_description: "CHEM 282 with a minimum of C+, or permission of the Department.",
+  prereq_logic:"(CHEM 282 >= C+)",
+  credits: 1,
+  instructors: ["Pete Wilson"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "285",
+  term: "spring",
+  year: "2025",
+  title: "Organic Chemistry Laboratory I",
+  description: "Organic chemistry lab experiments in physical, spectroscopic and chemical properties of simple organic compounds with specific focus on organic chemistry laboratory techniques. This course has the same laboratory component as CHEM 281.",
+  requisite_description: "CHEM 120 and CHEM 125, both with a minimum grade of C-, or CHEM 121 with a minimum grade of C-.",
+  prereq_logic:"(CHEM 120 >= C- AND CHEM 125 >= C-) OR CHEM 121 >= C-",
+  credits: 1,
+  instructors: ["Uwe Kreis"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["LB03"]
+)
+Course.create!(
+  dept: "chem",
+  number: "286",
+  term: "spring",
+  year: "2025",
+  title: "Organic Chemistry Laboratory II",
+  description: "Laboratory work chosen to complement the lecture course.",
+  requisite_description: "Prerequisite: CHEM 281 with a minimum grade of C-.",
+  prereq_logic:"CHEM 281 >= C-",
+  credits: 2,
+  instructors: ["Pete Wilson"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["LA03"]
+)
+Course.create!(
+  dept: "chem",
+  number: "296",
+  term: "spring",
+  year: "2025",
+  title: "Introduction to Experiential Undergraduate Research",
+  description: "Directed research in chemistry. Students may repeat this course for further credit under a different topic. This course is graded on a pass/fail basis.",
+  requisite_description: "30 units, including five units of 2nd year CHEM courses. A student may enroll in this course only with prior written agreement of a faculty member to act as a research supervisor.",
+  prereq_logic:"CREDITS >= 30",
+  credits: 2,
+  instructors: [],
+  campuses: ["TBD"],
+  delivery_methods: ["In Person"],
+  sections: ["D001","D002","D003","D004","D005","D006","D007","D008","D009","D010","D011","D012","D013","D014","D015","D016","D017","D018","D019","D020"]
+)
+Course.create!(
+  dept: "chem",
+  number: "306",
+  term: "spring",
+  year: "2025",
+  title: "Practicum I",
+  description: "This is the first term of work experience in a co-operative program available to students planning to pursue a career in chemistry or related areas. Units from this course do not count towards the units required for an SFU degree.",
+  requisite_description: "Completion of 28 units in a science program, including first-year calculus, chemistry and physics. Minimum CGPA 2.67 (or permission of co-op co-ordinator).",
+  prereq_logic:"CREDITS >= 28 AND CGPA >= 2.67",
+  credits: 3,
+  instructors: ["Gwen Litchfield", "Natalie Erickson"],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "307",
+  term: "spring",
+  year: "2025",
+  title: "Practicum II",
+  description: "This is the second term of work experience in the Chemistry Co-operative Education Program. Units from this course do not count towards the units required for an SFU degree.",
+  requisite_description: "CHEM 306 and completion of 42 units toward a BSc degree. Minimum CGPA 2.67 (or permission of co-op co-ordinator).",
+  prereq_logic:"(CHEM 306 >= C- AND CREDITS >= 42 AND CGPA >= 2.67)",
+  credits: 3,
+  instructors: ["Natalie Erickson", "Gwen Litchfield"],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "316",
+  term: "spring",
+  year: "2025",
+  title: "Introductory Instrumental Analysis",
+  description: "Principles and applications of basic analytical instrumentation based upon spectroscopy, chromatography and electrochemistry.",
+  requisite_description: "CHEM 210, 216, and 260, all with a minimum grade of C-, or permission of the department.",
+  prereq_logic:"(CHEM 210 >= C- AND CHEM 216 >= C- AND CHEM 260 >= C-)",
+  credits: 4,
+  instructors: ["Byron Gates"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "317",
+  term: "spring",
+  year: "2025",
+  title: "Analytical Environmental Chemistry",
+  description: "Principles and applications of the methodologies of analytical chemistry employed in the determination of substances in air, water, soil and plants, with particular emphasis upon sampling and sample preparation.",
+  requisite_description: "CHEM 316 with a minimum grade of C-.",
+  prereq_logic:"CHEM 316 >= C-",
+  credits: 2,
+  instructors: ["Byron Gates"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["LA01"]
+)
+Course.create!(
+  dept: "chem",
+  number: "332",
+  term: "spring",
+  year: "2025",
+  title: "The Chemistry of Transition Metals",
+  description: "The synthesis and characterization of classical and organometallic complexes of the transition metals, and their physical and chemical properties.",
+  requisite_description: "CHEM 230, 236W and 260, all with a minimum grade of C-, or permission of the Department.",
+  prereq_logic:"(W_course >= C- AND CHEM 230 >= C- AND CHEM 236W >= C- AND CHEM 260 >= C- OR Permission_of_Department)",
+  credits: 3,
+  instructors: ["Jeffrey Warren"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "336",
+  term: "spring",
+  year: "2025",
+  title: "Advanced Inorganic Chemistry Laboratory",
+  description: "Laboratory experiments in co-ordination, organometallic and solid state chemistry, involving synthesis, characterization and spectroscopy.",
+  requisite_description: "CHEM 236W with a minimum grade of C-.",
+  prereq_logic:"CHEM 226W >= C-",
+  credits: 2,
+  instructors: ["Garry Mund"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["LA01","LA02"]
+)
+Course.create!(
+  dept: "chem",
+  number: "360",
+  term: "spring",
+  year: "2025",
+  title: "Thermodynamics and Chemical Kinetics",
+  description: "Elements of physical chemistry from the macroscopic point of view. Thermodynamics, and its applications to chemical equilibrium. Chemical kinetics and reaction rate theories.",
+  requisite_description: "CHEM 260 with a minimum grade of C-. Recommended: MATH 251.",
+  prereq_logic:"(CHEM 260 >= C-)",
+  credits: 3,
+  instructors: ["Mohammadreza Karamad"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "391",
+  term: "spring",
+  year: "2025",
+  title: "Industrial Chemistry",
+  description: "A survey of industrial chemistry. Topics include the production of raw petrochemical and mineral materials, bulk organic and inorganic chemicals that drive the economy, industrially relevant polymers, and health and hygiene products. Green approaches to industrial chemistry are discussed.",
+  requisite_description: "CHEM 230 and 282 (or 283), both with a minimum grade of C-, or permission of the department.",
+  prereq_logic:"CHEM 230 >= C- AND (CHEM 282 >= C- OR CHEM 283 >= C-)",
+  credits: 3,
+  instructors: ["Vance Williams"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d200"]
+)
+Course.create!(
+  dept: "chem",
+  number: "396",
+  term: "spring",
+  year: "2025",
+  title: "Experiential Undergraduate Research",
+  description: "Directed research in chemistry. Students may repeat this course for further credit under a different topic. This course is graded on a pass/fail basis.",
+  requisite_description: "50 units, including one 3rd year CHEM core course (CHEM 316, 332, 336, 360, 366, 380 or NUSC 341). A student may enroll in this course only with prior written agreement of a faculty member to act as a research supervisor.",
+  prereq_logic:"CREDITS >= 50 AND (CHEM 316 >= C- OR CHEM 332 >= C- OR CHEM 336 >= C- OR CHEM 360 >= C- OR CHEM 380 >= C- OR NUSC 341 >= C-)",
+  credits: 1,
+  instructors: [],
+  campuses: ["TBD"],
+  delivery_methods: ["In Person"],
+  sections: ["D001","D002","D003","D004","D005","D006","D007","D008","D009","D010","D011","D012"]
+)
+Course.create!(
+  dept: "chem",
+  number: "399",
+  term: "spring",
+  year: "2025",
+  title: "Special Topics in Chemistry and Society",
+  description: "Selected topics in chemistry and its role in broader society, with an emphasis on using chemistry to solve technological, environmental and economic challenges. Intended for non-science students. Faculty of Science students may take this course as an elective, but may not apply this course toward their upper division program requirements.",
+  requisite_description: "A minimum of 45 units.",
+  prereq_logic:"CREDITS >= 45",
+  credits: 3,
+  instructors: ["Neil Branda"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "406",
+  term: "spring",
+  year: "2025",
+  title: "Practicum III",
+  description: "This is the third term of work experience in the Chemistry Co-operative Education Program. Units from this course do not count towards the units required for an SFU degree.",
+  requisite_description: "CHEM 307 and completion of 56 units toward a BSc degree. Minimum CGPA of 2.67 (or permission of co-op co-ordinator).",
+  prereq_logic:"(CHEM 307 >= C- AND CREDITS >= 56 AND CGPA >= 2.67)",
+  credits: 3,
+  instructors: ["Gwen Litchfield", "Natalie Erickson"],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "407",
+  term: "spring",
+  year: "2025",
+  title: "Practicum IV",
+  description: "This is the last term of work experience in the Chemistry Co-operative Education Program. Units from this course do not count towards the units required for an SFU degree. ",
+  requisite_description: "CHEM 406. Minimum CGPA of 2.67 (or permission of co-op co-ordinator).",
+  prereq_logic:"(CGPA >= 2.67) AND (CHEM 406 >= C-)",
+  credits: 3,
+  instructors: ["Gwen Litchfield", "Natalie Erickson"],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "408",
+  term: "spring",
+  year: "2025",
+  title: "Practicum V",
+  description: "Optional term of work experience in the Chemistry Co-operative Education Program. Units for this course do not count towards the units required for an SFU degree. This course may be repeated for additive credit.",
+  requisite_description: "CHEM 407.",
+  prereq_logic:"(CHEM 407 >= C-)",
+  credits: 3,
+  instructors: ["Gwen Litchfield", "Natalie Erickson"],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "419",
+  term: "spring",
+  year: "2025",
+  title: "Special Topics in Analytical Chemistry",
+  description: "Principles and applications of emerging techniques in analytical chemistry.",
+  requisite_description: "CHEM 316 with a minimum grade of C-.",
+  prereq_logic:"(CHEM 316 >= C-)",
+  credits: 3,
+  instructors: ["Bingyun Sun"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["e100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "432",
+  term: "spring",
+  year: "2025",
+  title: "Organometallic Chemistry",
+  description: "The organometallic chemistry of the transition elements; the synthesis, characterization and catalytic behavior of organometallic compounds.",
+  requisite_description: "CHEM 332 with a minimum grade of C-.",
+  prereq_logic:"(CHEM 332 >= C-)",
+  credits: 3,
+  instructors: ["Daniel Leznoff"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "440",
+  term: "spring",
+  year: "2025",
+  title: "Solid State Materials Chemistry",
+  description: "The study of the detailed chemistry of solid state inorganic materials in terms of crystal structures, bonding, preparative methods, analytical and characterization techniques, mixed valence states, solid solutions, defects and non-stoichiometry, molecular mechanisms of the optical, electronic, ionic, magnetic and dielectric properties, and materials applications in advanced technology.",
+  requisite_description: "CHEM 340 with a minimum grade of C-.",
+  prereq_logic:"(CHEM 340 >= C-)",
+  credits: 3,
+  instructors: ["Zuo-Guang Ye"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "442",
+  term: "spring",
+  year: "2025",
+  title: "Polymeric Materials Chemistry",
+  description: "The course covers the detailed chemistry of polymers, including polymer structure, studies of polymer solutions, molecular weight determination, and the synthesis of polymers. In addition, topics of current interest in polymer science will be discussed.",
+  requisite_description: "CHEM 282 or 283, with a minimum grade of C-.",
+  prereq_logic:"(CHEM 282 >= C- OR CHEM 283 >= C-)",
+  credits: 3,
+  instructors: ["Steven Holdcroft"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "459",
+  term: "spring",
+  year: "2025",
+  title: "Special Topics in Organic Chemistry",
+  description: "An advanced, in-depth treatment of a specialized area of organic chemistry.",
+  requisite_description: "CHEM 380 with a minimum grade of C-, or permission of the instructor.",
+  prereq_logic:"(CHEM 380 >= C-)",
+  credits: 3,
+  instructors: ["Robert Young"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["e100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "462",
+  term: "spring",
+  year: "2025",
+  title: "Molecular Spectroscopy",
+  description: "Topics may include: Atomic spectra, vibrational and rotational spectra of diatomic and polyatomic molecules, the Raman effect, nuclear and electron spin resonance, symmetry classification of molecules and their energy levels, UV-Vis-NIR absorption and photoluminescence spectroscopy.",
+  requisite_description: "CHEM 364 or PHYS 385, with a minimum grade of C-.",
+  prereq_logic:"(CHEM 364 >= C- OR PHYS 385 >= C-)",
+  credits: 3,
+  instructors: ["Loren Kaake"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "chem",
+  number: "481",
+  term: "spring",
+  year: "2025",
+  title: "Undergraduate Research",
+  description: "Experimental and/or theoretical research; preparation of a written report and oral presentation in research seminar format. Admission requires selection of a faculty supervisor and submission of a research proposal. Prospective students must contact the chemistry advisor to register their interest in this course before the last day of classes of the previous term. The research proposal is due by the end of the examination period preceding the research term.",
+  requisite_description: "Permission of the Department; knowledge of chemistry at an advanced level. Normally taken after completion of 300-level course requirements.",
+  prereq_logic:"#no_prereq_logic",
+  credits: 5,
+  instructors: [],
+  campuses: ["TBD"],
+  delivery_methods: ["In Person"],
+  sections: ["D001","D002","D003","D004","D005"]
+)
+Course.create!(
+  dept: "chem",
+  number: "482",
+  term: "spring",
+  year: "2025",
+  title: "Directed Study in Advanced Topics of Chemistry",
+  description: "Directed reading in a topic chosen in consultation with a supervisor. Admission requires selection of a faculty supervisor and submission of a study topic to the department a least one month prior to the start of the term in which the course will be taken. May repeat for credit.",
+  requisite_description: "Permission of the Department. Normally taken during the fourth year of study.",
+  prereq_logic:"#no_prereq_logic",
+  credits: 3,
+  instructors: [],
+  campuses: ["TBD"],
+  delivery_methods: ["In Person"],
+  sections: ["D001","D002","D003","D004","D005"]
+)
+Course.create!(
+  dept: "chem",
+  number: "483",
+  term: "spring",
+  year: "2025",
+  title: "Undergraduate Research II",
+  description: "Experimental and/or theoretical research; preparation of a written report and oral presentation in research seminar format. Admission requires selection of a faculty supervisor and submission of a research proposal. Prospective students must contact the chemistry advisor to register their interest in this course before the last day of classes of the previous semester. The research proposal is due by the end of the examination period preceding the research term.",
+  requisite_description: "CHEM 481 and permission of the Department. This course cannot be counted towards the 400-level CHEM unit requirement for the Chemistry Majors program.",
+  prereq_logic:"CHEM 481 >= C-",
+  credits: 5,
+  instructors: [],
+  campuses: ["TBD"],
+  delivery_methods: ["In Person"],
+  sections: ["D001","D002"]
+)
+Course.create!(
+  dept: "chem",
+  number: "484",
+  term: "spring",
+  year: "2025",
+  title: "Two-Semester Undergraduate Research in Chemistry",
+  description: "Experimental and/or theoretical research normally over two consecutive semesters; preparation of a written report and oral presentation in research seminar format. Admission requires selection of a faculty supervisor and submission of a research proposal. Prospective students must contact the chemistry advisor to register their interest in this course before the last day of classes of the previous term. The research proposal is due by the end of the examination period preceding the research term. ",
+  requisite_description: "Permission of the Department; knowledge of chemistry at an advanced level. Normally taken after completion of 300-level course requirements. No credit will be given for CHEM 481 or CHEM 483 if CHEM 484 is completed.",
+  prereq_logic:"#no_prereq_logic",
+  credits: 10,
+  instructors: ["Byron Gates"],
+  campuses: ["TBD"],
+  delivery_methods: ["In Person"],
+  sections: ["D001","D002"]
+)

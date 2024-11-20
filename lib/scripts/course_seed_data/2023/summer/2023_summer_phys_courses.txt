@@ -1,0 +1,165 @@
+Course.create!(
+  dept: "phys",
+  number: "100",
+  term: "summer",
+  year: "2023",
+  title: "Introduction to Physics",
+  description: "For students without Physics 12 (or equivalent) to prepare for further physics courses. Introduction to kinematics, dynamics, and conservation of energy and momentum.",
+  requisite_description: "BC Pre-Calculus 12 (or equivalent) or MATH 100, with a minimum grade of C-. BC Physics 11 (or equivalent) is recommended.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Simin Bagheri Najmi"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "op01"]
+)
+Course.create!(
+  dept: "phys",
+  number: "101",
+  term: "summer",
+  year: "2023",
+  title: "Physics for the Life Sciences I",
+  description: "Force and motion, conservation of energy and momentum, fluids, properties of soft matter and thermal physics with applications taken from the life sciences.",
+  requisite_description: "BC Principles of Physics 12 or PHYS 100 or equivalent, with a minimum grade of C-. This prerequisite may be waived, at the discretion of the department, as determined by the student's performance on a regularly scheduled PHYS 100 final exam. Please consult the physics advisor for further details. Corequisite: MATH 150 or 151 or 154 or 157; BISC 100 or 101 or 102. Recommended Corequisite: PHYS 132.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Andrew Debenedictis"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "op01"]
+)
+Course.create!(
+  dept: "phys",
+  number: "102",
+  term: "summer",
+  year: "2023",
+  title: "Physics for the Life Sciences II",
+  description: "Waves and optics; electricity and magnetism; modern physics emphasizing radioactivity, with applications taken from the life sciences.",
+  requisite_description: "PHYS 101 or 120 or 125 or 140; MATH 150 or 151 or 154 or 157; both with a minimum grade of C-. Corequisite: BISC 100 or 101 or 102. Recommended Corequisites: MATH 152, 155 or 158; PHYS 133.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Jean-Francois Caron"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "opl"]
+)
+Course.create!(
+  dept: "phys",
+  number: "121",
+  term: "summer",
+  year: "2023",
+  title: "Optics, Electricity and Magnetism",
+  description: "A general calculus-based introduction to electricity, magnetism and optics. Topics include electricity, magnetism, simple circuits, optics and topics from applied physics.",
+  requisite_description: "PHYS 120 or 125 or 140, with a minimum grade of C-, or PHYS 101 with a minimum grade of B. Corequisite: MATH 152 or 155. Recommended Corequisite: PHYS 133.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Michael Chen"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "phys",
+  number: "133",
+  term: "summer",
+  year: "2023",
+  title: "Physics Laboratory II",
+  description: "no description available",
+  requisite_description: "no prerequisite",
+  prereq_logic:"#not_applicable",
+  credits: nil,
+  instructors: [],
+  campuses: [],
+  delivery_methods: [],
+  sections: []
+)
+Course.create!(
+  dept: "phys",
+  number: "335",
+  term: "summer",
+  year: "2023",
+  title: "Practicum I",
+  description: "This is the first term of work experience in a co-operative education program available to students who are studying physics or related areas, such as biophysics, chemical physics or mathematical physics. Units from this course do not count towards the units required for an SFU degree. A course fee is required. This course is evaluated on a pass/withdrawal basis.",
+  requisite_description: "Completion of 30 units, with a minimum GPA of 2.75 in the physics program. Students should apply to the department at least one term in advance.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "phys",
+  number: "336",
+  term: "summer",
+  year: "2023",
+  title: "Practicum II",
+  description: "This is the second term of work experience in a co-operative education program available to students who are studying physics or related areas, such as biophysics, chemical physics or mathematical physics. Units from this course do not count towards the units required for an SFU degree. A course fee is required. This course is evaluated on a pass/withdrawal basis.",
+  requisite_description: "PHYS 335 followed by 12 units. A minimum cumulative GPA of 2.75. Students should apply to the department at least one term in advance.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "phys",
+  number: "432",
+  term: "summer",
+  year: "2023",
+  title: "Undergraduate Honours Thesis",
+  description: "Undergraduate research and preparation of an honours thesis over the fall and the subsequent spring semesters. The research project may be in experimental or theoretical physics. Prospective students must obtain agreement of a faculty member willing to supervise the project.",
+  requisite_description: "All students interested in taking this course must consult with their faculty supervisor regarding prerequisites.",
+  prereq_logic:"#not_applicable",
+  credits: 6,
+  instructors: [],
+  campuses: [],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "phys",
+  number: "435",
+  term: "summer",
+  year: "2023",
+  title: "Practicum III",
+  description: "This is the third term of work experience in a co-operative education program available to students who are studying physics or related areas, such as biophysics, chemical physics or mathematical physics. Units from this course do not count towards the units required for an SFU degree. Students should apply to the department at least one term in advance. A course fee is required. This course is evaluated on a pass/withdrawal basis.",
+  requisite_description: "PHYS 336 and 60 units with a minimum cumulative GPA of 2.75.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "phys",
+  number: "436",
+  term: "summer",
+  year: "2023",
+  title: "Practicum IV",
+  description: "This is the fourth term of work experience in a co-operative education program available to students who are studying physics or related areas, such as biophysics, chemical physics or mathematical physics. Units from this course do not count towards the units required for an SFU degree. Students should apply to the department at least one term in advance. A course fee is required. This course is evaluated on a pass/withdrawal basis.",
+  requisite_description: "PHYS 435 followed by 12 units. A minimum cumulative GPA of 2.75.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "phys",
+  number: "437",
+  term: "summer",
+  year: "2023",
+  title: "Practicum V",
+  description: "This is an optional fifth term of work experience in a co-operative education program available to students who are studying physics or related areas such as biophysics, chemical physics or mathematical physics. Units from this course do not count towards the units required for an SFU degree. A course fee is required. This course is evaluated on a pass/withdrawal basis. This course may be repeated for additive credit.",
+  requisite_description: "PHYS 436 and a minimum cumulative GPA of 2.75. Students should apply to the department at least one term in advance.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)

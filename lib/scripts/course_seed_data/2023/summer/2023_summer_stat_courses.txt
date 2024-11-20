@@ -1,0 +1,165 @@
+Course.create!(
+  dept: "stat",
+  number: "100",
+  term: "summer",
+  year: "2023",
+  title: "Chance and Data Analysis",
+  description: "Chance phenomena and data analysis are studied through simulation and examination of real world contexts including sports, investment, lotteries and environmental issues. Intended to be particularly accessible to students who are not specializing in Statistics. ",
+  requisite_description: "",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Sonja Isberg"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "op01"]
+)
+Course.create!(
+  dept: "stat",
+  number: "201",
+  term: "summer",
+  year: "2023",
+  title: "Statistics for the Life Sciences",
+  description: "Research methodology and associated statistical analysis techniques for students with training in the life sciences. Intended to be particularly accessible to students who are not specializing in Statistics. ",
+  requisite_description: "Recommended: 30 units.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Scott Pai", "Tim Swartz"],
+  campuses: ["Burnaby", nil],
+  delivery_methods: ["In Person", "Online"],
+  sections: ["d100", "ol01", "op01"]
+)
+Course.create!(
+  dept: "stat",
+  number: "203",
+  term: "summer",
+  year: "2023",
+  title: "Introduction to Statistics for the Social Sciences",
+  description: "Descriptive and inferential statistics aimed at students in the social sciences. Scales of measurement. Descriptive statistics. Measures of association. Hypothesis tests and confidence intervals. Students in Sociology and Anthropology are expected to take SA 255 before this course. Intended to be particularly accessible to students who are not specializing in Statistics. ",
+  requisite_description: "Recommended: 30 units including a research methods course such as SA 255, CRIM 220, POL 200W, or equivalent.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Wei Lin", "Tim Swartz"],
+  campuses: ["Burnaby", nil],
+  delivery_methods: ["In Person", "Online"],
+  sections: ["e100", "ol01", "op01"]
+)
+Course.create!(
+  dept: "stat",
+  number: "270",
+  term: "summer",
+  year: "2023",
+  title: "Introduction to Probability and Statistics",
+  description: "Basic laws of probability, sample distributions. Introduction to statistical inference and applications. ",
+  requisite_description: "or Corequisite: MATH 152 or 155 or 158, with a minimum grade of C-. Students wishing an intuitive appreciation of a broad range of statistical strategies may wish to take STAT 100 first.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Wei Lin", "Gamage Perera"],
+  campuses: ["Burnaby", nil],
+  delivery_methods: ["In Person", "Online"],
+  sections: ["d100", "ol01", "op01"]
+)
+Course.create!(
+  dept: "stat",
+  number: "300w",
+  term: "summer",
+  year: "2023",
+  title: "Statistics Communication",
+  description: "Guided experiences in written and oral communication of statistical ideas and results with both scientific and lay audiences.",
+  requisite_description: "Admission to the major or honours programs in statistics; STAT 350 with a minimum grade of C- or permission of the instructor; prior completion of a lower division W course.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Sonja Isberg"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "302",
+  term: "summer",
+  year: "2023",
+  title: "Analysis of Experimental and Observational Data",
+  description: "The standard techniques of multiple regression analysis, analysis of variance, and analysis of covariance, and their role in observational and experimental studies. This course may not be used to satisfy the upper division requirements of the following programs: statistics major, statistics honours, actuarial science major, and actuarial science honours.",
+  requisite_description: "One of STAT 201, STAT 203, STAT 205, STAT 270, BUS 232, or ECON 233, with a minimum grade of C-.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Pulindu Ratnasekera", "Gamage Perera"],
+  campuses: ["Burnaby", nil],
+  delivery_methods: ["In Person", "Online"],
+  sections: ["d100", "ol01", "op01"]
+)
+Course.create!(
+  dept: "stat",
+  number: "336",
+  term: "summer",
+  year: "2023",
+  title: "Job Practicum I",
+  description: "This is the first term of work experience in a co-operative education program available to statistics students. Interested students should contact their departmental advisors as early in their career as possible for proper counselling. Units from this course do not count towards the units required for an SFU degree. The course will be graded on a pass/withdraw basis. A course fee is required.",
+  requisite_description: "Students must apply and receive permission from the co-op co-ordinator at least one but preferably two terms in advance. They will normally be required to have completed 45 units with a GPA of 2.5 before they may take this practicum course.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "337",
+  term: "summer",
+  year: "2023",
+  title: "Job Practicum II",
+  description: "This is the second term of work experience in a co-operative education program available to statistics students. Units from this course do not count towards the units required for an SFU degree.  The course will be graded on a pass/withdraw basis. A course fee is required.",
+  requisite_description: "STAT 336 or Job Practicum I from another department. Students must apply and receive permission from the co-op co-ordinator at least one term in advance.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "436",
+  term: "summer",
+  year: "2023",
+  title: "Job Practicum III",
+  description: "This is the third term of work experience in a co-operative education program available to statistics students. Units from this course do not count towards the units required for an SFU degree. The course will be graded on a pass/withdraw basis. A course fee is required.",
+  requisite_description: "STAT 337 or Job Practicum II from another department. Students must apply and receive permission from the co-op co-ordinator at least one term in advance.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "437",
+  term: "summer",
+  year: "2023",
+  title: "Job Practicum IV",
+  description: "This is the fourth term of work experience in a co-operative education program available to statistics students. Units from this course do not count towards the units required for an SFU degree. The course will be graded on a pass-withdraw basis. A course fee is required.  ",
+  requisite_description: "STAT 436 or Job Practicum III from another department. Students must apply and receive permission from the co-op co-ordinator at least one term in advance.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)
+Course.create!(
+  dept: "stat",
+  number: "438",
+  term: "summer",
+  year: "2023",
+  title: "Job Practicum V",
+  description: "This is an optional fifth term of work experience in a co-operative education program available to statistics students. Units from this course do not count towards the units required for an SFU degree. The course will be graded on a pass/withdraw basis. A course fee is required. This course may be repeated for additive credit.",
+  requisite_description: "STAT 437 or Job Practicum IV from another department. Students must apply and receive permission from the co-op co-ordinator at least one term in advance.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: [],
+  campuses: [nil],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "i100"]
+)

@@ -6,14 +6,12 @@ Course.create!(
   title: "Chance and Data Analysis",
   description: "Chance phenomena and data analysis are studied through simulation and examination of real world contexts including sports, investment, lotteries and environmental issues. Intended to be particularly accessible to students who are not specializing in Statistics. ",
   requisite_description: "",
-  prereq_logic:"#no_prereq_logic",
-  short_description: "Chance phenomena and data analysis are studied through simulation and examination of real world contexts including sports, investment, lotteries and environmental issues. Intended to be particularly accessible to students who are not specializing in Statistics. ",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Richard Lockhart"],
   campuses: ["Burnaby", nil],
   delivery_methods: ["In Person"],
-  sections: ["d100", "op01"],
-  requisites: [],
+  sections: ["d100", "op01"]
 )
 Course.create!(
   dept: "stat",
@@ -23,14 +21,12 @@ Course.create!(
   title: "Career Development Seminar for Statistics and Actuarial Science",
   description: "A seminar primarily for students undertaking a major or an honours program in Statistics. Visiting speakers share experience relevant to Statistics students and provide useful education and career advice. ",
   requisite_description: "Enrollment in the Statistics or Actuarial Science major or honours program, or STAT 270 with a minimum grade of C-.",
-  prereq_logic:"#no_prereq_logic",
-  short_description: "A seminar primarily for students undertaking a major or an honours program in Statistics. Visiting speakers share experience relevant to Statistics students and provide useful education and career advice. ",
+  prereq_logic:"#not_applicable",
   credits: 1,
   instructors: ["Jiguo Cao"],
   campuses: ["Burnaby"],
   delivery_methods: ["In Person"],
-  sections: ["e100"],
-  requisites: [],
+  sections: ["e100"]
 )
 Course.create!(
   dept: "stat",
@@ -40,14 +36,12 @@ Course.create!(
   title: "Statistics for the Life Sciences",
   description: "Research methodology and associated statistical analysis techniques for students with training in the life sciences. Intended to be particularly accessible to students who are not specializing in Statistics. ",
   requisite_description: "Recommended: 30 units.",
-  prereq_logic:"#no_prereq_logic",
-  short_description: "Research methodology and associated statistical analysis techniques for students with training in the life sciences. Intended to be particularly accessible to students who are not specializing in Statistics. ",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Faculty ,", "Gamage Perera"],
   campuses: ["Burnaby", nil],
   delivery_methods: ["In Person", "Online"],
-  sections: ["d100", "ol01", "op01"],
-  requisites: [],
+  sections: ["d100", "ol01", "op01"]
 )
 Course.create!(
   dept: "stat",
@@ -57,14 +51,12 @@ Course.create!(
   title: "Introduction to Statistics for the Social Sciences",
   description: "Descriptive and inferential statistics aimed at students in the social sciences. Scales of measurement. Descriptive statistics. Measures of association. Hypothesis tests and confidence intervals. Students in Sociology and Anthropology are expected to take SA 255 before this course. Intended to be particularly accessible to students who are not specializing in Statistics. ",
   requisite_description: "Recommended: 30 units including a research methods course such as SA 255, CRIM 220, POL 200W, or equivalent.",
-  prereq_logic:"no_prereq_logic",
-  short_description: "Descriptive and inferential statistics aimed at students in the social sciences. Scales of measurement. Descriptive statistics. Measures of association. Hypothesis tests and confidence intervals. Students in Sociology and Anthropology are expected to take SA 255 before this course. Intended to be particularly accessible to students who are not specializing in Statistics. ",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Gamage Perera", "Tim Swartz"],
   campuses: ["Surrey", "Burnaby", nil],
   delivery_methods: ["In Person", "Online"],
-  sections: ["d900", "ol01", "op09"],
-  requisites: [],
+  sections: ["d900", "ol01", "op09"]
 )
 Course.create!(
   dept: "stat",
@@ -74,14 +66,12 @@ Course.create!(
   title: "Introductory R for Data Science",
   description: "An introduction to the R programming language for data science. Exploring data: visualization, transformation and summaries. Data wrangling: reading, tidying, and data types. No prior computer programming experience required.",
   requisite_description: "One of STAT 201, STAT 203, STAT 205, STAT 270, BUS 232, ECON 233, or POL 201, with a grade of at least C- or permission of the instructor.",
-  prereq_logic:"(STAT 201 >= C- OR STAT 203 >= C- OR STAT 205 >= C- OR STAT 270 >= C- OR BUS 232 >= C- OR ECON 233 >= C- OR POL 201 >= C-)",
-  short_description: "An introduction to the R programming language for data science. Exploring data: visualization, transformation and summaries. Data wrangling: reading, tidying, and data types. No prior computer programming experience required.",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Owen Ward"],
   campuses: ["Burnaby"],
   delivery_methods: ["In Person"],
-  sections: ["d100"],
-  requisites: [],
+  sections: ["d100"]
 )
 Course.create!(
   dept: "stat",
@@ -91,14 +81,12 @@ Course.create!(
   title: "Introduction to Probability and Statistics",
   description: "Basic laws of probability, sample distributions. Introduction to statistical inference and applications. ",
   requisite_description: "or Corequisite: MATH 152 or 155 or 158, with a minimum grade of C-. Students wishing an intuitive appreciation of a broad range of statistical strategies may wish to take STAT 100 first.",
-  prereq_logic:"(MATH 152 >= C- OR MATH 155 >= C- OR MATH 158 >= C-)",
-  short_description: "Basic laws of probability, sample distributions. Introduction to statistical inference and applications. ",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Lloyd Elliott", "Tim Swartz"],
   campuses: ["Burnaby", nil],
   delivery_methods: ["In Person", "Online"],
-  sections: ["d100", "ol01", "op01"],
-  requisites: [],
+  sections: ["d100", "ol01", "op01"]
 )
 Course.create!(
   dept: "stat",
@@ -108,14 +96,12 @@ Course.create!(
   title: "Probability and Statistics for Computing Science",
   description: "This is an introductory course in probability and statistics that is designed for Computer Science students. Mainly covers basic probability theory and statistical methods for designing and analyzing computing algorithms and systems. Topics include continuous probability distributions, random variables, multivariate normal distributions, parameter estimation and inference theory, as well as design and analysis of statistical studies, including hypothesis testing and presentation of statistical data.",
   requisite_description: "CMPT 210 with a minimum grade of C-.",
-  prereq_logic:"CMPT 210 >= C-",
-  short_description: "This is an introductory course in probability and statistics that is designed for Computer Science students. Mainly covers basic probability theory and statistical methods for designing and analyzing computing algorithms and systems. Topics include continuous probability distributions, random variables, multivariate normal distributions, parameter estimation and inference theory, as well as design and analysis of statistical studies, including hypothesis testing and presentation of statistical data.",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Gary Parker"],
   campuses: ["Burnaby"],
   delivery_methods: ["In Person"],
-  sections: ["d100"],
-  requisites: [],
+  sections: ["d100"]
 )
 Course.create!(
   dept: "stat",
@@ -125,14 +111,12 @@ Course.create!(
   title: "Intermediate Probability and Statistics",
   description: "This course is a continuation of STAT 270. Review of probability models. Procedures for statistical inference using survey results and experimental data. Statistical model building. Elementary design of experiments. Regression methods. Introduction to categorical data analysis.",
   requisite_description: "STAT 270 and one of MATH 152, MATH 155, or MATH 158, all with a minimum grade of C-.",
-  prereq_logic:"(STAT 270 >= C- AND (MATH 152 >= C- OR MATH 155 >= C- OR MATH 158 >= C-))",
-  short_description: "This course is a continuation of STAT 270. Review of probability models. Procedures for statistical inference using survey results and experimental data. Statistical model building. Elementary design of experiments. Regression methods. Introduction to categorical data analysis.",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Liangliang Wang"],
   campuses: ["Burnaby"],
   delivery_methods: ["In Person"],
-  sections: ["d100"],
-  requisites: [],
+  sections: ["d100"]
 )
 Course.create!(
   dept: "stat",
@@ -142,14 +126,12 @@ Course.create!(
   title: "Analysis of Experimental and Observational Data",
   description: "The standard techniques of multiple regression analysis, analysis of variance, and analysis of covariance, and their role in observational and experimental studies. This course may not be used to satisfy the upper division requirements of the following programs: statistics major, statistics honours, actuarial science major, and actuarial science honours.",
   requisite_description: "One of STAT 201, STAT 203, STAT 205, STAT 270, BUS 232, or ECON 233, with a minimum grade of C-.",
-  prereq_logic:"((STAT 201 >= C- OR STAT 203 >= C- OR STAT 205 >= C- OR STAT 270 >= C- OR BUS 232 >= C- OR ECON 233 >= C-))",
-  short_description: "The standard techniques of multiple regression analysis, analysis of variance, and analysis of covariance, and their role in observational and experimental studies. This course may not be used to satisfy the upper division requirements of the following programs: statistics major, statistics honours, actuarial science major, and actuarial science honours.",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Gamage Perera"],
   campuses: ["Burnaby"],
   delivery_methods: ["Online"],
-  sections: ["ol01"],
-  requisites: [],
+  sections: ["ol01"]
 )
 Course.create!(
   dept: "stat",
@@ -159,14 +141,12 @@ Course.create!(
   title: "Introduction to Biostatistical Methods for Health Sciences",
   description: "Intermediate statistical techniques for the health sciences. Review of introductory concepts in statistics and probability including hypothesis testing, estimation and confidence intervals for means and proportions. Contingency tables and the analysis of multiple 2x2 tables. Correlation and regression. Multiple regression and model selection. Logistic regression and odds ratios. Basic concepts in survival analysis. This course may not be used to satisfy the upper division requirements of the following programs: statistics major, statistics honours, actuarial science major, and actuarial science honours.",
   requisite_description: "One of STAT 201, STAT 203, STAT 205, STAT 270, BUS 232, or ECON 233, with a minimum grade of C-.",
-  prereq_logic:"(STAT 201 >= C- OR STAT 203 >= C- OR STAT 205 >= C- OR STAT 270 >= C- OR BUS 232 >= C- OR ECON 233 >= C-)",
-  short_description: "Intermediate statistical techniques for the health sciences. Review of introductory concepts in statistics and probability including hypothesis testing, estimation and confidence intervals for means and proportions. Contingency tables and the analysis of multiple 2x2 tables. Correlation and regression. Multiple regression and model selection. Logistic regression and odds ratios. Basic concepts in survival analysis. This course may not be used to satisfy the upper division requirements of the following programs: statistics major, statistics honours, actuarial science major, and actuarial science honours.",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Joan Hu"],
   campuses: ["Burnaby", nil],
   delivery_methods: ["In Person"],
-  sections: ["d100", "op01"],
-  requisites: [],
+  sections: ["d100", "op01"]
 )
 Course.create!(
   dept: "stat",
@@ -176,14 +156,12 @@ Course.create!(
   title: "Introduction to Data Science for the Social Sciences",
   description: "An introduction to modern tools and methods for data acquisition, management, visualization, and machine learning, capable of scaling to Big Data. No prior computer programming experience required. Examples will draw from the social sciences. This course may not be used to satisfy the upper division requirements of the statistics honours, major, or minor programs.",
   requisite_description: "60 units in subjects outside of the Faculties of Science and Applied Sciences and one of STAT 201, STAT 203, STAT 205, STAT 270, BUS 232, ECON 233, or POL 201, with a minimum grade of C-.",
-  prereq_logic:"(CREDITS >= 60) AND (STAT 201 >= C- OR STAT 203 >= C- OR STAT 205 >= C- OR STAT 270 >= C- OR BUS 232 >= C- OR ECON 233 >= C- OR POL 201 >= C-)",
-  short_description: "An introduction to modern tools and methods for data acquisition, management, visualization, and machine learning, capable of scaling to Big Data. No prior computer programming experience required. Examples will draw from the social sciences. This course may not be used to satisfy the upper division requirements of the statistics honours, major, or minor programs.",
+  prereq_logic:"#not_applicable",
   credits: 4,
   instructors: ["Haolun Shi"],
   campuses: ["Burnaby"],
   delivery_methods: ["In Person"],
-  sections: ["d100"],
-  requisites: [],
+  sections: ["d100"]
 )
 Course.create!(
   dept: "stat",
@@ -193,14 +171,12 @@ Course.create!(
   title: "Introduction to Mathematical Statistics",
   description: "Review of probability and distributions. Multivariate distributions. Distributions of functions of random variables. Limiting distributions. Inference. Sufficient statistics for the exponential family. Maximum likelihood. Bayes estimation, Fisher information, limiting distributions of MLEs. Likelihood ratio tests. ",
   requisite_description: "STAT 285, MATH 251, and one of MATH 232 or MATH 240, all with a minimum grade of C-.",
-  prereq_logic:"(STAT 285 >= C- AND MATH 251 >= C- AND (MATH 232 >= C- OR MATH 240 >= C-))",
-  short_description: "Review of probability and distributions. Multivariate distributions. Distributions of functions of random variables. Limiting distributions. Inference. Sufficient statistics for the exponential family. Maximum likelihood. Bayes estimation, Fisher information, limiting distributions of MLEs. Likelihood ratio tests. ",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Liangliang Wang"],
   campuses: ["Burnaby"],
   delivery_methods: ["In Person"],
-  sections: ["d100"],
-  requisites: [],
+  sections: ["d100"]
 )
 Course.create!(
   dept: "stat",
@@ -210,14 +186,12 @@ Course.create!(
   title: "Job Practicum I",
   description: "This is the first term of work experience in a co-operative education program available to statistics students. Interested students should contact their departmental advisors as early in their career as possible for proper counselling. Units from this course do not count towards the units required for an SFU degree. The course will be graded on a pass/withdraw basis. A course fee is required.",
   requisite_description: "Students must apply and receive permission from the co-op co-ordinator at least one but preferably two terms in advance. They will normally be required to have completed 45 units with a GPA of 2.5 before they may take this practicum course.",
-  prereq_logic:"#no_prereq_logic",
-  short_description: "This is the first term of work experience in a co-operative education program available to statistics students. Interested students should contact their departmental advisors as early in their career as possible for proper counselling. Units from this course do not count towards the units required for an SFU degree. The course will be graded on a pass/withdraw basis. A course fee is required.",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Natalie Erickson"],
   campuses: [nil],
   delivery_methods: ["In Person"],
-  sections: ["d100", "d200", "i100"],
-  requisites: [],
+  sections: ["d100", "d200", "i100"]
 )
 Course.create!(
   dept: "stat",
@@ -227,14 +201,12 @@ Course.create!(
   title: "Job Practicum II",
   description: "This is the second term of work experience in a co-operative education program available to statistics students. Units from this course do not count towards the units required for an SFU degree.  The course will be graded on a pass/withdraw basis. A course fee is required.",
   requisite_description: "STAT 336 or Job Practicum I from another department. Students must apply and receive permission from the co-op co-ordinator at least one term in advance.",
-  prereq_logic:"(STAT 336 >= C-)",
-  short_description: "This is the second term of work experience in a co-operative education program available to statistics students. Units from this course do not count towards the units required for an SFU degree.  The course will be graded on a pass/withdraw basis. A course fee is required.",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Natalie Erickson"],
   campuses: [nil],
   delivery_methods: ["In Person"],
-  sections: ["d100", "d200", "i100"],
-  requisites: [],
+  sections: ["d100", "d200", "i100"]
 )
 Course.create!(
   dept: "stat",
@@ -244,14 +216,12 @@ Course.create!(
   title: "Introduction to Statistical Computing and Exploratory Data Analysis - SAS",
   description: "Introduces the SAS statistical package. Data management; reading, editing and storing statistical data; data exploration and representation; summarizing data with tables, graphs and other statistical tools; and data simulation. ",
   requisite_description: "STAT 285 or STAT 302 or STAT 305 or ECON 333, with a minimum grade of C-.",
-  prereq_logic:"(STAT 285 >= C- OR STAT 302 >= C- OR STAT 305 >= C- OR ECON 333 >= C-)",
-  short_description: "Introduces the SAS statistical package. Data management; reading, editing and storing statistical data; data exploration and representation; summarizing data with tables, graphs and other statistical tools; and data simulation. ",
+  prereq_logic:"#not_applicable",
   credits: 2,
   instructors: ["Haolun Shi"],
   campuses: ["Burnaby"],
   delivery_methods: ["In Person"],
-  sections: ["d100"],
-  requisites: [],
+  sections: ["d100"]
 )
 Course.create!(
   dept: "stat",
@@ -261,14 +231,12 @@ Course.create!(
   title: "Linear Models in Applied Statistics",
   description: "Theory and application of linear regression. Normal distribution theory. Hypothesis tests and confidence intervals. Model selection. Model diagnostics. Introduction to weighted least squares and generalized linear models.",
   requisite_description: "STAT 260, STAT 285, MATH 251, and one of MATH 232 or MATH 240, all with a minimum grade of C-.",
-  prereq_logic:"(STAT 260 >= C- AND STAT 285 >= C- AND MATH 251 >= C- AND (MATH 232 >= C- OR MATH 240 >= C-))",
-  short_description: "Theory and application of linear regression. Normal distribution theory. Hypothesis tests and confidence intervals. Model selection. Model diagnostics. Introduction to weighted least squares and generalized linear models.",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Faculty ,"],
   campuses: ["Burnaby"],
   delivery_methods: ["In Person"],
-  sections: ["d100"],
-  requisites: [],
+  sections: ["d100"]
 )
 Course.create!(
   dept: "stat",
@@ -278,14 +246,12 @@ Course.create!(
   title: "Statistical Design and Analysis of Experiments",
   description: "An extension of the designs discussed in STAT 350 to include more than one blocking variable, incomplete block designs, fractional factorial designs, and response surface methods. ",
   requisite_description: "STAT 350 with a minimum grade of C-.",
-  prereq_logic:"(STAT 350 >= C-)",
-  short_description: "An extension of the designs discussed in STAT 350 to include more than one blocking variable, incomplete block designs, fractional factorial designs, and response surface methods. ",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Boxin Tang"],
   campuses: ["Burnaby"],
   delivery_methods: ["In Person"],
-  sections: ["d100"],
-  requisites: [],
+  sections: ["d100"]
 )
 Course.create!(
   dept: "stat",
@@ -295,14 +261,12 @@ Course.create!(
   title: "Job Practicum III",
   description: "This is the third term of work experience in a co-operative education program available to statistics students. Units from this course do not count towards the units required for an SFU degree. The course will be graded on a pass/withdraw basis. A course fee is required.",
   requisite_description: "STAT 337 or Job Practicum II from another department. Students must apply and receive permission from the co-op co-ordinator at least one term in advance.",
-  prereq_logic:"(STAT 337 >= C-)",
-  short_description: "This is the third term of work experience in a co-operative education program available to statistics students. Units from this course do not count towards the units required for an SFU degree. The course will be graded on a pass/withdraw basis. A course fee is required.",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Natalie Erickson"],
   campuses: [nil],
   delivery_methods: ["In Person"],
-  sections: ["d100", "d200", "i100"],
-  requisites: [],
+  sections: ["d100", "d200", "i100"]
 )
 Course.create!(
   dept: "stat",
@@ -312,14 +276,12 @@ Course.create!(
   title: "Job Practicum IV",
   description: "This is the fourth term of work experience in a co-operative education program available to statistics students. Units from this course do not count towards the units required for an SFU degree. The course will be graded on a pass-withdraw basis. A course fee is required.  ",
   requisite_description: "STAT 436 or Job Practicum III from another department. Students must apply and receive permission from the co-op co-ordinator at least one term in advance.",
-  prereq_logic:"(STAT 436 >= C-)",
-  short_description: "This is the fourth term of work experience in a co-operative education program available to statistics students. Units from this course do not count towards the units required for an SFU degree. The course will be graded on a pass-withdraw basis. A course fee is required.  ",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Natalie Erickson"],
   campuses: [nil],
   delivery_methods: ["In Person"],
-  sections: ["d100", "d200", "i100"],
-  requisites: [],
+  sections: ["d100", "d200", "i100"]
 )
 Course.create!(
   dept: "stat",
@@ -329,14 +291,12 @@ Course.create!(
   title: "Job Practicum V",
   description: "This is an optional fifth term of work experience in a co-operative education program available to statistics students. Units from this course do not count towards the units required for an SFU degree. The course will be graded on a pass/withdraw basis. A course fee is required. This course may be repeated for additive credit.",
   requisite_description: "STAT 437 or Job Practicum IV from another department. Students must apply and receive permission from the co-op co-ordinator at least one term in advance.",
-  prereq_logic:"(STAT 437 >= C-)",
-  short_description: "This is an optional fifth term of work experience in a co-operative education program available to statistics students. Units from this course do not count towards the units required for an SFU degree. The course will be graded on a pass/withdraw basis. A course fee is required. This course may be repeated for additive credit.",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Natalie Erickson"],
   campuses: [nil],
   delivery_methods: ["In Person"],
-  sections: ["d100", "d200", "i100"],
-  requisites: [],
+  sections: ["d100", "d200", "i100"]
 )
 Course.create!(
   dept: "stat",
@@ -346,14 +306,12 @@ Course.create!(
   title: "Learning from Big Data",
   description: "A data-first discovery of advanced statistical methods. Focus will be on a series of forecasting and prediction competitions, each based on a large real-world dataset. Additionally, practical tools for statistical modeling in real-world environments will be explored. ",
   requisite_description: "90 units including STAT 350 with a minimum grade of C- and one of STAT 341, STAT 260, or CMPT 225, with a minimum grade of C-, or instructor approval. STAT 240 is also recommended.",
-  prereq_logic:"(CREDITS >= 90 AND STAT 350 >= C- AND (STAT 341 >= C- OR STAT 260 >= C- OR CMPT 225 >= C-))",
-  short_description: "A data-first discovery of advanced statistical methods. Focus will be on a series of forecasting and prediction competitions, each based on a large real-world dataset. Additionally, practical tools for statistical modeling in real-world environments will be explored. ",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Lloyd Elliott"],
   campuses: ["Burnaby"],
   delivery_methods: ["In Person"],
-  sections: ["d100"],
-  requisites: [],
+  sections: ["d100"]
 )
 Course.create!(
   dept: "stat",
@@ -363,14 +321,12 @@ Course.create!(
   title: "Statistical Theory",
   description: "Distribution theory, methods for constructing tests, estimators, and confidence intervals with special attention to likelihood methods. Properties of the procedures including large sample theory.",
   requisite_description: "STAT 330 with a minimum grade of C-.",
-  prereq_logic:"(STAT 330 >= C-)",
-  short_description: "Distribution theory, methods for constructing tests, estimators, and confidence intervals with special attention to likelihood methods. Properties of the procedures including large sample theory.",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Lin Zhang"],
   campuses: ["Burnaby"],
   delivery_methods: ["In Person"],
-  sections: ["d100"],
-  requisites: [],
+  sections: ["d100"]
 )
 Course.create!(
   dept: "stat",
@@ -380,14 +336,12 @@ Course.create!(
   title: "Statistical Learning and Prediction",
   description: "An introduction to the essential modern supervised and unsupervised statistical learning methods. Topics include review of linear regression, classification, statistical error measurement, flexible regression and classification methods, clustering and dimension reduction.",
   requisite_description: "STAT 260 and one of STAT 302 or STAT 305 or STAT 350 or ECON 333 or equivalent, with a minimum grade of C-.",
-  prereq_logic:"(STAT 260 >= C- AND (STAT 302 >= C- OR STAT 305 >= C- OR STAT 350 >= C- OR ECON 333 >= C-))",
-  short_description: "An introduction to the essential modern supervised and unsupervised statistical learning methods. Topics include review of linear regression, classification, statistical error measurement, flexible regression and classification methods, clustering and dimension reduction.",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Owen Ward"],
   campuses: ["Burnaby"],
   delivery_methods: ["In Person"],
-  sections: ["d100"],
-  requisites: [],
+  sections: ["d100"]
 )
 Course.create!(
   dept: "stat",
@@ -397,14 +351,12 @@ Course.create!(
   title: "Applied Time Series Analysis",
   description: "Introduction to linear time series analysis including moving average, autoregressive and ARIMA models, estimation, data analysis, forecasting errors and confidence intervals, conditional and unconditional models, and seasonal models.",
   requisite_description: "STAT 260 and one of STAT 285 or STAT 302 or STAT 305 or ECON 333 or equivalent, with a minimum grade of C-.",
-  prereq_logic:"STAT 260 >= C- AND (STAT 285 >= C- OR STAT 302 >= C- OR STAT 305 >= C- OR ECON 333 >= C-)",
-  short_description: "Introduction to linear time series analysis including moving average, autoregressive and ARIMA models, estimation, data analysis, forecasting errors and confidence intervals, conditional and unconditional models, and seasonal models.",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Gary Parker"],
   campuses: ["Burnaby"],
   delivery_methods: ["In Person"],
-  sections: ["e100"],
-  requisites: [],
+  sections: ["e100"]
 )
 Course.create!(
   dept: "stat",
@@ -414,14 +366,12 @@ Course.create!(
   title: "Selected Topics in Probability and Statistics",
   description: "Topics in areas of probability and statistics not covered in the regular undergraduate curriculum of the department.",
   requisite_description: "Dependent on the topic covered.",
-  prereq_logic:"#no_prereq_logic",
-  short_description: "Topics in areas of probability and statistics not covered in the regular undergraduate curriculum of the department.",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Jean-Francois Begin"],
   campuses: ["Burnaby"],
   delivery_methods: ["In Person"],
-  sections: ["d100"],
-  requisites: [],
+  sections: ["d100"]
 )
 Course.create!(
   dept: "stat",
@@ -431,12 +381,10 @@ Course.create!(
   title: "Directed Studies in Probability and Statistics",
   description: "Independent reading or research on consultation with the supervising instructor. This course can be repeated for credit.",
   requisite_description: "Written permission of the department undergraduate studies committee.",
-  prereq_logic:"#no_prereq_logic",
-  short_description: "Independent reading or research on consultation with the supervising instructor. This course can be repeated for credit.",
+  prereq_logic:"#not_applicable",
   credits: 3,
   instructors: ["Joan Hu"],
   campuses: [nil],
   delivery_methods: ["In Person"],
-  sections: ["d100"],
-  requisites: [],
+  sections: ["d100"]
 )

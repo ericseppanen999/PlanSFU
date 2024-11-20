@@ -109,7 +109,7 @@ const SearchBarWithDropdown = () => {
     <div className="horizontal-stack">
       <Checkbox
         id="use_courses"
-        label="Apply Selected Courses"
+        label="Check eligibility for Spring 2025"
         defaultChecked={defaultQuery.use_courses}
         onChange={(checked) =>
           setSearchUseCourses(checked)

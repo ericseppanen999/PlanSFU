@@ -1,0 +1,90 @@
+Course.create!(
+  dept: "macm",
+  number: "101",
+  term: "fall",
+  year: "2023",
+  title: "Discrete Mathematics I",
+  description: "Introduction to graph theory, trees, induction, automata theory, formal reasoning, modular arithmetic.",
+  requisite_description: "BC Math 12 (or equivalent), or any of MATH 100, 150, 151, 154, 157.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Andrei Bulatov", "Thomas Shermer"],
+  campuses: ["Burnaby", "Surrey"],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "d300"]
+)
+Course.create!(
+  dept: "macm",
+  number: "201",
+  term: "fall",
+  year: "2023",
+  title: "Discrete Mathematics II",
+  description: "A continuation of MACM 101. Topics covered include graph theory, trees, inclusion-exclusion, generating functions, recurrence relations, and optimization and matching.",
+  requisite_description: "MACM 101 or (ENSC 251 and one of MATH 232 or MATH 240).",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Matthew DeVos"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100", "d200", "op01"]
+)
+Course.create!(
+  dept: "macm",
+  number: "204",
+  term: "fall",
+  year: "2023",
+  title: "Computing with Calculus",
+  description: "Using a mathematical software package for doing computations from calculus. Development of computer models that analyze and illustrate applications of calculus. All calculations and experiments will be done in the Maple software package. Topics include: graphing functions and data, preparing visual aids for illustrating mathematical concepts, integration, Taylor series, numerical approximation methods, 3D visualization of curves and surfaces, multi-dimensional optimization, differential equations and disease spread models.",
+  requisite_description: "One of CMPT 102, 120, 126, 128 or 130 and MATH 251. MATH 251 can be taken as a corequisite. Students in excess of 80 units may not take MACM 204 for further credit.",
+  prereq_logic:"#not_applicable",
+  credits: 2,
+  instructors: ["Michael Monagan"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "macm",
+  number: "316",
+  term: "fall",
+  year: "2023",
+  title: "Numerical Analysis I",
+  description: "A presentation of the problems commonly arising in numerical analysis and scientific computing and the basic methods for their solutions.",
+  requisite_description: "MATH 152 or 155 or 158, and MATH 232 or 240, and computing experience.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["John Stockie"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "macm",
+  number: "409",
+  term: "fall",
+  year: "2023",
+  title: "Numerical Linear Algebra: Algorithms, Implementation and Applications",
+  description: "Development of numerical methods for solving linear algebra problems at the heart of many scientific computing problems. Mathematical foundations for the use, implementation and analysis of the algorithms used for solving many optimization problems and differential equations.",
+  requisite_description: "MATH 251, MACM 316, programming experience.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Nilima Nigam"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)
+Course.create!(
+  dept: "macm",
+  number: "442",
+  term: "fall",
+  year: "2023",
+  title: "Cryptography",
+  description: "An introduction to the subject of modern cryptography. Classical methods for cryptography and how to break them, the data encryption standard (DES), the advanced encryption standard (AES), the RSA and ElGammal public key cryptosystems, digital signatures, secure hash functions and pseudo-random number generation. Algorithms for computing with long integers including the use of probabilistic algorithms.  ",
+  requisite_description: "(CMPT 201 or 225) and one of (MATH 340 or 332 or 342); or CMPT 405.",
+  prereq_logic:"#not_applicable",
+  credits: 3,
+  instructors: ["Petr Lisonek"],
+  campuses: ["Burnaby"],
+  delivery_methods: ["In Person"],
+  sections: ["d100"]
+)

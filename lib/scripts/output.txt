@@ -208,3 +208,2278 @@ stat 452, fall 2024 : (STAT 260 >= C- AND (STAT 302 >= C- OR STAT 305 >= C- OR S
 stat 485, fall 2024 : STAT 260 >= C- AND (STAT 285 >= C- OR STAT 302 >= C- OR STAT 305 >= C- OR ECON 333 >= C-)
 stat 490, fall 2024 : (COURSE 320 >= C- AND COURSE 321 >= C- AND COURSE 421 >= C- AND COURSE 331 >= C- AND CGPA >= 2.0)
 stat 495, fall 2024 : #no_prereq_logic
+ensc 180, spring 2025 : (ENSC 151 >= C- OR CMPT 120 >= C- OR CMPT 130 >= C- AND MATH 151 >= C- OR MATH 150 >= C- AND CGPA >= 2.00)
+ensc 194, spring 2025 : #no_prereq_logic
+ensc 195, spring 2025 : #no_prereq_logic
+ensc 196, spring 2025 : #no_prereq_logic
+ensc 100w, fall 2023 : #no_prereq_logic
+ensc 180, spring 2025 : ((ENSEC 151 >= C- OR CMPT 120 >= C- OR CMPT 130 >= C-) AND (MATH 151 >= C- OR MATH 150 >= C-) AND GPA >= 2.0)
+ensc 194, spring 2025 : #no_prereq_logic
+ensc 195, spring 2025 : #no_prereq_logic
+ensc 196, spring 2025 : #no_prereq_logic
+ensc 295, spring 2025 : (ENSC 195 >= C- OR ENSC 196 >= C-)
+ensc 296, spring 2025 : (ENSC 195 >= C- OR ENSC 196 >= C- AND GENDER >= 3.0)
+phys 100, spring 2025 : (MATH 100 >= C- OR BC PRECAL 12 >= C-)
+phys 101, spring 2025 : (MATH 100 >= C- OR PHYS 100 >= C- OR equivalent >= C-) AND (MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C-)
+phys 102, spring 2025 : #no_prereq_logic
+phys 120, spring 2025 : `(BC Principles of Physics 12 >= C- OR PHYS 100 >= C- OR equivalent >= C- AND MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C-)`
+phys 126, spring 2025 : (PHYS 125 >= C- OR Permission of the department)
+phys 132, spring 2025 : #no_prereq_logic
+phys 133, spring 2025 : #no_prereq_logic
+phys 141, spring 2025 : (PHYS 120 >= C- OR PHYS 125 >= C- OR PHYS 140 >= C- OR MSE 103 >= C- OR PHYS 101 >= B AND MATH 152 >= C- OR MATH 155 >= C-)
+phys 190, spring 2025 : #no_prereq_logic
+phys 201, spring 2025 : (PHYS 121 >= C- OR PHYS 126 >= C- OR PHYS 141 >= C- OR PHYS 102 >= B)
+phys 211, spring 2025 : (MATH 251 >= C- AND (MATH 232 >= C- OR MATH 240 >= C-) AND (PHYS 255 >= C- OR ENSC 380 >= C-))
+phys 234, spring 2025 : (PHYS 233 >= C- AND PHYS 255 >= C-)
+phys 285, spring 2025 : (MATH 232 >= C- OR MATH 240 >= C-)
+phys 313, spring 2025 : (PHYS 121 >= C- OR PHYS 126 >= C- OR PHYS 141 >= C- OR (PHYS 102 >= B)) AND (MATH 232 >= C- OR MATH 240 >= C-).
+phys 321, spring 2025 : (CREDITS >= 0 AND (PHYS 121 >= C- OR PHYS 126 >= C- OR PHYS 141 >= C- OR (PHYS 102 >= B AND (PHYS 102 >= C- OR PHYS 121 >= C- OR PHYS 126 >= C- OR PHYS 141 >= C-)) AND (MATH 252 >= C- OR MATH 254 >= C- OR MATH 260 >= C- OR MATH 310 >= C-)))
+phys 332w, spring 2025 : (PHYS 233 >= C- AND (PHYS 285 >= C- OR CHEM 260 >= C-))
+phys 335, spring 2025 : (CREDITS >= 30 AND GPA >= 2.75)
+phys 336, spring 2025 : (CREDS >= 12 AND PHYS 335 >= C- AND CGPA >= 2.75)
+phys 347, spring 2025 : #no_prereq_logic
+phys 391, spring 2025 : (PHYS 233 >= C- OR equivalent >= C- AND CMPT 120 >= C- OR equivalent >= C-)
+phys 395, spring 2025 : (MATH 260 >= C- OR MATH 310 >= C- AND PHYS 255 >= C- AND (CMPT 120 >= C-))
+phys 415, spring 2025 : (PHYS 385 >= C- AND (PHYS 384 >= C- OR MATH 314 >= C-))
+phys 416, spring 2025 : (PHYS 385 >= C- AND (PHYS 384 >= C- OR (MATH 314 >= C- AND MATH 419 >= C-)))
+phys 432, spring 2025 : #no_prereq_logic
+phys 435, spring 2025 : (CREDITS >= 60 AND CGPA >= 2.75 AND PHYS 336 >= C-)
+phys 436, spring 2025 : (CREDITS >= 12 AND CGPA >= 2.75)
+phys 437, spring 2025 : (CREDITS >= 0 AND PHYS 436 >= C- AND CGPA >= 2.75)
+phys 485, spring 2025 : (PHYS 385 >= C- OR CHEM 364 >= C- AND (PHYS 313 >= C- OR (PHYS 313 >= C- AND Permission_from_instructor)))
+chem 110, spring 2025 : #no_prereq_logic
+chem 111, spring 2025 : #'no_prereq_logic'
+chem 120, spring 2025 : (CHEM 12 >= B OR (CHEM 110 >= C- OR CHEM 111 >= C-))
+chem 121, spring 2025 : (CHEM 12 >= B OR CHEM 109 >= C- OR CHEM 111 >= C-)
+chem 122, spring 2025 : (CHEM 120 >= C- OR CHEM 121 >= C-)
+chem 126, spring 2025 : #no_prereq_logic
+chem 210, spring 2025 : (CHEM 122 >= C-)
+chem 216, spring 2025 : #no_prereq_logic
+chem 260, spring 2025 : (CHEM 122 >= C- AND MATH 152 >= C- AND PHYS 121 >= C- AND (PHYS 126 >= C- OR PHYS 141 >= C- OR PHYS 102 >= B))
+chem 266, spring 2025 : #no_prereq_logic
+chem 281, spring 2025 : (CHEM 121 >= C- AND COREQUISITE CHEM 122 >= C-)
+chem 283, spring 2025 : (CHEM 281 >= C-)
+chem 285, spring 2025 : #no_prereq_logic
+chem 286, spring 2025 : #no_prereq_logic
+chem 296, spring 2025 : #no_prereq_logic
+chem 306, spring 2025 : (CREDITS >= 28 AND (CMPT 100 >= C- OR CHEM 100 >= C- OR PHYS 100 >= C-) AND CGPA >= 2.67)
+chem 307, spring 2025 : (CHEM 306 >= C- AND CREDITS >= 42 AND CGPA >= 2.67)
+chem 316, spring 2025 : (CHEM 210 >= C- AND CHEM 216 >= C- AND CHEM 260 >= C- OR Permission of department)
+chem 317, spring 2025 : #no_prereq_logic
+chem 332, spring 2025 : (W_course >= C- AND CHEM 230 >= C- AND CHEM 236 >= C- AND CHEM 260 >= C-) OR (PERMDept)
+chem 336, spring 2025 : #no_prereq_logic
+chem 360, spring 2025 : (CHEM 260 >= C-)
+chem 391, spring 2025 : (CHEM 230 >= C- AND CHEM 282 >= C- OR CHEM 283 >= C-)
+chem 396, spring 2025 : #no_prereq_logic
+chem 399, spring 2025 : CREDITS >= 45
+chem 406, spring 2025 : (CREDITS >= 56 AND CHEM 307 >= C- AND CGPA >= 2.67)
+chem 407, spring 2025 : (CGPA >= 2.67)
+chem 408, spring 2025 : (CHEM 407 >= C-)
+chem 419, spring 2025 : (CHEM 316 >= C-)
+chem 432, spring 2025 : (CHEM 332 >= C-)
+chem 440, spring 2025 : (CHEM 340 >= C-)
+chem 442, spring 2025 : (CHEM 282 >= C- OR CHEM 283 >= C-)
+chem 459, spring 2025 : (CHEM 380 >= C- OR (W_course >= C-))
+chem 462, spring 2025 : (CHEM 364 >= C- OR PHYS 385 >= C-)
+chem 481, spring 2025 : #no_prereq_logic
+chem 482, spring 2025 : #no_prereq_logic
+chem 483, spring 2025 : #no_prereq_logic
+chem 484, spring 2025 : #no_prereq_logic
+stat 100, spring 2025 : #no_prereq_logic
+stat 201, spring 2025 : #no_prereq_logic
+stat 203, spring 2025 : (SA 255 >= C- OR CRIM 220 >= C- OR POL 200W >= C-)
+stat 240, spring 2025 : (CMPT 102 >= C- OR CMPT 120 >= C- OR CMPT 125 >= C- OR CMPT 128 >= C- OR CMPT 129 >= C- OR CMPT 130 >= C- AND (STAT 201 >= C- OR STAT 203 >= C- OR STAT 205 >= C- OR STAT 270 >= C- OR BUS 232 >= C- OR ECON 233 >= C-))
+stat 260, spring 2025 : (STAT 201 >= C- OR STAT 203 >= C- OR STAT 205 >= C- OR STAT 270 >= C- OR BUS 232 >= C- OR ECON 233 >= C- OR POL 201 >= C-)
+stat 271, spring 2025 : CMPT 210 >= C-
+stat 285, spring 2025 : (STAT 270 >= C- AND (MATH 152 >= C- OR MATH 155 >= C- OR MATH 158 >= C-))
+stat 300w, spring 2025 : (STAT 350 >= C- OR permission of the instructor) AND (W_course >= C-)
+stat 302, spring 2025 : (STAT 201 >= C- OR STAT 203 >= C- OR STAT 205 >= C- OR STAT 270 >= C- OR BUS 232 >= C- OR ECON 233 >= C-)
+stat 336, spring 2025 : '(CREDITS >= 45 AND GPA >= 2.5)'
+stat 337, spring 2025 : (STAT 336 >= C- OR W_course >= C- AND CREDITS >= a_const)
+stat 350, spring 2025 : }(STAT 260 >= C- AND STAT 285 >= C- AND MATH 251 >= C- AND (MATH 232 >= C- OR MATH 240 >= C-))
+stat 360, spring 2025 : ('(STAT 260 >= C- OR STAT 341 >= C- AND (STAT 302 >= C- OR STAT 305 >= C- OR STAT 350 >= C- OR ECON 333 >= C-) AND CMPT 125 >= C- AND CMPT 129 >= C-)')
+stat 380, spring 2025 : (STAT 330 >= C- OR (STAT 285 >= C- AND MATH 208W >= C- AND MATH 251 >= C-))
+stat 403, spring 2025 : (STAT 260 >= C- AND (STAT 302 >= C- OR STAT 305 >= C- OR STAT 350 >= C- OR ECON 333 >= C-))
+stat 436, spring 2025 : `(STAT 337 >= C- OR W_course >= C- AND CREDITS >= [number])`
+stat 437, spring 2025 : #no_prereq_logic
+stat 438, spring 2025 : (STAT 437 >= C- OR JOB PRACTICUM IV >= C-)
+stat 445, spring 2025 : (W_course >= C- AND (STAT 260 >= C- AND (STAT 285 >= C- OR STAT 302 >= C- OR STAT 305 >= C- OR ECON 333 >= C-)))
+stat 475, spring 2025 : (STAT 260 >= C- AND (STAT 302 >= C- OR STAT 305 >= C- OR STAT 350 >= C- OR ECON 333 >= C-))
+stat 490, spring 2025 : (CREDITS >= 45 AND (CMPT 421 >= C- AND CMPT 422 >= C- AND CMPT 424 >= C- AND CMPT 431 >= C- AND CMPT 432 >= C- AND CMPT 433 >= C- AND CMPT 434 >= C- AND CMPT 441 >= C- AND CMPT 442 >= C- AND CMPT 452 >= C- AND CMPT 461 >= C- AND CMPT 462 >= C- AND CGPA >= 3.50) AND (GPA >= 3.50 OR course >= C-))
+ensc 180, spring 2025 : (ENSC 151 >= C- OR CMPT 120 >= C- OR CMPT 130 >= C- AND MATH 151 >= C- OR MATH 150 >= C- AND CGPA >= 2.50)
+ensc 194, spring 2025 : #no_prereq_logic
+ensc 195, spring 2025 : #no_prereq_logic
+ensc 196, spring 2025 : #no_prereq_logic
+ensc 295, spring 2025 : (ENSC 195 >= C- OR ENSC 196 >= C-)
+ensc 296, spring 2025 : (ENSC 195 >= C- OR ENSC 196 >= C- AND approval_of_internship_coordinator_required)
+ensc 325, spring 2025 : (ENSC 225 >= C- OR ENSC 226 >= C- OR MSE 251 >= C-)
+ensc 327, spring 2025 : '(ENSC 380 >= C- OR MSE 280 >= C- AND ENSC 280 >= C-) OR (STAT 270 >= C-)'
+ensc 350, spring 2025 : (GEN_EDU_COURSE >= C- AND (ENSC 215 AND (ENSC 250 >= C- OR CMPT 250 >= C-) OR ENSC 252 >= C- AND ENSC 254 >= C-))
+ensc 383, spring 2025 : (ENSC 380 >= C- OR MSE 280 >= C-)
+ensc 386, spring 2025 : (PHYS 120 >= C- AND MATH 260 >= C- OR MATH 310 >= C- AND ENSC 281 >= C- OR ENSC 385 >= C-)
+ensc 387, spring 2025 : (ENSC 380 >= C- OR MSE 280 >= C-)
+ensc 395, spring 2025 : (ENSC 295 >= C- OR ENSC 296 >= C- AND CREDITS >= 75)
+ensc 396, spring 2025 : '(CREDITS >= 75 AND (ENSC 295 >= C- OR ENSC 296 >= C-))'
+ensc 405w, spring 2025 : (ENSC 105W >= C- OR MSE 101W >= C- AND ENSC 204 >= C- AND CREDITS >= 22 AND (UPPER_DIV_ELEC1 >= C- AND UPPER_DIV_ELEC2 >= C-))
+ensc 410, spring 2025 : (CREDITS >= 80)
+ensc 413, spring 2025 : (ENSC 280 >= B AND ENSC 351 >= B AND ENSC 380 >= B AND MATH 251 >= B)
+ensc 416, spring 2025 : (ENSC 316 >= C- AND MATH 254 >= C-)
+ensc 427, spring 2025 : (CREDITS >= 80 AND ENSC 327 >= C-)
+ensc 450, spring 2025 : #no_prereq_logic
+ensc 452, spring 2025 : #no_prereq_logic
+ensc 461, spring 2025 : #no_prereq_logic
+ensc 474, spring 2025 : '(CREDITS >= 80 AND (ENSC 180 >= C- AND ENSC 251 >= C- OR CMPT 225 >= C-))'
+ensc 475, spring 2025 : (CREDITS >= 80 AND (ENSC 225 >= C- OR MSE 251 >= C-) AND ENSC 320 >= C- AND (ENSC 380 >= C- OR MSE 280 >= C-))
+ensc 488, spring 2025 : (ENSC 230 >= C- OR ENSC 386 >= C- AND ENSC 383 >= C- OR MSE 381 >= C- AND CREDITS >= 80)
+ensc 495, spring 2025 : (CREDITS >= 80 OR ENSC 225 >= C- OR MSE 251 >= C- OR PHYS 365 >= C- OR SEE 231 >= C-)
+ensc 498, spring 2025 : '(CREDITS >= 115 OR PERMISSION_OF_ACADEMIC_SUPERVISOR)'
+ensc 499, spring 2025 : (ENSC 498 >= C-)
+ensc 100w, fall 2023 : #no_prereq_logic
+ensc 105w, fall 2023 : #no_prereq_logic
+ensc 120, fall 2023 : '#no_prereq_logic'
+ensc 151, fall 2023 : (CREDITS >= 0 AND #no_prereq_logic)
+ensc 194, fall 2023 : #no_prereq_logic
+ensc 195, fall 2023 : #no_prereq_logic
+ensc 196, fall 2023 : #no_prereq_logic
+ensc 204, fall 2023 : #no_prereq_logic
+ensc 220, fall 2023 : (E_aaa || (aaaa && bbb_c)) && (ccc_ddd && (eee || fff_ggg))
+ensc 225, fall 2023 : (ENSC 220 >= C- OR MSE 250 >= C- AND MATH 232 >= C- AND (MATH 260 >= C- OR MATH 310 >= C-))
+ensc 251, fall 2023 : (ENSC 151 >= C- OR CMPT 135 >= C- OR (CMPT 125 >= C- AND CMPT 127 >= C-))
+ensc 252, fall 2023 : (ENSC 151 >= C- OR CMPT 125 >= C- OR CMPT 126 >= C- OR CMPT 135 >= C- AND CGPA >= 2.00)
+ensc 295, fall 2023 : (ENSC 195 >= C- OR ENSC 196 >= C-)
+ensc 296, fall 2023 : (ENSC 195 >= C- OR ENSC 196 >= C- AND APPROVAL_INTERN_SOLE >= C-)
+ensc 316, fall 2023 : (MATH 251 >= C- AND (ENSC 220 >= C- OR MSE 250 >= C-))
+ensc 324, fall 2023 : '(ENSC 220 >= C- OR MSE 250 >= C- AND MATH 232 >= C- AND (MATH 260 >= C- OR MATH 310 >= C-))'
+ensc 327, fall 2023 : (ENSC 380 >= C- OR MSE 280 >= C- AND ENSC 280 >= C-)
+ensc 350, fall 2023 : (ENSC 215 >= C- AND (ENSC 250 >= C- OR CMPT 250 >= C-)) OR (ENSC 252 >= C- AND ENSC 254 >= C-)
+ensc 351, fall 2023 : (ENSC 151 >= C- AND ENSC 215 >= C- AND ENSC 250 >= C- OR ENSC 254 >= C- OR (CMPT 225 >= C- AND (CMPT 250 >= C- OR CMPT 295 >= C-))) AND CREDITS >= 60
+ensc 370, fall 2023 : (ENSC >= C- AND CREDITS >= 25)
+ensc 380, fall 2023 : (ENSC 180 >= C- AND ENSC 220 >= C- AND (MSE 250 >= C- OR MATH 260 >= C- OR MATH 310 >= C-))
+ensc 385, fall 2023 : (PHYS 120 >= C- OR PHYS 140 >= C- AND MATH 152 >= C-)
+ensc 395, fall 2023 : (ENSC 295 >= C- OR ENSC 296 >= C- AND CREDITS >= 75)
+ensc 396, fall 2023 : (ENSC 295 >= C- OR ENSC 296 >= C- AND CREDITS >= 75 AND APPROVAL >= C-)
+ensc 440, fall 2023 : (ENSC 405W >= C-)
+ensc 453, fall 2023 : (ENSC 350 >= C- AND ENSC 351 >= C-)
+ensc 476, fall 2023 : (CREDITS >= 80 AND (PHYS 121 >= C- OR PHYS 102 >= C- OR PHYS 141 >= C-))
+ensc 477, fall 2023 : (ENSC 380 >= C- OR MSE 280 >= C- AND CREDITS >= 80)
+ensc 498, fall 2023 : (CREDITS >= 115)
+ensc 499, fall 2023 : ENSC 498 >= C-
+cmpt 105w, spring 2025 : #no_prereq_logic
+cmpt 120, spring 2025 : #no_prereq_logic
+cmpt 125, spring 2025 : (CMPT 120 >= C- OR CMPT 130 >= C-)
+cmpt 135, spring 2025 : (CMPT 130 >= C-)
+cmpt 201, spring 2025 : (CMPT 125 >= C- OR CMPT 135 >= C- AND MACM 101 >= C-)
+cmpt 210, spring 2025 : (CMPT 125 >= C- OR CMPT 135 >= C- AND MATH 152 >= C- AND MATH 240 >= C- OR MATH 232 >= C- AND GPA >= 2.00)
+cmpt 213, spring 2025 : (CMPT 225 >= C-)
+cmpt 225, spring 2025 : (CMPT 125 >= C- OR CMPT 129 >= C- OR CMPT 135 >= C-) AND MACM 101 >= C- OR (ENSC 251 >= C- AND ENSC 252 >= C-)
+cmpt 276, spring 2025 : (W_course >= C- AND CMPT 225 >= C- AND (MACM 101 >= C- OR (ENSC 251 >= C- AND ENSC 252 >= C-) AND (MATH 151 >= C- OR MATH 150 >= C- OR MATH 154 >= B+ OR MATH 157 >= B+)))
+cmpt 295, spring 2025 : (MACM 101 >= C- AND (CMPT 125 >= C- OR CMPT 135 >= C-)) OR (MATH 151 >= C- AND CMPT 102 >= C-)
+cmpt 303, spring 2025 : (ENSC 254 >= C- OR CMPT 295 >= C- AND ENSC 351 >= C- OR CMPT 201 >= C- AND CGPA >= 2.50)
+cmpt 307, spring 2025 : (CMPT 225 >= C- AND (MACM 201 >= C- OR CMPT 210 >= C-) AND (MATH 150 >= C- OR MATH 151 >= C- OR MATH 232 >= C- OR MATH 240 >= C-) AND (MATH 232 >= C- OR MATH 240 >= C-))
+cmpt 310, spring 2025 : (CMPT 225 >= C- AND (MACM 101 >= C- OR (ENSC 251 >= C- AND ENSC 252 >= C-)))
+cmpt 318, spring 2025 : (CMPT 225 >= C-)
+cmpt 340, spring 2025 : #no_prereq_logic
+cmpt 353, spring 2025 : (CMPT 225 >= C- AND (BUS 232 >= C- OR STAT 201 >= C- OR STAT 203 >= C- OR STAT 205 >= C- OR STAT 270 >= C- OR STAT 271 >= C- OR ENSC 280 >= C- OR MSE 210 >= C- OR SEE 241 >= C-))
+cmpt 354, spring 2025 : (CMPT 225 >= C- AND (MACM 101 >= C- OR (ENSC 251 >= C- AND ENSC 252 >= C-)))
+cmpt 361, spring 2025 : (CMPT 225 >= C- AND MATH 232 >= C- OR MATH 240 >= C-)
+cmpt 363, spring 2025 : (CMPT 225 >= C- AND CMPT 263 >= C-)
+cmpt 365, spring 2025 : CMPT 225 >= C-
+cmpt 371, spring 2025 : ((CMPT 225 >= C- AND (MATH 151 >= C- OR MATH 150 >= C-)) AND (MATH 154 >= B+ OR MATH 157 >= B+))
+cmpt 376w, spring 2025 : (CMPT 105W >= C- AND (CMPT 275 >= C- OR CMPT 276 >= C-))
+cmpt 383, spring 2025 : (CMPT 225 >= C- AND (MACM 101 >= C- OR (ENSC 251 >= C- AND ENSC 252 >= C-)))
+cmpt 384, spring 2025 : (CMPT 225 >= C- AND (MACM 101 >= C- OR (ENSC 251 >= C- AND ENSC 252 >= C-)))
+cmpt 404, spring 2025 : (CREDITS >= C- AND MACM 201 >= C- OR CMPT 210 >= C- AND CMPT 307 >= C- AND CMPT 308 >= C-)
+cmpt 405, spring 2025 : CMPT 307 >= C-
+cmpt 409, spring 2025 : CMPT 307 >= C-
+cmpt 410, spring 2025 : (CMPT 310 >= C- AND MACM 316 >= C-)
+cmpt 412, spring 2025 : (CMPT 361 >= C- AND MATH 152 >= C-)
+cmpt 413, spring 2025 : (CS 300 >= C- OR (CS 301 >= C- OR CS 302 >= C- OR CS 306 >= C- OR CS 308 >= C-) OR PERMISSION_OF_INSTRUCTOR)
+cmpt 415, spring 2025 : #no_prereq_logic
+cmpt 416, spring 2025 : '#no_prereq_logic'
+cmpt 419, spring 2025 : #no_prereq_logic
+cmpt 420, spring 2025 : (CMPT 410 >= C- OR CMPT 419 >= C-)
+cmpt 426, spring 2025 : (CREDITS >= 45 AND (CMPT 275 >= C- OR CMPT 276 >= C-) AND CGPA >= 2.50)
+cmpt 427, spring 2025 : (CMP426 >= C- AND CGPA >= 2.50)
+cmpt 428, spring 2025 : (CGPA >= 2.50 AND CMPT 427 >= C-)
+cmpt 429, spring 2025 : (CGPA >= 2.50 AND CMPT 428 >= C-)
+cmpt 430, spring 2025 : (CGPA >= 2.50 AND CMPT 429 >= C-)
+cmpt 431, spring 2025 : (CMPT 201 >= C- OR CMPT 300 >= C- AND CMPT 371 >= C-)
+cmpt 433, spring 2025 : (CMPT 201 >= C- OR CMPT 300 >= C- AND CMPT 295 >= C-)
+cmpt 454, spring 2025 : (CMPT 201 >= C- OR CMPT 300 >= C- AND CMPT 354 >= C-)
+cmpt 459, spring 2025 : (CMPT 354 >= C-)
+cmpt 461, spring 2025 : (CMPT 361 >= C-)
+cmpt 466, spring 2025 : (CMPT 361 >= C- AND MACM 316 >= C-)
+cmpt 469, spring 2025 : (CMPT 361 >= C-)
+cmpt 475, spring 2025 : (CMPT 275 >= C- OR CMPT 276 >= C- AND (MACM 201 >= C- OR CMPT 210 >= C-) AND UPPER_DIVISION_CREDITS >= 15)
+cmpt 478, spring 2025 : (CMPT 476 >= C- OR PHYS 416 >= C-)
+cmpt 479, spring 2025 : (CMPT 201 >= C- OR CMPT 300 >= C-)
+cmpt 493, spring 2025 : (CS major-program-program >= C- AND (CMPT 275 >= C- OR CMPT 276 >= C- AND CREDITS >= 80 AND CGPA >= 3.0 AND UDGPA >= 3.0))
+cmpt 494, spring 2025 : (CREDITS >= 15 AND (CMPT >= C-))
+cmpt 495, spring 2025 : (CMPT 494 >= C- AND (CMPT 495 >= C-))
+cmpt 496, spring 2025 : (CREDITS >= 90 AND (CMPT >= 300 AND CREDITS >= 15) AND GPA >= 3.00)
+cmpt 497, spring 2025 : '#no_prereq_logic'
+cmpt 498, spring 2025 : (CREDITS >= 90 AND (CMPT 300+ >= C- AND DU(CMPT) >= 15) AND GPA >= 3.00)
+macm 101, spring 2025 : '#no_prereq_logic'
+macm 201, spring 2025 : (CREDITS >= 0 AND (MACM 101 >= C- OR (ENSC 251 >= C- AND (MATH 232 >= C- OR MATH 240 >= C-))))
+macm 203, spring 2025 : (CMPT 102 >= C- OR CMPT 120 >= C- OR CMPT 126 >= C- OR CMPT 128 >= C- OR CMPT 130 >= C- AND (MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C- AND (MATH 232 >= C- OR MATH 240 >= C- OR MATH 232 >= C- AND MATH 240 >= C-)))
+macm 316, spring 2025 : (MATH 152 >= C- OR MATH 155 >= C- OR MATH 158 >= C- AND MATH 232 >= C- OR MATH 240 >= C-)
+macm 401, spring 2025 : (CMPT 307 >= C- OR (MATH 340 >= C- AND (MATH 342 >= C- AND (CMPT 225 >= C- OR MACM 204 >= C-))))
+macm 476, spring 2025 : (MATH 232 >= C- OR MATH 240 >= C-)
+math 100, spring 2025 : (Foundations of Mathematics 11 >= B OR Pre-Calculus 11 >= B) AND (Pre-Calculus 12 >= C OR SFU FAN credit OR SFU FAN X99 >= B- OR Quantitative Placement Test >= Satisfactory)
+math 130, spring 2025 : (MATH 100 >= C- OR MATH >= B)
+math 150, spring 2025 : (MATH 100 >= B- OR (Pre-Calculus 12 >= B+ OR SFU Calculus Readiness Test))
+math 152, spring 2025 : (MATH 150 >= C- OR MATH 151 >= C- OR MATH 155 >= C-) OR (MATH 154 >= B OR MATH 157 >= B)
+math 154, spring 2025 : (CREDITS >= 0 AND (MATH 12 >= B OR MATH 100 >= C- OR Simon Fraser University Calculus Readiness Test >= satisfactory))
+math 155, spring 2025 : (MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= B)
+math 157, spring 2025 : (MATH 100 >= C- OR MATH _equiv >= B)
+math 158, spring 2025 : MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C-
+math 190, spring 2025 : (MATH 11 >= B OR MATH 11 >= B OR FAN X99 >= C OR Quantitative Placement Test >= S)
+math 208w, spring 2025 : MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C-
+math 232, spring 2025 : (MATH 150 >= C- OR MATH 151 >= C- OR MACM 101 >= C- OR MATH 154 >= B OR MATH 157 >= B)
+math 240, spring 2025 : (MATH 150 >= C- OR MATH 151 >= C- OR MACM 101 >= C-) OR (MATH 154 >= B AND MATH 157 >= B)
+math 242, spring 2025 : (MATH 152 >= C- OR MATH 155 >= B OR MATH 158 >= B)
+math 251, spring 2025 : (MATH 152 >= C- OR MATH 158 >= B) AND (LIFE SCIENCES_students MATH 154 >= C- AND MATH 155 >= A-)
+math 252, spring 2025 : (MATH 240 >= C- OR MATH 232 >= C- AND MATH 251 >= C-)
+math 260, spring 2025 : (MATH 152 >= C- OR (MATH 155 >= B OR MATH 158 >= B) OR (MATH 232 >= C- OR MATH 240 >= C-))
+math 304, spring 2025 : (MATH 152 >= C- OR MATH 155 >= C- OR MATH 158 >= C- AND MATH 232 >= C- OR MATH 240 >= C-)
+math 308, spring 2025 : (MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C- AND (MATH 240 >= C- OR MATH 232 >= C-))
+math 314, spring 2025 : ('(MATH 260 >= C- OR MATH 310 >= C- AND (MATH 251 >= B+ OR (MATH 252 >= C- OR MATH 254 >= C-)))')
+math 320, spring 2025 : (MATH 242 >= C- AND MATH 251 >= C-)
+math 336, spring 2025 : #no_prereq_logic
+math 337, spring 2025 : (MATH 336 >= C- AND permission_of_coordinator >= C-)
+math 341, spring 2025 : (MATH 340 >= C- OR MATH 342 >= C- OR MATH 332 >= C-)
+math 348, spring 2025 : (CREDITS >= 0 AND STAT 270 >= C- AND (MATH 232 >= C- OR MATH 240 >= C-))
+math 381w, spring 2025 : (MATH 300+ >= C-) OR PERMISSION OF INSTRUCTOR
+math 402w, spring 2025 : MATH 308 >= C-
+math 436, spring 2025 : (MATH 337 >= C-)
+math 437, spring 2025 : 'MATH 436 >= C-'
+math 440, spring 2025 : (MATH 340 >= C- OR MATH 332 >= C-)
+math 467, spring 2025 : (MATH 260 >= C- OR MATH 310 >= C-)
+math 469, spring 2025 : (MATH 343 >= C- OR MATH 345 >= C- OR MATH 360 >= C-)
+math 486, spring 2025 : (MATH 437 >= C-)
+cmpt 105w, fall 2022 : #no_prereq_logic
+cmpt 105w, fall 2022 : #no_prereq_logic
+cmpt 120, fall 2022 : #no_prereq_logic
+cmpt 125, fall 2022 : (CMPT 120 >= C- OR CMPT 130 >= C-)
+cmpt 128, fall 2022 : 'MATH 100 >= C- OR MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C-'
+cmpt 130, fall 2022 : MATH 100 >= C- OR MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C-
+cmpt 210, fall 2022 : (MACM 101 >= C- AND MATH 152 >= C- AND MATH 240 >= C-)
+cmpt 213, fall 2022 : (CMPT 225 >= C-)
+cmpt 225, fall 2022 : (MACM 101 >= C- AND (CMPT 125 >= C- OR CMPT 129 >= C- OR CMPT 135 >= C-)) OR (ENSC 251 >= C- AND ENSC 252 >= C-)
+cmpt 272, fall 2022 : (CMPT 120 >= C- OR CMPT 130 >= C- OR CMPT 128 >= C-)
+cmpt 276, fall 2022 : (W_course >= C- AND CMPT 225 >= C- AND (MACM 101 >= C- OR (ENSC 251 >= C- AND ENSC 252 >= C-) AND (MATH 151 >= C- OR MATH 150 >= C- OR MATH 154 >= B+ OR MATH 157 >= B+) ))
+cmpt 295, fall 2022 : (MACM 101 >= C- AND (CMPT 125 >= C- OR CMPT 135 >= C-)) OR (MATH 151 >= C- AND CMPT 102 >= C-)
+cmpt 300, fall 2022 : (CMPT 225 >= C- AND (CMPT 295 >= C- OR ENSC 254 >= C-))
+cmpt 307, fall 2022 : (CMPT 225 >= C- AND (MACM 201 >= C- OR CMPT 210 >= C-) AND (MATH 150 >= C- OR MATH 151 >= C- OR MATH 232 >= C- OR MATH 240 >= C-) AND (MATH 154 >= C- OR MATH 157 >= C- OR MATH 150 >= B+ OR MATH 151 >= B+))
+cmpt 308, fall 2022 : ((MACM 201 >= C-) OR (CMPT 210 >= C-))
+cmpt 310, fall 2022 : (CMPT 225 >= C- AND (MACM 101 >= C- OR (ENSC 251 >= C- AND ENSC 252 >= C-)))
+cmpt 318, fall 2022 : (CMPT 225 >= C-)
+cmpt 353, fall 2022 : (CMPT 225 >= C- AND (STAT 101 >= C- OR STAT 270 >= C- OR ENSC 280 >= C- OR MSE 210 >= C-))
+cmpt 354, fall 2022 : (CMPT 225 >= C- AND (MACM 101 >= C- OR (ENSC 251 >= C- AND ENSC 252 >= C-)))
+cmpt 361, fall 2022 : (CMPT 225 >= C- AND MATH 232 >= C- OR MATH 240 >= C-)
+cmpt 362, fall 2022 : (CMPT 225 >= C-)
+cmpt 363, fall 2022 : (CMPT 225 >= C-)
+cmpt 365, fall 2022 : CMPT 225 >= C-
+cmpt 371, fall 2022 : (CMPT 225 >= C- AND (MATH 151 >= C- OR MATH 150 >= C-) AND ((MATH 154 >= B+ OR MATH 157 >= B+) AND (MATH 154 >= C- OR MATH 157 >= C-)))
+cmpt 373, fall 2022 : (CMPT 276 >= C- OR CMPT 275 >= C-)
+cmpt 376w, fall 2022 : (W_course >= C- AND (CMPT 105W >= C- AND (CMPT 275 >= C- OR CMPT 276 >= C-)))
+cmpt 379, fall 2022 : (MACM 201 >= C- OR CMPT 210 >= C-) AND (CMPT 295 >= C- OR ENSC 215 >= C-) AND CMPT 225 >= C-
+cmpt 383, fall 2022 : (CMPT 225 >= C- AND (MACM 101 >= C- OR (ENSC 251 >= C- AND ENSC 252 >= C-)))
+cmpt 405, fall 2022 : (CMPT 307 >= C-)
+cmpt 409, fall 2022 : CMPT 307 >= C-
+cmpt 410, fall 2022 : (CMPT 310 >= C- AND MACM 316 >= C-)
+cmpt 413, fall 2022 : (CS UPPER >= C- OR PERMISSION OF THE INSTRUCTOR)
+cmpt 415, fall 2022 : #no_prereq_logic
+cmpt 416, fall 2022 : #no_prereq_logic
+cmpt 417, fall 2022 : (CMPT 225 >= C-)
+cmpt 426, fall 2022 : (CREDITS >= 45 AND (CMPT 275 >= C- OR CMPT 276 >= C-) AND CGPA >= 2.50)
+cmpt 427, fall 2022 : (CGPA >= 2.50 AND CMPT 426 >= C-)
+cmpt 428, fall 2022 : (CGPA >= 2.50 AND CMPT 427 >= C-)
+cmpt 429, fall 2022 : (CGPA >= 2.50 AND CMPT 428 >= C-)
+cmpt 430, fall 2022 : (CGPA >= 2.50 AND CMPT 429 >= C-)
+cmpt 431, fall 2022 : (CMPT 300 >= C- AND CMPT 371 >= C-)
+cmpt 450, fall 2022 : (CMPT 295 >= C-)
+cmpt 454, fall 2022 : (CMPT 300 >= C- AND CMPT 354 >= C-)
+cmpt 459, fall 2022 : (CMPT 354 >= C-)
+cmpt 469, fall 2022 : CMPT 361 >= C-
+cmpt 471, fall 2022 : (CMPT 300 >= C- AND CMPT 371 >= C-)
+cmpt 473, fall 2022 : (CREDITS >= 15 AND (CMPT 275 >= C- OR CMPT 276 >= C-))
+cmpt 475, fall 2022 : (CMPT 275 >= C- OR CMPT 276 >= C- AND (MACM 201 >= C- OR CMPT 210 >= C-) AND CREDITS >= 15)
+cmpt 477, fall 2022 : (CMPT 275 >= C- OR CMPT 276 >= C-)
+cmpt 479, fall 2022 : (CMPT 300 >= C-)
+cmpt 494, fall 2022 : (CREDITS >= 15 AND (CMPT-coded >= C-))
+cmpt 495, fall 2022 : (CMPT 494 >= C- AND CMPT 495 >= C-)
+cmpt 496, fall 2022 : (CREDITS >= 90 AND (CMPT >= 300 AND CMPT >= 300*15) AND GPA >= 3.00)
+cmpt 497, fall 2022 : (CREDITS >= 0 AND #no_prereq_logic)
+cmpt 498, fall 2022 : (CREDITS >= 90 AND (CMPT _ >= C- AND (15 = SUM (CMPT _ > 100) AND GPA >= 3.00)))
+macm 101, fall 2022 : 'MATH 100 >= C- OR MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C-'
+macm 201, fall 2022 : (MACM 101 >= C- OR (ENSC 251 >= C- AND (MATH 232 >= C- OR MATH 240 >= C-)))
+macm 204, fall 2022 : (CMPT 102 >= C- OR CMPT 120 >= C- OR CMPT 126 >= C- OR CMPT 128 >= C- OR CMPT 130 >= C- AND MATH 251 >= C-)
+macm 316, fall 2022 : (MATH 152 >= C- OR MATH 155 >= C- OR MATH 158 >= C- AND MATH 232 >= C- OR MATH 240 >= C-)
+macm 416, fall 2022 : (MATH 260 >= C- OR MATH 310 >= C- AND MACM 316 >= C-)
+math 100, fall 2022 : (CREDITS >= 120.00 AND (MATH 11 >= B OR MATH 11 >= B AND FNDM 11 >= B OR MATH 12 >= C) AND SFU FAN >= B- OR SFU FAN >= B- AND X99 >= B- OR QPT >= Satisfactory)
+math 130, fall 2022 : (MATH 100 >= C- OR (MATH 101 >= B OR FOUNDATIONS OF MATHEMATICS 12 >= B OR PRE-CALCULUS 12 >= B))
+math 150, fall 2022 : (MATH 100 >= B- OR (CREDIT_EQUIVALENT >= B+ AND CREDIT_EQUIVALENT >= B+))
+math 151, fall 2022 : (MATH 100 >= B OR (grade >= A AND course_code OF Pre-Calculus 12) OR Calculus Readiness Test >=)
+math 152, fall 2022 : (MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= B OR MATH 157 >= B)
+math 154, fall 2022 : (CREDITS >= 0 AND #no_prereq_logic)
+math 157, fall 2022 : (CREDITS >= equivalent OR MATH 100 >= C- OR SFU Calculus Readiness Test >= satisfactory)
+math 190, fall 2022 : (MATH 190 >= B OR SFU FAN X99 >= C OR Quantitative Placement Test >= satisfies)
+math 232, fall 2022 : (MATH 150 >= C- OR MATH 151 >= C- OR MACM 101 >= C-) OR (MATH 154 >= B AND MATH 157 >= B)
+math 240, fall 2022 : (MATH 150 >= C- OR MATH 151 >= C- OR MACM 101 >= C- OR MATH 154 >= B OR MATH 157 >= B)
+math 251, fall 2022 : (MATH 152 >= C- OR (MATH 155 >= B OR MATH 158 >= B))
+math 260, fall 2022 : (MATH 152 >= C- OR (MATH 155 >= B OR MATH 158 >= B) OR (MATH 232 >= C- OR MATH 240 >= C-))
+math 303, fall 2022 : (MATH 152 >= C- OR MATH 155 >= C- OR MATH 158 >= C- AND MATH 232 >= C- OR MATH 240 >= C-)
+math 308, fall 2022 : (MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C- AND MATH 240 >= C- OR MATH 232 >= C-)
+math 309, fall 2022 : (MATH 232 >= C- OR MATH 240 >= C- AND MATH 251 >= C-)
+math 322, fall 2022 : (MATH 251 >= C-)
+math 336, fall 2022 : #no_prereq_logic
+math 337, fall 2022 : (MATH 336 >= C- AND #no_prereq_logic)
+math 340, fall 2022 : (MATH 240 >= C- OR MATH 232 >= B)
+math 343, fall 2022 : (MACM 201 >= B-)
+math 345, fall 2022 : (MACM 201 >= B-)
+math 408, fall 2022 : MATH 308 >= C-
+math 418, fall 2022 : ((MATH 260 >= C- OR MATH 310 >= C- AND (MATH 314 >= C- OR MATH 320 >= C- OR MATH 322 >= C- OR PHYS 384 >= C-)) OR (MATH 252 >= C- AND MATH 260 >= C- AND MATH 310 >= C- AND (MATH 252 >= A- AND MATH 260 >= A- AND MATH 310 >= A-)))
+math 436, fall 2022 : (MATH 337 >= C- AND GPA >= 2.00)
+math 437, fall 2022 : (MATH 436 >= C-)
+math 447, fall 2022 : (MATH 340 >= C- OR MATH 332 >= C-)
+math 450, fall 2022 : (MATH 242 >= C- AND MATH 340 >= C-)
+math 480w, fall 2022 : (MACM 201 >= B AND (MACM 201 >= A OR MATH 240 >= A OR MATH 242 >= A OR MATH 251 >= A OR MATH 252 >= A OR MACM 203 >= A AND MACM 204 >= A)) OR (MACM 203 >= A AND MACM 204 >= A) OR (PERMISSION_OF_INSTRUCTOR)
+math 486, fall 2022 : (MATH 437 >= C-)
+math 495, fall 2022 : (CREDITS >= 45 AND GPA >= 2.75)
+math 498, fall 2022 : #no_prereq_logic
+math 499w, fall 2022 : (CREDITS >= 18 AND (MATH >= C- OR MACM >= C-) AND GPA >= 3.0)
+cmpt 105w, spring 2022 : #no_prereq_logic
+cmpt 120, spring 2022 : #no_prereq_logic
+cmpt 125, spring 2022 : (CMPT 120 >= C- OR CMPT 130 >= C-)
+cmpt 130, spring 2022 : 'MATH 100 >= C- OR MATH 150 >= C- OR MATH 151 >= C- OR MATH 154 >= C- OR MATH 157 >= C-'
+cmpt 135, spring 2022 : (CMPT 130 >= C-)
+cmpt 213, spring 2022 : (CMPT 225 >= C-)
+cmpt 218, spring 2022 : #no_prereq_logic
+cmpt 225, spring 2022 : ('(MACM 101 >= C- AND (CMPT 125 >= C- OR CMPT 129 >= C- OR CMPT 135 >= C-)) OR (ENSC 251 >= C- AND ENSC 252 >= C-)')
+cmpt 276, spring 2022 : (W_course >= C- AND CMPT 225 >= C- AND (MACM 101 >= C- OR (ENS 251 >= C- AND ENSC 252 >= C-) AND (MATH 151 >= C- OR MATH 150 >= C- OR MATH 154 >= B+ OR MATH 157 >= B+)))
+cmpt 295, spring 2022 : (MACM 101 >= C- AND (CMPT 125 >= C- OR CMPT 135 >= C-)) OR (MATH 151 >= C- AND CMPT 102 >= C- AND APPLIED_PHYSICS)
+cmpt 300, spring 2022 : (CMPT 225 >= C- AND (CMPT 295 >= C- OR ENSC 254 >= C-))
+cmpt 305, spring 2022 : ((CMPT 225 >= C-) AND ((MACM 101 >= C-) OR (ENSC 251 >= C- AND ENSC 252 >= C-)) AND (STAT 270 >= C-))
+cmpt 307, spring 2022 : (CMPT 225 >= C- AND MACM 201 >= C- AND (MATH 150 >= C- OR MATH 151 >= C- OR (MATH 154 >= B+ AND MATH 232 >= C- OR MATH 240 >= C-) OR (MATH 232 >= C- OR MATH 240 >= C-)))
+cmpt 310, spring 2022 : (CMPT 225 >= C- AND (MACM 101 >= C- OR (ENSC 251 >= C- AND ENSC 252 >= C-)))
+cmpt 318, spring 2022 : (CMPT 225 >= C-)
+cmpt 320, spring 2022 : (CMPT >= C- AND CREDITS >= 45)
+cmpt 353, spring 2022 : (CMPT 225 >= C- AND (STAT 101 >= C- OR STAT 270 >= C- OR ENSC 280 >= C- OR MSE 210 >= C-))
+cmpt 354, spring 2022 : (CMPT 225 >= C- AND (MACM 101 >= C- OR (ENSC 251 >= C- AND ENSC 252 >= C-)))
+cmpt 361, spring 2022 : (CMPT 225 >= C- AND MATH 232 >= C- OR MATH 240 >= C-)
+cmpt 363, spring 2022 : CMPT 225 >= C-
+cmpt 365, spring 2022 : (CMPT 225 >= C-)
+cmpt 371, spring 2022 : (CMPT 225 >= C- AND (MATH 151 >= C- OR MATH 150 >= C-) AND (MATH 154 >= B+ OR MATH 157 >= B+))
+cmpt 376w, spring 2022 : (W_course >= C- AND (CMPT 275 >= C- OR CMPT 276 >= C- AND CMPT 105W >= C-))
+cmpt 383, spring 2022 : (CMPT 225 >= C- AND (MACM 101 >= C- OR (ENSC 251 >= C- AND ENSC 252 >= C-)))
+cmpt 405, spring 2022 : (CMPT 307 >= C-)
+cmpt 415, spring 2022 : #no_prereq_logic
+cmpt 416, spring 2022 : #no_prereq_logic
+cmpt 419, spring 2022 : #no_prereq_logic
+cmpt 426, spring 2022 : (CREDITS >= 45 AND (CMPT 275 >= C- OR CMPT 276 >= C-) AND CGPA >= 2.50)
+cmpt 427, spring 2022 : (CGPA >= 2.50 AND CMPT 426 >= C-)
+cmpt 428, spring 2022 : (CGPA >= 2.50 AND CMPT 427 >= C-)
+cmpt 429, spring 2022 : (CMPT 428 >= C- AND CGPA >= 2.50)
+cmpt 430, spring 2022 : (CGPA >= 2.50 AND CMPT 429 >= C-)
+cmpt 431, spring 2022 : (CMPT 300 >= C- AND CMPT 371 >= C-)
+cmpt 433, spring 2022 : (CMPT 295 >= C- AND CMPT 300 >= C-)
+cmpt 454, spring 2022 : (CMPT 300 >= C- AND CMPT 354 >= C-)
+cmpt 459, spring 2022 : (CMPT 354 >= C-)
+cmpt 461, spring 2022 : (CMPT 361 >= C- AND MACM 201 >= C- AND MACM 316 >= C-)
+cmpt 466, spring 2022 : (CMPT 361 >= C- AND MACM 316 >= C-) OR (permission of the instructor)
+cmpt 473, spring 2022 : (W_course >= C- AND (CMPT 275 >= C- OR CMPT 276 >= C-) AND CREDITS >= 15)
+cmpt 475, spring 2022 : (OR CMPT 275 >= C- OR CMPT 276 >= C- AND MACM 201 >= C- AND CREDITS >= 15*1200 AND CGPA >= 2.00)
+cmpt 105w, fall 2022 : }
+cmpt 120, fall 2022 : }
+cmpt 125, fall 2022 : }
+cmpt 128, fall 2022 : }
+cmpt 130, fall 2022 : }
+cmpt 210, fall 2022 : }
+cmpt 213, fall 2022 : }
+cmpt 225, fall 2022 : }
+cmpt 272, fall 2022 : }
+cmpt 276, fall 2022 : }
+cmpt 295, fall 2022 : }
+cmpt 300, fall 2022 : }
+cmpt 307, fall 2022 : }
+cmpt 308, fall 2022 : }
+cmpt 310, fall 2022 : }
+cmpt 318, fall 2022 : }
+cmpt 353, fall 2022 : }
+cmpt 354, fall 2022 : }
+cmpt 361, fall 2022 : }
+cmpt 362, fall 2022 : }
+cmpt 363, fall 2022 : }
+cmpt 365, fall 2022 : }
+cmpt 371, fall 2022 : }
+cmpt 373, fall 2022 : }
+cmpt 376w, fall 2022 : }
+cmpt 379, fall 2022 : }
+cmpt 383, fall 2022 : }
+cmpt 405, fall 2022 : }
+cmpt 409, fall 2022 : }
+cmpt 410, fall 2022 : }
+cmpt 413, fall 2022 : }
+cmpt 415, fall 2022 : }
+cmpt 416, fall 2022 : }
+cmpt 417, fall 2022 : }
+cmpt 426, fall 2022 : }
+cmpt 427, fall 2022 : }
+cmpt 428, fall 2022 : }
+cmpt 429, fall 2022 : }
+cmpt 430, fall 2022 : }
+cmpt 431, fall 2022 : }
+cmpt 450, fall 2022 : }
+cmpt 454, fall 2022 : }
+cmpt 459, fall 2022 : }
+cmpt 469, fall 2022 : }
+cmpt 471, fall 2022 : }
+cmpt 473, fall 2022 : }
+cmpt 475, fall 2022 : }
+cmpt 477, fall 2022 : }
+cmpt 479, fall 2022 : }
+cmpt 494, fall 2022 : }
+cmpt 495, fall 2022 : }
+cmpt 496, fall 2022 : }
+cmpt 497, fall 2022 : }
+cmpt 498, fall 2022 : }
+macm 101, fall 2022 : }
+macm 201, fall 2022 : }
+macm 204, fall 2022 : }
+macm 316, fall 2022 : }
+macm 416, fall 2022 : }
+math 100, fall 2022 : }
+math 130, fall 2022 : }
+math 150, fall 2022 : }
+math 151, fall 2022 : }
+math 152, fall 2022 : }
+math 154, fall 2022 : }
+math 157, fall 2022 : }
+math 190, fall 2022 : }
+math 232, fall 2022 : }
+math 240, fall 2022 : }
+math 251, fall 2022 : }
+math 260, fall 2022 : }
+math 303, fall 2022 : }
+math 308, fall 2022 : }
+math 309, fall 2022 : }
+math 322, fall 2022 : }
+math 336, fall 2022 : }
+math 337, fall 2022 : }
+math 340, fall 2022 : }
+math 343, fall 2022 : }
+math 345, fall 2022 : }
+math 408, fall 2022 : }
+math 418, fall 2022 : }
+math 436, fall 2022 : }
+math 437, fall 2022 : }
+math 447, fall 2022 : }
+math 450, fall 2022 : }
+math 480w, fall 2022 : }
+math 486, fall 2022 : }
+math 495, fall 2022 : }
+math 498, fall 2022 : }
+math 499w, fall 2022 : }
+ensc 100w, fall 2022 : }
+ensc 105w, fall 2022 : }
+ensc 120, fall 2022 : }
+ensc 151, fall 2022 : }
+ensc 194, fall 2022 : }
+ensc 195, fall 2022 : }
+ensc 196, fall 2022 : }
+ensc 204, fall 2022 : }
+ensc 220, fall 2022 : }
+ensc 225, fall 2022 : }
+ensc 251, fall 2022 : }
+ensc 252, fall 2022 : }
+ensc 295, fall 2022 : }
+ensc 296, fall 2022 : }
+ensc 316, fall 2022 : }
+ensc 324, fall 2022 : }
+ensc 350, fall 2022 : }
+ensc 351, fall 2022 : }
+ensc 370, fall 2022 : }
+ensc 380, fall 2022 : }
+ensc 385, fall 2022 : }
+ensc 395, fall 2022 : }
+ensc 396, fall 2022 : }
+ensc 424, fall 2022 : }
+ensc 440, fall 2022 : }
+ensc 453, fall 2022 : }
+ensc 462, fall 2022 : }
+ensc 477, fall 2022 : }
+ensc 498, fall 2022 : }
+ensc 499, fall 2022 : }
+phys 100, fall 2022 : }
+phys 101, fall 2022 : }
+phys 102, fall 2022 : }
+phys 120, fall 2022 : }
+phys 125, fall 2022 : }
+phys 132, fall 2022 : }
+phys 140, fall 2022 : }
+phys 190, fall 2022 : }
+phys 201, fall 2022 : }
+phys 233, fall 2022 : }
+phys 255, fall 2022 : }
+phys 326, fall 2022 : }
+phys 335, fall 2022 : }
+phys 336, fall 2022 : }
+phys 344, fall 2022 : }
+phys 384, fall 2022 : }
+phys 385, fall 2022 : }
+phys 413, fall 2022 : }
+phys 421, fall 2022 : }
+phys 431, fall 2022 : }
+phys 432, fall 2022 : }
+phys 435, fall 2022 : }
+phys 436, fall 2022 : }
+phys 437, fall 2022 : }
+phys 455, fall 2022 : }
+phys 465, fall 2022 : }
+chem 110, fall 2022 : }
+chem 111, fall 2022 : }
+chem 120, fall 2022 : }
+chem 121, fall 2022 : }
+chem 122, fall 2022 : }
+chem 125, fall 2022 : }
+chem 126, fall 2022 : }
+chem 180, fall 2022 : }
+chem 210, fall 2022 : }
+chem 216, fall 2022 : }
+chem 230, fall 2022 : }
+chem 236w, fall 2022 : }
+chem 260, fall 2022 : }
+chem 281, fall 2022 : }
+chem 282, fall 2022 : }
+chem 283, fall 2022 : }
+chem 284, fall 2022 : }
+chem 285, fall 2022 : }
+chem 286, fall 2022 : }
+chem 306, fall 2022 : }
+chem 307, fall 2022 : }
+chem 316, fall 2022 : }
+chem 340, fall 2022 : }
+chem 364, fall 2022 : }
+chem 366w, fall 2022 : }
+chem 371, fall 2022 : }
+chem 380, fall 2022 : }
+chem 406, fall 2022 : }
+chem 407, fall 2022 : }
+chem 408, fall 2022 : }
+chem 419, fall 2022 : }
+chem 452, fall 2022 : }
+chem 455, fall 2022 : }
+chem 459, fall 2022 : }
+chem 481, fall 2022 : }
+chem 482, fall 2022 : }
+chem 483, fall 2022 : }
+chem 484, fall 2022 : }
+stat 100, fall 2022 : }
+stat 180, fall 2022 : }
+stat 201, fall 2022 : }
+stat 203, fall 2022 : }
+stat 260, fall 2022 : }
+stat 261, fall 2022 : }
+stat 270, fall 2022 : }
+stat 285, fall 2022 : }
+stat 302, fall 2022 : }
+stat 305, fall 2022 : }
+stat 310, fall 2022 : }
+stat 311, fall 2022 : }
+stat 330, fall 2022 : }
+stat 336, fall 2022 : }
+stat 337, fall 2022 : }
+stat 342, fall 2022 : }
+stat 350, fall 2022 : }
+stat 430, fall 2022 : }
+stat 436, fall 2022 : }
+stat 437, fall 2022 : }
+stat 438, fall 2022 : }
+stat 440, fall 2022 : }
+stat 450, fall 2022 : }
+stat 452, fall 2022 : }
+stat 485, fall 2022 : }
+stat 490, fall 2022 : }
+stat 495, fall 2022 : }
+cmpt 105w, spring 2022 : }
+cmpt 120, spring 2022 : }
+cmpt 125, spring 2022 : }
+cmpt 130, spring 2022 : }
+cmpt 135, spring 2022 : }
+cmpt 213, spring 2022 : }
+cmpt 218, spring 2022 : }
+cmpt 225, spring 2022 : }
+cmpt 276, spring 2022 : }
+cmpt 295, spring 2022 : }
+cmpt 300, spring 2022 : }
+cmpt 305, spring 2022 : }
+cmpt 307, spring 2022 : }
+cmpt 310, spring 2022 : }
+cmpt 318, spring 2022 : }
+cmpt 320, spring 2022 : }
+cmpt 353, spring 2022 : }
+cmpt 354, spring 2022 : }
+cmpt 361, spring 2022 : }
+cmpt 363, spring 2022 : }
+cmpt 365, spring 2022 : }
+cmpt 371, spring 2022 : }
+cmpt 376w, spring 2022 : }
+cmpt 383, spring 2022 : }
+cmpt 405, spring 2022 : }
+cmpt 415, spring 2022 : }
+cmpt 416, spring 2022 : }
+cmpt 419, spring 2022 : }
+cmpt 426, spring 2022 : }
+cmpt 427, spring 2022 : }
+cmpt 428, spring 2022 : }
+cmpt 429, spring 2022 : }
+cmpt 430, spring 2022 : }
+cmpt 431, spring 2022 : }
+cmpt 433, spring 2022 : }
+cmpt 454, spring 2022 : }
+cmpt 459, spring 2022 : }
+cmpt 461, spring 2022 : }
+cmpt 466, spring 2022 : }
+cmpt 473, spring 2022 : }
+cmpt 475, spring 2022 : }
+cmpt 494, spring 2022 : }
+cmpt 495, spring 2022 : }
+cmpt 497, spring 2022 : }
+macm 101, spring 2022 : }
+macm 201, spring 2022 : }
+macm 203, spring 2022 : }
+macm 316, spring 2022 : }
+math 100, spring 2022 : }
+math 130, spring 2022 : }
+math 150, spring 2022 : }
+math 152, spring 2022 : }
+math 154, spring 2022 : }
+math 155, spring 2022 : }
+math 157, spring 2022 : }
+math 158, spring 2022 : }
+math 190, spring 2022 : }
+math 208w, spring 2022 : }
+math 232, spring 2022 : }
+math 240, spring 2022 : }
+math 242, spring 2022 : }
+math 251, spring 2022 : }
+math 252, spring 2022 : }
+math 260, spring 2022 : }
+math 302, spring 2022 : }
+math 308, spring 2022 : }
+math 314, spring 2022 : }
+math 320, spring 2022 : }
+math 336, spring 2022 : }
+math 337, spring 2022 : }
+math 341, spring 2022 : }
+math 380w, spring 2022 : }
+math 402w, spring 2022 : }
+math 436, spring 2022 : }
+math 437, spring 2022 : }
+math 441, spring 2022 : }
+math 443, spring 2022 : }
+math 448, spring 2022 : }
+math 475, spring 2022 : }
+math 486, spring 2022 : }
+math 496, spring 2022 : }
+math 497, spring 2022 : }
+ensc 180, spring 2022 : }
+ensc 194, spring 2022 : }
+ensc 195, spring 2022 : }
+ensc 196, spring 2022 : }
+ensc 295, spring 2022 : }
+ensc 296, spring 2022 : }
+ensc 325, spring 2022 : }
+ensc 327, spring 2022 : }
+ensc 350, spring 2022 : }
+ensc 383, spring 2022 : }
+ensc 386, spring 2022 : }
+ensc 387, spring 2022 : }
+ensc 395, spring 2022 : }
+ensc 396, spring 2022 : }
+ensc 400, spring 2022 : }
+ensc 403, spring 2022 : }
+ensc 405w, spring 2022 : }
+ensc 410, spring 2022 : }
+ensc 413, spring 2022 : }
+ensc 416, spring 2022 : }
+ensc 428, spring 2022 : }
+ensc 450, spring 2022 : }
+ensc 462, spring 2022 : }
+ensc 474, spring 2022 : }
+ensc 475, spring 2022 : }
+ensc 483, spring 2022 : }
+ensc 488, spring 2022 : }
+ensc 491, spring 2022 : }
+ensc 494, spring 2022 : }
+ensc 495, spring 2022 : }
+ensc 498, spring 2022 : }
+ensc 499, spring 2022 : }
+phys 100, spring 2022 : }
+phys 101, spring 2022 : }
+phys 102, spring 2022 : }
+phys 120, spring 2022 : }
+phys 121, spring 2022 : }
+phys 126, spring 2022 : }
+phys 132, spring 2022 : }
+phys 133, spring 2022 : }
+phys 141, spring 2022 : }
+phys 190, spring 2022 : }
+phys 201, spring 2022 : }
+phys 211, spring 2022 : }
+phys 234, spring 2022 : }
+phys 285, spring 2022 : }
+phys 313, spring 2022 : }
+phys 321, spring 2022 : }
+phys 332w, spring 2022 : }
+phys 335, spring 2022 : }
+phys 336, spring 2022 : }
+phys 347, spring 2022 : }
+phys 390, spring 2022 : }
+phys 395, spring 2022 : }
+phys 415, spring 2022 : }
+phys 416, spring 2022 : }
+phys 432, spring 2022 : }
+phys 435, spring 2022 : }
+phys 436, spring 2022 : }
+phys 437, spring 2022 : }
+phys 445, spring 2022 : }
+phys 484, spring 2022 : }
+phys 485, spring 2022 : }
+chem 110, spring 2022 : }
+chem 111, spring 2022 : }
+chem 120, spring 2022 : }
+chem 122, spring 2022 : }
+chem 125, spring 2022 : }
+chem 126, spring 2022 : }
+chem 210, spring 2022 : }
+chem 216, spring 2022 : }
+chem 266, spring 2022 : }
+chem 280, spring 2022 : }
+chem 282, spring 2022 : }
+chem 283, spring 2022 : }
+chem 284, spring 2022 : }
+chem 285, spring 2022 : }
+chem 286, spring 2022 : }
+chem 306, spring 2022 : }
+chem 307, spring 2022 : }
+chem 316, spring 2022 : }
+chem 332, spring 2022 : }
+chem 336, spring 2022 : }
+chem 360, spring 2022 : }
+chem 381, spring 2022 : }
+chem 406, spring 2022 : }
+chem 407, spring 2022 : }
+chem 408, spring 2022 : }
+chem 433, spring 2022 : }
+chem 440, spring 2022 : }
+chem 442, spring 2022 : }
+chem 459, spring 2022 : }
+chem 462, spring 2022 : }
+chem 481, spring 2022 : }
+chem 482, spring 2022 : }
+chem 483, spring 2022 : }
+chem 484, spring 2022 : }
+stat 100, spring 2022 : }
+stat 201, spring 2022 : }
+stat 203, spring 2022 : }
+stat 240, spring 2022 : }
+stat 260, spring 2022 : }
+stat 261, spring 2022 : }
+stat 270, spring 2022 : }
+stat 285, spring 2022 : }
+stat 300w, spring 2022 : }
+stat 302, spring 2022 : }
+stat 305, spring 2022 : }
+stat 336, spring 2022 : }
+stat 337, spring 2022 : }
+stat 360, spring 2022 : }
+stat 361, spring 2022 : }
+stat 380, spring 2022 : }
+stat 403, spring 2022 : }
+stat 410, spring 2022 : }
+stat 436, spring 2022 : }
+stat 437, spring 2022 : }
+stat 438, spring 2022 : }
+stat 445, spring 2022 : }
+stat 460, spring 2022 : }
+stat 475, spring 2022 : }
+stat 490, spring 2022 : }
+stat 495, spring 2022 : }
+cmpt 105w, summer 2022 : }
+cmpt 115, summer 2022 : }
+cmpt 120, summer 2022 : }
+cmpt 125, summer 2022 : }
+cmpt 210, summer 2022 : }
+cmpt 213, summer 2022 : }
+cmpt 225, summer 2022 : }
+cmpt 276, summer 2022 : }
+cmpt 295, summer 2022 : }
+cmpt 300, summer 2022 : }
+cmpt 307, summer 2022 : }
+cmpt 310, summer 2022 : }
+cmpt 320, summer 2022 : }
+cmpt 354, summer 2022 : }
+cmpt 361, summer 2022 : }
+cmpt 362, summer 2022 : }
+cmpt 363, summer 2022 : }
+cmpt 371, summer 2022 : }
+cmpt 372, summer 2022 : }
+cmpt 376w, summer 2022 : }
+cmpt 383, summer 2022 : }
+cmpt 409, summer 2022 : }
+cmpt 415, summer 2022 : }
+cmpt 416, summer 2022 : }
+cmpt 417, summer 2022 : }
+cmpt 426, summer 2022 : }
+cmpt 427, summer 2022 : }
+cmpt 428, summer 2022 : }
+cmpt 429, summer 2022 : }
+cmpt 430, summer 2022 : }
+cmpt 454, summer 2022 : }
+cmpt 459, summer 2022 : }
+cmpt 479, summer 2022 : }
+cmpt 494, summer 2022 : }
+cmpt 495, summer 2022 : }
+cmpt 496, summer 2022 : }
+cmpt 497, summer 2022 : }
+cmpt 498, summer 2022 : }
+macm 101, summer 2022 : }
+macm 316, summer 2022 : }
+math 150, summer 2022 : }
+math 152, summer 2022 : }
+math 155, summer 2022 : }
+math 157, summer 2022 : }
+math 190, summer 2022 : }
+math 232, summer 2022 : }
+math 240, summer 2022 : }
+math 251, summer 2022 : }
+math 254, summer 2022 : }
+math 260, summer 2022 : }
+math 336, summer 2022 : }
+math 337, summer 2022 : }
+math 342, summer 2022 : }
+math 419, summer 2022 : }
+math 436, summer 2022 : }
+math 437, summer 2022 : }
+math 462, summer 2022 : }
+math 486, summer 2022 : }
+ensc 194, summer 2022 : }
+ensc 195, summer 2022 : }
+ensc 196, summer 2022 : }
+ensc 220, summer 2022 : }
+ensc 225, summer 2022 : }
+ensc 251, summer 2022 : }
+ensc 252, summer 2022 : }
+ensc 254, summer 2022 : }
+ensc 280, summer 2022 : }
+ensc 295, summer 2022 : }
+ensc 296, summer 2022 : }
+ensc 320, summer 2022 : }
+ensc 395, summer 2022 : }
+ensc 396, summer 2022 : }
+ensc 405w, summer 2022 : }
+ensc 406, summer 2022 : }
+ensc 425, summer 2022 : }
+ensc 426, summer 2022 : }
+ensc 429, summer 2022 : }
+ensc 440, summer 2022 : }
+ensc 462, summer 2022 : }
+ensc 470, summer 2022 : }
+ensc 476, summer 2022 : }
+ensc 482, summer 2022 : }
+ensc 494, summer 2022 : }
+ensc 498, summer 2022 : }
+ensc 499, summer 2022 : }
+phys 100, summer 2022 : }
+phys 101, summer 2022 : }
+phys 102, summer 2022 : }
+phys 121, summer 2022 : }
+phys 133, summer 2022 : }
+phys 335, summer 2022 : }
+phys 336, summer 2022 : }
+phys 435, summer 2022 : }
+phys 436, summer 2022 : }
+phys 437, summer 2022 : }
+chem 110, summer 2022 : }
+chem 120, summer 2022 : }
+chem 121, summer 2022 : }
+chem 122, summer 2022 : }
+chem 125, summer 2022 : }
+chem 126, summer 2022 : }
+chem 210, summer 2022 : }
+chem 216, summer 2022 : }
+chem 281, summer 2022 : }
+chem 282, summer 2022 : }
+chem 283, summer 2022 : }
+chem 284, summer 2022 : }
+chem 285, summer 2022 : }
+chem 286, summer 2022 : }
+chem 306, summer 2022 : }
+chem 307, summer 2022 : }
+chem 380, summer 2022 : }
+chem 406, summer 2022 : }
+chem 407, summer 2022 : }
+chem 408, summer 2022 : }
+chem 481, summer 2022 : }
+chem 482, summer 2022 : }
+chem 483, summer 2022 : }
+chem 484, summer 2022 : }
+stat 100, summer 2022 : }
+stat 201, summer 2022 : }
+stat 203, summer 2022 : }
+stat 270, summer 2022 : }
+stat 300w, summer 2022 : }
+stat 302, summer 2022 : }
+stat 336, summer 2022 : }
+stat 337, summer 2022 : }
+stat 436, summer 2022 : }
+stat 437, summer 2022 : }
+stat 438, summer 2022 : }
+cmpt 105w, fall 2023 : }
+cmpt 120, fall 2023 : }
+cmpt 125, fall 2023 : }
+cmpt 130, fall 2023 : }
+cmpt 210, fall 2023 : }
+cmpt 213, fall 2023 : }
+cmpt 218, fall 2023 : }
+cmpt 225, fall 2023 : }
+cmpt 272, fall 2023 : }
+cmpt 276, fall 2023 : }
+cmpt 295, fall 2023 : }
+cmpt 300, fall 2023 : }
+cmpt 307, fall 2023 : }
+cmpt 308, fall 2023 : }
+cmpt 310, fall 2023 : }
+cmpt 318, fall 2023 : }
+cmpt 320, fall 2023 : }
+cmpt 340, fall 2023 : }
+cmpt 353, fall 2023 : }
+cmpt 354, fall 2023 : }
+cmpt 361, fall 2023 : }
+cmpt 362, fall 2023 : }
+cmpt 363, fall 2023 : }
+cmpt 365, fall 2023 : }
+cmpt 371, fall 2023 : }
+cmpt 373, fall 2023 : }
+cmpt 376w, fall 2023 : }
+cmpt 379, fall 2023 : }
+cmpt 383, fall 2023 : }
+cmpt 405, fall 2023 : }
+cmpt 410, fall 2023 : }
+cmpt 412, fall 2023 : }
+cmpt 415, fall 2023 : }
+cmpt 416, fall 2023 : }
+cmpt 419, fall 2023 : }
+cmpt 426, fall 2023 : }
+cmpt 427, fall 2023 : }
+cmpt 428, fall 2023 : }
+cmpt 429, fall 2023 : }
+cmpt 430, fall 2023 : }
+cmpt 431, fall 2023 : }
+cmpt 441, fall 2023 : }
+cmpt 450, fall 2023 : }
+cmpt 454, fall 2023 : }
+cmpt 473, fall 2023 : }
+cmpt 475, fall 2023 : }
+cmpt 477, fall 2023 : }
+cmpt 479, fall 2023 : }
+cmpt 489, fall 2023 : }
+cmpt 494, fall 2023 : }
+cmpt 495, fall 2023 : }
+cmpt 496, fall 2023 : }
+cmpt 497, fall 2023 : }
+cmpt 498, fall 2023 : }
+macm 101, fall 2023 : }
+macm 201, fall 2023 : }
+macm 204, fall 2023 : }
+macm 316, fall 2023 : }
+macm 409, fall 2023 : }
+macm 442, fall 2023 : }
+math 100, fall 2023 : }
+math 130, fall 2023 : }
+math 150, fall 2023 : }
+math 151, fall 2023 : }
+math 152, fall 2023 : }
+math 154, fall 2023 : }
+math 157, fall 2023 : }
+math 190, fall 2023 : }
+math 232, fall 2023 : }
+math 240, fall 2023 : }
+math 251, fall 2023 : }
+math 260, fall 2023 : }
+math 301, fall 2023 : }
+math 308, fall 2023 : }
+math 309, fall 2023 : }
+math 322, fall 2023 : }
+math 336, fall 2023 : }
+math 337, fall 2023 : }
+math 340, fall 2023 : }
+math 345, fall 2023 : }
+math 348, fall 2023 : }
+math 360, fall 2023 : }
+math 418, fall 2023 : }
+math 425, fall 2023 : }
+math 436, fall 2023 : }
+math 437, fall 2023 : }
+math 480w, fall 2023 : }
+math 486, fall 2023 : }
+math 495, fall 2023 : }
+math 497, fall 2023 : }
+math 498, fall 2023 : }
+math 499w, fall 2023 : }
+ensc 100w, fall 2023 : }
+ensc 105w, fall 2023 : }
+ensc 120, fall 2023 : }
+ensc 151, fall 2023 : }
+ensc 194, fall 2023 : }
+ensc 195, fall 2023 : }
+ensc 196, fall 2023 : }
+ensc 204, fall 2023 : }
+ensc 220, fall 2023 : }
+ensc 225, fall 2023 : }
+ensc 251, fall 2023 : }
+ensc 252, fall 2023 : }
+ensc 295, fall 2023 : }
+ensc 296, fall 2023 : }
+ensc 316, fall 2023 : }
+ensc 324, fall 2023 : }
+ensc 327, fall 2023 : }
+ensc 350, fall 2023 : }
+ensc 351, fall 2023 : }
+ensc 370, fall 2023 : }
+ensc 380, fall 2023 : }
+ensc 385, fall 2023 : }
+ensc 395, fall 2023 : }
+ensc 396, fall 2023 : }
+ensc 440, fall 2023 : }
+ensc 453, fall 2023 : }
+ensc 476, fall 2023 : }
+ensc 477, fall 2023 : }
+ensc 498, fall 2023 : }
+ensc 499, fall 2023 : }
+phys 100, fall 2023 : }
+phys 101, fall 2023 : }
+phys 102, fall 2023 : }
+phys 120, fall 2023 : }
+phys 125, fall 2023 : }
+phys 132, fall 2023 : }
+phys 140, fall 2023 : }
+phys 190, fall 2023 : }
+phys 201, fall 2023 : }
+phys 233, fall 2023 : }
+phys 255, fall 2023 : }
+phys 326, fall 2023 : }
+phys 335, fall 2023 : }
+phys 336, fall 2023 : }
+phys 344, fall 2023 : }
+phys 384, fall 2023 : }
+phys 385, fall 2023 : }
+phys 413, fall 2023 : }
+phys 416, fall 2023 : }
+phys 421, fall 2023 : }
+phys 431, fall 2023 : }
+phys 432, fall 2023 : }
+phys 435, fall 2023 : }
+phys 436, fall 2023 : }
+phys 437, fall 2023 : }
+phys 465, fall 2023 : }
+phys 492, fall 2023 : }
+chem 110, fall 2023 : }
+chem 111, fall 2023 : }
+chem 120, fall 2023 : }
+chem 121, fall 2023 : }
+chem 122, fall 2023 : }
+chem 125, fall 2023 : }
+chem 126, fall 2023 : }
+chem 180, fall 2023 : }
+chem 210, fall 2023 : }
+chem 216, fall 2023 : }
+chem 230, fall 2023 : }
+chem 236w, fall 2023 : }
+chem 260, fall 2023 : }
+chem 281, fall 2023 : }
+chem 282, fall 2023 : }
+chem 283, fall 2023 : }
+chem 284, fall 2023 : }
+chem 285, fall 2023 : }
+chem 286, fall 2023 : }
+chem 296, fall 2023 : }
+chem 306, fall 2023 : }
+chem 307, fall 2023 : }
+chem 316, fall 2023 : }
+chem 364, fall 2023 : }
+chem 366w, fall 2023 : }
+chem 371, fall 2023 : }
+chem 380, fall 2023 : }
+chem 396, fall 2023 : }
+chem 399, fall 2023 : }
+chem 406, fall 2023 : }
+chem 407, fall 2023 : }
+chem 408, fall 2023 : }
+chem 433, fall 2023 : }
+chem 449, fall 2023 : }
+chem 455, fall 2023 : }
+chem 481, fall 2023 : }
+chem 482, fall 2023 : }
+chem 483, fall 2023 : }
+chem 484, fall 2023 : }
+stat 100, fall 2023 : }
+stat 180, fall 2023 : }
+stat 201, fall 2023 : }
+stat 203, fall 2023 : }
+stat 260, fall 2023 : }
+stat 261, fall 2023 : }
+stat 270, fall 2023 : }
+stat 271, fall 2023 : }
+stat 285, fall 2023 : }
+stat 302, fall 2023 : }
+stat 305, fall 2023 : }
+stat 310, fall 2023 : }
+stat 311, fall 2023 : }
+stat 330, fall 2023 : }
+stat 336, fall 2023 : }
+stat 337, fall 2023 : }
+stat 342, fall 2023 : }
+stat 350, fall 2023 : }
+stat 430, fall 2023 : }
+stat 436, fall 2023 : }
+stat 437, fall 2023 : }
+stat 438, fall 2023 : }
+stat 440, fall 2023 : }
+stat 450, fall 2023 : }
+stat 452, fall 2023 : }
+stat 485, fall 2023 : }
+stat 490, fall 2023 : }
+cmpt 105w, spring 2023 : }
+cmpt 120, spring 2023 : }
+cmpt 125, spring 2023 : }
+cmpt 135, spring 2023 : }
+cmpt 210, spring 2023 : }
+cmpt 213, spring 2023 : }
+cmpt 225, spring 2023 : }
+cmpt 276, spring 2023 : }
+cmpt 295, spring 2023 : }
+cmpt 300, spring 2023 : }
+cmpt 305, spring 2023 : }
+cmpt 307, spring 2023 : }
+cmpt 310, spring 2023 : }
+cmpt 318, spring 2023 : }
+cmpt 354, spring 2023 : }
+cmpt 361, spring 2023 : }
+cmpt 363, spring 2023 : }
+cmpt 371, spring 2023 : }
+cmpt 372, spring 2023 : }
+cmpt 376w, spring 2023 : }
+cmpt 383, spring 2023 : }
+cmpt 404, spring 2023 : }
+cmpt 405, spring 2023 : }
+cmpt 410, spring 2023 : }
+cmpt 412, spring 2023 : }
+cmpt 415, spring 2023 : }
+cmpt 416, spring 2023 : }
+cmpt 426, spring 2023 : }
+cmpt 427, spring 2023 : }
+cmpt 428, spring 2023 : }
+cmpt 429, spring 2023 : }
+cmpt 430, spring 2023 : }
+cmpt 431, spring 2023 : }
+cmpt 433, spring 2023 : }
+cmpt 454, spring 2023 : }
+cmpt 459, spring 2023 : }
+cmpt 461, spring 2023 : }
+cmpt 464, spring 2023 : }
+cmpt 466, spring 2023 : }
+cmpt 474, spring 2023 : }
+cmpt 475, spring 2023 : }
+cmpt 479, spring 2023 : }
+cmpt 489, spring 2023 : }
+cmpt 494, spring 2023 : }
+cmpt 495, spring 2023 : }
+cmpt 496, spring 2023 : }
+cmpt 497, spring 2023 : }
+cmpt 498, spring 2023 : }
+macm 101, spring 2023 : }
+macm 201, spring 2023 : }
+macm 203, spring 2023 : }
+macm 316, spring 2023 : }
+macm 401, spring 2023 : }
+math 100, spring 2023 : }
+math 130, spring 2023 : }
+math 150, spring 2023 : }
+math 152, spring 2023 : }
+math 154, spring 2023 : }
+math 155, spring 2023 : }
+math 157, spring 2023 : }
+math 158, spring 2023 : }
+math 190, spring 2023 : }
+math 208w, spring 2023 : }
+math 232, spring 2023 : }
+math 240, spring 2023 : }
+math 242, spring 2023 : }
+math 251, spring 2023 : }
+math 252, spring 2023 : }
+math 260, spring 2023 : }
+math 304, spring 2023 : }
+math 308, spring 2023 : }
+math 314, spring 2023 : }
+math 320, spring 2023 : }
+math 336, spring 2023 : }
+math 337, spring 2023 : }
+math 341, spring 2023 : }
+math 381w, spring 2023 : }
+math 396, spring 2023 : }
+math 402w, spring 2023 : }
+math 436, spring 2023 : }
+math 437, spring 2023 : }
+math 440, spring 2023 : }
+math 445, spring 2023 : }
+math 467, spring 2023 : }
+math 486, spring 2023 : }
+ensc 180, spring 2023 : }
+ensc 194, spring 2023 : }
+ensc 195, spring 2023 : }
+ensc 196, spring 2023 : }
+ensc 295, spring 2023 : }
+ensc 296, spring 2023 : }
+ensc 325, spring 2023 : }
+ensc 327, spring 2023 : }
+ensc 350, spring 2023 : }
+ensc 383, spring 2023 : }
+ensc 386, spring 2023 : }
+ensc 387, spring 2023 : }
+ensc 395, spring 2023 : }
+ensc 396, spring 2023 : }
+ensc 400, spring 2023 : }
+ensc 405w, spring 2023 : }
+ensc 410, spring 2023 : }
+ensc 413, spring 2023 : }
+ensc 416, spring 2023 : }
+ensc 427, spring 2023 : }
+ensc 450, spring 2023 : }
+ensc 452, spring 2023 : }
+ensc 474, spring 2023 : }
+ensc 475, spring 2023 : }
+ensc 483, spring 2023 : }
+ensc 488, spring 2023 : }
+ensc 495, spring 2023 : }
+ensc 498, spring 2023 : }
+ensc 499, spring 2023 : }
+phys 100, spring 2023 : }
+phys 101, spring 2023 : }
+phys 102, spring 2023 : }
+phys 120, spring 2023 : }
+phys 121, spring 2023 : }
+phys 126, spring 2023 : }
+phys 132, spring 2023 : }
+phys 133, spring 2023 : }
+phys 141, spring 2023 : }
+phys 190, spring 2023 : }
+phys 201, spring 2023 : }
+phys 211, spring 2023 : }
+phys 234, spring 2023 : }
+phys 285, spring 2023 : }
+phys 313, spring 2023 : }
+phys 321, spring 2023 : }
+phys 332w, spring 2023 : }
+phys 335, spring 2023 : }
+phys 336, spring 2023 : }
+phys 346, spring 2023 : }
+phys 365, spring 2023 : }
+phys 391, spring 2023 : }
+phys 395, spring 2023 : }
+phys 415, spring 2023 : }
+phys 432, spring 2023 : }
+phys 435, spring 2023 : }
+phys 436, spring 2023 : }
+phys 437, spring 2023 : }
+phys 445, spring 2023 : }
+phys 485, spring 2023 : }
+chem 110, spring 2023 : }
+chem 111, spring 2023 : }
+chem 120, spring 2023 : }
+chem 121, spring 2023 : }
+chem 122, spring 2023 : }
+chem 125, spring 2023 : }
+chem 126, spring 2023 : }
+chem 192, spring 2023 : }
+chem 210, spring 2023 : }
+chem 216, spring 2023 : }
+chem 260, spring 2023 : }
+chem 266, spring 2023 : }
+chem 281, spring 2023 : }
+chem 282, spring 2023 : }
+chem 283, spring 2023 : }
+chem 284, spring 2023 : }
+chem 285, spring 2023 : }
+chem 286, spring 2023 : }
+chem 306, spring 2023 : }
+chem 307, spring 2023 : }
+chem 316, spring 2023 : }
+chem 332, spring 2023 : }
+chem 336, spring 2023 : }
+chem 360, spring 2023 : }
+chem 372, spring 2023 : }
+chem 381, spring 2023 : }
+chem 406, spring 2023 : }
+chem 407, spring 2023 : }
+chem 408, spring 2023 : }
+chem 432, spring 2023 : }
+chem 440, spring 2023 : }
+chem 449, spring 2023 : }
+chem 450, spring 2023 : }
+chem 459, spring 2023 : }
+chem 462, spring 2023 : }
+chem 465, spring 2023 : }
+chem 481, spring 2023 : }
+chem 482, spring 2023 : }
+chem 483, spring 2023 : }
+chem 484, spring 2023 : }
+stat 100, spring 2023 : }
+stat 201, spring 2023 : }
+stat 203, spring 2023 : }
+stat 240, spring 2023 : }
+stat 260, spring 2023 : }
+stat 261, spring 2023 : }
+stat 270, spring 2023 : }
+stat 271, spring 2023 : }
+stat 285, spring 2023 : }
+stat 300w, spring 2023 : }
+stat 302, spring 2023 : }
+stat 305, spring 2023 : }
+stat 336, spring 2023 : }
+stat 337, spring 2023 : }
+stat 360, spring 2023 : }
+stat 361, spring 2023 : }
+stat 380, spring 2023 : }
+stat 403, spring 2023 : }
+stat 410, spring 2023 : }
+stat 436, spring 2023 : }
+stat 437, spring 2023 : }
+stat 438, spring 2023 : }
+stat 445, spring 2023 : }
+stat 460, spring 2023 : }
+stat 475, spring 2023 : }
+stat 490, spring 2023 : }
+cmpt 105w, summer 2023 : }
+cmpt 120, summer 2023 : }
+cmpt 125, summer 2023 : }
+cmpt 210, summer 2023 : }
+cmpt 225, summer 2023 : }
+cmpt 276, summer 2023 : }
+cmpt 295, summer 2023 : }
+cmpt 300, summer 2023 : }
+cmpt 307, summer 2023 : }
+cmpt 310, summer 2023 : }
+cmpt 353, summer 2023 : }
+cmpt 354, summer 2023 : }
+cmpt 361, summer 2023 : }
+cmpt 363, summer 2023 : }
+cmpt 371, summer 2023 : }
+cmpt 372, summer 2023 : }
+cmpt 376w, summer 2023 : }
+cmpt 379, summer 2023 : }
+cmpt 383, summer 2023 : }
+cmpt 403, summer 2023 : }
+cmpt 407, summer 2023 : }
+cmpt 415, summer 2023 : }
+cmpt 416, summer 2023 : }
+cmpt 419, summer 2023 : }
+cmpt 426, summer 2023 : }
+cmpt 427, summer 2023 : }
+cmpt 428, summer 2023 : }
+cmpt 429, summer 2023 : }
+cmpt 430, summer 2023 : }
+cmpt 454, summer 2023 : }
+cmpt 469, summer 2023 : }
+cmpt 475, summer 2023 : }
+cmpt 493, summer 2023 : }
+cmpt 494, summer 2023 : }
+cmpt 495, summer 2023 : }
+cmpt 496, summer 2023 : }
+cmpt 497, summer 2023 : }
+cmpt 498, summer 2023 : }
+macm 101, summer 2023 : }
+macm 316, summer 2023 : }
+math 150, summer 2023 : }
+math 152, summer 2023 : }
+math 155, summer 2023 : }
+math 157, summer 2023 : }
+math 190, summer 2023 : }
+math 232, summer 2023 : }
+math 240, summer 2023 : }
+math 251, summer 2023 : }
+math 254, summer 2023 : }
+math 260, summer 2023 : }
+math 336, summer 2023 : }
+math 337, summer 2023 : }
+math 338, summer 2023 : }
+math 342, summer 2023 : }
+math 426, summer 2023 : }
+math 436, summer 2023 : }
+math 437, summer 2023 : }
+math 486, summer 2023 : }
+math 497, summer 2023 : }
+ensc 151, summer 2023 : }
+ensc 194, summer 2023 : }
+ensc 195, summer 2023 : }
+ensc 196, summer 2023 : }
+ensc 220, summer 2023 : }
+ensc 225, summer 2023 : }
+ensc 251, summer 2023 : }
+ensc 252, summer 2023 : }
+ensc 254, summer 2023 : }
+ensc 280, summer 2023 : }
+ensc 295, summer 2023 : }
+ensc 296, summer 2023 : }
+ensc 320, summer 2023 : }
+ensc 395, summer 2023 : }
+ensc 396, summer 2023 : }
+ensc 405w, summer 2023 : }
+ensc 406, summer 2023 : }
+ensc 425, summer 2023 : }
+ensc 426, summer 2023 : }
+ensc 428, summer 2023 : }
+ensc 429, summer 2023 : }
+ensc 440, summer 2023 : }
+ensc 470, summer 2023 : }
+ensc 482, summer 2023 : }
+ensc 498, summer 2023 : }
+ensc 499, summer 2023 : }
+phys 100, summer 2023 : }
+phys 101, summer 2023 : }
+phys 102, summer 2023 : }
+phys 121, summer 2023 : }
+phys 133, summer 2023 : }
+phys 335, summer 2023 : }
+phys 336, summer 2023 : }
+phys 432, summer 2023 : }
+phys 435, summer 2023 : }
+phys 436, summer 2023 : }
+phys 437, summer 2023 : }
+chem 110, summer 2023 : }
+chem 120, summer 2023 : }
+chem 121, summer 2023 : }
+chem 122, summer 2023 : }
+chem 125, summer 2023 : }
+chem 126, summer 2023 : }
+chem 210, summer 2023 : }
+chem 216, summer 2023 : }
+chem 230, summer 2023 : }
+chem 236w, summer 2023 : }
+chem 281, summer 2023 : }
+chem 282, summer 2023 : }
+chem 283, summer 2023 : }
+chem 284, summer 2023 : }
+chem 285, summer 2023 : }
+chem 286, summer 2023 : }
+chem 306, summer 2023 : }
+chem 307, summer 2023 : }
+chem 360, summer 2023 : }
+chem 366w, summer 2023 : }
+chem 406, summer 2023 : }
+chem 407, summer 2023 : }
+chem 408, summer 2023 : }
+chem 481, summer 2023 : }
+chem 482, summer 2023 : }
+chem 483, summer 2023 : }
+chem 484, summer 2023 : }
+stat 100, summer 2023 : }
+stat 201, summer 2023 : }
+stat 203, summer 2023 : }
+stat 270, summer 2023 : }
+stat 300w, summer 2023 : }
+stat 302, summer 2023 : }
+stat 336, summer 2023 : }
+stat 337, summer 2023 : }
+stat 436, summer 2023 : }
+stat 437, summer 2023 : }
+stat 438, summer 2023 : }
+cmpt 105w, fall 2024 : }
+cmpt 120, fall 2024 : }
+cmpt 125, fall 2024 : }
+cmpt 130, fall 2024 : }
+cmpt 201, fall 2024 : }
+cmpt 210, fall 2024 : }
+cmpt 213, fall 2024 : }
+cmpt 225, fall 2024 : }
+cmpt 263, fall 2024 : }
+cmpt 272, fall 2024 : }
+cmpt 276, fall 2024 : }
+cmpt 295, fall 2024 : }
+cmpt 307, fall 2024 : }
+cmpt 310, fall 2024 : }
+cmpt 318, fall 2024 : }
+cmpt 340, fall 2024 : }
+cmpt 353, fall 2024 : }
+cmpt 354, fall 2024 : }
+cmpt 361, fall 2024 : }
+cmpt 362, fall 2024 : }
+cmpt 365, fall 2024 : }
+cmpt 371, fall 2024 : }
+cmpt 373, fall 2024 : }
+cmpt 376w, fall 2024 : }
+cmpt 383, fall 2024 : }
+cmpt 405, fall 2024 : }
+cmpt 409, fall 2024 : }
+cmpt 410, fall 2024 : }
+cmpt 412, fall 2024 : }
+cmpt 415, fall 2024 : }
+cmpt 416, fall 2024 : }
+cmpt 417, fall 2024 : }
+cmpt 426, fall 2024 : }
+cmpt 427, fall 2024 : }
+cmpt 428, fall 2024 : }
+cmpt 429, fall 2024 : }
+cmpt 430, fall 2024 : }
+cmpt 431, fall 2024 : }
+cmpt 441, fall 2024 : }
+cmpt 450, fall 2024 : }
+cmpt 454, fall 2024 : }
+cmpt 459, fall 2024 : }
+cmpt 464, fall 2024 : }
+cmpt 469, fall 2024 : }
+cmpt 473, fall 2024 : }
+cmpt 475, fall 2024 : }
+cmpt 477, fall 2024 : }
+cmpt 479, fall 2024 : }
+cmpt 489, fall 2024 : }
+cmpt 494, fall 2024 : }
+cmpt 495, fall 2024 : }
+cmpt 496, fall 2024 : }
+cmpt 497, fall 2024 : }
+cmpt 498, fall 2024 : }
+macm 101, fall 2024 : }
+macm 201, fall 2024 : }
+macm 204, fall 2024 : }
+macm 316, fall 2024 : }
+macm 416, fall 2024 : }
+math 100, fall 2024 : }
+math 130, fall 2024 : }
+math 150, fall 2024 : }
+math 151, fall 2024 : }
+math 152, fall 2024 : }
+math 154, fall 2024 : }
+math 157, fall 2024 : }
+math 190, fall 2024 : }
+math 232, fall 2024 : }
+math 240, fall 2024 : }
+math 251, fall 2024 : }
+math 260, fall 2024 : }
+math 292, fall 2024 : }
+math 303, fall 2024 : }
+math 308, fall 2024 : }
+math 309, fall 2024 : }
+math 322, fall 2024 : }
+math 336, fall 2024 : }
+math 337, fall 2024 : }
+math 340, fall 2024 : }
+math 343, fall 2024 : }
+math 345, fall 2024 : }
+math 360, fall 2024 : }
+math 408, fall 2024 : }
+math 418, fall 2024 : }
+math 436, fall 2024 : }
+math 437, fall 2024 : }
+math 447, fall 2024 : }
+math 450, fall 2024 : }
+math 480w, fall 2024 : }
+math 486, fall 2024 : }
+math 498, fall 2024 : }
+math 499w, fall 2024 : }
+ensc 100w, fall 2024 : }
+ensc 105w, fall 2024 : }
+ensc 120, fall 2024 : }
+ensc 151, fall 2024 : }
+ensc 194, fall 2024 : }
+ensc 195, fall 2024 : }
+ensc 196, fall 2024 : }
+ensc 204, fall 2024 : }
+ensc 220, fall 2024 : }
+ensc 225, fall 2024 : }
+ensc 251, fall 2024 : }
+ensc 252, fall 2024 : }
+ensc 295, fall 2024 : }
+ensc 296, fall 2024 : }
+ensc 316, fall 2024 : }
+ensc 324, fall 2024 : }
+ensc 350, fall 2024 : }
+ensc 351, fall 2024 : }
+ensc 370, fall 2024 : }
+ensc 380, fall 2024 : }
+ensc 385, fall 2024 : }
+ensc 395, fall 2024 : }
+ensc 396, fall 2024 : }
+ensc 403, fall 2024 : }
+ensc 440, fall 2024 : }
+ensc 453, fall 2024 : }
+ensc 477, fall 2024 : }
+ensc 498, fall 2024 : }
+ensc 499, fall 2024 : }
+phys 100, fall 2024 : }
+phys 101, fall 2024 : }
+phys 102, fall 2024 : }
+phys 120, fall 2024 : }
+phys 125, fall 2024 : }
+phys 132, fall 2024 : }
+phys 140, fall 2024 : }
+phys 190, fall 2024 : }
+phys 201, fall 2024 : }
+phys 233, fall 2024 : }
+phys 255, fall 2024 : }
+phys 326, fall 2024 : }
+phys 335, fall 2024 : }
+phys 336, fall 2024 : }
+phys 344, fall 2024 : }
+phys 365, fall 2024 : }
+phys 384, fall 2024 : }
+phys 385, fall 2024 : }
+phys 413, fall 2024 : }
+phys 421, fall 2024 : }
+phys 432, fall 2024 : }
+phys 435, fall 2024 : }
+phys 436, fall 2024 : }
+phys 437, fall 2024 : }
+phys 465, fall 2024 : }
+phys 490, fall 2024 : }
+chem 110, fall 2024 : }
+chem 111, fall 2024 : }
+chem 120, fall 2024 : }
+chem 121, fall 2024 : }
+chem 122, fall 2024 : }
+chem 125, fall 2024 : }
+chem 126, fall 2024 : }
+chem 180, fall 2024 : }
+chem 210, fall 2024 : }
+chem 216, fall 2024 : }
+chem 230, fall 2024 : }
+chem 236w, fall 2024 : }
+chem 260, fall 2024 : }
+chem 281, fall 2024 : }
+chem 282, fall 2024 : }
+chem 283, fall 2024 : }
+chem 284, fall 2024 : }
+chem 285, fall 2024 : }
+chem 286, fall 2024 : }
+chem 296, fall 2024 : }
+chem 306, fall 2024 : }
+chem 307, fall 2024 : }
+chem 316, fall 2024 : }
+chem 340, fall 2024 : }
+chem 364, fall 2024 : }
+chem 366w, fall 2024 : }
+chem 380, fall 2024 : }
+chem 396, fall 2024 : }
+chem 406, fall 2024 : }
+chem 407, fall 2024 : }
+chem 408, fall 2024 : }
+chem 419, fall 2024 : }
+chem 439, fall 2024 : }
+chem 452, fall 2024 : }
+chem 459, fall 2024 : }
+chem 481, fall 2024 : }
+chem 482, fall 2024 : }
+chem 483, fall 2024 : }
+chem 484, fall 2024 : }
+stat 100, fall 2024 : }
+stat 180, fall 2024 : }
+stat 201, fall 2024 : }
+stat 203, fall 2024 : }
+stat 260, fall 2024 : }
+stat 270, fall 2024 : }
+stat 271, fall 2024 : }
+stat 285, fall 2024 : }
+stat 302, fall 2024 : }
+stat 305, fall 2024 : }
+stat 310, fall 2024 : }
+stat 330, fall 2024 : }
+stat 336, fall 2024 : }
+stat 337, fall 2024 : }
+stat 342, fall 2024 : }
+stat 350, fall 2024 : }
+stat 430, fall 2024 : }
+stat 436, fall 2024 : }
+stat 437, fall 2024 : }
+stat 438, fall 2024 : }
+stat 440, fall 2024 : }
+stat 450, fall 2024 : }
+stat 452, fall 2024 : }
+stat 485, fall 2024 : }
+stat 490, fall 2024 : }
+stat 495, fall 2024 : }
+cmpt 105w, spring 2024 : }
+cmpt 120, spring 2024 : }
+cmpt 125, spring 2024 : }
+cmpt 135, spring 2024 : }
+cmpt 201, spring 2024 : }
+cmpt 210, spring 2024 : }
+cmpt 213, spring 2024 : }
+cmpt 225, spring 2024 : }
+cmpt 276, spring 2024 : }
+cmpt 295, spring 2024 : }
+cmpt 300, spring 2024 : }
+cmpt 305, spring 2024 : }
+cmpt 307, spring 2024 : }
+cmpt 310, spring 2024 : }
+cmpt 318, spring 2024 : }
+cmpt 340, spring 2024 : }
+cmpt 353, spring 2024 : }
+cmpt 354, spring 2024 : }
+cmpt 361, spring 2024 : }
+cmpt 363, spring 2024 : }
+cmpt 365, spring 2024 : }
+cmpt 371, spring 2024 : }
+cmpt 372, spring 2024 : }
+cmpt 376w, spring 2024 : }
+cmpt 383, spring 2024 : }
+cmpt 404, spring 2024 : }
+cmpt 405, spring 2024 : }
+cmpt 409, spring 2024 : }
+cmpt 410, spring 2024 : }
+cmpt 413, spring 2024 : }
+cmpt 415, spring 2024 : }
+cmpt 416, spring 2024 : }
+cmpt 419, spring 2024 : }
+cmpt 420, spring 2024 : }
+cmpt 426, spring 2024 : }
+cmpt 427, spring 2024 : }
+cmpt 428, spring 2024 : }
+cmpt 429, spring 2024 : }
+cmpt 430, spring 2024 : }
+cmpt 431, spring 2024 : }
+cmpt 433, spring 2024 : }
+cmpt 454, spring 2024 : }
+cmpt 459, spring 2024 : }
+cmpt 461, spring 2024 : }
+cmpt 469, spring 2024 : }
+cmpt 471, spring 2024 : }
+cmpt 474, spring 2024 : }
+cmpt 475, spring 2024 : }
+cmpt 476, spring 2024 : }
+cmpt 479, spring 2024 : }
+cmpt 493, spring 2024 : }
+cmpt 494, spring 2024 : }
+cmpt 495, spring 2024 : }
+cmpt 496, spring 2024 : }
+cmpt 497, spring 2024 : }
+cmpt 498, spring 2024 : }
+macm 101, spring 2024 : }
+macm 201, spring 2024 : }
+macm 203, spring 2024 : }
+macm 316, spring 2024 : }
+math 100, spring 2024 : }
+math 130, spring 2024 : }
+math 150, spring 2024 : }
+math 152, spring 2024 : }
+math 154, spring 2024 : }
+math 155, spring 2024 : }
+math 157, spring 2024 : }
+math 158, spring 2024 : }
+math 190, spring 2024 : }
+math 208w, spring 2024 : }
+math 232, spring 2024 : }
+math 240, spring 2024 : }
+math 242, spring 2024 : }
+math 251, spring 2024 : }
+math 252, spring 2024 : }
+math 260, spring 2024 : }
+math 292, spring 2024 : }
+math 302, spring 2024 : }
+math 308, spring 2024 : }
+math 314, spring 2024 : }
+math 320, spring 2024 : }
+math 336, spring 2024 : }
+math 337, spring 2024 : }
+math 341, spring 2024 : }
+math 380w, spring 2024 : }
+math 402w, spring 2024 : }
+math 436, spring 2024 : }
+math 437, spring 2024 : }
+math 441, spring 2024 : }
+math 443, spring 2024 : }
+math 448, spring 2024 : }
+math 462, spring 2024 : }
+math 468, spring 2024 : }
+math 475, spring 2024 : }
+math 486, spring 2024 : }
+ensc 180, spring 2024 : }
+ensc 194, spring 2024 : }
+ensc 195, spring 2024 : }
+ensc 196, spring 2024 : }
+ensc 295, spring 2024 : }
+ensc 296, spring 2024 : }
+ensc 325, spring 2024 : }
+ensc 327, spring 2024 : }
+ensc 350, spring 2024 : }
+ensc 383, spring 2024 : }
+ensc 386, spring 2024 : }
+ensc 387, spring 2024 : }
+ensc 395, spring 2024 : }
+ensc 396, spring 2024 : }
+ensc 405w, spring 2024 : }
+ensc 410, spring 2024 : }
+ensc 413, spring 2024 : }
+ensc 416, spring 2024 : }
+ensc 427, spring 2024 : }
+ensc 450, spring 2024 : }
+ensc 452, spring 2024 : }
+ensc 461, spring 2024 : }
+ensc 474, spring 2024 : }
+ensc 475, spring 2024 : }
+ensc 488, spring 2024 : }
+ensc 495, spring 2024 : }
+ensc 498, spring 2024 : }
+ensc 499, spring 2024 : }
+phys 100, spring 2024 : }
+phys 101, spring 2024 : }
+phys 102, spring 2024 : }
+phys 120, spring 2024 : }
+phys 121, spring 2024 : }
+phys 126, spring 2024 : }
+phys 132, spring 2024 : }
+phys 133, spring 2024 : }
+phys 141, spring 2024 : }
+phys 190, spring 2024 : }
+phys 201, spring 2024 : }
+phys 211, spring 2024 : }
+phys 234, spring 2024 : }
+phys 285, spring 2024 : }
+phys 313, spring 2024 : }
+phys 321, spring 2024 : }
+phys 332w, spring 2024 : }
+phys 335, spring 2024 : }
+phys 336, spring 2024 : }
+phys 346, spring 2024 : }
+phys 347, spring 2024 : }
+phys 390, spring 2024 : }
+phys 395, spring 2024 : }
+phys 415, spring 2024 : }
+phys 432, spring 2024 : }
+phys 435, spring 2024 : }
+phys 436, spring 2024 : }
+phys 437, spring 2024 : }
+phys 445, spring 2024 : }
+phys 455, spring 2024 : }
+phys 485, spring 2024 : }
+chem 110, spring 2024 : }
+chem 111, spring 2024 : }
+chem 120, spring 2024 : }
+chem 121, spring 2024 : }
+chem 122, spring 2024 : }
+chem 126, spring 2024 : }
+chem 210, spring 2024 : }
+chem 216, spring 2024 : }
+chem 260, spring 2024 : }
+chem 266, spring 2024 : }
+chem 281, spring 2024 : }
+chem 282, spring 2024 : }
+chem 283, spring 2024 : }
+chem 284, spring 2024 : }
+chem 285, spring 2024 : }
+chem 286, spring 2024 : }
+chem 296, spring 2024 : }
+chem 306, spring 2024 : }
+chem 307, spring 2024 : }
+chem 316, spring 2024 : }
+chem 332, spring 2024 : }
+chem 336, spring 2024 : }
+chem 340, spring 2024 : }
+chem 360, spring 2024 : }
+chem 372, spring 2024 : }
+chem 381, spring 2024 : }
+chem 396, spring 2024 : }
+chem 406, spring 2024 : }
+chem 407, spring 2024 : }
+chem 408, spring 2024 : }
+chem 419, spring 2024 : }
+chem 439, spring 2024 : }
+chem 449, spring 2024 : }
+chem 459, spring 2024 : }
+chem 481, spring 2024 : }
+chem 482, spring 2024 : }
+chem 483, spring 2024 : }
+chem 484, spring 2024 : }
+stat 100, spring 2024 : }
+stat 201, spring 2024 : }
+stat 203, spring 2024 : }
+stat 240, spring 2024 : }
+stat 260, spring 2024 : }
+stat 261, spring 2024 : }
+stat 270, spring 2024 : }
+stat 271, spring 2024 : }
+stat 285, spring 2024 : }
+stat 300w, spring 2024 : }
+stat 302, spring 2024 : }
+stat 305, spring 2024 : }
+stat 336, spring 2024 : }
+stat 337, spring 2024 : }
+stat 360, spring 2024 : }
+stat 361, spring 2024 : }
+stat 380, spring 2024 : }
+stat 403, spring 2024 : }
+stat 410, spring 2024 : }
+stat 436, spring 2024 : }
+stat 437, spring 2024 : }
+stat 438, spring 2024 : }
+stat 445, spring 2024 : }
+stat 460, spring 2024 : }
+stat 475, spring 2024 : }
+stat 490, spring 2024 : }
+cmpt 105w, summer 2024 : }
+cmpt 120, summer 2024 : }
+cmpt 125, summer 2024 : }
+cmpt 213, summer 2024 : }
+cmpt 225, summer 2024 : }
+cmpt 263, summer 2024 : }
+cmpt 276, summer 2024 : }
+cmpt 295, summer 2024 : }
+cmpt 300, summer 2024 : }
+cmpt 307, summer 2024 : }
+cmpt 310, summer 2024 : }
+cmpt 353, summer 2024 : }
+cmpt 354, summer 2024 : }
+cmpt 365, summer 2024 : }
+cmpt 371, summer 2024 : }
+cmpt 376w, summer 2024 : }
+cmpt 403, summer 2024 : }
+cmpt 415, summer 2024 : }
+cmpt 416, summer 2024 : }
+cmpt 426, summer 2024 : }
+cmpt 427, summer 2024 : }
+cmpt 428, summer 2024 : }
+cmpt 429, summer 2024 : }
+cmpt 430, summer 2024 : }
+cmpt 454, summer 2024 : }
+cmpt 471, summer 2024 : }
+cmpt 478, summer 2024 : }
+cmpt 479, summer 2024 : }
+cmpt 489, summer 2024 : }
+cmpt 493, summer 2024 : }
+cmpt 494, summer 2024 : }
+cmpt 495, summer 2024 : }
+cmpt 496, summer 2024 : }
+cmpt 497, summer 2024 : }
+cmpt 498, summer 2024 : }
+macm 101, summer 2024 : }
+macm 316, summer 2024 : }
+math 150, summer 2024 : }
+math 152, summer 2024 : }
+math 155, summer 2024 : }
+math 157, summer 2024 : }
+math 190, summer 2024 : }
+math 232, summer 2024 : }
+math 240, summer 2024 : }
+math 251, summer 2024 : }
+math 254, summer 2024 : }
+math 260, summer 2024 : }
+math 336, summer 2024 : }
+math 337, summer 2024 : }
+math 342, summer 2024 : }
+math 419, summer 2024 : }
+math 436, summer 2024 : }
+math 437, summer 2024 : }
+math 486, summer 2024 : }
+math 495, summer 2024 : }
+math 497, summer 2024 : }
+ensc 194, summer 2024 : }
+ensc 195, summer 2024 : }
+ensc 196, summer 2024 : }
+ensc 220, summer 2024 : }
+ensc 225, summer 2024 : }
+ensc 251, summer 2024 : }
+ensc 252, summer 2024 : }
+ensc 254, summer 2024 : }
+ensc 280, summer 2024 : }
+ensc 295, summer 2024 : }
+ensc 296, summer 2024 : }
+ensc 320, summer 2024 : }
+ensc 395, summer 2024 : }
+ensc 396, summer 2024 : }
+ensc 405w, summer 2024 : }
+ensc 406, summer 2024 : }
+ensc 425, summer 2024 : }
+ensc 426, summer 2024 : }
+ensc 428, summer 2024 : }
+ensc 429, summer 2024 : }
+ensc 440, summer 2024 : }
+ensc 470, summer 2024 : }
+ensc 476, summer 2024 : }
+ensc 482, summer 2024 : }
+ensc 483, summer 2024 : }
+ensc 498, summer 2024 : }
+ensc 499, summer 2024 : }
+phys 100, summer 2024 : }
+phys 101, summer 2024 : }
+phys 102, summer 2024 : }
+phys 121, summer 2024 : }
+phys 133, summer 2024 : }
+phys 335, summer 2024 : }
+phys 336, summer 2024 : }
+phys 432, summer 2024 : }
+phys 435, summer 2024 : }
+phys 436, summer 2024 : }
+phys 437, summer 2024 : }
+chem 110, summer 2024 : }
+chem 120, summer 2024 : }
+chem 121, summer 2024 : }
+chem 122, summer 2024 : }
+chem 125, summer 2024 : }
+chem 126, summer 2024 : }
+chem 210, summer 2024 : }
+chem 216, summer 2024 : }
+chem 266, summer 2024 : }
+chem 280, summer 2024 : }
+chem 281, summer 2024 : }
+chem 282, summer 2024 : }
+chem 283, summer 2024 : }
+chem 284, summer 2024 : }
+chem 285, summer 2024 : }
+chem 286, summer 2024 : }
+chem 296, summer 2024 : }
+chem 306, summer 2024 : }
+chem 307, summer 2024 : }
+chem 396, summer 2024 : }
+chem 406, summer 2024 : }
+chem 407, summer 2024 : }
+chem 408, summer 2024 : }
+chem 481, summer 2024 : }
+chem 482, summer 2024 : }
+chem 483, summer 2024 : }
+chem 484, summer 2024 : }
+stat 100, summer 2024 : }
+stat 201, summer 2024 : }
+stat 203, summer 2024 : }
+stat 270, summer 2024 : }
+stat 302, summer 2024 : }
+stat 336, summer 2024 : }
+stat 337, summer 2024 : }
+stat 436, summer 2024 : }
+stat 437, summer 2024 : }
+stat 438, summer 2024 : }
+cmpt 105w, spring 2025 : }
+cmpt 120, spring 2025 : }
+cmpt 125, spring 2025 : }
+cmpt 135, spring 2025 : }
+cmpt 201, spring 2025 : }
+cmpt 105w, spring 2025 : }
+cmpt 120, spring 2025 : }
+cmpt 125, spring 2025 : }
+cmpt 135, spring 2025 : }
+cmpt 201, spring 2025 : }
+cmpt 210, spring 2025 : }
+cmpt 213, spring 2025 : }
+cmpt 225, spring 2025 : }
+cmpt 276, spring 2025 : }
+cmpt 295, spring 2025 : }
+cmpt 300, spring 2025 : }
+cmpt 303, spring 2025 : }
+cmpt 305, spring 2025 : }
+cmpt 307, spring 2025 : }
+cmpt 310, spring 2025 : }
+cmpt 318, spring 2025 : }
+cmpt 340, spring 2025 : }
+cmpt 353, spring 2025 : }
+cmpt 354, spring 2025 : }
+cmpt 361, spring 2025 : }
+cmpt 363, spring 2025 : }
+cmpt 365, spring 2025 : }
+cmpt 371, spring 2025 : }
+cmpt 372, spring 2025 : }
+cmpt 376w, spring 2025 : }
+cmpt 383, spring 2025 : }
+cmpt 384, spring 2025 : }
+cmpt 404, spring 2025 : }
+cmpt 405, spring 2025 : }
+cmpt 409, spring 2025 : }
+cmpt 410, spring 2025 : }
+cmpt 412, spring 2025 : }
+cmpt 413, spring 2025 : }
+cmpt 415, spring 2025 : }
+cmpt 416, spring 2025 : }
+cmpt 417, spring 2025 : }
+cmpt 419, spring 2025 : }
+cmpt 420, spring 2025 : }
+cmpt 426, spring 2025 : }
+cmpt 427, spring 2025 : }
+cmpt 428, spring 2025 : }
+cmpt 429, spring 2025 : }
+cmpt 430, spring 2025 : }
+cmpt 431, spring 2025 : }
+cmpt 433, spring 2025 : }
+cmpt 454, spring 2025 : }
+cmpt 459, spring 2025 : }
+cmpt 461, spring 2025 : }
+cmpt 466, spring 2025 : }
+cmpt 469, spring 2025 : }
+cmpt 471, spring 2025 : }
+cmpt 473, spring 2025 : }
+cmpt 474, spring 2025 : }
+cmpt 475, spring 2025 : }
+cmpt 476, spring 2025 : }
+cmpt 478, spring 2025 : }
+cmpt 479, spring 2025 : }
+cmpt 493, spring 2025 : }
+cmpt 494, spring 2025 : }
+cmpt 495, spring 2025 : }
+cmpt 496, spring 2025 : }
+cmpt 497, spring 2025 : }
+cmpt 498, spring 2025 : }
+macm 101, spring 2025 : }
+macm 201, spring 2025 : }
+macm 203, spring 2025 : }
+macm 316, spring 2025 : }
+macm 401, spring 2025 : }
+macm 476, spring 2025 : }
+math 100, spring 2025 : }
+math 130, spring 2025 : }
+math 150, spring 2025 : }
+math 152, spring 2025 : }
+math 154, spring 2025 : }
+math 155, spring 2025 : }
+math 157, spring 2025 : }
+math 158, spring 2025 : }
+math 190, spring 2025 : }
+math 208w, spring 2025 : }
+math 232, spring 2025 : }
+math 240, spring 2025 : }
+math 242, spring 2025 : }
+math 251, spring 2025 : }
+math 252, spring 2025 : }
+math 260, spring 2025 : }
+math 304, spring 2025 : }
+math 308, spring 2025 : }
+math 314, spring 2025 : }
+math 320, spring 2025 : }
+math 336, spring 2025 : }
+math 337, spring 2025 : }
+math 341, spring 2025 : }
+math 348, spring 2025 : }
+math 381w, spring 2025 : }
+math 402w, spring 2025 : }
+math 436, spring 2025 : }
+math 437, spring 2025 : }
+math 440, spring 2025 : }
+math 467, spring 2025 : }
+math 469, spring 2025 : }
+math 486, spring 2025 : }
+ensc 180, spring 2025 : }
+ensc 194, spring 2025 : }
+ensc 195, spring 2025 : }
+ensc 196, spring 2025 : }
+ensc 295, spring 2025 : }
+ensc 296, spring 2025 : }
+ensc 325, spring 2025 : }
+ensc 327, spring 2025 : }
+ensc 350, spring 2025 : }
+ensc 383, spring 2025 : }
+ensc 386, spring 2025 : }
+ensc 387, spring 2025 : }
+ensc 395, spring 2025 : }
+ensc 396, spring 2025 : }
+ensc 405w, spring 2025 : }
+ensc 410, spring 2025 : }
+ensc 413, spring 2025 : }
+ensc 416, spring 2025 : }
+ensc 427, spring 2025 : }
+ensc 450, spring 2025 : }
+ensc 452, spring 2025 : }
+ensc 461, spring 2025 : }
+ensc 474, spring 2025 : }
+ensc 475, spring 2025 : }
+ensc 488, spring 2025 : }
+ensc 495, spring 2025 : }
+ensc 498, spring 2025 : }
+ensc 499, spring 2025 : }
+phys 100, spring 2025 : }
+phys 101, spring 2025 : }
+phys 102, spring 2025 : }
+phys 120, spring 2025 : }
+phys 121, spring 2025 : }
+phys 126, spring 2025 : }
+phys 132, spring 2025 : }
+phys 133, spring 2025 : }
+phys 141, spring 2025 : }
+phys 190, spring 2025 : }
+phys 201, spring 2025 : }
+phys 211, spring 2025 : }
+phys 234, spring 2025 : }
+phys 285, spring 2025 : }
+phys 313, spring 2025 : }
+phys 321, spring 2025 : }
+phys 332w, spring 2025 : }
+phys 335, spring 2025 : }
+phys 336, spring 2025 : }
+phys 347, spring 2025 : }
+phys 391, spring 2025 : }
+phys 395, spring 2025 : }
+phys 415, spring 2025 : }
+phys 416, spring 2025 : }
+phys 432, spring 2025 : }
+phys 435, spring 2025 : }
+phys 436, spring 2025 : }
+phys 437, spring 2025 : }
+phys 445, spring 2025 : }
+phys 485, spring 2025 : }
+chem 110, spring 2025 : }
+chem 111, spring 2025 : }
+chem 120, spring 2025 : }
+chem 121, spring 2025 : }
+chem 122, spring 2025 : }
+chem 126, spring 2025 : }
+chem 210, spring 2025 : }
+chem 216, spring 2025 : }
+chem 260, spring 2025 : }
+chem 266, spring 2025 : }
+chem 281, spring 2025 : }
+chem 282, spring 2025 : }
+chem 283, spring 2025 : }
+chem 284, spring 2025 : }
+chem 285, spring 2025 : }
+chem 286, spring 2025 : }
+chem 296, spring 2025 : }
+chem 306, spring 2025 : }
+chem 307, spring 2025 : }
+chem 316, spring 2025 : }
+chem 317, spring 2025 : }
+chem 332, spring 2025 : }
+chem 336, spring 2025 : }
+chem 360, spring 2025 : }
+chem 391, spring 2025 : }
+chem 396, spring 2025 : }
+chem 399, spring 2025 : }
+chem 406, spring 2025 : }
+chem 407, spring 2025 : }
+chem 408, spring 2025 : }
+chem 419, spring 2025 : }
+chem 432, spring 2025 : }
+chem 440, spring 2025 : }
+chem 442, spring 2025 : }
+chem 459, spring 2025 : }
+chem 462, spring 2025 : }
+chem 481, spring 2025 : }
+chem 482, spring 2025 : }
+chem 483, spring 2025 : }
+chem 484, spring 2025 : }
+stat 100, spring 2025 : }
+stat 201, spring 2025 : }
+stat 203, spring 2025 : }
+stat 240, spring 2025 : }
+stat 260, spring 2025 : }
+stat 270, spring 2025 : }
+stat 271, spring 2025 : }
+stat 285, spring 2025 : }
+stat 300w, spring 2025 : }
+stat 302, spring 2025 : }
+stat 336, spring 2025 : }
+stat 337, spring 2025 : }
+stat 350, spring 2025 : }
+stat 360, spring 2025 : }
+stat 380, spring 2025 : }
+stat 403, spring 2025 : }
+stat 436, spring 2025 : }
+stat 437, spring 2025 : }
+stat 438, spring 2025 : }
+stat 445, spring 2025 : }
+stat 475, spring 2025 : }
+stat 490, spring 2025 : }

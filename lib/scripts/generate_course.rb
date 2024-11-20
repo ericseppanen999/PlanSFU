@@ -75,7 +75,7 @@ end
 
 # get sections data
 def get_sections(base_url)
-  response = get_data(base_url) # get data
+  response = get_data_with_retries(base_url) # get data
   return unless response # return if no response
   JSON.parse(response)
 rescue JSON::ParserError
@@ -118,7 +118,7 @@ end
 
 
 def get_section(section_url)
-  response = get_data(section_url) # get data
+  response = get_data_with_retries(section_url) # get data
   return { instructors: [], prerequisite: nil, campuses: [], delivery_methods: [], description: nil, credits: nil } unless response
 
   section_data = JSON.parse(response)
@@ -135,27 +135,44 @@ rescue JSON::ParserError
   { instructors: [], prerequisite: nil, campuses: [], delivery_methods: [], description: nil, credits: nil }
 end
 
-def get_data(url)
-  uri = URI(url)
-  response = Net::HTTP.get_response(uri)
-  if response.code.to_i == 200
-    parsed_body = JSON.parse(response.body)
+def get_data_with_retries(url, max_retries = 3)
+  retries = 0
+  begin
+    uri = URI(url)
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = (uri.scheme == "https")
+    http.open_timeout = 15 # Set the open timeout in seconds
+    http.read_timeout = 15 # Set the read timeout in seconds
 
-    if parsed_body.is_a?(Hash) && parsed_body["errorMessage"]
-      puts "Error: #{parsed_body["errorMessage"]} at URL #{url}"
-      nil
+    response = http.get(uri.request_uri)
+    if response.code.to_i == 200
+      parsed_body = JSON.parse(response.body)
+
+      if parsed_body.is_a?(Hash) && parsed_body["errorMessage"]
+        puts "Error: #{parsed_body["errorMessage"]} at URL #{url}"
+        nil
+      else
+        response.body
+      end
     else
-      response.body
+      puts "Response error in getdata #{url} with code #{response.code}"
+      nil
     end
-  else
-    puts "response error in getdata #{url} with code #{response.code}"
+  rescue JSON::ParserError
+    puts "Invalid JSON response from #{url}"
     nil
+  rescue Net::OpenTimeout, Net::ReadTimeout => e
+    retries += 1
+    puts "Timeout error when connecting to #{url}: #{e.message}. Retrying (Attempt #{retries})"
+    if retries <= max_retries
+      sleep(2**retries) # Exponential backoff
+      retry
+    else
+      puts "Failed to fetch #{url} after #{max_retries} retries."
+      nil
+    end
   end
-rescue JSON::ParserError
-  puts "Invalid JSON response from #{url}"
-  nil
 end
-
 # get professor data
 def get_profs(section_data)
   # map through instructor data to array
@@ -202,18 +219,16 @@ Course.create!(
   title: "#{title}",
   description: "#{description || "no description available"}",
   requisite_description: "#{prerequisite || "no prerequisite"}",
-  prereq_logic:"#{prerequisite_logic}",
-  short_description: "#{short_description}",
+  prereq_logic:"#{prerequisite_logic || "#no_prereq_logic"}",
   credits: #{credits || "nil"},
   instructors: #{instructors.inspect},
   campuses: #{campuses.inspect},
   delivery_methods: #{delivery_methods.inspect},
-  sections: #{filtered_sections.map { |section| section["value"] }.inspect},
-  requisites: [],
+  sections: #{filtered_sections.map { |section| section["value"] }.inspect}
 )
   RUBY
   begin
-    File.open("output.txt", "a") { |file| file.puts("#{dept} #{number}, #{term} #{year} : #{prerequisite_logic}") } # write into the file
+    File.open("output.txt", "a") { |file| file.puts("#{dept} #{number}, #{term} #{year} : }") } # write into the file
   rescue IOError => e
     puts "Error writing to file: #{e}"
   end
@@ -232,26 +247,47 @@ Course.create!(
 end
 
 # scrape sfu rest api for all course data
-def get_all_courses(year, sem, dept)
-  url = URI("https://www.sfu.ca/bin/wcm/course-outlines?#{year}/#{sem}/#{dept}/")
-  response = Net::HTTP.get_response(url)
-  if response.code.to_i != 200
-    puts "dept: #{dept} failed with #{response.code}"
-    return nil
+def get_all_courses_with_retries(year, sem, dept, max_retries = 3)
+  retries = 0
+  begin
+    url = URI("https://www.sfu.ca/bin/wcm/course-outlines?#{year}/#{sem}/#{dept}/")
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = (url.scheme == "https")
+    http.open_timeout = 15
+    http.read_timeout = 15
+
+    response = http.get(url.request_uri)
+    if response.code.to_i != 200
+      puts "dept: #{dept} failed with #{response.code}"
+      return nil
+    end
+
+    JSON.parse(response.body)
+  rescue JSON::ParserError
+    puts "json error in get_all_courses: #{url}"
+    nil
+  rescue Net::OpenTimeout, Net::ReadTimeout => e
+    retries += 1
+    puts "timeout error when connecting to #{url}: #{e.message}. Retrying (Attempt #{retries})"
+    if retries <= max_retries
+      sleep(2**retries) # Exponential backoff
+      retry
+    else
+      puts "failed to fetch all courses for dept: #{dept} after #{max_retries} retries."
+      nil
+    end
   end
-  JSON.parse(response.body)
-rescue JSON::ParserError
-  puts "json error in get_all_courses: #{url}"
-  nil
 end
 
+# Generate URLs and fetch data with retry mechanism integrated
 def generate_url(year, sem, dept)
-  courses = get_all_courses(year, sem, dept)
+  courses = get_all_courses_with_retries(year, sem, dept)
   return if courses.nil?
 
   courses.each do |course|
     course_value = course["value"] rescue nil
     next if course_value.nil?
+
     if less_than_600(course_value) # we don't want grad courses
       course_url = "https://www.sfu.ca/bin/wcm/course-outlines?#{year}/#{sem}/#{dept}/#{course_value}/"
       create_course(course_url)
@@ -261,7 +297,7 @@ end
 
 year_scope = [ "2022", "2023", "2024", "2025" ]
 terms = [ "fall", "spring", "summer" ]
-
+terms = [ "spring" ]
 departments = [
   "acma", "als", "apma", "arab", "arch", "bisc", "bpk", "bus", "ca", "cenv",
   "chem", "chin", "cmns", "cmpt", "cogs", "crim", "data", "dial", "dmed", "easc",
@@ -276,26 +312,27 @@ departments = [
 
 departments = [ "cmpt", "macm", "math", "ensc", "phys", "chem", "stat" ]
 
-departments = [ "ensc", "phys", "chem", "stat" ]
+# departments = [ "cmpt", "macm", "math" ]
 
 def times(year_scope, terms, departments)
-  puts "year:"
-  year = gets.chomp
-  puts "term:"
-  term = gets.chomp
-
+  # puts "term:"
+  # term = gets.chomp
+  year = "2025"
+  # term = "spring"
   total_time = Benchmark.measure do
     # threads = [] # threads for parralel processing
-
-    departments.each do |dept|
-      # threads << Thread.new do
-      if year_scope.include?(year) and terms.include?(term) and departments.include?(dept)
-        time = Benchmark.measure do
-          generate_url(year, term, dept)
+    # year_scope.each do |year|
+    terms.each do |term|
+      departments.each do |dept|
+        # threads << Thread.new do
+        if year_scope.include?(year) and terms.include?(term) and departments.include?(dept)
+          time = Benchmark.measure do
+            generate_url(year, term, dept)
+          end
+          puts "dept: #{dept} elapsed in: #{time.real}"
+        else
+          puts "invalid input"
         end
-        puts "dept: #{dept} elapsed in: #{time.real}"
-      else
-        puts "invalid input"
       end
     end
   end
