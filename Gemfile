@@ -22,7 +22,7 @@ gem "jbuilder"
 gem "bcrypt", "~> 3.1.7"
 
 # force bundler to use older version of psych, bc it won't work otherwise
-gem "psych", "< 5"
+gem "psych", "< 6"
 
 # include central authentification system
 gem "rubycas-client"
