@@ -1,6 +1,11 @@
 ![PlanSFU](assets/PlanSFU.svg "PlanSFU")\
 A course planner for undergrads at SFU. A group project for CMPT 276 D300, Fall 2024
 
+
+## please note that this branch is outdated, an upto date version is on the sfu enterprise github ##
+
+
+
 ## Running The Server Locally ##
 ### Prerequisites ###
 Ruby
