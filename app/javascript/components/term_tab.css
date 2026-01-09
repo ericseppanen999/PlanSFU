@@ -4,6 +4,8 @@
     height: 100%;
     background-color: var(--base-dark);
     opacity: 0.5;
+    transition: opacity var(--transition-medium);
+    backdrop-filter: blur(2px);
 }
 
 .greyout_container {
@@ -14,11 +16,20 @@
 
 .tab_container {
     border: 1px solid var(--base-dark);
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-medium);
+}
+
+.tab_container:hover {
+    box-shadow: var(--shadow-md);
 }
 
 .tab_header {
     height: 2lh;
     background-color: var(--base-dark);
+    transition: background-color var(--transition-medium);
 }
 
 .term_tab_header {
@@ -30,4 +41,10 @@
     border-left: 1px solid var(--base-dark);
     border-right: 1px solid var(--base-dark);
     max-width: 10lh;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+}
+
+.term_tab_header:hover {
+    background-color: var(--base-medium);
 }

@@ -1,6 +1,6 @@
-## This script is used to generate course data from SFU's course outline API and write it to a file
-# The generated data can be used to seed the database with course data
-# just a simple script, pretty readable.
+## This script is used to generate course data from SFU's course outline API
+# It can either write to seed files or directly load into the database
+# Set LOAD_TO_DB=true to load directly into database
 
 require "net/http"
 require "json"
@@ -9,6 +9,14 @@ require "fileutils"
 require "thread"
 require "open3"
 require_relative "prerequisite_parser"
+
+# Load Rails environment if loading to database
+if ENV["LOAD_TO_DB"] == "true" || ARGV.include?("--load-to-db")
+  require_relative "../../config/environment"
+  LOAD_TO_DATABASE = true
+else
+  LOAD_TO_DATABASE = false
+end
 
 
 def create_course(base_url)
@@ -48,18 +56,31 @@ def create_course(base_url)
   campuses.uniq!
   delivery_methods.uniq!
 
-
-  print_command(
-    sections_data.first,
-    filtered_sections,
-    instructors,
-    campuses,
-    delivery_methods,
-    prereq,
-    desc,
-    creds,
-    base_url
-  )
+  if LOAD_TO_DATABASE
+    create_course_in_database(
+      sections_data.first,
+      filtered_sections,
+      instructors,
+      campuses,
+      delivery_methods,
+      prereq,
+      desc,
+      creds,
+      base_url
+    )
+  else
+    print_command(
+      sections_data.first,
+      filtered_sections,
+      instructors,
+      campuses,
+      delivery_methods,
+      prereq,
+      desc,
+      creds,
+      base_url
+    )
+  end
 end
 
 # append element to array
@@ -203,12 +224,84 @@ def parse_prerequisites(input_string)
   end
 end
 
+# Create course directly in database with proper error handling
+def create_course_in_database(first_section, filtered_sections, instructors, campuses, delivery_methods, prerequisite, description, credits, url)
+  number, dept, term, year = get_course_dept_term_year(url)
+  title = first_section["title"] || "n/a"
+  prerequisite_logic = parse_prerequisites(prerequisite) || "#no_prereq_logic"
+
+  # Escape strings for database
+  course_data = {
+    dept: dept.to_s,
+    number: number.to_s,
+    term: term.to_s,
+    year: year.to_s,
+    title: sanitize_string(title),
+    description: sanitize_string(description || "no description available"),
+    requisite_description: sanitize_string(prerequisite || "no prerequisite"),
+    prereq_logic: prerequisite_logic.to_s,
+    credits: credits,
+    instructors: instructors || [],
+    campuses: campuses || [],
+    delivery_methods: delivery_methods || [],
+    sections: filtered_sections.map { |section| section["value"] } || []
+  }
+
+  # Validate required fields
+  unless course_data[:dept] && course_data[:number] && course_data[:term] && course_data[:year]
+    puts "ERROR: Missing required fields for course: #{dept} #{number}"
+    return false
+  end
+
+  # Check if course already exists
+  existing_course = Course.find_by(
+    dept: course_data[:dept],
+    number: course_data[:number],
+    term: course_data[:term],
+    year: course_data[:year]
+  )
+
+  if existing_course
+    # Update existing course
+    begin
+      existing_course.update!(course_data)
+      puts "UPDATED: #{dept} #{number} (#{term} #{year})"
+      true
+    rescue ActiveRecord::RecordInvalid => e
+      puts "ERROR updating #{dept} #{number}: #{e.message}"
+      false
+    end
+  else
+    # Create new course
+    begin
+      Course.create!(course_data)
+      puts "CREATED: #{dept} #{number} (#{term} #{year})"
+      true
+    rescue ActiveRecord::RecordInvalid => e
+      puts "ERROR creating #{dept} #{number}: #{e.message}"
+      false
+    rescue ActiveRecord::RecordNotUnique => e
+      puts "ERROR: Duplicate course #{dept} #{number} (#{term} #{year})"
+      false
+    end
+  end
+rescue => e
+  puts "ERROR processing course from #{url}: #{e.message}"
+  puts e.backtrace.first(5).join("\n")
+  false
+end
+
+# Sanitize string for database insertion
+def sanitize_string(str)
+  return "" if str.nil?
+  # Remove null bytes and escape quotes
+  str.to_s.gsub(/\0/, "").gsub(/"/, '\\"').gsub(/'/, "''")
+end
+
 def print_command(first_section, filtered_sections, instructors, campuses, delivery_methods, prerequisite, description, credits, url)
   # generate the command to seed our db
   number, dept, term, year = get_course_dept_term_year(url)
   title = first_section["title"] || "n/a"
-  short_description = description || "no short description"
-  # prerequisite_logic = parse_prerequisites(prerequisite) || "#no_prereq_logic"
   prerequisite_logic = parse_prerequisites(prerequisite) || "#no_prereq_logic"
   course_create_command = <<-RUBY
 Course.create!(

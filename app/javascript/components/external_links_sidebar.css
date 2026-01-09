@@ -18,12 +18,14 @@ ul.box_list {
 .group_title {
     cursor: pointer;
     user-select: none;
+    transition: color var(--transition-fast);
 }
 
 .group_title:hover {
     cursor: pointer;
     user-select: none;
     color: var(--hover-text-color);
+    transform: translateX(3px);
 }
 
 .external-links-sidebar {
@@ -33,18 +35,33 @@ ul.box_list {
     border-right: 1px solid #e0e0e0;
     overflow-y: auto;
     height: calc(100vh - 60px);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-medium);
+}
+
+.external-links-sidebar:hover {
+    box-shadow: var(--shadow-md);
 }
   
 .nested-group {
     margin-left: 15px;
+    transition: margin-left var(--transition-fast);
 }
   
 .group-title {
     cursor: pointer;
     margin: 5px 0;
     font-weight: bold;
+    transition: all var(--transition-fast);
+    padding: 4px 8px;
+    border-radius: var(--border-radius-small);
 }
   
+.group-title:hover {
+    background-color: var(--base-medium);
+    transform: translateX(3px);
+}
+
 .level-1 > .group-title {
     font-size: 18px;
     color: #333;
@@ -67,6 +84,7 @@ ul.box_list {
   
 .group-content {
     margin-left: 15px;
+    transition: margin-left var(--transition-fast);
 }
   
 .group-content ul {
@@ -78,8 +96,14 @@ ul.box_list {
     text-decoration: none;
     color: #0066cc;
     font-size: 12px;
+    transition: all var(--transition-fast);
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: var(--border-radius-small);
 }
   
 .group-content a:hover {
     text-decoration: underline;
+    background-color: rgba(0, 102, 204, 0.1);
+    transform: translateX(3px);
 }

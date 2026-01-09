@@ -3,14 +3,22 @@
     align-items: center;
     position: relative;
     margin: 20px 0;
+    transition: all var(--transition-medium);
 }
 
 #advanced_search_button {
     padding: var(--padding-small);
     height: 100%;
+    transition: transform var(--transition-fast);
+}
+
+#advanced_search_button:hover {
+    transform: scale(1.1);
 }
 
 .search_dropdown {
     position: absolute;
     width: 320px;
+    animation: slideDown var(--transition-medium) ease-out;
+    z-index: 100;
 }

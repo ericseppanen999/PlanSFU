@@ -1,10 +1,16 @@
 #logo {
     height: 60px;
     object-fit: scale-down;
+    transition: transform var(--transition-medium);
+}
+
+#logo:hover {
+    transform: scale(1.05);
 }
 
 #signin_panel {
     margin-left: auto;
+    transition: all var(--transition-medium);
 }
 
 #main_panel {
@@ -13,16 +19,26 @@
     padding: 0;
     margin-left: auto;
     margin-right: auto;
+    border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: box-shadow var(--transition-medium);
+}
+
+#main_panel:hover {
+    box-shadow: var(--shadow-xl);
 }
 
 #inner_panel {
     padding: var(--padding-large);
     height: 100%;
+    transition: padding var(--transition-medium);
 }
 
 #left_panel {
     width: calc(30% - var(--padding-medium) - 1px);
     height: max-content;
+    transition: all var(--transition-medium);
 }
 
 #right_panel {
@@ -30,8 +46,10 @@
     display: flex;
     flex-direction: column;
     flex-grow: 100;
+    transition: all var(--transition-medium);
 }
 
 .footer_text {
     color: var(--light-text-color);
+    transition: color var(--transition-fast);
 }

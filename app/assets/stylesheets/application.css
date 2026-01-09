@@ -36,12 +36,29 @@ body {
     --light-text-color: rgb(229, 229, 229);
     --text-error-color: red;
 
+    /* Modern design tokens */
+    --border-radius-small: 6px;
+    --border-radius-medium: 12px;
+    --border-radius-large: 16px;
+    --transition-fast: 0.15s ease;
+    --transition-medium: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
     margin: 0;
     background-color: var(--primary-color);
     color: var(--text-color);
     
     display: grid;
     grid-template-rows: auto 1fr auto;
+    
+    /* Smooth scrolling */
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a:link {
@@ -86,6 +103,12 @@ button {
     padding: var(--padding-medium);
     width: fit-content;
     height: fit-content;
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    transition: all var(--transition-medium);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
 }
 
 button.small {
@@ -96,16 +119,15 @@ button.small {
 button:hover {
     color: var(--base-color);
     background-color: var(--primary-color);
-}
-
-button:hover {
-    color: var(--base-color);
-    background-color: var(--primary-color);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
 }
 
 button:active {
     color: var(--primary-color);
     background-color: var(--base-dark);
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
 }
 
 button.flat {
@@ -113,11 +135,14 @@ button.flat {
     background-color: var(--base-color);
     padding: var(--padding-small);
     --content-color: var(--text-color);
+    box-shadow: none;
 }
 
 button.flat:hover {
     outline: none;
     background-color: var(--base-medium);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
 }
 
 button.flat:active {
@@ -125,12 +150,15 @@ button.flat:active {
     background-color: var(--base-color);
     color: var(--primary-color);
     --content-color: var(--primary-color);
+    transform: translateY(0);
 }
 
 header {
     background-color: var(--base-color);
     padding: var(--padding-medium);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
+    transition: box-shadow var(--transition-medium);
+    backdrop-filter: blur(10px);
 }
 
 input[type="checkbox"] {
@@ -140,22 +168,29 @@ input[type="checkbox"] {
 input:is([type="text"], [type="password"], [type="email"], [type="search"], [type="url"]) {
     outline: 1px solid var(--base-dark);
     border: none;
-    border-radius: 0;
+    border-radius: var(--border-radius-small);
     display: flex;
     height: max-content;
+    transition: all var(--transition-medium);
+    padding: calc(var(--padding-small) + 2px) var(--padding-medium);
+    box-shadow: var(--shadow-sm);
 }
 
 input:is([type="text"], [type="password"], [type="email"], [type="search"], [type="url"]):is(:focus, :hover) {
-    outline: 1px solid var(--primary-color);
+    outline: 2px solid var(--primary-color);
+    box-shadow: var(--shadow-md), 0 0 0 3px rgba(165, 42, 42, 0.1);
+    transform: translateY(-1px);
 }
 
 input:is([type="text"], [type="password"], [type="email"], [type="search"], [type="url"]):active:focus {
-    outline: 1px solid var(--primary-light);
+    outline: 2px solid var(--primary-light);
+    box-shadow: var(--shadow-md), 0 0 0 3px rgba(206, 74, 74, 0.15);
 }
 
 footer {
     background-color: var(--accent-dark);
     padding: var(--padding-medium);
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .transparent {
@@ -166,11 +201,16 @@ footer {
     border: 1px solid var(--base-dark);
     padding: var(--padding-small);
     --title-color: var(--text-color);
+    border-radius: var(--border-radius-small);
+    transition: all var(--transition-medium);
+    box-shadow: var(--shadow-sm);
 }
 
 .active_panel:hover {
     border: 1px solid var(--primary-color);
     --title-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
 }
 
 .material-symbols-outlined {
@@ -200,6 +240,29 @@ footer {
 
 .scroll {
     overflow-y: scroll;
+    scroll-behavior: smooth;
+    /* Modern scrollbar styling */
+    scrollbar-width: thin;
+    scrollbar-color: var(--base-dark) var(--base-color);
+}
+
+.scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scroll::-webkit-scrollbar-track {
+    background: var(--base-color);
+    border-radius: var(--border-radius-small);
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    background: var(--base-dark);
+    border-radius: var(--border-radius-small);
+    transition: background var(--transition-fast);
+}
+
+.scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
 }
 
 .item_stack {
@@ -231,4 +294,46 @@ footer {
     background-color: transparent;
     border: none;
     margin: auto;
+}
+
+/* Modern utility classes */
+.smooth-transition {
+    transition: all var(--transition-medium);
+}
+
+.hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.fade-in {
+    animation: fadeIn var(--transition-medium) ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.slide-up {
+    animation: slideUp var(--transition-medium) ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

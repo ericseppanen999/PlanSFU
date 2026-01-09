@@ -2,15 +2,26 @@
     height: fit-content;
     margin-bottom: var(--padding-medium);
     margin-right: var(--padding-medium);
+    border-radius: var(--border-radius-medium);
+    transition: all var(--transition-medium);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
 }
 
 .course_add_remove_button {
     margin-left: auto;
+    transition: transform var(--transition-fast);
+}
+
+.course_add_remove_button:hover {
+    transform: scale(1.1);
 }
 
 .course_item:hover {
     border: 1px solid var(--primary-color);
     --title-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
 }
 .course_item, .horizontal-stack {
     pointer-events: auto;
@@ -18,16 +29,21 @@
 
 .course_title {
     color: var(--title-color);
+    transition: color var(--transition-medium);
 }
 
 .course_info_item a {
     color: var(--link-color,blue);
     margin: 0;
+    transition: color var(--transition-fast);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
 }
 
 .course_info_item a:hover {
     color: var(--hover-link-color,darkblue);
     cursor: pointer;
+    border-bottom-color: var(--hover-link-color,darkblue);
 }
 
 .grade_input {

@@ -8,6 +8,14 @@
     height: min-content;
     margin: var(--padding-small);
     padding: 0;
+    transition: all var(--transition-fast);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.info_hover_tag:hover {
+    background-color: var(--base-medium);
+    transform: scale(1.1);
 }
 
 .info_hover_tag.show_active {
@@ -17,6 +25,11 @@
 .info_button_icon {
     width: 1lh;
     height: 1lh;
+    transition: transform var(--transition-fast);
+}
+
+.info_hover_tag:hover .info_button_icon {
+    transform: rotate(15deg);
 }
 
 .info_popup_rect {
@@ -27,14 +40,22 @@
     width: 200px;
     height: 80px;
     display: inline-block;
+    border-radius: var(--border-radius-medium);
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-medium);
 }
 
 .info_popup_panel {
     background-color: transparent;
     position: absolute;
     z-index: 1000;
+    transition: opacity var(--transition-medium), transform var(--transition-medium);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .info_popup_panel.hide_panel {
     display: none;
+    opacity: 0;
+    transform: translateY(-5px);
 }
